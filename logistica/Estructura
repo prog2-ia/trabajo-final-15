@@ -1,0 +1,18 @@
+logistica/
+│
+├── main.py
+├── clases/
+│   ├── pedido.py
+│   ├── vehiculo.py
+│   ├── ruta.py
+│   └── flota.py
+│
+├── exceptions/
+│   └── errores.py
+│
+├── utiles/
+│   ├── persistencia.py
+│   └── generador_albaran.py
+│
+└── datos/
+    └── sistema.bin
