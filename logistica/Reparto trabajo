@@ -3,14 +3,14 @@ Para que ninguno cargue más peso técnico:
         UML
       Decisiones de arquitectura
 
-    - Persona A
+    - Manuel
         Pedido
         Excepciones
         Ruta
         Generador de albaranes
         Parte de testing
 
-    - Persona B
+    - Anton
         Vehiculo + herencia
         Flota
         Persistencia
