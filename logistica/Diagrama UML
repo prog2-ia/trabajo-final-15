@@ -1,4 +1,4 @@
-DIAGRAMA UML – Vista Conceptual
+1 DIAGRAMA UML – Vista Conceptual
                 ┌─────────────────────┐
                 │       Pedido        │
                 └─────────────────────┘
@@ -29,7 +29,7 @@ DIAGRAMA UML – Vista Conceptual
         ┌─────────┐ ┌──────────┐ ┌────────┐
         │ Camion  │ │Furgoneta │ │  Moto  │
         └─────────┘ └──────────┘ └────────┘
-2️⃣ 📋 DIAGRAMA UML DETALLADO
+2 DIAGRAMA UML DETALLADO
 
 Ahora versión completa con atributos y métodos.
 
@@ -64,10 +64,10 @@ Ahora versión completa con atributos y métodos.
 │ + descargar(p: Pedido): None               │
 │ + porcentaje_ocupacion(): float            │
 └────────────────────────────────────────────┘
-                ▲
-                │ (Herencia)
- ┌──────────────┼──────────────┐
- │              │              │
+                          ▲
+                          │ (Herencia)
+ ┌────────────────────────┼──────────────────────┐
+ │                        │                      │
 
 ┌───────────────┐   ┌───────────────┐   ┌──────────────┐
 │   Camion      │   │  Furgoneta    │   │    Moto      │
@@ -109,31 +109,21 @@ Ahora versión completa con atributos y métodos.
 │ PlazoInvalidoError                         │
 │ DireccionInvalidaError                     │
 └────────────────────────────────────────────┘
-3️⃣ 🔗 Relaciones UML (para explicar en la defensa)
-🔹 Herencia
-
-Camion, Furgoneta, Moto
-→ heredan de Vehiculo
+3 Relaciones UML (para explicar en la defensa)
+        - Herencia
+            Camion, Furgoneta, Moto → heredan de Vehiculo
 
 Tipo de relación:
 
 Generalización (triángulo blanco en UML)
-🔹 Composición
+        - Composición
+            Vehiculo contiene Pedido
+            Ruta contiene Pedido
+            Flota contiene Vehiculo
 
-Vehiculo contiene Pedido
-
-Ruta contiene Pedido
-
-Flota contiene Vehiculo
-
-En UML esto se representa con:
-
-Rombo negro → Composición fuerte
-
-Porque si destruyes la flota, desaparece la relación con los vehículos.
-
-🔹 Asociación
-
-Flota asigna Pedido a Vehiculo
-
-Ruta usa Pedido
+            En UML esto se representa con:
+                Rombo negro → Composición fuerte
+                    Porque si destruyes la flota, desaparece la relación con los vehículos.
+        - Asociación
+            Flota asigna Pedido a Vehiculo
+            Ruta usa Pedido
