@@ -1,0 +1,139 @@
+DIAGRAMA UML – Vista Conceptual
+                ┌─────────────────────┐
+                │       Pedido        │
+                └─────────────────────┘
+                         ▲
+                         │
+                         │ pertenece
+                         │
+                ┌─────────────────────┐
+                │        Ruta         │
+                └─────────────────────┘
+                         ▲
+                         │
+                         │ usa
+                         │
+                ┌─────────────────────┐
+                │       Flota         │
+                └─────────────────────┘
+                         ▲
+                         │
+                         │ contiene
+                         │
+                ┌─────────────────────┐
+                │      Vehiculo       │
+                └─────────────────────┘
+                         ▲
+              ┌──────────┼──────────┐
+              │          │          │
+        ┌─────────┐ ┌──────────┐ ┌────────┐
+        │ Camion  │ │Furgoneta │ │  Moto  │
+        └─────────┘ └──────────┘ └────────┘
+2️⃣ 📋 DIAGRAMA UML DETALLADO
+
+Ahora versión completa con atributos y métodos.
+
+┌────────────────────────────────────────────┐
+│                  Pedido                    │
+├────────────────────────────────────────────┤
+│ - id: str                                  │
+│ - origen: str                              │
+│ - destino: str                             │
+│ - peso: float                              │
+│ - volumen: float                           │
+│ - fecha_entrega: datetime                  │
+│ - nivel_servicio: str                      │
+├────────────────────────────────────────────┤
+│ + validar(): None                          │
+│ + generar_albaran(): str                   │
+│ + __add__(other: Pedido): Pedido           │
+│ + __str__(): str                           │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│                 Vehiculo                   │
+├────────────────────────────────────────────┤
+│ - matricula: str                           │
+│ - capacidad_peso: float                    │
+│ - capacidad_volumen: float                 │
+│ - carga_actual: List[Pedido]               │
+├────────────────────────────────────────────┤
+│ + puede_cargar(p: Pedido): bool            │
+│ + cargar(p: Pedido): None                  │
+│ + descargar(p: Pedido): None               │
+│ + porcentaje_ocupacion(): float            │
+└────────────────────────────────────────────┘
+                ▲
+                │ (Herencia)
+ ┌──────────────┼──────────────┐
+ │              │              │
+
+┌───────────────┐   ┌───────────────┐   ┌──────────────┐
+│   Camion      │   │  Furgoneta    │   │    Moto      │
+├───────────────┤   ├───────────────┤   ├──────────────┤
+│ (especializa) │   │ (especializa) │   │ (especializa)│
+└───────────────┘   └───────────────┘   └──────────────┘
+
+
+┌────────────────────────────────────────────┐
+│                   Ruta                     │
+├────────────────────────────────────────────┤
+│ - lista_pedidos: List[Pedido]              │
+│ - distancia_total: float                   │
+│ - coste_total: float                       │
+├────────────────────────────────────────────┤
+│ + calcular_distancia(): float              │
+│ + calcular_coste(): float                  │
+│ + agregar_pedido(p: Pedido): None          │
+│ + __lt__(other: Ruta): bool                │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│                  Flota                     │
+├────────────────────────────────────────────┤
+│ - lista_vehiculos: List[Vehiculo]          │
+├────────────────────────────────────────────┤
+│ + agregar_vehiculo(v: Vehiculo): None      │
+│ + asignar_pedido(p: Pedido): bool          │
+│ + balancear(): None                        │
+│ + __add__(other: Flota): Flota             │
+└────────────────────────────────────────────┘
+
+
+┌────────────────────────────────────────────┐
+│             Excepciones (Abstracto)        │
+├────────────────────────────────────────────┤
+│ PesoExcedidoError                          │
+│ PlazoInvalidoError                         │
+│ DireccionInvalidaError                     │
+└────────────────────────────────────────────┘
+3️⃣ 🔗 Relaciones UML (para explicar en la defensa)
+🔹 Herencia
+
+Camion, Furgoneta, Moto
+→ heredan de Vehiculo
+
+Tipo de relación:
+
+Generalización (triángulo blanco en UML)
+🔹 Composición
+
+Vehiculo contiene Pedido
+
+Ruta contiene Pedido
+
+Flota contiene Vehiculo
+
+En UML esto se representa con:
+
+Rombo negro → Composición fuerte
+
+Porque si destruyes la flota, desaparece la relación con los vehículos.
+
+🔹 Asociación
+
+Flota asigna Pedido a Vehiculo
+
+Ruta usa Pedido

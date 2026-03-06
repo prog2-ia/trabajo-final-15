@@ -1,0 +1,66 @@
+4️⃣ 🗓 Plan de trabajo por semanas
+📅 Semana 1 — Diseño y Base
+Día 1
+
+Diseñar UML juntos
+
+Crear repositorio Git
+
+Configurar estructura de carpetas
+
+Día 2–3
+
+Persona A → Pedido + excepciones
+
+Persona B → Vehiculo base
+
+Día 4–5
+
+Persona B → Camion, Furgoneta, Moto
+
+Persona A → Ruta básica
+
+📅 Semana 2 — Integración
+Día 1–2
+
+Persona B → Flota
+
+Persona A → Sobrecarga operadores
+
+Día 3
+
+Integración en develop
+
+Día 4
+
+Persistencia con pickle
+
+Día 5
+
+Menú principal funcional
+
+📅 Semana 3 — Testing y Documentación
+
+Generar albaranes
+
+Probar errores
+
+Probar guardado/carga
+
+Escribir README
+
+Simulación completa
+
+5️⃣ 🧪 Testing (muy importante)
+
+Cada persona debe:
+
+✔ Probar su módulo de forma aislada
+✔ Crear pequeños scripts de prueba
+✔ No subir código que no funcione
+
+Opcional (mejor nota):
+
+tests/
+    test_pedido.py
+    test_flota.py

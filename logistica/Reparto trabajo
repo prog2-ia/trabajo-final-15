@@ -1,0 +1,39 @@
+Para que ninguno cargue más peso técnico:
+
+🔹 Ambos diseñan juntos
+
+UML
+
+Decisiones de arquitectura
+
+👤 Persona A
+
+Pedido
+
+Excepciones
+
+Ruta
+
+Generador de albaranes
+
+Parte de testing
+
+👤 Persona B
+
+Vehiculo + herencia
+
+Flota
+
+Persistencia
+
+main.py
+
+Integración final
+
+🔹 Ambos
+
+Revisan código del otro
+
+Hacen merge juntos
+
+Prueban sistema completo
