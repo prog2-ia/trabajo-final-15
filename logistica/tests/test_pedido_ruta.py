@@ -12,9 +12,9 @@ import folium
 
 
 from datetime import datetime, timedelta
-from logistica.clases.pedido import Pedido
-from logistica.clases.ruta import Ruta
-from logistica.tests.generador_pedidos import generar_pedidos
+from clases.pedido import Pedido
+from clases.ruta import Ruta
+from tests.generador_pedidos import generar_pedidos
 
 
 def test_crear_pedido():

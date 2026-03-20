@@ -1,7 +1,8 @@
 import random
 from datetime import datetime
 from exceptions.errores import PlazoInvalidoError, DireccionInvalidaError
-
+from datos.ciudades import CIUDADES
+'''
 # Coordenadas de ciudades
 CIUDADES = {
     "Alicante": (38.3452, -0.4810),
@@ -13,7 +14,7 @@ CIUDADES = {
     "Bilbao": (43.2630, -2.9350),
     "Zaragoza": (41.6488, -0.889)
 }
-
+'''
 
 class Pedido:
 

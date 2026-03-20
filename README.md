@@ -300,7 +300,7 @@ python tests/test_pedido_ruta.py
 
 # Autores
 
-Manuel Quiles Gómez
+Manuel Quiles Gómez  
 Anton Koniaev
 
 
