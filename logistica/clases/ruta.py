@@ -1,3 +1,6 @@
+
+from geopy.distance import geodesic
+
 class Ruta:
     """
     Representa una ruta logística formada por varios pedidos.
@@ -71,11 +74,30 @@ class Ruta:
 
     def calcular_distancia(self):
         """
-        Devuelve la distancia total de la ruta.
+        Calcula distancia total de la ruta usando coordenadas reales.
         """
 
-        return self.distancia_total
+        if len(self.lista_pedidos) < 2:
+            return 0
 
+        distancia = 0
+
+        for i in range(len(self.lista_pedidos) - 1):
+
+            p1 = self.lista_pedidos[i]
+            p2 = self.lista_pedidos[i + 1]
+
+            coord1 = p1.coordenadas_destino()
+            coord2 = p2.coordenadas_destino()
+
+            distancia += geodesic(coord1, coord2).km
+
+        # multiplicamos por 1.2 para aproximar carreteras reales
+        distancia *= 1.2
+
+        self.distancia_total = distancia
+
+        return distancia
     # --------------------------------------------------
 
     def calcular_coste(self, precio_km=1.5):
@@ -119,6 +141,21 @@ class Ruta:
 
         return "\n".join(texto)
 
+    def recorrido_ciudades(self):
+        """
+        Devuelve el recorrido de ciudades de la ruta.
+        """
+
+        if not self.lista_pedidos:
+            return "Ruta vacía"
+
+        ciudades = [p.origen for p in self.lista_pedidos]
+
+        # añadimos el último destino
+        ciudades.append(self.lista_pedidos[-1].destino)
+
+        return " → ".join(ciudades)
+
     # --------------------------------------------------
 
     def __lt__(self, other):
@@ -138,15 +175,16 @@ class Ruta:
         return len(self.lista_pedidos)
 
     # --------------------------------------------------
-
     def __str__(self):
-        """
-        Representación en texto de la ruta.
-        """
 
         return (
             f"Ruta {self.id_ruta} | "
             f"{len(self.lista_pedidos)} pedidos | "
-            f"{self.distancia_total} km"
+            f"{self.distancia_total:.2f} km | "
+            f"{self.recorrido_ciudades()} | "
+            f"{self.generar_albaran_ruta()}"
         )
+
+    
+
 
