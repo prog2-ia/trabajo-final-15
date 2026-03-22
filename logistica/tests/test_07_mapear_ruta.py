@@ -1,3 +1,12 @@
+"""
+-------------------------------------------------------
+- Mapea los origenes de cada pedido en un mapa.
+- 1 Genera 10 pedidos aleatorios
+- 2 Genera una ruta a partir de los 10 pedidos
+- 3 imprime la ruta (utiliza la sobrecarga __str__ de la clase ruta)
+- 4 Dibuja los origenes de cada pedido de la ruta en un mapa por medio de la libreria folium
+________________________________________________________
+"""
 import sys
 import os
 

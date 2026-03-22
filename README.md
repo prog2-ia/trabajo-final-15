@@ -5,6 +5,7 @@
 - Generado requiremets.txt  despues de incluir libreria **SSL** vinculada a libreria **folium** utilizada para mapear rutas
 - desglosados archivos de prueba test_xx_....... desde archivos originales en carpeta obsoletos, para realizar comprobaciones 
 - Modificado archivo README.md
+- 
 
 ## Descripción
 

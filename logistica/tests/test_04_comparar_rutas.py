@@ -1,3 +1,11 @@
+"""
+-------------------------------------------------------
+- Compara la distancia de dos rutas.
+- 1 Genera 2 rutas vacias sin pedidos asignando una distancia aleatoria
+- 2 imprime las dos rutas
+- 3 Informa de la ruta mas barata
+________________________________________________________
+"""
 import sys
 import os
 

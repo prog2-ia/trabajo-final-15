@@ -1,3 +1,11 @@
+"""
+-------------------------------------------------------
+- Genera ruta encadenadas.
+- 1 Genera 100 pedidos aleatorios
+- 2 Genera las rutas encadenando origen y destino
+- 3 imprime todas la rutas generadas
+________________________________________________________
+"""
 import sys
 import os
 

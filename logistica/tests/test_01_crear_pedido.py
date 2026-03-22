@@ -1,3 +1,10 @@
+"""
+-------------------------------------------------------
+- crea un pedido.
+- 1 Genera 1 pedido
+- 3 imprime el pedido utilizando la sobrecarga __str__
+________________________________________________________
+"""
 import sys
 import os
 

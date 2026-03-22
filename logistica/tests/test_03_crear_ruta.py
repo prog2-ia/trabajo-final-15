@@ -1,3 +1,12 @@
+"""
+-------------------------------------------------------
+- Genera una ruta a partir de 2 pedidos
+- 1 Genera 2 pedidos
+- 2 Genera una ruta con los 2 pedidos generados
+- 3 Imprime la ruta, incluido el albaran, utilizando la sobrecarga __str__ de la clase ruta
+________________________________________________________
+"""
+
 import sys
 import os
 

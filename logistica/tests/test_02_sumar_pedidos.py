@@ -1,3 +1,12 @@
+"""
+-------------------------------------------------------
+- Suma 2 pedidos.
+- 1 Genera 2 pedidos
+- 2 Imprime los dos pedidos utilizando la sobrecarga __str__ de la clase pedido
+- 3 Genera un nuevo pedido utilizando la sobrecarga __add__ de la clase pedido
+- 4 imprime el nuevo pedido suma
+________________________________________________________
+"""
 import sys
 import os
 

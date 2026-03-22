@@ -1,3 +1,13 @@
+"""
+-------------------------------------------------------
+- Dibuja una ruta que une los origenes de cada pedido.
+- 1 Genera 10 pedidos aleatorios
+- 2 Genera una ruta utilizando los 10 pedidos generados
+- 3 Une los origenes de cada pedidos generados mediante coordenadas x,y  ficticias generada aleatoriamente
+- 3 imprime la rutas generada
+- 4 dibuja la ruta utiliando la libreria matplotlib
+________________________________________________________
+"""
 import sys
 import os
 

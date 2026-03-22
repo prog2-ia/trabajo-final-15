@@ -1,3 +1,10 @@
+"""
+-------------------------------------------------------
+- Genera pedidos aleatorios.
+- 1 Genera 100 pedidos aleatorios
+- 2 Imprime todos los pedidos generados
+________________________________________________________
+"""
 import sys
 import os
 
