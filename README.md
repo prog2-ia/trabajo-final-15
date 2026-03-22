@@ -1,11 +1,21 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/09uckVan)
 # Sistema de Gestión Logística
 
-## Ultimas modificacones
-- Generado requiremets.txt  despues de incluir libreria **SSL** vinculada a libreria **folium** utilizada para mapear rutas
-- desglosados archivos de prueba test_xx_....... desde archivos originales en carpeta obsoletos, para realizar comprobaciones 
-- Modificado archivo README.md
-- 
+## Instalación
+
+
+git clone <repo>
+cd trabajo-final-15
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+
+## Prueba y ejecución
+En la actualidad estamos generando programas de prueba antes de generar el menu de ejecución principal
+Se pueden ejecutar desde la carpeta **test** los programas utilizados para probar el funcionamento de funciones y clases.
+
 
 ## Descripción
 
@@ -28,26 +38,43 @@ El proyecto está diseñado de forma modular para facilitar su ampliación futur
 # Arquitectura del proyecto
 
 El proyecto se organiza en diferentes módulos: 
+```text
+├──logistica/  
+│    ├── clases/  
+│    │     ├──── pedido.py  
+│    │     ├──── ruta.py 
+│    │     ├──── clientes.py
+│    │     ├──── vehiculo.py  
+│    │     ├──── flota.py  
+│    │     ├──── camion.py  # Clase derivada de vehiculo
+│    │     ├──── furgoneta.py  # Clase derivada de vehiculo
+│    │     └──── moto.py  # Clase derivada de vehiculo
+│    │
+│    ├── datos/
+│    │     ├── ruta.html
+│    │     └── ciudades_alicante.py   # Diccionario de ciudades y coordenadas
+│    │  
+│    ├── exceptions/  
+│    │     └── errores.py  
+│    │  
+│    ├── tests/  
+│    │     ├── test_01_crear_pedido.py
+│    │     ├── test_09_calcular_km_rutas.py
+│    │     └── ...            # Otros tests
+│    │    
+│    ├── utiles/  
+│    │    └── util.py 
+│    │ 
+│    ├── Diagrama UML
+│    ├── diagrama uml.png
+│    ├── Estructura
+│    ├── Proyecto ejemplo
+│    └── requirements.txt
+├── .gitignore
+└── README.md 
 
-logistica/  
-│
-├── clases/  
-│ ├── pedido.py  
-│ ├── ruta.py  
-│ ├── vehiculo.py  
-│ ├── flota.py  
-│ ├── camion.py  
-│ ├── furgoneta.py  
-│ └── moto.py  
-│  
-├── exceptions/  
-│ └── errores.py  
-│  
-├── tests/  
-│ └── test_pedido_ruta.py  
-│  
-└── README.md  
-
+ 
+```
 ---
 
 # Modelo del sistema
@@ -65,6 +92,7 @@ El sistema se basa en las siguientes entidades principales:
 
 La clase `Pedido` representa un envío logístico entre dos ciudades.
 
+## Atributos  
 Cada pedido contiene información sobre:
 
 - identificador
@@ -74,21 +102,51 @@ Cada pedido contiene información sobre:
 - volumen
 - fecha de entrega
 - nivel de servicio
+- validacion
+- coordenadas x e y para visualizacion de ruta
+- coordenadas de latitud y longitud de origen
+- coordenadas de latitud y longutud de destino
+- km entre origen y destino
 
-También incluye coordenadas geográficas asociadas a la ciudad de origen.
 
 ## Funcionalidades
 
 - Validación de datos
+- obtencion de coordenadas geograficas de origen y destino
+- calculo de distancia entre origen y destino
 - Agrupación de pedidos mediante sobrecarga del operador `+`
 - Representación en texto
 
 Ejemplo de salida:
 
-**Pedido:P1 Alicante → Valencia Peso:5 kg Volumen:1**
+**Pedido:P0 Alicante → Torrevieja 44.5 km Peso:42.28 kg Vol:0.14 l. Entrega:2026-03-25 Hora:23:06 Servicio:urgente**
 
 
 ---
+# Clase Ruta
+
+La clase `Ruta` contiene una lista de pedidos y representa un recorrido de un vehiculo distribuyendo pedidos  
+
+Cada ruta contiene información de :
+- Identificador de la ruta 
+- Distancia total estimada de la ruta
+- Lista de pedidos
+
+## Funcionalidades
+- Añadir pedido a ruta 
+- Eliminar pedido de ruta
+- calcular nº de pedidos de ruta
+- Calcular el peso de todos los pedidos
+- Calcular el volumen de todos los pedidos
+- Calcular el recorrido total de toda la ruta
+- Calcular el coste de la ruta
+- Devuelve la lista de pedidos de la ruta
+- Devuelve un albaran de la ruta
+- Devuelve una cadena con el recorrido de la ruta
+- Compara el coste de dos rutas diferentes mediante el oparador de sobrecarga __lt__
+- Calcula el numero de pedidos de la ruta mediante el operado de sobrecarga __len__
+- Imprime la informacion de la ruta mediante la sobrecarga __str__
+    
 
 # Clase Vehiculo (planificada)
 

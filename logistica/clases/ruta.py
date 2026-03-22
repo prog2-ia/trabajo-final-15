@@ -143,16 +143,19 @@ class Ruta:
 
     def recorrido_ciudades(self):
         """
-        Devuelve el recorrido de ciudades de la ruta.
+        Devuelve el recorrido de ciudades de la ruta encadenada:
+        origen(p1) → destino(p1) → destino(p2) → ... → destino(pn)
         """
 
         if not self.lista_pedidos:
             return "Ruta vacía"
 
-        ciudades = [p.origen for p in self.lista_pedidos]
+        # Empezamos con el origen del primer pedido
+        ciudades = [self.lista_pedidos[0].origen]
 
-        # añadimos el último destino
-        ciudades.append(self.lista_pedidos[-1].destino)
+        # Añadimos todos los destinos en orden
+        for p in self.lista_pedidos:
+            ciudades.append(p.destino)
 
         return " → ".join(ciudades)
 

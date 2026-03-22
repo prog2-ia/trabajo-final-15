@@ -7,12 +7,53 @@ ________________________________________________________
 """
 import sys
 import os
+from datetime import datetime, timedelta
+import random
 
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from datos.ciudades_alicante import CIUDADES_ALICANTE
 
-import utiles.utils as utils
+from clases.pedido import Pedido
+
+
+def generar_pedidos(n=100):
+
+    pedidos = []
+    ciudades = list(CIUDADES_ALICANTE.keys())
+    niveles_servicio = ["standard", "urgente"]
+
+    for i in range(n):
+
+        # elegir ciudades aleatorias
+        origen = random.choice(ciudades)
+        destino = random.choice(ciudades)
+
+        # evitar origen y destino iguales
+        while destino == origen:
+            destino = random.choice(ciudades)
+
+        peso = round(random.uniform(1, 100), 2)
+        volumen = round(random.uniform(0.1, 5), 2)
+
+        fecha = datetime.now() + timedelta(days=random.randint(1, 10))
+
+        nivel = random.choice(niveles_servicio)
+
+        p = Pedido(
+            f"P{i}",
+            origen,
+            destino,
+            peso,
+            volumen,
+            fecha,
+            nivel
+        )
+
+        pedidos.append(p)
+
+    return pedidos
 
 if __name__ == "__main__":
 
@@ -20,7 +61,7 @@ if __name__ == "__main__":
 
 
 
-    pedidos = utils.generar_pedidos(100)
+    pedidos = generar_pedidos(100)
 
     print("Pedidos generados:", len(pedidos))
     print(pedidos[0])

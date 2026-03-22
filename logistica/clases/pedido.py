@@ -2,6 +2,10 @@ import random
 from datetime import datetime
 from exceptions.errores import PlazoInvalidoError, DireccionInvalidaError
 from datos.ciudades import CIUDADES
+import utiles.utils as utils
+
+
+from logistica.datos.ciudades_alicante import CIUDADES_ALICANTE
 
 
 class Pedido:
@@ -23,7 +27,11 @@ class Pedido:
         self.y = random.uniform(0, 100)
 
         # coordenadas reales de la ciudad
-        self.lat, self.lon = CIUDADES[origen]
+        self.lat, self.lon = CIUDADES_ALICANTE[origen]
+        self.lat_des, self.lon_des = CIUDADES_ALICANTE[destino]
+
+        self.km = self.calcular_distancia()
+
 
     def validar(self):
 
@@ -34,10 +42,16 @@ class Pedido:
             raise PlazoInvalidoError("Fecha de entrega inválida")
 
     def coordenadas_origen(self):
-        return CIUDADES[self.origen]
+        return CIUDADES_ALICANTE[self.origen]
 
     def coordenadas_destino(self):
-        return CIUDADES[self.destino]
+        return CIUDADES_ALICANTE[self.destino]
+
+    def calcular_distancia(self):
+        return utils.distancia_km(
+            (self.lat, self.lon),
+            (self.lat_des, self.lon_des)
+        )
 
     def __add__(self, other):
 
@@ -56,4 +70,4 @@ class Pedido:
 
     def __str__(self):
 
-        return f"Pedido:{self.id} {self.origen} → {self.destino} Peso:{self.peso} kg Vol:{self.volumen} l. Entrega:{self.fecha_entrega.date()} Hora:{self.fecha_entrega.strftime('%H:%M')} Servicio:{self.nivel_servicio}"
+        return f"Pedido:{self.id} {self.origen} → {self.destino} {self.km:.1f} km Peso:{self.peso} kg Vol:{self.volumen} l. Entrega:{self.fecha_entrega.date()} Hora:{self.fecha_entrega.strftime('%H:%M')} Servicio:{self.nivel_servicio}"
