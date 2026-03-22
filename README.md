@@ -1,6 +1,11 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/09uckVan)
 # Sistema de Gestión Logística
 
+## Ultimas modificacones
+- Generado requiremets.txt  despues de incluir libreria **SSL** vinculada a libreria **folium** utilizada para mapear rutas
+- desglosados archivos de prueba test_xx_....... desde archivos originales en carpeta obsoletos, para realizar comprobaciones 
+- Modificado archivo README.md
+
 ## Descripción
 
 Este proyecto implementa un sistema de gestión logística desarrollado en **Python** utilizando **Programación Orientada a Objetos (POO)**.  

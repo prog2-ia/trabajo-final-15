@@ -2,19 +2,7 @@ import random
 from datetime import datetime
 from exceptions.errores import PlazoInvalidoError, DireccionInvalidaError
 from datos.ciudades import CIUDADES
-'''
-# Coordenadas de ciudades
-CIUDADES = {
-    "Alicante": (38.3452, -0.4810),
-    "Valencia": (39.4699, -0.3763),
-    "Madrid": (40.4168, -3.7038),
-    "Barcelona": (41.3874, 2.1686),
-    "Murcia": (37.9922, -1.1307),
-    "Sevilla": (37.3891, -5.9845),
-    "Bilbao": (43.2630, -2.9350),
-    "Zaragoza": (41.6488, -0.889)
-}
-'''
+
 
 class Pedido:
 
@@ -68,4 +56,4 @@ class Pedido:
 
     def __str__(self):
 
-        return f"Pedido:{self.id} {self.origen} → {self.destino} Peso:{self.peso} kg Vol:{self.volumen}"
+        return f"Pedido:{self.id} {self.origen} → {self.destino} Peso:{self.peso} kg Vol:{self.volumen} l. Entrega:{self.fecha_entrega.date()} Hora:{self.fecha_entrega.strftime('%H:%M')} Servicio:{self.nivel_servicio}"

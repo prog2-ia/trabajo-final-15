@@ -1,5 +1,5 @@
 
-from geopy.distance import geodesic
+# from geopy.distance import geodesic
 
 class Ruta:
     """
@@ -126,7 +126,7 @@ class Ruta:
         """
 
         texto = []
-        texto.append(f"ALBARÁN RUTA {self.id_ruta}")
+        texto.append(f"\n\n\nALBARÁN RUTA {self.id_ruta}")
         texto.append("-" * 30)
 
         for p in self.lista_pedidos:
@@ -134,10 +134,10 @@ class Ruta:
 
         texto.append("-" * 30)
         texto.append(f"Total pedidos: {self.numero_pedidos()}")
-        texto.append(f"Peso total: {self.peso_total()} kg")
-        texto.append(f"Volumen total: {self.volumen_total()}")
-        texto.append(f"Distancia: {self.distancia_total} km")
-        texto.append(f"Coste estimado: {self.calcular_coste()}")
+        texto.append(f"Peso total: {self.peso_total():.2f} kg")
+        texto.append(f"Volumen total: {self.volumen_total():.2f} l")
+        texto.append(f"Distancia: {self.distancia_total:.2f} km")
+        texto.append(f"Coste estimado: {self.calcular_coste():.2f} €")
 
         return "\n".join(texto)
 
@@ -180,7 +180,7 @@ class Ruta:
         return (
             f"Ruta {self.id_ruta} | "
             f"{len(self.lista_pedidos)} pedidos | "
-            f"{self.distancia_total:.2f} km | "
+            f"{self.distancia_total:} km | "
             f"{self.recorrido_ciudades()} | "
             f"{self.generar_albaran_ruta()}"
         )
