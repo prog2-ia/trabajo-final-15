@@ -8,6 +8,8 @@ contiene los atributos de pais, ciudad, calle, numero, coordenadas geograficas
 
     ATRIBUTOS
     dni -> identificador del cliente
+    nombre -> nombre del cliente
+    apellidos -> apellidos del cliente
     direccion -> objeto de la clase Direccion
     pedidos_en_curso -> lista de pedidos activos
     pedidos_terminados -> lista de pedidos finalizados
@@ -20,9 +22,11 @@ contiene los atributos de pais, ciudad, calle, numero, coordenadas geograficas
     __sub__ -> mueve pedidos a pedidos_terminados
     """
 class Cliente:
-    def __init__(self, dni, direccion):
+    def __init__(self, dni, nombre, apellidos, direccion):
 
         self._dni = dni
+        self._nombre = nombre
+        self._apellidos = apellidos
         self._direccion = direccion
 
         self._pedidos_en_curso = []
@@ -37,6 +41,25 @@ class Cliente:
     @property
     def dni(self):
         return self._dni
+
+    @property
+    def nombre(self):
+        return self._nombre
+
+    @nombre.setter
+    def nombre(self, valor):
+        if isinstance(valor, str) and valor:
+            self._nombre = valor
+
+    @property
+    def apellidos(self):
+        return self._apellidos
+
+    @apellidos.setter
+    def apellidos(self, valor):
+        if isinstance(valor, str) and valor:
+            self._apellidos = valor
+
 
     @property
     def direccion(self):
@@ -134,12 +157,13 @@ class Cliente:
         pedidos_terminados_str = [str(p) for p in self._pedidos_terminados]
 
         return (
-            f"Cliente {self._dni}\n"
+            f"DNI cliente: {self._dni}\n"
+            f"Apellidos y Nombre: {self._apellidos}, {self._nombre}\n"
             f"Direccion: {self._direccion}\n\n"
             f"Pedidos en curso:\n"
             f"{pedidos_curso_str}\n\n"
             f"Pedidos terminados:\n"
             f"{pedidos_terminados_str}\n\n"
-            f"Importe facturado: {self._importe_facturado}"
+            f"Importe facturado: {round(self._importe_facturado,2)}"
         )
 
