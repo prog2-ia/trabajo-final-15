@@ -1,4 +1,4 @@
-# ciudades.py
+# dic_ciudades.py
 # Coordenadas de las capitales de provincia de España
 # formato: (latitud, longitud)
 

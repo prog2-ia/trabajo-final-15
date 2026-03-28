@@ -26,7 +26,7 @@ import webbrowser
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import utiles.utils as utils
-from datos.ciudades_alicante import CIUDADES_ALICANTE
+from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
 from clases.pedido import Pedido
 from clases.ruta import Ruta
 

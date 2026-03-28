@@ -23,7 +23,7 @@ from pathlib import Path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from clases.ruta import Ruta
 from clases.pedido import Pedido
-from datos.ciudades_alicante import CIUDADES_ALICANTE
+from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
 
 
 def generar_pedidos(n=100):

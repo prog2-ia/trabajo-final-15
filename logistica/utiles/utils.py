@@ -1,7 +1,7 @@
 
 from math import radians, sin, cos, sqrt, atan2
-from datos.ciudades import CIUDADES   # importar diccionario de ciudades
-from datos.ciudades_alicante import CIUDADES_ALICANTE
+# from datos.dic_ciudades import CIUDADES   # importar diccionario de ciudades
+# from datos.ciudades_alicante import CIUDADES_ALICANTE
 
 
 
