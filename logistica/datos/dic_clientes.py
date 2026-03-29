@@ -1,103 +1,410 @@
-# Archivo generado automáticamente
 clientes = {
-    "cliente_1": {'dni': '32007137S', 'nombre': 'Alejandro', 'apellidos': 'Núñez Suárez', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Calle San Vicente', 'numero': 16, 'coordenadas': (39.905963, 1.973307)},
-    "cliente_2": {'dni': '28702920R', 'nombre': 'Juan', 'apellidos': 'Sanz Díaz', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Calle San Vicente', 'numero': 45, 'coordenadas': (37.969966, -0.64941)},
-    "cliente_3": {'dni': '59038432P', 'nombre': 'Carlos', 'apellidos': 'Domínguez Domínguez', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 23, 'coordenadas': (39.483039, 1.029639)},
-    "cliente_4": {'dni': '39555812K', 'nombre': 'José', 'apellidos': 'Fernández Ortega', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Mayor', 'numero': 26, 'coordenadas': (39.165911, 1.279658)},
-    "cliente_5": {'dni': '60946894E', 'nombre': 'Rafael', 'apellidos': 'Navarro Domínguez', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle San Vicente', 'numero': 5, 'coordenadas': (39.293647, -3.709586)},
-    "cliente_6": {'dni': '26456593S', 'nombre': 'Álvaro', 'apellidos': 'Torres López', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Calle San Vicente', 'numero': 30, 'coordenadas': (36.582265, -3.78726)},
-    "cliente_7": {'dni': '92303725X', 'nombre': 'Adrián', 'apellidos': 'Medina Medina', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Gran Vía', 'numero': 40, 'coordenadas': (38.913434, -2.733752)},
-    "cliente_8": {'dni': '53772138R', 'nombre': 'Carlos', 'apellidos': 'Moreno Delgado', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 31, 'coordenadas': (40.115342, 1.604701)},
-    "cliente_9": {'dni': '79875330X', 'nombre': 'Sergio', 'apellidos': 'Serrano Serrano', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Alcalá', 'numero': 13, 'coordenadas': (38.580076, -0.722985)},
-    "cliente_10": {'dni': '13192169J', 'nombre': 'Javier', 'apellidos': 'Marín Rubio', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Calle Mayor', 'numero': 7, 'coordenadas': (39.979827, 0.353818)},
-    "cliente_11": {'dni': '14427907F', 'nombre': 'Francisco', 'apellidos': 'Iglesias Navarro', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Mayor', 'numero': 15, 'coordenadas': (38.201745, 1.171697)},
-    "cliente_12": {'dni': '75903109G', 'nombre': 'Álvaro', 'apellidos': 'Ortiz Muñoz', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 36, 'coordenadas': (36.34022, -3.166103)},
-    "cliente_13": {'dni': '46865802J', 'nombre': 'Iván', 'apellidos': 'Blanco Rubio', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Gran Vía', 'numero': 9, 'coordenadas': (37.098631, 0.39132)},
-    "cliente_14": {'dni': '84813075T', 'nombre': 'Luis', 'apellidos': 'Delgado Castro', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Mayor', 'numero': 3, 'coordenadas': (36.561398, -0.034867)},
-    "cliente_15": {'dni': '26610175A', 'nombre': 'Alejandro', 'apellidos': 'Hernández López', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 25, 'coordenadas': (36.037213, -3.33844)},
-    "cliente_16": {'dni': '57400166D', 'nombre': 'Javier', 'apellidos': 'Serrano Serrano', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle San Vicente', 'numero': 31, 'coordenadas': (37.808776, -1.394498)},
-    "cliente_17": {'dni': '59295512V', 'nombre': 'Antonio', 'apellidos': 'López Romero', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle San Vicente', 'numero': 40, 'coordenadas': (36.614766, -3.837894)},
-    "cliente_18": {'dni': '17271534Y', 'nombre': 'Rubén', 'apellidos': 'Castro Romero', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Avenida Libertad', 'numero': 24, 'coordenadas': (38.5986, -0.524428)},
-    "cliente_19": {'dni': '46473644M', 'nombre': 'José', 'apellidos': 'Blanco Suárez', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle San Vicente', 'numero': 27, 'coordenadas': (40.85886, -3.190297)},
-    "cliente_20": {'dni': '21379774D', 'nombre': 'Rafael', 'apellidos': 'Ramírez Muñoz', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Gran Vía', 'numero': 2, 'coordenadas': (36.606414, 1.898205)},
-    "cliente_21": {'dni': '35633990K', 'nombre': 'José', 'apellidos': 'Molina Núñez', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Avenida Libertad', 'numero': 41, 'coordenadas': (37.374552, -1.016912)},
-    "cliente_22": {'dni': '58641246D', 'nombre': 'Javier', 'apellidos': 'Suárez Ortiz', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Gran Vía', 'numero': 46, 'coordenadas': (39.648292, 1.809753)},
-    "cliente_23": {'dni': '59280807D', 'nombre': 'Sergio', 'apellidos': 'Blanco Hernández', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Calle Mayor', 'numero': 48, 'coordenadas': (40.961648, -1.403015)},
-    "cliente_24": {'dni': '13301150C', 'nombre': 'Javier', 'apellidos': 'Marín Domínguez', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 23, 'coordenadas': (36.83595, -3.540247)},
-    "cliente_25": {'dni': '98219358C', 'nombre': 'Alejandro', 'apellidos': 'Romero Navarro', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Avenida Libertad', 'numero': 24, 'coordenadas': (40.145366, -0.296529)},
-    "cliente_26": {'dni': '13621407W', 'nombre': 'Sergio', 'apellidos': 'Alonso Gómez', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Avenida Libertad', 'numero': 49, 'coordenadas': (40.18904, 0.531777)},
-    "cliente_27": {'dni': '16950651L', 'nombre': 'Luis', 'apellidos': 'Gil Rodríguez', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Gran Vía', 'numero': 33, 'coordenadas': (37.00517, 0.547278)},
-    "cliente_28": {'dni': '89723173N', 'nombre': 'Juan', 'apellidos': 'Iglesias Álvarez', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Avenida Libertad', 'numero': 48, 'coordenadas': (37.86585, 0.857029)},
-    "cliente_29": {'dni': '11733191V', 'nombre': 'Daniel', 'apellidos': 'Ruiz Marín', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Mayor', 'numero': 15, 'coordenadas': (36.898546, -2.77317)},
-    "cliente_30": {'dni': '38847053F', 'nombre': 'Juan', 'apellidos': 'Molina Molina', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 13, 'coordenadas': (36.006841, 1.313951)},
-    "cliente_31": {'dni': '23146908F', 'nombre': 'Rafael', 'apellidos': 'Ramírez Rodríguez', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle Mayor', 'numero': 30, 'coordenadas': (37.502044, 0.406291)},
-    "cliente_32": {'dni': '58497979D', 'nombre': 'Luis', 'apellidos': 'Suárez Delgado', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Avenida Libertad', 'numero': 49, 'coordenadas': (37.095179, -2.348415)},
-    "cliente_33": {'dni': '44238329Z', 'nombre': 'Carlos', 'apellidos': 'Gómez Castro', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Alcalá', 'numero': 25, 'coordenadas': (36.992304, -2.187953)},
-    "cliente_34": {'dni': '77616859R', 'nombre': 'Javier', 'apellidos': 'Sánchez Rubio', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Avenida Libertad', 'numero': 20, 'coordenadas': (38.34582, 1.747765)},
-    "cliente_35": {'dni': '96475764X', 'nombre': 'Pablo', 'apellidos': 'Ortiz López', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Calle Mayor', 'numero': 40, 'coordenadas': (37.175594, 0.78659)},
-    "cliente_36": {'dni': '47331410D', 'nombre': 'Adrián', 'apellidos': 'Álvarez Ortega', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Mayor', 'numero': 8, 'coordenadas': (39.098769, -3.901773)},
-    "cliente_37": {'dni': '21007578E', 'nombre': 'Luis', 'apellidos': 'Núñez López', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle Mayor', 'numero': 39, 'coordenadas': (36.15548, 1.74735)},
-    "cliente_38": {'dni': '73074837L', 'nombre': 'Pablo', 'apellidos': 'Marín Serrano', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Calle San Vicente', 'numero': 28, 'coordenadas': (39.073969, -1.35737)},
-    "cliente_39": {'dni': '75854689E', 'nombre': 'Pablo', 'apellidos': 'Delgado Romero', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Gran Vía', 'numero': 3, 'coordenadas': (40.948856, 1.446804)},
-    "cliente_40": {'dni': '87684564P', 'nombre': 'Daniel', 'apellidos': 'García Muñoz', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Gran Vía', 'numero': 2, 'coordenadas': (37.455681, -3.38381)},
-    "cliente_41": {'dni': '74850726D', 'nombre': 'Adrián', 'apellidos': 'Navarro Hernández', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Alcalá', 'numero': 30, 'coordenadas': (38.508527, 1.065168)},
-    "cliente_42": {'dni': '56904317V', 'nombre': 'Fernando', 'apellidos': 'Torres Martínez', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Mayor', 'numero': 7, 'coordenadas': (40.999562, -3.014607)},
-    "cliente_43": {'dni': '42453243G', 'nombre': 'Rubén', 'apellidos': 'Rodríguez López', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Avenida Libertad', 'numero': 9, 'coordenadas': (38.288009, -2.041415)},
-    "cliente_44": {'dni': '49062844A', 'nombre': 'Adrián', 'apellidos': 'Morales Marín', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Mayor', 'numero': 2, 'coordenadas': (38.605995, -0.935139)},
-    "cliente_45": {'dni': '43945479T', 'nombre': 'Manuel', 'apellidos': 'Gómez Gómez', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Mayor', 'numero': 12, 'coordenadas': (39.735414, -1.524713)},
-    "cliente_46": {'dni': '28597486E', 'nombre': 'Francisco', 'apellidos': 'Romero Gómez', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Alcalá', 'numero': 33, 'coordenadas': (40.718179, -3.230077)},
-    "cliente_47": {'dni': '42105594T', 'nombre': 'Antonio', 'apellidos': 'Morales Rodríguez', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle Alcalá', 'numero': 17, 'coordenadas': (36.140344, -1.055284)},
-    "cliente_48": {'dni': '22451471K', 'nombre': 'Javier', 'apellidos': 'Ramírez Ramírez', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Calle Alcalá', 'numero': 27, 'coordenadas': (40.982574, -3.691558)},
-    "cliente_49": {'dni': '29521352R', 'nombre': 'Sergio', 'apellidos': 'Torres López', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 12, 'coordenadas': (38.974777, -0.372033)},
-    "cliente_50": {'dni': '46395987L', 'nombre': 'David', 'apellidos': 'Sánchez Morales', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle Mayor', 'numero': 38, 'coordenadas': (39.385057, -0.041469)},
-    "cliente_51": {'dni': '69792450P', 'nombre': 'José', 'apellidos': 'Torres Ortiz', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Gran Vía', 'numero': 39, 'coordenadas': (37.006591, 1.628071)},
-    "cliente_52": {'dni': '41830851S', 'nombre': 'Daniel', 'apellidos': 'Torres Moreno', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Alcalá', 'numero': 4, 'coordenadas': (40.76736, -1.964131)},
-    "cliente_53": {'dni': '31432348L', 'nombre': 'David', 'apellidos': 'Díaz Núñez', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle Alcalá', 'numero': 42, 'coordenadas': (38.033657, 1.25915)},
-    "cliente_54": {'dni': '38940555Z', 'nombre': 'Juan', 'apellidos': 'Domínguez Sanz', 'pais': 'España', 'ciudad': 'Orihuela', 'calle': 'Calle Alcalá', 'numero': 8, 'coordenadas': (36.805259, 0.068541)},
-    "cliente_55": {'dni': '46209252K', 'nombre': 'Rafael', 'apellidos': 'Moreno Gutiérrez', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Avenida Libertad', 'numero': 36, 'coordenadas': (36.639446, -2.074053)},
-    "cliente_56": {'dni': '50348316M', 'nombre': 'Daniel', 'apellidos': 'Romero Molina', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle San Vicente', 'numero': 31, 'coordenadas': (39.013911, -0.909972)},
-    "cliente_57": {'dni': '68374673C', 'nombre': 'Iván', 'apellidos': 'Álvarez Ramos', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Alcalá', 'numero': 25, 'coordenadas': (38.613375, -3.543742)},
-    "cliente_58": {'dni': '18294679L', 'nombre': 'Rubén', 'apellidos': 'Sanz Medina', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Avenida Libertad', 'numero': 32, 'coordenadas': (38.14865, -3.611539)},
-    "cliente_59": {'dni': '35900834L', 'nombre': 'Sergio', 'apellidos': 'Sanz Fernández', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Avenida Libertad', 'numero': 35, 'coordenadas': (39.480064, 1.358461)},
-    "cliente_60": {'dni': '37247795P', 'nombre': 'Rubén', 'apellidos': 'Ramos Morales', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Calle San Vicente', 'numero': 19, 'coordenadas': (38.164172, -0.690565)},
-    "cliente_61": {'dni': '46339211F', 'nombre': 'Álvaro', 'apellidos': 'Muñoz Ortega', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle Alcalá', 'numero': 3, 'coordenadas': (36.557705, -2.397382)},
-    "cliente_62": {'dni': '60261276B', 'nombre': 'Adrián', 'apellidos': 'Ramírez Ortega', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Gran Vía', 'numero': 17, 'coordenadas': (40.797813, -2.629831)},
-    "cliente_63": {'dni': '74326897M', 'nombre': 'Adrián', 'apellidos': 'Hernández Gil', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Calle Mayor', 'numero': 33, 'coordenadas': (37.19449, 1.114266)},
-    "cliente_64": {'dni': '92126790Z', 'nombre': 'Sergio', 'apellidos': 'Iglesias Molina', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Avenida Libertad', 'numero': 40, 'coordenadas': (39.342939, 0.496509)},
-    "cliente_65": {'dni': '83136772Y', 'nombre': 'Daniel', 'apellidos': 'Gutiérrez Sanz', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Gran Vía', 'numero': 43, 'coordenadas': (36.462031, -2.73094)},
-    "cliente_66": {'dni': '34317592M', 'nombre': 'Francisco', 'apellidos': 'Ruiz Muñoz', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle San Vicente', 'numero': 37, 'coordenadas': (38.81401, 0.030318)},
-    "cliente_67": {'dni': '89959484K', 'nombre': 'Antonio', 'apellidos': 'Rodríguez Ortega', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Avenida Libertad', 'numero': 37, 'coordenadas': (39.933939, 1.945713)},
-    "cliente_68": {'dni': '37566640G', 'nombre': 'Javier', 'apellidos': 'Blanco Vázquez', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Mayor', 'numero': 16, 'coordenadas': (40.389759, -3.10676)},
-    "cliente_69": {'dni': '82099241M', 'nombre': 'Miguel', 'apellidos': 'Suárez Hernández', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Gran Vía', 'numero': 20, 'coordenadas': (37.659884, -3.147139)},
-    "cliente_70": {'dni': '95206351J', 'nombre': 'José', 'apellidos': 'López Romero', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Gran Vía', 'numero': 49, 'coordenadas': (40.115802, -1.547096)},
-    "cliente_71": {'dni': '72856555F', 'nombre': 'Sergio', 'apellidos': 'González Romero', 'pais': 'España', 'ciudad': 'Orihuela', 'calle': 'Calle San Vicente', 'numero': 32, 'coordenadas': (39.997103, 1.243211)},
-    "cliente_72": {'dni': '78002797E', 'nombre': 'Álvaro', 'apellidos': 'Molina Ramírez', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle Alcalá', 'numero': 22, 'coordenadas': (36.070286, -2.33803)},
-    "cliente_73": {'dni': '54467951H', 'nombre': 'Javier', 'apellidos': 'Gil Navarro', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Gran Vía', 'numero': 39, 'coordenadas': (38.663252, 0.908599)},
-    "cliente_74": {'dni': '80619414K', 'nombre': 'Rubén', 'apellidos': 'Vázquez Núñez', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Gran Vía', 'numero': 3, 'coordenadas': (37.073618, -1.31905)},
-    "cliente_75": {'dni': '60467239D', 'nombre': 'Pablo', 'apellidos': 'Muñoz Morales', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Mayor', 'numero': 19, 'coordenadas': (36.767714, -1.599157)},
-    "cliente_76": {'dni': '38201118G', 'nombre': 'David', 'apellidos': 'Torres Sanz', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Avenida Libertad', 'numero': 44, 'coordenadas': (40.896922, -0.108675)},
-    "cliente_77": {'dni': '76982320D', 'nombre': 'Fernando', 'apellidos': 'Pérez Martínez', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle San Vicente', 'numero': 42, 'coordenadas': (37.929745, -1.04772)},
-    "cliente_78": {'dni': '41799620H', 'nombre': 'Javier', 'apellidos': 'Suárez Torres', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle Mayor', 'numero': 18, 'coordenadas': (40.95112, 0.949858)},
-    "cliente_79": {'dni': '37010606H', 'nombre': 'Rafael', 'apellidos': 'Suárez Blanco', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Calle Alcalá', 'numero': 2, 'coordenadas': (39.932895, 0.332561)},
-    "cliente_80": {'dni': '91363887K', 'nombre': 'Rafael', 'apellidos': 'Núñez Domínguez', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Calle Alcalá', 'numero': 37, 'coordenadas': (40.056723, -2.154146)},
-    "cliente_81": {'dni': '47669945F', 'nombre': 'Miguel', 'apellidos': 'Sanz Delgado', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Avenida Libertad', 'numero': 19, 'coordenadas': (37.128272, -1.733447)},
-    "cliente_82": {'dni': '93398571X', 'nombre': 'Álvaro', 'apellidos': 'Rodríguez Moreno', 'pais': 'España', 'ciudad': 'Móstoles', 'calle': 'Avenida Libertad', 'numero': 16, 'coordenadas': (40.376545, -0.922865)},
-    "cliente_83": {'dni': '33175210X', 'nombre': 'Álvaro', 'apellidos': 'Sanz Marín', 'pais': 'España', 'ciudad': 'Orihuela', 'calle': 'Calle Mayor', 'numero': 18, 'coordenadas': (39.109625, 0.499192)},
-    "cliente_84": {'dni': '47175504C', 'nombre': 'Daniel', 'apellidos': 'Molina Medina', 'pais': 'España', 'ciudad': 'Torrevieja', 'calle': 'Calle San Vicente', 'numero': 7, 'coordenadas': (39.616458, 0.308058)},
-    "cliente_85": {'dni': '51678127W', 'nombre': 'Rubén', 'apellidos': 'Ortiz Hernández', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Gran Vía', 'numero': 44, 'coordenadas': (37.257058, 1.42113)},
-    "cliente_86": {'dni': '70974590V', 'nombre': 'Iván', 'apellidos': 'Díaz Navarro', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Avenida Libertad', 'numero': 45, 'coordenadas': (36.472852, -2.308611)},
-    "cliente_87": {'dni': '17607970K', 'nombre': 'Alejandro', 'apellidos': 'Domínguez Romero', 'pais': 'España', 'ciudad': 'Orihuela', 'calle': 'Gran Vía', 'numero': 9, 'coordenadas': (39.241491, -2.714322)},
-    "cliente_88": {'dni': '56445849P', 'nombre': 'Daniel', 'apellidos': 'Gómez Serrano', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Gran Vía', 'numero': 40, 'coordenadas': (37.259734, -1.907)},
-    "cliente_89": {'dni': '15517220V', 'nombre': 'Juan', 'apellidos': 'Medina Serrano', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Avenida Libertad', 'numero': 27, 'coordenadas': (38.511003, 0.706355)},
-    "cliente_90": {'dni': '23800361F', 'nombre': 'Miguel', 'apellidos': 'Núñez Rodríguez', 'pais': 'España', 'ciudad': 'Fuenlabrada', 'calle': 'Calle Mayor', 'numero': 48, 'coordenadas': (38.963778, -0.45688)},
-    "cliente_91": {'dni': '31055176R', 'nombre': 'Pablo', 'apellidos': 'Gil Torres', 'pais': 'España', 'ciudad': 'Leganés', 'calle': 'Avenida Libertad', 'numero': 25, 'coordenadas': (38.622003, 0.077728)},
-    "cliente_92": {'dni': '34847098M', 'nombre': 'Adrián', 'apellidos': 'Serrano Morales', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Calle Mayor', 'numero': 43, 'coordenadas': (40.489003, 0.466065)},
-    "cliente_93": {'dni': '53951067J', 'nombre': 'Rubén', 'apellidos': 'Hernández Serrano', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Avenida Libertad', 'numero': 32, 'coordenadas': (36.604976, -2.882657)},
-    "cliente_94": {'dni': '14978842T', 'nombre': 'Pablo', 'apellidos': 'Serrano Romero', 'pais': 'España', 'ciudad': 'Alcalá de Henares', 'calle': 'Calle Mayor', 'numero': 50, 'coordenadas': (40.68275, 0.515948)},
-    "cliente_95": {'dni': '34822821Q', 'nombre': 'Adrián', 'apellidos': 'López Fernández', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Calle Mayor', 'numero': 17, 'coordenadas': (40.363435, 0.840544)},
-    "cliente_96": {'dni': '87087568T', 'nombre': 'Sergio', 'apellidos': 'Gil Díaz', 'pais': 'España', 'ciudad': 'Madrid', 'calle': 'Gran Vía', 'numero': 44, 'coordenadas': (36.501944, -1.99515)},
-    "cliente_97": {'dni': '77398141J', 'nombre': 'Javier', 'apellidos': 'Serrano Alonso', 'pais': 'España', 'ciudad': 'Alicante', 'calle': 'Avenida Libertad', 'numero': 13, 'coordenadas': (40.877881, -3.629354)},
-    "cliente_98": {'dni': '79414954W', 'nombre': 'Sergio', 'apellidos': 'García Muñoz', 'pais': 'España', 'ciudad': 'Elche', 'calle': 'Avenida Libertad', 'numero': 36, 'coordenadas': (36.090811, 1.986917)},
-    "cliente_99": {'dni': '69720300D', 'nombre': 'Adrián', 'apellidos': 'Álvarez Sánchez', 'pais': 'España', 'ciudad': 'Orihuela', 'calle': 'Gran Vía', 'numero': 29, 'coordenadas': (40.716073, 0.901033)},
-    "cliente_100": {'dni': '61866952B', 'nombre': 'Rubén', 'apellidos': 'Domínguez Morales', 'pais': 'España', 'ciudad': 'Benidorm', 'calle': 'Avenida Libertad', 'numero': 15, 'coordenadas': (40.95251, -2.168709)}
+    '82619808W': {
+        'nombre': 'Juan',
+        'apellidos': 'Lopez Fernandez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '58893930F': {
+        'nombre': 'Carmen',
+        'apellidos': 'Lopez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '68502212V': {
+        'nombre': 'Luis',
+        'apellidos': 'Perez Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '21379355B': {
+        'nombre': 'Carmen',
+        'apellidos': 'Moreno Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Avenida Maisonnave\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '49713569I': {
+        'nombre': 'Elena',
+        'apellidos': 'Perez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '27511613Y': {
+        'nombre': 'Miguel',
+        'apellidos': 'Ruiz Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '74031405F': {
+        'nombre': 'Pedro',
+        'apellidos': 'Lopez Garcia',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '39278043Q': {
+        'nombre': 'Ana',
+        'apellidos': 'Diaz Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '04872429B': {
+        'nombre': 'Juan',
+        'apellidos': 'Lopez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '25199547A': {
+        'nombre': 'Ana',
+        'apellidos': 'Garcia Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '69203784I': {
+        'nombre': 'Carmen',
+        'apellidos': 'Garcia Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '79789685T': {
+        'nombre': 'Luis',
+        'apellidos': 'Fernandez Lopez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '53495531U': {
+        'nombre': 'Ana',
+        'apellidos': 'Garcia Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Avenida Maisonnave\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '49966507T': {
+        'nombre': 'Miguel',
+        'apellidos': 'Gomez Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '52974611V': {
+        'nombre': 'Lucia',
+        'apellidos': 'Martinez Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '39888299K': {
+        'nombre': 'Lucia',
+        'apellidos': 'Perez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '90573613L': {
+        'nombre': 'Ana',
+        'apellidos': 'Moreno Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Avenida Maisonnave\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '58233612I': {
+        'nombre': 'Miguel',
+        'apellidos': 'Diaz Lopez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '76372462O': {
+        'nombre': 'Carlos',
+        'apellidos': 'Martinez Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '79371475M': {
+        'nombre': 'Maria',
+        'apellidos': 'Moreno Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '98149715C': {
+        'nombre': 'Juan',
+        'apellidos': 'Diaz Garcia',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '06463268X': {
+        'nombre': 'Carmen',
+        'apellidos': 'Ruiz Diaz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '30549269T': {
+        'nombre': 'Maria',
+        'apellidos': 'Fernandez Garcia',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '06998068S': {
+        'nombre': 'Lucia',
+        'apellidos': 'Martinez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '55973880O': {
+        'nombre': 'Ana',
+        'apellidos': 'Lopez Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '89960090Y': {
+        'nombre': 'Carlos',
+        'apellidos': 'Perez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '37396443Z': {
+        'nombre': 'Juan',
+        'apellidos': 'Fernandez Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '11545315X': {
+        'nombre': 'Juan',
+        'apellidos': 'Diaz Fernandez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '80542087T': {
+        'nombre': 'Lucia',
+        'apellidos': 'Diaz Fernandez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '93588252Q': {
+        'nombre': 'Juan',
+        'apellidos': 'Gomez Fernandez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Avenida Maisonnave\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '10798955M': {
+        'nombre': 'Pedro',
+        'apellidos': 'Sanchez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '97117395F': {
+        'nombre': 'Carlos',
+        'apellidos': 'Perez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '67601181W': {
+        'nombre': 'Pedro',
+        'apellidos': 'Sanchez Lopez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '69369921I': {
+        'nombre': 'Luis',
+        'apellidos': 'Martinez Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '21990263E': {
+        'nombre': 'Carmen',
+        'apellidos': 'Gomez Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '53841221D': {
+        'nombre': 'Miguel',
+        'apellidos': 'Garcia Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '73034006V': {
+        'nombre': 'Elena',
+        'apellidos': 'Sanchez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '64557609R': {
+        'nombre': 'Lucia',
+        'apellidos': 'Diaz Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '36742941K': {
+        'nombre': 'Elena',
+        'apellidos': 'Garcia Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '65884294J': {
+        'nombre': 'Carlos',
+        'apellidos': 'Diaz Ruiz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '79197968Q': {
+        'nombre': 'Maria',
+        'apellidos': 'Perez Moreno',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '21869284F': {
+        'nombre': 'Carlos',
+        'apellidos': 'Moreno Martinez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '01291335E': {
+        'nombre': 'Lucia',
+        'apellidos': 'Garcia Perez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '95635277Q': {
+        'nombre': 'Pedro',
+        'apellidos': 'Martinez Diaz',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Avenida Maisonnave\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '43841061C': {
+        'nombre': 'Pedro',
+        'apellidos': 'Garcia Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '70108885F': {
+        'nombre': 'Carmen',
+        'apellidos': 'Martinez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Benidorm\\\'"\'', '\'"\\\'Avenida Mediterraneo\\\'"\'', 30, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '55739471J': {
+        'nombre': 'Juan',
+        'apellidos': 'Fernandez Gomez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Alicante\\\'"\'', '\'"\\\'Elche\\\'"\'', '\'"\\\'Avenida Libertad\\\'"\'', 20, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '89327097E': {
+        'nombre': 'Lucia',
+        'apellidos': 'Garcia Lopez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '25851986H': {
+        'nombre': 'Ana',
+        'apellidos': 'Diaz Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Calle Alcala\\\'"\'', 50, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '80283351H': {
+        'nombre': 'Ana',
+        'apellidos': 'Martinez Sanchez',
+        'direccion': ('\'"\\\'España\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Madrid\\\'"\'', '\'"\\\'Gran Via\\\'"\'', 1, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    },
+    '21978008J': {
+        'nombre': 'Manuel',
+        'apellidos': 'Quiles Gomez',
+        'direccion': ('"\'España\'"', '"\'Alicante\'"', '"\'Alicante\'"', '"\'Padre Mariana\'"', 40, None),
+        'pedidos_en_curso': [],
+        'pedidos_terminados': [],
+        'importe_facturado': 0
+    }
 }
