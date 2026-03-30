@@ -15,7 +15,7 @@ import random
 
 
 # Añadir la carpeta raíz del proyecto al path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from clases.pedido import Pedido
 from clases.ruta import Ruta

@@ -2,28 +2,26 @@
 -------------------------------------------------------
 AUTOR: Manuel Quiles
 
-- Mapea los origenes de cada pedido en un mapa.
+- Dibuja una ruta que une los origenes de cada pedido.
 - 1 Genera 10 pedidos aleatorios
-- 2 Genera una ruta a partir de los 10 pedidos
-- 3 imprime la ruta (utiliza la sobrecarga __str__ de la clase ruta)
-- 4 Dibuja los origenes de cada pedido de la ruta en un mapa por medio de la libreria folium
+- 2 Genera una ruta utilizando los 10 pedidos generados
+- 3 Une los origenes de cada pedidos generados mediante coordenadas x,y  ficticias generada aleatoriamente
+- 3 imprime la rutas generada
+- 4 dibuja la ruta utiliando la libreria matplotlib
 ________________________________________________________
 """
 import sys
 import os
 from datetime import datetime, timedelta
 import random
-import folium
-import webbrowser
-from pathlib import Path
-
+import matplotlib.pyplot as plt
 
 
 # Añadir la carpeta raíz del proyecto al path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
+from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
 from clases.ruta import Ruta
 from clases.pedido import Pedido
-from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
 
 
 def generar_pedidos(n=100):
@@ -63,23 +61,26 @@ def generar_pedidos(n=100):
 
     return pedidos
 
-def mapa_ruta(ruta):
 
-    mapa = folium.Map(location=[40, -3], zoom_start=6)
+# Dibuja un grafo uniendo coordenadas x,y para cada pedido
+def dibujar_ruta(ruta):
+
+    xs = []
+    ys = []
 
     for p in ruta.lista_pedidos:
-        folium.Marker(
-            location=[p.lat, p.lon],
-            popup=p.id
-        ).add_to(mapa)
+        xs.append(p.x)
+        ys.append(p.y)
 
-    mapa.save("../datos/ruta.html")
+    plt.plot(xs, ys, marker="o")
+    plt.title("Ruta logística")
+    plt.xlabel("X")
+    plt.ylabel("Y")
 
-    #  abrir automáticamente
-    ruta_archivo = Path("../datos/ruta.html").resolve()
+    for i,p in enumerate(ruta.lista_pedidos):
+        plt.text(p.x, p.y, p.id)
 
-    webbrowser.open_new_tab(ruta_archivo.as_uri())
-
+    plt.show()
 
 if __name__ == "__main__":
     pedidos = generar_pedidos(10)
@@ -99,6 +100,4 @@ if __name__ == "__main__":
     print()
     print(ruta)
 
-    mapa_ruta(ruta)
-    print("Se ha generado el mapa en 'datos/ruta.html'")
-
+    dibujar_ruta(ruta)

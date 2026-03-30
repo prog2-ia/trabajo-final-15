@@ -12,7 +12,7 @@ import random
 from datetime import datetime, timedelta
 
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from clases.pedido import Pedido
 
 
