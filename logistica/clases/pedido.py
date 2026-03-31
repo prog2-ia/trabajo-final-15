@@ -1,16 +1,11 @@
 import random
 from datetime import datetime
 import utiles.utils as utils
-from logistica.datos.dic_ciudades_alicante import CIUDADES_ALICANTE
+from logistica.datos.obsoletos.dic_ciudades_alicante import CIUDADES_ALICANTE
 
 
 class Pedido:
-    """
-    Clase Pedido (versión silenciosa)
-    - No usa raise
-    - No usa print
-    - Manejo de errores devolviendo None o ignorando cambios
-    """
+
 
     def __init__(self, id, origen, destino, peso, volumen, fecha_entrega, nivel_servicio):
 

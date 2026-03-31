@@ -79,7 +79,7 @@ for clave, direccion in delegaciones_reales.items():
 # =========================
 # GUARDAR FICHERO
 # =========================
-with open("../datos/dic_delegaciones.py", "w", encoding="utf-8") as f:
+with open("../datos/obsoletos/dic_delegaciones.py", "w", encoding="utf-8") as f:
     f.write("# Delegaciones SEUR reales geolocalizadas\n")
     f.write("delegaciones = {\n")
 
