@@ -26,10 +26,7 @@
     LIBRERIA
     geopy con Nominatim
 
-    COMPORTAMIENTO
-    No usa raise
-    No usa print
-    Devuelve None si hay errores
+
 """
 
 from geopy.geocoders import Nominatim
@@ -57,6 +54,14 @@ class Direccion:
     @property
     def coordenadas(self):
         return self.__coordenadas
+
+    @property
+    def coordenadas(self):
+        return self.__coordenadas
+
+    @coordenadas.setter
+    def coordenadas(self, valor):
+        self.__coordenadas = valor
 
     # construye direccion completa
     def direccion_completa(self):

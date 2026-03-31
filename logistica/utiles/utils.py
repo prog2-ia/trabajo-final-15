@@ -1,5 +1,7 @@
 
 from math import radians, sin, cos, sqrt, atan2
+import random
+
 # from datos.dic_ciudades import CIUDADES   # importar diccionario de ciudades
 # from datos.ciudades_alicante import CIUDADES_ALICANTE
 
@@ -62,3 +64,52 @@ def generar_dni_real():
     letra = letras[numero % 23]
 
     return f"{numero}{letra}"
+
+def validar_matricula_esp(matricula):
+
+    if not matricula:
+        return False
+
+    matricula = matricula.upper().replace(" ", "")
+
+    if len(matricula) != 7:
+        return False
+
+    numeros = matricula[:4]
+    letras = matricula[4:]
+
+    if not numeros.isdigit():
+        return False
+
+    letras_validas = "BCDFGHJKLMNPRSTVWXYZ"
+
+    for l in letras:
+        if l not in letras_validas:
+            return False
+
+    return True
+
+
+
+def generar_matricula():
+
+    """
+    Genera matricula española valida
+    Ejemplo: 1234 ABC
+    """
+
+    numeros = random.randint(1000, 9999)
+
+    letras_validas = "BCDFGHJKLMNPRSTVWXYZ"
+
+    letras = "".join(random.choice(letras_validas) for _ in range(3))
+
+    return f"{numeros} {letras}"
+
+def validar_unicidad(valor, conjunto):
+
+    if valor in conjunto:
+        return False
+
+    conjunto.add(valor)
+    return True
