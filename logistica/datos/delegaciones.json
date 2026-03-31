@@ -1,0 +1,54 @@
+[
+    {
+        "tipo": "DelegacionCentral",
+        "nombre": "Central Madrid",
+        "direccion": "Gran Via 1, Madrid",
+        "coordenadas": [
+            40.4192229,
+            -3.6983182
+        ],
+        "vehiculos": [
+            {
+                "tipo": "camion",
+                "matricula": "1234 ABC",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "5678 DEF",
+                "disponible": true
+            },
+            {
+                "tipo": "motocicleta",
+                "matricula": "1111 GHI",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho Alicante",
+        "direccion": "Avenida Maisonnave 1, Alicante",
+        "coordenadas": [
+            38.3433692,
+            -0.4920739
+        ],
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "5678 DEF",
+                "disponible": true
+            },
+            {
+                "tipo": "motocicleta",
+                "matricula": "1111 GHI",
+                "disponible": true
+            },
+            {
+                "tipo": "mochila",
+                "matricula": "ALICANTE-1",
+                "disponible": true
+            }
+        ]
+    }
+]
