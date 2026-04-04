@@ -1,34 +1,3 @@
-
-"""
-    CLASE DIRECCION
-
-    Esta clase representa una direccion completa y permite:
-
-    - Construir la direccion en formato texto
-      metodo direccion_completa()
-
-    - Validar si la direccion existe realmente
-      metodo validar()
-
-    - Obtener las coordenadas geograficas
-      metodo obtener_coordenadas()
-
-    - Acceder a las coordenadas
-      propiedad coordenadas
-
-    - Mostrar la direccion
-      metodo __str__()
-
-    ATRIBUTOS
-    _pais, _provincia, _ciudad, _calle, _numero -> protegidos
-    __coordenadas -> privado
-
-    LIBRERIA
-    geopy con Nominatim
-
-
-"""
-
 from geopy.geocoders import Nominatim
 from geopy.exc import GeocoderTimedOut
 
@@ -37,23 +6,39 @@ class Direccion:
 
     def __init__(self, pais, provincia, ciudad, calle, numero):
 
-        # atributos protegidos
         self._pais = pais
         self._provincia = provincia
         self._ciudad = ciudad
         self._calle = calle
         self._numero = numero
 
-        # atributo privado
         self.__coordenadas = None
 
-        # geolocalizador
         self._geolocator = Nominatim(user_agent="logistica_app")
 
-    # getter coordenadas
+    # ==========================
+    # GETTERS (NECESARIOS)
+    # ==========================
+
     @property
-    def coordenadas(self):
-        return self.__coordenadas
+    def pais(self):
+        return self._pais
+
+    @property
+    def provincia(self):
+        return self._provincia
+
+    @property
+    def ciudad(self):
+        return self._ciudad
+
+    @property
+    def calle(self):
+        return self._calle
+
+    @property
+    def numero(self):
+        return self._numero
 
     @property
     def coordenadas(self):
@@ -63,11 +48,13 @@ class Direccion:
     def coordenadas(self, valor):
         self.__coordenadas = valor
 
-    # construye direccion completa
+    # ==========================
+    # FUNCIONES
+    # ==========================
+
     def direccion_completa(self):
         return f"{self._calle} {self._numero}, {self._ciudad}, {self._provincia}, {self._pais}"
 
-    # valida direccion
     def validar(self):
         try:
             direccion = self.direccion_completa()
@@ -84,7 +71,6 @@ class Direccion:
         except GeocoderTimedOut:
             return None
 
-    # obtiene coordenadas
     def obtener_coordenadas(self):
         try:
             direccion = self.direccion_completa()
@@ -99,7 +85,6 @@ class Direccion:
         except GeocoderTimedOut:
             return None
 
-    # representacion en texto
     def __str__(self):
 
         if self.__coordenadas is None:

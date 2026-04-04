@@ -1,0 +1,420 @@
+[
+    {
+        "tipo": "DelegacionCentral",
+        "nombre": "Central Madrid",
+        "direccion": "Ctra. Villaverde a Vallecas, 257, Villa de Vallecas, 28031 Madrid",
+        "coordenadas": [
+            40.3703671,
+            -3.6447707
+        ],
+        "delegacion_superior": null,
+        "vehiculos": [
+            {
+                "tipo": "camion",
+                "matricula": "7184 FHP",
+                "disponible": true
+            },
+            {
+                "tipo": "camion",
+                "matricula": "8546 RRX",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 1",
+        "direccion": "Gran Via 1, Madrid, Espa\u00f1a",
+        "coordenadas": [
+            40.4192229,
+            -3.6983182
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "8582 SNG",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "8137 PTG",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 2",
+        "direccion": "Calle Carpinteros 7, Getafe, Espa\u00f1a",
+        "coordenadas": [
+            40.309782,
+            -3.7021359
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "2362 VFY",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "7476 WXM",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 3",
+        "direccion": "Calle Industrias 14, Alcorc\u00f3n, Espa\u00f1a",
+        "coordenadas": [
+            40.340689,
+            -3.812384
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "1893 PKG",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "9382 XSH",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 4",
+        "direccion": "Calle Constituci\u00f3n 5, Fuenlabrada, Espa\u00f1a",
+        "coordenadas": [
+            40.2823784,
+            -3.790263
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "7879 VVZ",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "8960 LPR",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 5",
+        "direccion": "Carrer de Colon 1, Valencia, Espa\u00f1a",
+        "coordenadas": [
+            39.1488697,
+            -0.4380286
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "4156 GXK",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "8979 DXL",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 6",
+        "direccion": "Av. Euro 9, Alicante, Espa\u00f1a",
+        "coordenadas": [
+            38.3394392,
+            -0.5722345
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "6936 YGW",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "5857 NMZ",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 7",
+        "direccion": "Calle Almansa 8, Elche, Espa\u00f1a",
+        "coordenadas": [
+            38.1936445,
+            -0.5679936
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "5006 CVB",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "5995 DKD",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 8",
+        "direccion": "C. Torno, 14, 03690 Sant Vicent del Raspeig, Alicante",
+        "coordenadas": [
+            38.4053958,
+            -0.5400405
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "2289 XHZ",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "9039 DDX",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionBase",
+        "nombre": "Base 9",
+        "direccion": "Travessera D'amadeu Vives 16, El Campello, Alicante",
+        "coordenadas": [
+            38.427416,
+            -0.3983685
+        ],
+        "delegacion_superior": "Central Madrid",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "5649 ZSC",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "9941 SNX",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 1",
+        "direccion": "Calle Resina 39, Madrid, Espa\u00f1a",
+        "coordenadas": [
+            40.3357627,
+            -3.7091824
+        ],
+        "delegacion_superior": "Base 2",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "7131 SMR",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "4422 PHR",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 2",
+        "direccion": "Calle Cottolengo 25, San Vicente del Raspeig, Espa\u00f1a",
+        "coordenadas": [
+            38.3867285,
+            -0.5093643
+        ],
+        "delegacion_superior": "Base 8",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "5073 WTX",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "7960 ZTZ",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 3",
+        "direccion": "Carrer del Mercat 13, San Juan de Alicante, Espa\u00f1a",
+        "coordenadas": [
+            38.3993843,
+            -0.4343824
+        ],
+        "delegacion_superior": "Base 9",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "6017 DWY",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "8404 FTY",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 4",
+        "direccion": "Av. Jaime I 11, San Juan de Alicante, Espa\u00f1a,",
+        "coordenadas": [
+            38.397112,
+            -0.4341073
+        ],
+        "delegacion_superior": "Base 9",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "7350 XZN",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "2756 XDT",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 5",
+        "direccion": "Calle Sant Bartomeu 39, El Campello, Espa\u00f1a",
+        "coordenadas": [
+            38.4222495,
+            -0.3918047
+        ],
+        "delegacion_superior": "Base 9",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "9451 KDX",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "9225 ZYX",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 6",
+        "direccion": "Av. Generalitat 23, El Campello, Espa\u00f1a",
+        "coordenadas": [
+            38.4281857,
+            -0.3957666
+        ],
+        "delegacion_superior": "Base 9",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "8759 LLC",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "1571 RSV",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 7",
+        "direccion": "Calle Valle Incl\u00e1n 13, Alicante, Espa\u00f1a",
+        "coordenadas": [
+            38.3739258,
+            -0.4914623
+        ],
+        "delegacion_superior": "Base 8",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "3727 YVT",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "5201 DZH",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 8",
+        "direccion": "Calle Churruca 23, Alicante, Espa\u00f1a",
+        "coordenadas": [
+            38.3413873,
+            -0.4928494
+        ],
+        "delegacion_superior": "Base 6",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "1716 HHH",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "6795 PDV",
+                "disponible": true
+            }
+        ]
+    },
+    {
+        "tipo": "DelegacionDespacho",
+        "nombre": "Despacho 9",
+        "direccion": "Avenida Libertad 11, Elche, Espa\u00f1a",
+        "coordenadas": [
+            38.2513451,
+            -0.8142725
+        ],
+        "delegacion_superior": "Base 7",
+        "vehiculos": [
+            {
+                "tipo": "furgoneta",
+                "matricula": "8049 NDV",
+                "disponible": true
+            },
+            {
+                "tipo": "furgoneta",
+                "matricula": "3221 VFD",
+                "disponible": true
+            }
+        ]
+    }
+]

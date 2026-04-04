@@ -76,7 +76,7 @@ def mapa_ruta(ruta):
     mapa.save("../datos/ruta.html")
 
     #  abrir automáticamente
-    ruta_archivo = Path("../../datos/ruta.html").resolve()
+    ruta_archivo = Path("../../datos/obsoletos/ruta.html").resolve()
 
     webbrowser.open_new_tab(ruta_archivo.as_uri())
 

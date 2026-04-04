@@ -208,7 +208,7 @@ def mapa_ruta_optimizada(ruta_ciudades):
     ).add_to(mapa)
 
     # Guardar archivo
-    ruta_archivo = Path("datos/ruta.html")
+    ruta_archivo = Path("obsoleto/datos/ruta.html")
     ruta_archivo.parent.mkdir(exist_ok=True)
 
     mapa.save(ruta_archivo)

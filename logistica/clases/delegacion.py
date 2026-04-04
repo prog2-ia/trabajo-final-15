@@ -1,89 +1,52 @@
-"""
-CLASES DELEGACIÓN DEL SISTEMA LOGÍSTICO
-
-Este módulo define la jerarquía de clases que representan las delegaciones
-del sistema logístico.
-
-DESCRIPCIÓN GENERAL
-------------------
-Una delegación es un punto logístico desde el cual se gestionan vehículos
-y operaciones de transporte.
-
-El diseño sigue un modelo orientado a objetos con:
-
-- Clase abstracta base: Delegacion
-- Subclases:
-    - DelegacionCentral
-    - DelegacionDespacho
-
-RESPONSABILIDADES
-----------------
-Cada delegación se encarga de:
-
-- almacenar información básica (nombre, dirección, coordenadas)
-- validar sus datos
-- gestionar su flota de vehículos
-- definir qué tipos de vehículos puede aceptar
-
-CONCEPTOS UTILIZADOS
---------------------
-- Herencia (Delegacion → Central / Despacho)
-- Clase abstracta (ABC)
-- Encapsulación (atributos privados con propiedades)
-- Composición (Delegacion → Flota)
-- Polimorfismo (validar_vehiculo)
-- Uso de APIs externas (geocoding con geopy)
-
-OBJETIVO
---------
-Modelar el comportamiento real de distintos tipos de delegaciones
-en un sistema logístico.
-"""
+from abc import ABC
+from clases.flota import Flota
+from utiles.utils import (geocodificar_direccion, geocodificar_con_cache)
 
 
-# ==========================================================
-# IMPORTACIONES
-# ==========================================================
-
-from abc import ABC, abstractmethod   # Para crear clases abstractas
-from geopy.geocoders import Nominatim  # Para convertir dirección en coordenadas
-from clases.flota import Flota        # Relación de composición (Delegacion → Flota)
-
-# Importamos tipos de vehículos para validaciones
-from clases.vehiculo import (
-    VehiculoCamion,
-    VehiculoFurgoneta,
-    VehiculoMotocicleta,
-    VehiculoMochila
-)
-
-
-# ==========================================================
-# CLASE ABSTRACTA DELEGACION
-# ==========================================================
 
 class Delegacion(ABC):
-    """
-    Clase base abstracta para todas las delegaciones.
 
-    No se puede instanciar directamente.
-    Define la estructura y comportamiento común.
-    """
-
-    # Conjunto para evitar nombres duplicados
     nombres_existentes = set()
 
-    def __init__(self, nombre, direccion):
+    def __init__(self, nombre, direccion, delegacion_superior=None):
 
-        # Atributos privados (encapsulación)
+        if nombre in Delegacion.nombres_existentes:
+            raise ValueError(f"Nombre duplicado: {nombre}")
+
+        Delegacion.nombres_existentes.add(nombre)
+
         self._nombre = nombre
         self._direccion = direccion
+        self._delegacion_superior = delegacion_superior
+
+        #  NO geocodificar aquí
         self._coordenadas = None
+
         self._flota = None
 
-    # ------------------------------------------------------
-    # PROPIEDADES (GETTERS)
-    # ------------------------------------------------------
+    # ======================================================
+    # MÉTODO NUEVO
+    # ======================================================
+
+    def calcular_coordenadas(self):
+        """
+        Calcula coordenadas usando cache para evitar llamadas repetidas
+        """
+
+        if hasattr(self, "_coordenadas") and self._coordenadas:
+            return  # ya calculadas
+
+        self._coordenadas = geocodificar_con_cache(self.direccion)
+
+
+
+    # ======================================================
+    # PROPIEDADES
+    # ======================================================
+
+    @property
+    def coordenadas(self):
+        return self._coordenadas
 
     @property
     def nombre(self):
@@ -94,145 +57,59 @@ class Delegacion(ABC):
         return self._direccion
 
     @property
-    def coordenadas(self):
-        return self._coordenadas
-
-    @property
     def flota(self):
         return self._flota
 
-    # ------------------------------------------------------
-    # MÉTODO: ASIGNAR FLOTA
-    # ------------------------------------------------------
+    @property
+    def delegacion_superior(self):
+        return self._delegacion_superior
+
+    # ======================================================
+    # MÉTODOS
+    # ======================================================
 
     def asignar_flota(self):
-        """
-        Crea una flota asociada a la delegación.
-
-        Relación de composición:
-        Una delegación contiene una flota.
-        """
         self._flota = Flota(self)
 
-    # ------------------------------------------------------
-    # VALIDACIÓN DE NOMBRE
-    # ------------------------------------------------------
-
-    def validar_nombre(self):
-        """
-        Comprueba que el nombre de la delegación no esté repetido.
-
-        Utiliza un conjunto (set) para almacenar nombres existentes.
-        """
-
-        if self._nombre in Delegacion.nombres_existentes:
-            return False
-
-        Delegacion.nombres_existentes.add(self._nombre)
-        return True
-
-    # ------------------------------------------------------
-    # VALIDACIÓN DE DIRECCIÓN
-    # ------------------------------------------------------
-
     def validar_direccion(self):
-        """
-        Valida la dirección usando geocoding.
-
-        Convierte la dirección en coordenadas geográficas
-        mediante la API de OpenStreetMap (Nominatim).
-        """
-
-        geolocator = Nominatim(user_agent="logistica_app")
-
-        try:
-            location = geolocator.geocode(self._direccion)
-
-            if location:
-                # Guardamos coordenadas (latitud, longitud)
-                self._coordenadas = (location.latitude, location.longitude)
-                return True
-
-            return False
-
-        except:
-            # Manejo de errores (fallos de conexión, etc.)
-            return False
-
-    # ------------------------------------------------------
-    # MÉTODO ABSTRACTO
-    # ------------------------------------------------------
-
-    @abstractmethod
-    def validar_vehiculo(self, vehiculo):
-        """
-        Método abstracto que debe implementar cada tipo de delegación.
-
-        Define qué tipos de vehículos son válidos.
-        """
-        pass
-
-    # ------------------------------------------------------
-    # REPRESENTACIÓN EN TEXTO
-    # ------------------------------------------------------
+        coords = geocodificar_direccion(self._direccion)
+        if coords:
+            self._coordenadas = coords
+            return True
+        return False
 
     def __str__(self):
-        """
-        Devuelve una representación en texto de la delegación.
-        """
-
-        total = 0
-        if self._flota:
-            total = len(self._flota.vehiculos)
-
-        return f"{self._nombre} | {self._direccion} | {self._coordenadas} | Vehiculos: {total}"
+        sup = self._delegacion_superior.nombre if self._delegacion_superior else "Ninguna"
+        total = len(self._flota.vehiculos) if self._flota else 0
+        return f"{self._nombre} | Sup:{sup} | Vehiculos:{total}"
 
 
 # ==========================================================
-# DELEGACIÓN CENTRAL
+# SUBCLASES
 # ==========================================================
+
+from clases.vehiculo import VehiculoCamion, VehiculoFurgoneta
+
 
 class DelegacionCentral(Delegacion):
-    """
-    Delegación principal.
-
-    Permite vehículos de mayor capacidad.
-    """
+    def __init__(self, nombre, direccion):
+        super().__init__(nombre, direccion, None)
 
     def validar_vehiculo(self, vehiculo):
-        """
-        Solo permite:
-        - Camiones
-        - Furgonetas
-        - Motocicletas
-        """
-
-        return isinstance(
-            vehiculo,
-            (VehiculoCamion, VehiculoFurgoneta, VehiculoMotocicleta)
-        )
+        return isinstance(vehiculo, VehiculoCamion)
 
 
-# ==========================================================
-# DELEGACIÓN DESPACHO
-# ==========================================================
+class DelegacionBase(Delegacion):
+    def __init__(self, nombre, direccion, delegacion_superior):
+        super().__init__(nombre, direccion, delegacion_superior)
+
+    def validar_vehiculo(self, vehiculo):
+        return isinstance(vehiculo, VehiculoFurgoneta)
+
 
 class DelegacionDespacho(Delegacion):
-    """
-    Delegación secundaria (reparto local).
-
-    No permite vehículos pesados.
-    """
+    def __init__(self, nombre, direccion, delegacion_superior):
+        super().__init__(nombre, direccion, delegacion_superior)
 
     def validar_vehiculo(self, vehiculo):
-        """
-        Solo permite:
-        - Furgonetas
-        - Motocicletas
-        - Mochilas
-        """
-
-        return isinstance(
-            vehiculo,
-            (VehiculoFurgoneta, VehiculoMotocicleta, VehiculoMochila)
-        )
+        return isinstance(vehiculo, VehiculoFurgoneta)

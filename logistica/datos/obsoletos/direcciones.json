@@ -1,0 +1,189 @@
+[
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Madrid",
+        "ciudad": "Madrid",
+        "calle": "Gran Via",
+        "numero": 1,
+        "coordenadas": [
+            40.4192229,
+            -3.6983182
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Madrid",
+        "ciudad": "Getafe",
+        "calle": "Calle Carpinteros",
+        "numero": 7,
+        "coordenadas": [
+            40.309782,
+            -3.7021359
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Madrid",
+        "ciudad": "Alcorc\u00f3n",
+        "calle": "Calle Industrias",
+        "numero": 14,
+        "coordenadas": [
+            40.340689,
+            -3.812384
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Madrid",
+        "ciudad": "Fuenlabrada",
+        "calle": "Calle Constituci\u00f3n",
+        "numero": 5,
+        "coordenadas": [
+            40.2823784,
+            -3.790263
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Valencia",
+        "ciudad": "Valencia",
+        "calle": "Calle Colon",
+        "numero": 1,
+        "coordenadas": [
+            39.3922083,
+            -1.0469375
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Alicante",
+        "calle": "Av Euro",
+        "numero": 9,
+        "coordenadas": [
+            38.3394392,
+            -0.5722345
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Elche",
+        "calle": "Calle Almansa",
+        "numero": 8,
+        "coordenadas": [
+            38.1936445,
+            -0.5679936
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "San Juan de Alicante",
+        "calle": "Av Jaime I",
+        "numero": 11,
+        "coordenadas": [
+            38.397112,
+            -0.4341073
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Madrid",
+        "ciudad": "Villaverde",
+        "calle": "Calle Resina",
+        "numero": 39,
+        "coordenadas": [
+            40.3360491,
+            -3.697444
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "San Vicente",
+        "calle": "Calle Cottolengo",
+        "numero": 25,
+        "coordenadas": [
+            38.3867285,
+            -0.5093643
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "San Juan",
+        "calle": "Carrer del Mercat",
+        "numero": 13,
+        "coordenadas": [
+            38.3993843,
+            -0.4343824
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "San Juan",
+        "calle": "Plaza Espa\u00f1a",
+        "numero": 3,
+        "coordenadas": [
+            38.4014296,
+            -0.4359406
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Campello",
+        "calle": "Calle Sant Bartomeu",
+        "numero": 39,
+        "coordenadas": [
+            38.4250091,
+            -0.3912374
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Campello",
+        "calle": "Av Generalitat",
+        "numero": 23,
+        "coordenadas": [
+            38.4281857,
+            -0.3957666
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Alicante",
+        "calle": "Calle Valle Incl\u00e1n",
+        "numero": 13,
+        "coordenadas": [
+            38.3739258,
+            -0.4914623
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Alicante",
+        "calle": "Calle Churruca",
+        "numero": 23,
+        "coordenadas": [
+            38.3413873,
+            -0.4928494
+        ]
+    },
+    {
+        "pais": "Espa\u00f1a",
+        "provincia": "Alicante",
+        "ciudad": "Elche",
+        "calle": "Avenida Libertad",
+        "numero": 11,
+        "coordenadas": [
+            38.2513451,
+            -0.8142725
+        ]
+    }
+]
