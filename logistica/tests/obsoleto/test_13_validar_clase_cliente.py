@@ -4,7 +4,7 @@ import os
 from datetime import datetime, timedelta
 
 # Añadir la carpeta raíz del proyecto al path
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from clases.cliente import Cliente
 from clases.direccion import Direccion
 from clases.pedido import Pedido

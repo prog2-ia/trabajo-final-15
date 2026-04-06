@@ -1,270 +1,251 @@
+# ==========================================================
+# GENERADOR DE CLIENTES - VERSION PRO FINAL (CORREGIDA)
+# ==========================================================
+
+import sys
+import os
 import random
-import time
-from geopy.geocoders import Nominatim
+import math
 
-# =========================
-# CONFIGURACION GEOPY
-# =========================
-geolocator = Nominatim(user_agent="clientes_app")
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# =========================
-# CACHE
-# =========================
-cache = {}
-
-def obtener_coordenadas(direccion):
-    if direccion in cache:
-        return cache[direccion]
-
-    try:
-        location = geolocator.geocode(direccion)
-        if location:
-            coords = (location.latitude, location.longitude)
-            cache[direccion] = coords
-            time.sleep(1)
-            return coords
-    except:
-        pass
-
-    return None
+from clases.cliente import Cliente
+from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
+from persistencia.persistencia_delegaciones import cargar_delegaciones
+from utiles.geolocalizacion import direccion_cercana
 
 
-# =========================
+# ==========================================================
+# DATOS
+# ==========================================================
+nombres = [
+    "Antonio","Manuel","José","Francisco","David",
+    "Juan","Javier","Daniel","Carlos","Miguel"
+]
+
+apellidos = [
+    "García","Fernández","González","Rodríguez",
+    "López","Martínez","Sánchez","Pérez"
+]
+
+
+# ==========================================================
 # DNI
-# =========================
+# ==========================================================
 def generar_dni():
     numero = random.randint(10000000, 99999999)
     letras = "TRWAGMYFPDXBNJZSQVHLCKE"
     return f"{numero}{letras[numero % 23]}"
 
 
-# =========================
-# NOMBRES (20)
-# =========================
-nombres = [
-    "Antonio", "José", "Manuel", "Francisco", "David",
-    "Juan", "Javier", "Daniel", "Carlos", "Miguel",
-    "Alejandro", "Rafael", "Luis", "Fernando", "Pablo",
-    "Sergio", "Álvaro", "Adrián", "Iván", "Rubén"
-]
+# ==========================================================
+# GENERADOR
+# ==========================================================
+def generar_clientes():
 
-# =========================
-# APELLIDOS (40)
-# =========================
-apellidos = [
-    "García", "Fernández", "González", "Rodríguez", "López",
-    "Martínez", "Sánchez", "Pérez", "Gómez", "Ruiz",
-    "Díaz", "Hernández", "Moreno", "Muñoz", "Álvarez",
-    "Romero", "Alonso", "Gutiérrez", "Navarro", "Torres",
-    "Domínguez", "Vázquez", "Ramos", "Gil", "Ramírez",
-    "Serrano", "Blanco", "Suárez", "Molina", "Morales",
-    "Ortega", "Delgado", "Castro", "Ortiz", "Rubio",
-    "Marín", "Sanz", "Iglesias", "Núñez", "Medina"
-]
+    print("\n===== GENERADOR FINAL =====")
 
-# =========================
-# CIUDADES Y CALLES
-# =========================
-ciudades = {
+    opcion = input("¿Generar desde cero (s) o añadir (n)? ").lower()
 
-    # -------- ALICANTE --------
-    "Alicante": [
-        "Calle San Vicente", "Avenida Maisonnave", "Calle Mayor",
-        "Calle Castaños", "Avenida Alfonso X", "Calle Pintor Aparicio",
-        "Avenida Aguilera", "Calle Gerona", "Calle Italia", "Calle Francia"
-    ],
+    if opcion == "s":
+        clientes = {}
+    else:
+        clientes = cargar_clientes()
 
-    "Elche": [
-        "Calle Reina Victoria", "Avenida Libertad", "Calle Jorge Juan",
-        "Calle Obispo Winibal", "Calle Antonio Machado", "Calle Blas Valero",
-        "Calle José María Buck", "Calle Doctor Caro", "Calle Alfonso XII", "Calle Filet de Fora"
-    ],
+    provincia = input("\nProvincia (ENTER = todas): ").strip().lower()
 
-    "Torrevieja": [
-        "Calle Ramón Gallud", "Calle Caballero de Rodas", "Calle del Mar",
-        "Calle Apolo", "Calle Pedro Lorca", "Calle Bazán",
-        "Calle Zoa", "Calle La Loma", "Calle San Pascual", "Calle Patricio Pérez"
-    ],
+    n_clientes = int(input("Clientes por delegación: "))
+    max_intentos = int(input("Máximo de intentos: "))
 
-    "Orihuela": [
-        "Calle Mayor", "Calle San Pascual", "Calle Hospital",
-        "Calle Ramón y Cajal", "Calle Soleres", "Calle Aragón",
-        "Calle Duque de Tamames", "Calle Santa Justa", "Calle San Juan", "Calle Obispo Rocamora"
-    ],
+    delegaciones = cargar_delegaciones()
 
-    "Benidorm": [
-        "Avenida Mediterráneo", "Calle Gerona", "Calle Ibiza",
-        "Avenida Europa", "Calle Lepanto", "Calle Murcia",
-        "Calle Esperanto", "Calle Londres", "Calle Berlín", "Calle París"
-    ],
+    # asegurar coordenadas
+    for d in delegaciones:
+        if not d.coordenadas:
+            d.calcular_coordenadas()
 
-    "Alcoy": [
-        "Calle San Nicolás", "Calle País Valencià", "Calle Oliver",
-        "Calle Entenza", "Calle Alzamora", "Calle Santa Rosa",
-        "Calle Alicante", "Calle Isabel la Católica", "Calle El Camí", "Calle Sabadell"
-    ],
+    # ======================================================
+    # FILTRADO
+    # ======================================================
+    print("\n🔎 FILTRANDO DESPACHOS...\n")
 
-    "Elda": [
-        "Calle Nueva", "Calle Jardines", "Calle Dahellos",
-        "Calle Ortega y Gasset", "Calle Antonino Vera", "Calle Padre Manjón",
-        "Calle Colón", "Calle Reyes Católicos", "Calle San Roque", "Calle La Cruz"
-    ],
+    despachos = []
 
-    "San Vicente del Raspeig": [
-        "Calle Alicante", "Calle Ancha de Castelar", "Calle Mayor",
-        "Calle San Pascual", "Calle La Huerta", "Calle Río Turia",
-        "Calle Cervantes", "Calle Doctor Fleming", "Calle Lillo Juan", "Calle Poeta Miguel Hernández"
-    ],
+    for d in delegaciones:
 
-    "Villena": [
-        "Calle Mayor", "Calle Corredera", "Calle Nueva",
-        "Calle San Sebastián", "Calle San Francisco", "Calle Joaquín María López",
-        "Calle Rambla", "Calle Navarro Santafé", "Calle La Virgen", "Calle El Hilo"
-    ],
+        if d.__class__.__name__ != "DelegacionDespacho":
+            continue
 
-    "Denia": [
-        "Calle Marqués de Campo", "Calle La Mar", "Calle Diana",
-        "Calle Campos", "Calle Colón", "Calle Sandunga",
-        "Calle Magallanes", "Calle Loreto", "Calle Pare Pere", "Calle Calderón"
-    ],
+        prov = (d.provincia or "").lower()
 
-    # -------- MADRID --------
-    "Madrid": [
-        "Gran Vía", "Calle Alcalá", "Paseo Castellana",
-        "Calle Serrano", "Calle Goya", "Calle Atocha",
-        "Calle Velázquez", "Calle Princesa", "Calle Mayor", "Calle Fuencarral"
-    ],
+        print(f"🏢 {d.nombre}")
+        print(f"   Provincia: {prov}")
 
-    "Móstoles": [
-        "Calle Simón Hernández", "Avenida Portugal", "Calle Baleares",
-        "Calle Canarias", "Calle Barcelona", "Calle Zaragoza",
-        "Calle Toledo", "Calle Burgos", "Calle Sevilla", "Calle Madrid"
-    ],
+        if provincia and prov != provincia:
+            print("   ❌ Excluido\n")
+            continue
 
-    "Alcalá de Henares": [
-        "Calle Mayor", "Calle Libreros", "Calle Santiago",
-        "Calle Cervantes", "Calle Tinte", "Calle Empecinado",
-        "Calle Teniente Ruiz", "Calle Colegios", "Calle Victoria", "Calle Imagen"
-    ],
+        print("   ✔ Incluido\n")
+        despachos.append(d)
 
-    "Fuenlabrada": [
-        "Calle Leganés", "Calle Móstoles", "Calle Humanes",
-        "Calle Málaga", "Calle Francia", "Calle Grecia",
-        "Calle Italia", "Calle Alemania", "Calle Portugal", "Calle Holanda"
-    ],
+    if not despachos:
+        print("❌ No hay despachos")
+        return
 
-    "Leganés": [
-        "Calle Juan Muñoz", "Calle Madrid", "Calle Getafe",
-        "Calle Alcorcón", "Calle Fuenlabrada", "Calle Toledo",
-        "Calle Barcelona", "Calle Sevilla", "Calle Zaragoza", "Calle Valencia"
-    ],
+    print("\n📍 DESPACHOS SELECCIONADOS:\n")
 
-    "Getafe": [
-        "Calle Madrid", "Calle Toledo", "Calle Leganés",
-        "Calle Fuenlabrada", "Calle Alcalá", "Calle Valencia",
-        "Calle Barcelona", "Calle Zaragoza", "Calle Sevilla", "Calle Granada"
-    ],
+    for d in despachos:
+        print(f"- {d.nombre} ({d.provincia})")
 
-    "Alcorcón": [
-        "Calle Mayor", "Calle Porto Cristo", "Calle Polvoranca",
-        "Calle Oslo", "Calle Estocolmo", "Calle Viena",
-        "Calle Berlín", "Calle París", "Calle Roma", "Calle Lisboa"
-    ],
+    # ======================================================
+    # GENERACIÓN
+    # ======================================================
+    for d in despachos:
 
-    "Parla": [
-        "Calle Real", "Calle Pinto", "Calle Leganés",
-        "Calle Getafe", "Calle Toledo", "Calle Madrid",
-        "Calle Valencia", "Calle Barcelona", "Calle Sevilla", "Calle Zaragoza"
-    ],
+        print("\n==============================")
+        print(f"🏢 {d.nombre} [{d.provincia}]")
+        print("==============================\n")
 
-    "Torrejón de Ardoz": [
-        "Calle Enmedio", "Calle Madrid", "Calle Pesquera",
-        "Calle Londres", "Calle París", "Calle Roma",
-        "Calle Lisboa", "Calle Berlín", "Calle Viena", "Calle Oslo"
-    ],
+        generados = 0
+        intentos = 0
 
-    "Alcobendas": [
-        "Calle Marquesa Viuda Aldama", "Calle Constitución", "Calle Libertad",
-        "Calle Mayor", "Calle Real", "Calle Madrid",
-        "Calle Valencia", "Calle Barcelona", "Calle Sevilla", "Calle Zaragoza"
-    ]
-}
+        while generados < n_clientes and intentos < max_intentos:
+
+            intentos += 1
+
+            print(f"\r🔄 Intento {intentos}/{max_intentos} | Generados: {generados}", end="")
+
+            lat, lon = d.coordenadas
+
+            # generar punto aleatorio cercano
+            radio = random.uniform(1, 4) / 111
+            t = 2 * math.pi * random.random()
+            w = radio * (random.random() ** 0.5)
+
+            coord = (
+                lat + w * math.cos(t),
+                lon + w * math.sin(t) / math.cos(math.radians(lat))
+            )
+
+            print(f"\n   📍 Coordenada: {coord}")
+
+            direccion = direccion_cercana(coord)
+
+            if not direccion:
+                print("   ❌ No geolocalizado")
+                continue
+
+            print(f"   📬 Dirección: {direccion}")
+
+            ap1 = random.choice(apellidos)
+            ap2 = random.choice(apellidos)
+
+            if ap1 == ap2:
+                print("   ❌ Apellidos iguales")
+                continue
+
+            nombre = random.choice(nombres)
+
+            print("   👤 Creando cliente...")
+            print(f"   🏢 Delegación asignada: {d.nombre}")
+
+            c = Cliente(
+                generar_dni(),
+                nombre,
+                f"{ap1} {ap2}",
+                direccion,
+                d
+            )
+
+            # atributos extra
+            c._coordenadas = coord
+            c._provincia = d.provincia
+            c.delegacion_cercana = d   # 🔥 CLAVE
+
+            clientes[c.dni] = c
+
+            generados += 1
+
+        print(f"\n✔ Generados en {d.nombre}: {generados}")
+
+    guardar_clientes(clientes)
+
+    print("\n🚀 FIN GENERACIÓN")
 
 
-# =========================
-# GENERAR DIRECCIONES
-# =========================
-def generar_direcciones_unicas(n=20):
-    direcciones = set()
+# ==========================================================
+# MOSTRAR CLIENTES
+# ==========================================================
+def mostrar_clientes():
 
-    ciudades_lista = list(ciudades.keys())
+    print("\n===== LISTADO RÁPIDO DE CLIENTES =====")
 
-    while len(direcciones) < n:
-        ciudad = random.choice(ciudades_lista)
-        calle = random.choice(ciudades[ciudad])
-        numero = random.randint(1, 50)
+    clientes = cargar_clientes()
 
-        direccion = f"{calle} {numero}, {ciudad}, España"
-        direcciones.add(direccion)
+    provincia = input("\nProvincia (ENTER = todas): ").strip().lower()
 
-    return list(direcciones)
+    total = 0
 
+    for c in clientes.values():
 
-# =========================
-# GENERAR CLIENTES
-# =========================
-def generar_clientes(n=100):
+        prov = (c._provincia or "").lower()
 
-    clientes = {}
+        if provincia and prov != provincia:
+            continue
 
-    direcciones = generar_direcciones_unicas(20)
-    coords_direcciones = {}
+        print("\n-----------------------------------")
+        print(f"DNI: {c.dni}")
+        print(f"{c.nombre} {c.apellidos}")
+        print(f"📍 {c.direccion}")
+        print(f"🌍 {prov}")
 
-    print("Geocodificando...\n")
+        # delegación segura
+        deleg = None
 
-    for direccion in direcciones:
-        print(direccion)
+        if hasattr(c, "delegacion_cercana") and c.delegacion_cercana:
+            if hasattr(c.delegacion_cercana, "nombre"):
+                deleg = c.delegacion_cercana.nombre
+            else:
+                deleg = str(c.delegacion_cercana)
 
-        coords = obtener_coordenadas(direccion)
+        if not deleg:
+            deleg = "Sin delegación"
 
-        if not coords:
-            ciudad = direccion.split(",")[1]
-            coords = obtener_coordenadas(f"{ciudad}, España")
+        print(f"🏢 {deleg}")
 
-        coords_direcciones[direccion] = coords
+        total += 1
 
-    print("\nGenerando clientes...\n")
-
-    for i in range(n):
-
-        direccion = random.choice(direcciones)
-
-        calle_num, ciudad, _ = direccion.split(",")
-
-        partes = calle_num.strip().split(" ")
-        numero = partes[-1]
-        calle = " ".join(partes[:-1])
-
-        cliente = {
-            "dni": generar_dni(),
-            "nombre": random.choice(nombres),
-            "apellidos": f"{random.choice(apellidos)} {random.choice(apellidos)}",
-            "pais": "España",
-            "ciudad": ciudad.strip(),
-            "calle": calle,
-            "numero": int(numero),
-            "coordenadas": coords_direcciones[direccion]
-        }
-
-        clientes[f"cliente_{i+1}"] = cliente
-
-    return clientes
+    print("\n===================================")
+    print(f"TOTAL: {total}")
 
 
-# =========================
-# EJECUCION
-# =========================
-clientes = generar_clientes(100)
+# ==========================================================
+# MENU
+# ==========================================================
+def menu():
 
-for k, v in list(clientes.items())[:]:
-    print(k, v)
+    while True:
+
+        print("\n==============================")
+        print("1. Generar clientes")
+        print("2. Ver clientes")
+        print("3. Salir")
+        print("==============================")
+
+        op = input("Opción: ")
+
+        if op == "1":
+            generar_clientes()
+        elif op == "2":
+            mostrar_clientes()
+        elif op == "3":
+            break
+        else:
+            print("❌ Opción inválida")
+
+
+# ==========================================================
+# MAIN
+# ==========================================================
+if __name__ == "__main__":
+    menu()

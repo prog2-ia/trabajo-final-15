@@ -23,7 +23,7 @@ from pathlib import Path
 import webbrowser
 
 # Añadir la carpeta raíz del proyecto al path para poder importar módulos propios
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 import utiles.utils as utils
 from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
@@ -208,7 +208,7 @@ def mapa_ruta_optimizada(ruta_ciudades):
     ).add_to(mapa)
 
     # Guardar archivo
-    ruta_archivo = Path("obsoleto/datos/ruta.html")
+    ruta_archivo = Path("datos/ruta.html")
     ruta_archivo.parent.mkdir(exist_ok=True)
 
     mapa.save(ruta_archivo)

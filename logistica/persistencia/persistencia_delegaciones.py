@@ -42,6 +42,7 @@ def guardar_delegaciones(delegaciones, nombre_fichero="delegaciones.json"):
         data.append({
             "nombre": d.nombre,
             "direccion": d.direccion,
+            "provincia": d.provincia,
             "tipo": tipo,
             "coordenadas": d.coordenadas,  # 🔥 GUARDAR COORDENADAS
             "superior": nombre_superior
@@ -82,17 +83,20 @@ def cargar_delegaciones(nombre_fichero="delegaciones.json"):
 
         nombre = item["nombre"]
         direccion = item["direccion"]
+        provincia = item.get("provincia", None)
         tipo = item["tipo"]
 
         if tipo == "central":
-            d = DelegacionCentral(nombre, direccion)
+            d = DelegacionCentral(nombre, direccion, provincia=provincia)
         elif tipo == "base":
-            d = DelegacionBase(nombre, direccion, None)
+            d = DelegacionBase(nombre, direccion, provincia=provincia)
         else:
-            d = DelegacionDespacho(nombre, direccion, None)
+            d = DelegacionDespacho(nombre, direccion, provincia=provincia)
+
 
         # 🔥 RESTAURAR COORDENADAS
-        d._coordenadas = item.get("coordenadas")
+        coords = item.get("coordenadas")
+        d._coordenadas = tuple(coords) if coords else None
 
         objetos[nombre] = d
 

@@ -1,54 +1,1344 @@
 [
     {
-        "tipo": "DelegacionCentral",
         "nombre": "Central Madrid",
-        "direccion": "Gran Via 1, Madrid",
+        "direccion": "Ctra. Villaverde a Vallecas, 257, Madrid, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "central",
+        "coordenadas": [
+            40.3675866,
+            -3.6686455
+        ],
+        "superior": null
+    },
+    {
+        "nombre": "Base 1",
+        "direccion": "Av. Euro 9, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "base",
+        "coordenadas": [
+            38.3408148,
+            -0.5722342
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 2",
+        "direccion": "Avenida Espioca, 84, Silla, Valencia, Espa\u00f1a",
+        "provincia": "valencia",
+        "tipo": "base",
+        "coordenadas": [
+            39.3744635,
+            -0.4152312
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 3",
+        "direccion": "Calle Industrias 14, Alcorc\u00f3n, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "base",
+        "coordenadas": [
+            40.340689,
+            -3.812384
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 4",
+        "direccion": "Calle Joaquim Molins, 5, 08028 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "base",
+        "coordenadas": [
+            41.3840958,
+            2.1855126
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 5",
+        "direccion": "Calle Varsovia, 6, Pol\u00edgono Industrial Romica, 02007 Albacete",
+        "provincia": "albacete",
+        "tipo": "base",
+        "coordenadas": [
+            39.0541695,
+            -1.8417708
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 6",
+        "direccion": "Ctra. Toledo-Oca\u00f1a, s/n, Pol\u00edgono Industrial Santa Mar\u00eda de Benquerencia, 45007 Toledo",
+        "provincia": "toledo",
+        "tipo": "base",
+        "coordenadas": [
+            39.8747937,
+            -3.9438356
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Base 7",
+        "direccion": "Pol\u00edgono Industrial Oeste, Calle Venezuela, 30820 Alcantarilla, Murcia",
+        "provincia": "murcia",
+        "tipo": "base",
+        "coordenadas": [
+            37.95751,
+            -1.2130692
+        ],
+        "superior": "Central Madrid"
+    },
+    {
+        "nombre": "Despacho 1",
+        "direccion": "Aeropuerto de Valencia, Manises",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4881796,
+            -0.4813204
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 2",
+        "direccion": "Apartado de Correos 584, 02640 Almansa, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.8694206,
+            -1.0985287
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 3",
+        "direccion": "Av. Generalitat 23, El Campello, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.4271255,
+            -0.3977785
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 4",
+        "direccion": "Av. Jaime I 11, Sant Joan d'Alacant, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.397112,
+            -0.4341073
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 5",
+        "direccion": "Avda. Principal, 30564 Lorca, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.6711989,
+            -1.6988592
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 6",
+        "direccion": "Avenida Castilla-La Mancha, 45200 Illescas, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.1275056,
+            -3.8460703
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 7",
+        "direccion": "Avenida Castilla-La Mancha, s/n, 45003 Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.097566,
+            -4.0478397
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 8",
+        "direccion": "Avenida Josep Tarradellas, 8, 08029 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.384253,
+            2.1856073
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 9",
+        "direccion": "Avenida Mare Nostrum, 7, 46120 Alboraya",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4934627,
+            -0.3249751
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 10",
+        "direccion": "Avenida Portugal, 32, 45290 Pantoja, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.0526812,
+            -3.8378028
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 11",
+        "direccion": "Avenida Regi\u00f3n Murciana, 30730 San Javier, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.7787934,
+            -0.825428
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 12",
+        "direccion": "Avenida Reyes Cat\u00f3licos, 150, 02600 Villarrobledo, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.2612457,
+            -2.6001877
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 13",
+        "direccion": "Avenida Toledo, 3, 45600 Talavera de la Reina, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.962907,
+            -4.8249654
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 14",
+        "direccion": "Avenida al Vedat, 5, 46900 Torrent",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4361556,
+            -0.4660599
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 15",
+        "direccion": "Avenida de la Horchata, 19, 46120 Alboraya",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.496148,
+            -0.3539835
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 16",
+        "direccion": "Avenida del Pilar, 24, 45500 Torrijos, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.9806098,
+            -4.281336
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 17",
+        "direccion": "Avinguda Onze de Setembre, 111, 08208 Sabadell",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.5534208,
+            2.1044223
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 18",
+        "direccion": "Avinguda de la Llibertat 11, Elche, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.2706062,
+            -0.7021147
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 19",
+        "direccion": "C. Torno, 14, Sant Vicent del Raspeig, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.4053958,
+            -0.5400405
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 20",
+        "direccion": "C/ Bernat Descoll, 39, 46026 Valencia",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4514222,
+            -0.3803622
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 21",
+        "direccion": "C/ Mar Roja, 51, 08040 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.3236188,
+            2.1417169
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 22",
+        "direccion": "Calle Aureliano Ibarra, 16, 03009 Alicante",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3587035,
+            -0.4929938
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 23",
+        "direccion": "Calle Camp de Turia, 1, 46940 Manises",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4993274,
+            -0.4899786
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 24",
+        "direccion": "Calle Capitan Antonio Mena 78, Elche",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.2653307,
+            -0.6988391
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 25",
+        "direccion": "Calle Carpinteros 7, Getafe, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.309782,
+            -3.7021359
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 26",
+        "direccion": "Calle Casas de Miravete, 30, Villa de Vallecas, 28031 Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.3739576,
+            -3.6121632
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 27",
+        "direccion": "Calle Catedr\u00e1tico Agust\u00edn Escardino, 9, 46940 Manises",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.489394,
+            -0.4743906
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 28",
+        "direccion": "Calle Cerro de los Santos 6, 03290 Elche",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.2443955,
+            -0.6836217
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 29",
+        "direccion": "Calle Churruca 23, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3413873,
+            -0.4928494
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 30",
+        "direccion": "Calle Constituci\u00f3n 5, Fuenlabrada, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.2823784,
+            -3.790263
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 31",
+        "direccion": "Calle Cottolengo 25, Sant Vicent del Raspeig, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3867285,
+            -0.5093643
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 32",
+        "direccion": "Calle D, 73, Pol\u00edgono Malpica, 50016 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6553028,
+            -0.7911368
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 33",
+        "direccion": "Calle Dinamarca, 4, 45005 Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.8788982,
+            -4.0286345
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 34",
+        "direccion": "Calle Domenico Veneciano, 5, 45223 Sese\u00f1a, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.1353977,
+            -3.6685683
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 35",
+        "direccion": "Calle Edison, 45600 Talavera de la Reina, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.9611332,
+            -4.9252478
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 36",
+        "direccion": "Calle Enrique Miquel Mossi, 7, 46900 Torrent",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4458603,
+            -0.4781168
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 37",
+        "direccion": "Calle Europa, 4, 46900 Torrent",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4292145,
+            -0.4787362
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 38",
+        "direccion": "Calle Federico Garc\u00eda Lorca, 6, 02001 Albacete",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.9983166,
+            -1.8477831
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 39",
+        "direccion": "Calle Feria, 98, 02005 Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.9967518,
+            -1.8633537
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 40",
+        "direccion": "Calle Gibraltar, 8, 45500 Torrijos, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.9791866,
+            -4.2801269
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 41",
+        "direccion": "Calle Gran V\u00eda, 54, 02400 Hell\u00edn, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.5085853,
+            -1.6934041
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 42",
+        "direccion": "Calle Guifr\u00e9, 12, 08912 Badalona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.4430667,
+            2.2476828
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 43",
+        "direccion": "Calle Hermanos Lumi\u00e8re, 02600 Villarrobledo, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.2695979,
+            -2.5880314
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 44",
+        "direccion": "Calle Jazm\u00edn, 34, 28033 Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.5055903,
+            -3.5110611
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 45",
+        "direccion": "Calle Joan d'Austria, 11, 46909 Torrent",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4435405,
+            -0.5174579
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 46",
+        "direccion": "Calle Joaqu\u00edn Rodrigo, 19, 45311 Dosbarrios, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.885062,
+            -3.4752912
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 47",
+        "direccion": "Calle K, 8, 50016 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6325055,
+            -0.8500109
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 48",
+        "direccion": "Calle Mallorca, 260, 08008 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.43618,
+            2.192952
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 49",
+        "direccion": "Calle Mar de Arag\u00f3n, 183, 50014 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6674198,
+            -0.8542484
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 50",
+        "direccion": "Calle Mart\u00edn Soler, 11, 03203 Elche",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.2950237,
+            -0.6160184
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 51",
+        "direccion": "Calle Mayor, 45, 30500 Molina de Segura, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.0530482,
+            -1.2117636
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 52",
+        "direccion": "Calle Montreal, 76, 46900 Torrent",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4247048,
+            -0.4655529
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 53",
+        "direccion": "Calle O, 134, Pol\u00edgono Malpica, 50016 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6558309,
+            -0.7887138
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 54",
+        "direccion": "Calle Par\u00eds, 6, 45003 Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.68193,
+            -3.9812604
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 55",
+        "direccion": "Calle Poeta Gabriel Celaya, 7, 50018 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6514685,
+            -0.8776717
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 56",
+        "direccion": "Calle Resina 39, Madrid, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.3357627,
+            -3.7091824
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 57",
+        "direccion": "Calle Ricardo del Arco, 1, 50015 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6595668,
+            -0.8760803
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 58",
+        "direccion": "Calle R\u00edo Almanzora, 4, 28906 Getafe, Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.2722118,
+            -3.7078402
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 59",
+        "direccion": "Calle R\u00edo Jarama, 132, 45007 Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.8788319,
+            -3.9314502
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 60",
+        "direccion": "Calle Sant Bartomeu 39, El Campello, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.4222495,
+            -0.3918047
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 61",
+        "direccion": "Calle Santa B\u00e1rbara, 55, 45161 Pol\u00e1n, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.7851753,
+            -4.1747934
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 62",
+        "direccion": "Calle Sierra de Albarrac\u00edn, 2, 28946 Fuenlabrada, Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.2725926,
+            -3.7545639
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 63",
+        "direccion": "Calle Sierra de Guadarrama, 45200 Illescas, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.1669188,
+            -3.8183469
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 64",
+        "direccion": "Calle Teruel, 56, 50180 Utebo",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.7033057,
+            -0.9937165
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 65",
+        "direccion": "Calle Trueno, 125, 03006 Alicante",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3532003,
+            -0.5514162
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 66",
+        "direccion": "Calle Tuset, 23, 08006 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.399373,
+            2.1215125
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 67",
+        "direccion": "Calle Valle Incl\u00e1n 13, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3739258,
+            -0.4914623
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 68",
+        "direccion": "Calle del Prado, 7, 45600 Talavera de la Reina, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.9618674,
+            -4.827878
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 69",
+        "direccion": "Camino Hondo, 25, 46120 Alboraya",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4951095,
+            -0.3358304
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 70",
+        "direccion": "Camino de San Antonio, 4-5, 50013 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6215153,
+            -0.8570013
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 71",
+        "direccion": "Camino de los Frailes 3, Sant Vicent del Raspeig, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3964248,
+            -0.5250339
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 72",
+        "direccion": "Carrer Almansa 8, Elche, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.2819015,
+            -0.714054
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 73",
+        "direccion": "Carrer Bernat Metge, 92, 08205 Sabadell",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.5305757,
+            2.1010046
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 74",
+        "direccion": "Carrer Joan Monpe\u00f3, 60, 08223 Terrassa",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.434763,
+            2.1886465
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 75",
+        "direccion": "Carrer de Francesc Eiximenis, 6, 08205 Sabadell",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.5525732,
+            2.0837355
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 76",
+        "direccion": "Carrer de Francesc Eiximenis, 6, 08205 Terrassa",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.575593,
+            2.0293457
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 77",
+        "direccion": "Carrer de Sant Gon\u00e7al, 7, 08912 Badalona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.4494811,
+            2.2406312
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 78",
+        "direccion": "Carrer del Mercat 13, Sant Joan d'Alacant, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.3993843,
+            -0.4343824
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 79",
+        "direccion": "Carrer dels Voluntaris, 87, 08225 Terrassa, Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.5775453,
+            2.0134222
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 80",
+        "direccion": "Carretera de Ja\u00e9n, km 2, 02300 Alcaraz, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.6956555,
+            -2.4855938
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 81",
+        "direccion": "Carretera de Murcia, km 1, 02400 Hell\u00edn, Albacete",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.4668202,
+            -1.6126056
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 82",
+        "direccion": "Carretera de Yepes, 45300 Oca\u00f1a, Toledo",
+        "provincia": "toledo",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.9560754,
+            -3.4987368
+        ],
+        "superior": "Base 6"
+    },
+    {
+        "nombre": "Despacho 83",
+        "direccion": "Ctra. Castell\u00f3n, km 233, Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6318141,
+            -0.8585924
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 84",
+        "direccion": "Eduardo Bosc\u00e1, 14, 46023 Valencia",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4655386,
+            -0.3573094
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 85",
+        "direccion": "Gran Via 1, Madrid, Espa\u00f1a",
+        "provincia": "madrid",
+        "tipo": "despacho",
         "coordenadas": [
             40.4192229,
             -3.6983182
         ],
-        "vehiculos": [
-            {
-                "tipo": "camion",
-                "matricula": "1234 ABC",
-                "disponible": true
-            },
-            {
-                "tipo": "furgoneta",
-                "matricula": "5678 DEF",
-                "disponible": true
-            },
-            {
-                "tipo": "motocicleta",
-                "matricula": "1111 GHI",
-                "disponible": true
-            }
-        ]
+        "superior": "Base 3"
     },
     {
-        "tipo": "DelegacionDespacho",
-        "nombre": "Despacho Alicante",
-        "direccion": "Avenida Maisonnave 1, Alicante",
+        "nombre": "Despacho 86",
+        "direccion": "Muntaner, 200, 08036 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
         "coordenadas": [
-            38.3433692,
-            -0.4920739
+            41.3929252,
+            2.1513059
         ],
-        "vehiculos": [
-            {
-                "tipo": "furgoneta",
-                "matricula": "5678 DEF",
-                "disponible": true
-            },
-            {
-                "tipo": "motocicleta",
-                "matricula": "1111 GHI",
-                "disponible": true
-            },
-            {
-                "tipo": "mochila",
-                "matricula": "ALICANTE-1",
-                "disponible": true
-            }
-        ]
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 87",
+        "direccion": "Padre Tom\u00e1s de Monta\u00f1ana, 26, 46023 Valencia",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4630198,
+            -0.3525246
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 88",
+        "direccion": "Paraje Campo la Egesa, 30892 Librilla, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.8883568,
+            -1.3481614
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 89",
+        "direccion": "Paseo Echegaray y Caballero, 8, 50003 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.6586971,
+            -0.8904151
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 90",
+        "direccion": "Paseo Peira, 23, 08031 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.399373,
+            2.1215125
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 91",
+        "direccion": "Paseo de la Zona Franca, 73, 08038 Barcelona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.4232198,
+            2.2029402
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 92",
+        "direccion": "Pl. Camachos, 2, 30002 Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.9816597,
+            -1.1312087
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 93",
+        "direccion": "Plaza H\u00e9roes de Cavite, s/n, 30201 Cartagena, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.6031254,
+            -0.9837082
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 94",
+        "direccion": "Plaza Mayor, 47, 02630 La Roda, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.2066188,
+            -2.1582046
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 95",
+        "direccion": "Pol\u00edgono Alcalde Caballero, Avda. Alcalde Caballero, 72, 50014 Zaragoza",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.673685,
+            -0.862128
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 96",
+        "direccion": "Pol\u00edgono Industrial Base 2000, Calle Castillo de Aledo, 30564 Lorqu\u00ed, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.106434,
+            -1.2287119
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 97",
+        "direccion": "Pol\u00edgono Industrial Cabezo Beaza, Calle Berl\u00edn, 30353 Cartagena, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.6246013,
+            -0.9638096
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 98",
+        "direccion": "Pol\u00edgono Industrial Cobo Calleja, Calle Manuel Cobo Calleja, 28947 Fuenlabrada, Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.2656058,
+            -3.749054
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 99",
+        "direccion": "Pol\u00edgono Industrial El Labradorcico, 30880 \u00c1guilas, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.4215694,
+            -1.585459
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 100",
+        "direccion": "Pol\u00edgono Industrial El Salvador, 02630 La Roda, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.1906096,
+            -2.1440941
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 101",
+        "direccion": "Pol\u00edgono Industrial El Tapiado, 30500 Molina de Segura, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.0682295,
+            -1.2174088
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 102",
+        "direccion": "Pol\u00edgono Industrial La Casaza, 50180 Utebo",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.7104922,
+            -1.017434
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 103",
+        "direccion": "Pol\u00edgono Industrial La Charluca, 50300 Calatayud",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.3527628,
+            -1.6422977
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 104",
+        "direccion": "Pol\u00edgono Industrial La Mina, s/n, 46200 Paiporta",
+        "provincia": "valencia",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4201369,
+            -0.4002856
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 105",
+        "direccion": "Pol\u00edgono Industrial La Serreta, Calle Montevideo, 30500 Molina de Segura, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.0761322,
+            -1.2250241
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 106",
+        "direccion": "Pol\u00edgono Industrial Los Torraos, 30560 Alguazas, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.0528142,
+            -1.244114
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 107",
+        "direccion": "Pol\u00edgono Industrial Los Villares, 02640 Almansa, Albacete",
+        "provincia": "albacete",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.8694206,
+            -1.0985287
+        ],
+        "superior": "Base 5"
+    },
+    {
+        "nombre": "Despacho 108",
+        "direccion": "Pol\u00edgono Industrial Mediavega, 50300 Calatayud",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.3527628,
+            -1.6422977
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 109",
+        "direccion": "Pol\u00edgono Industrial Saprelorca, Avenida R\u00edo Guadalent\u00edn, 30800 Lorca, Murcia",
+        "provincia": "murcia",
+        "tipo": "despacho",
+        "coordenadas": [
+            37.6140856,
+            -1.7612945
+        ],
+        "superior": "Base 7"
+    },
+    {
+        "nombre": "Despacho 110",
+        "direccion": "Pol\u00edgono Industrial Urtinsa, Calle Laguna, 28923 Alcorc\u00f3n, Madrid",
+        "provincia": "madrid",
+        "tipo": "despacho",
+        "coordenadas": [
+            40.3370817,
+            -3.8085362
+        ],
+        "superior": "Base 3"
+    },
+    {
+        "nombre": "Despacho 111",
+        "direccion": "Riera de Montalegre, 12, 08916 Badalona",
+        "provincia": "barcelona",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.4710186,
+            2.2518258
+        ],
+        "superior": "Base 4"
+    },
+    {
+        "nombre": "Despacho 112",
+        "direccion": "Travessera d'Amadeu Vives 16, El Campello, Alicante, Espa\u00f1a",
+        "provincia": "alicante",
+        "tipo": "despacho",
+        "coordenadas": [
+            38.427416,
+            -0.3983685
+        ],
+        "superior": "Base 1"
+    },
+    {
+        "nombre": "Despacho 113",
+        "direccion": "Urbanizaci\u00f3n Callejillas, 13, 50300 Calatayud",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            39.4674138,
+            -0.3370973
+        ],
+        "superior": "Base 2"
+    },
+    {
+        "nombre": "Despacho 114",
+        "direccion": "Urbanizaci\u00f3n Collarada, 50180 Utebo",
+        "provincia": "zaragoza",
+        "tipo": "despacho",
+        "coordenadas": [
+            41.7140829,
+            -0.9943593
+        ],
+        "superior": "Base 2"
     }
 ]

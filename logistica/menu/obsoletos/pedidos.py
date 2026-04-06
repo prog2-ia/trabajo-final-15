@@ -2,7 +2,7 @@ import os
 import sys
 
 # asegurar acceso a la raiz del proyecto
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append(BASE_DIR)
 
 

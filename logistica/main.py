@@ -4,8 +4,10 @@ import sys
 import os
 
 # asegurar ruta del proyecto
+
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-sys.path.append(BASE_DIR)
+if BASE_DIR not in sys.path:
+    sys.path.append(BASE_DIR)
 
 from menu.menu_principal import menu_principal
 

@@ -4,7 +4,7 @@ import sys
 import os
 
 # añadir raiz del proyecto correctamente
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 """
 BASE_DIR = os.path.abspath(

@@ -198,4 +198,13 @@ direcciones_despacho_txt = limpiar_direcciones([
     "Avenida Portugal, 32, 45290 Pantoja, Toledo",
     "Calle Santa Bárbara, 55, 45161 Polán, Toledo"
 ])
+# ==========================================================
+# TODAS LAS DIRECCIONES JUNTAS
+# ==========================================================
+
+todas_direcciones = (
+    direcciones_central_txt +
+    direcciones_base_txt +
+    direcciones_despacho_txt
+)
 

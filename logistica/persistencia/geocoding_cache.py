@@ -1,20 +1,15 @@
 # ==========================================================
-# CACHE DE GEOLOCALIZACIÓN (PERSISTENTE)
+# CACHE PERSISTENTE GEOLOCALIZACIÓN
 # ==========================================================
 
 import json
 import os
 
-# Ruta robusta (independiente del working directory)
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 RUTA_CACHE = os.path.join(BASE_DIR, "datos", "geocoding_cache.json")
 
 
 def cargar_cache():
-    """
-    Carga el cache desde JSON.
-    Si no existe, devuelve diccionario vacío.
-    """
     if not os.path.exists(RUTA_CACHE):
         return {}
 
@@ -23,9 +18,6 @@ def cargar_cache():
 
 
 def guardar_cache(cache):
-    """
-    Guarda el cache en JSON asegurando que la carpeta existe.
-    """
     carpeta = os.path.dirname(RUTA_CACHE)
     os.makedirs(carpeta, exist_ok=True)
 

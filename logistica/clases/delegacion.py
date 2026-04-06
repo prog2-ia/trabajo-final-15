@@ -8,7 +8,7 @@ class Delegacion(ABC):
 
     nombres_existentes = set()
 
-    def __init__(self, nombre, direccion, delegacion_superior=None):
+    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
 
         if nombre in Delegacion.nombres_existentes:
             raise ValueError(f"Nombre duplicado: {nombre}")
@@ -17,6 +17,7 @@ class Delegacion(ABC):
 
         self._nombre = nombre
         self._direccion = direccion
+        self.provincia = provincia
         self._delegacion_superior = delegacion_superior
 
         #  NO geocodificar aquí
@@ -57,6 +58,14 @@ class Delegacion(ABC):
         return self._direccion
 
     @property
+    def provincia(self):
+        return self._provincia
+
+    @provincia.setter
+    def provincia(self, valor):
+        self._provincia = valor.lower() if valor else None
+
+    @property
     def flota(self):
         return self._flota
 
@@ -92,7 +101,7 @@ from clases.vehiculo import VehiculoCamion, VehiculoFurgoneta
 
 
 class DelegacionCentral(Delegacion):
-    def __init__(self, nombre, direccion):
+    def __init__(self, nombre, direccion,provincia=None, delegacion_superior=None):
         super().__init__(nombre, direccion, None)
 
     def validar_vehiculo(self, vehiculo):
@@ -100,16 +109,16 @@ class DelegacionCentral(Delegacion):
 
 
 class DelegacionBase(Delegacion):
-    def __init__(self, nombre, direccion, delegacion_superior):
-        super().__init__(nombre, direccion, delegacion_superior)
+    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
+        super().__init__(nombre, direccion, provincia, delegacion_superior)
 
     def validar_vehiculo(self, vehiculo):
         return isinstance(vehiculo, VehiculoFurgoneta)
 
 
 class DelegacionDespacho(Delegacion):
-    def __init__(self, nombre, direccion, delegacion_superior):
-        super().__init__(nombre, direccion, delegacion_superior)
+    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
+        super().__init__(nombre, direccion, provincia, delegacion_superior)
 
     def validar_vehiculo(self, vehiculo):
         return isinstance(vehiculo, VehiculoFurgoneta)
