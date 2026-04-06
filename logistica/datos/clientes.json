@@ -1,0 +1,182 @@
+{
+    "14478287V": {
+        "nombre": "Sergio",
+        "apellidos": "Moreno Prieto",
+        "direccion": "Camí dels Arcs, la Punyalà, Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03208, España",
+        "coordenadas": [
+            38.27205811879758,
+            -0.7253763964823127
+        ],
+        "delegacion_cercana": "despacho 12",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.04
+    },
+    "50872376X": {
+        "nombre": "Alberto",
+        "apellidos": "Cortés Sanz",
+        "direccion": "Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03208, España",
+        "coordenadas": [
+            38.27789778273984,
+            -0.7263883634425219
+        ],
+        "delegacion_cercana": "despacho 12",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.27
+    },
+    "21347232N": {
+        "nombre": "Hugo",
+        "apellidos": "Torres Castro",
+        "direccion": "9, carrer Doctor Fajarnés, l'Asil, Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03204, España",
+        "coordenadas": [
+            38.25942098030498,
+            -0.702390881451598
+        ],
+        "delegacion_cercana": "despacho 12",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.24
+    },
+    "62934469Y": {
+        "nombre": "Patricia",
+        "apellidos": "Navarro Cortés",
+        "direccion": "5, Carrer dels Xipresos, Bonavista, Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03207, España",
+        "coordenadas": [
+            38.298352389224426,
+            -0.6830870151057565
+        ],
+        "delegacion_cercana": "despacho 12",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 3.5
+    },
+    "11973048F": {
+        "nombre": "Patricia",
+        "apellidos": "Castro Núñez",
+        "direccion": "Sender del Pantà d'Elx, Patilla, Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03207, España",
+        "coordenadas": [
+            38.28045181493919,
+            -0.7020566170206886
+        ],
+        "delegacion_cercana": "despacho 12",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.09
+    },
+    "59320475W": {
+        "nombre": "Pilar",
+        "apellidos": "Morales Ruiz",
+        "direccion": "calle Alcalde Vicente Gomis Ramos, el Campello, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03550, España",
+        "coordenadas": [
+            38.416513923675936,
+            -0.3858185019028652
+        ],
+        "delegacion_cercana": "despacho 32",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 0.79
+    },
+    "85220931C": {
+        "nombre": "Javier",
+        "apellidos": "Serrano Guerrero",
+        "direccion": "Fabraquer, el Campello, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03550, España",
+        "coordenadas": [
+            38.40800793964596,
+            -0.3894052056543288
+        ],
+        "delegacion_cercana": "despacho 32",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.55
+    },
+    "50237489S": {
+        "nombre": "Beatriz",
+        "apellidos": "Castro García",
+        "direccion": "Piscifactoria Romana, carrer de les Drassanes, Urbanització L'Almadrava, el Campello, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, España",
+        "coordenadas": [
+            38.42670645411164,
+            -0.3760931504849705
+        ],
+        "delegacion_cercana": "despacho 32",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.48
+    },
+    "33467526L": {
+        "nombre": "Rubén",
+        "apellidos": "Medina Navarro",
+        "direccion": "Urbanització L'Almadrava, el Campello, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, España",
+        "coordenadas": [
+            38.413577010679944,
+            -0.37721801831684515
+        ],
+        "delegacion_cercana": "despacho 32",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.57
+    },
+    "77100361Z": {
+        "nombre": "Vicente",
+        "apellidos": "Jiménez Alonso",
+        "direccion": "Circunvalación de Alicante, Urbanització L'Almadrava, el Campello, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, España",
+        "coordenadas": [
+            38.446014967769734,
+            -0.38897794963639865
+        ],
+        "delegacion_cercana": "despacho 32",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.7
+    },
+    "32053162V": {
+        "nombre": "Pedro",
+        "apellidos": "Miralles Parres",
+        "direccion": "Doctor Caro",
+        "coordenadas": [
+            48.1138132,
+            11.698776
+        ],
+        "delegacion_cercana": "despacho 53",
+        "provincia": "barcelona",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1047.96
+    },
+    "21978008J": {
+        "nombre": "Manuel",
+        "apellidos": "Quiles Gómez",
+        "direccion": "Blas Valero 34, Elche, Alicante",
+        "coordenadas": [
+            38.2670851,
+            -0.7015176
+        ],
+        "delegacion_cercana": "despacho 16",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 0.3
+    }
+}

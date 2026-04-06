@@ -135,13 +135,63 @@ def get_color(d):
     else:
         return "green"
 
+def preguntar_regenerar():
+
+    from utiles.utils import encontrar_raiz
+    import os
+
+    ruta = os.path.join(encontrar_raiz(), "datos", "delegaciones.json")
+
+    if not os.path.exists(ruta):
+        return True
+
+    opcion = input("¿Regenerar delegaciones? (s/n): ").lower()
+
+    if opcion == "s":
+        os.remove(ruta)
+        print("🗑️ Delegaciones eliminadas")
+        return True
+
+    print("✔ Usando delegaciones existentes")
+    return False
 
 # ==========================================================
 # MAIN
 # ==========================================================
 def ejecutar():
+    print("\n" + "*" * 40)
+    print("   GENERACION DE DATOS DE PRUEBA DE DELEGACIONES CON GEOLOCALIZACIÓN")
+    print("*" * 40)
 
     print("\n🚀 Iniciando test de delegaciones...\n")
+
+    regenerar = preguntar_regenerar()
+
+    # ==========================================================
+    # CASO 1 → USAR EXISTENTES
+    # ==========================================================
+    if not regenerar:
+        delegaciones = cargar_delegaciones()
+
+        print("\n🔎 ESTADO FINAL:\n")
+        for d in delegaciones:
+            print(f"{d.nombre} → {d.provincia}")
+
+        imprimir_arbol(delegaciones)
+
+        generar_mapa(
+            delegaciones,
+            get_coord,
+            get_popup,
+            get_color,
+            nombre_fichero="mapa_delegaciones.html"
+        )
+
+        return
+
+    # ==========================================================
+    # CASO 2 → GENERAR NUEVAS
+    # ==========================================================
 
     # ----------------------------------------------------------
     # CENTRAL
@@ -164,7 +214,7 @@ def ejecutar():
 
         prov = extraer_provincia(txt)
 
-        b = DelegacionBase(f"Base {i+1}", txt, central, provincia=prov)
+        b = DelegacionBase(f"Base {i+1}", txt, central, prov)
 
         b.asignar_flota()
         poblar_flota(b)
@@ -184,7 +234,7 @@ def ejecutar():
         base = asignar_base(coord, bases)
         prov = extraer_provincia(txt)
 
-        d = DelegacionDespacho(f"Despacho {i+1}", txt, base, provincia=prov)
+        d = DelegacionDespacho(f"Despacho {i+1}", txt, base, prov)
 
         d.asignar_flota()
         poblar_flota(d)
@@ -198,11 +248,6 @@ def ejecutar():
     print("\n🔎 INFORME DE GEOLOCALIZACIÓN\n")
     print(f"✔ Direcciones válidas: {len(coords_despachos)}")
     print(f"❌ Direcciones fallidas: {len(fallidas)}\n")
-
-    if fallidas:
-        print("⚠️ NO GEOLOCALIZADAS:")
-        for d in fallidas:
-            print(" -", d)
 
     # ----------------------------------------------------------
     # PERSISTENCIA

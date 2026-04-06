@@ -36,6 +36,7 @@ class Cliente:
         # nueva arquitectura
         self._coordenadas = None
         self._delegacion_cercana = delegacion_cercana
+        self._distancia_despacho = None
 
         # ==========================
         # PEDIDOS
@@ -83,6 +84,10 @@ class Cliente:
     def delegacion_cercana(self, value):
         self._delegacion_cercana = value
 
+    @property
+    def distancia_despacho(self):
+        return self._distancia_despacho
+
     # ==========================================
     # OPERADORES
     # ==========================================
@@ -116,4 +121,5 @@ class Cliente:
             f"Coordenadas: {self._coordenadas}\n"
             f"Delegacion: {self._delegacion_cercana.nombre if self._delegacion_cercana else 'N/A'}\n"
             f"Importe: {round(self._importe_facturado,2)}\n"
+            f"Distancia al despacho: {self._distancia_despacho} km\n"
         )

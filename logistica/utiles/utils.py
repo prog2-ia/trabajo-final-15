@@ -175,6 +175,26 @@ def generar_punto_cercano(lat, lon, radio_km=4):
 
 
 # ==========================================================
+# DNI
+# ==========================================================
+def validar_dni_real(dni):
+    if len(dni) != 9:
+        return False
+
+    numeros = dni[:8]
+    letra = dni[8].upper()
+
+    if not numeros.isdigit() or not letra.isalpha():
+        return False
+
+    letras = "TRWAGMYFPDXBNJZSQVHLCKE"
+    return letra == letras[int(numeros) % 23]
+
+def generar_dni_real():
+    numero = random.randint(10000000, 99999999)
+    letras = "TRWAGMYFPDXBNJZSQVHLCKE"
+    return f"{numero}{letras[numero % 23]}"
+# ==========================================================
 # MATRÍCULAS
 # ==========================================================
 

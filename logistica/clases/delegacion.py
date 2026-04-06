@@ -1,14 +1,13 @@
 from abc import ABC
 from clases.flota import Flota
-from utiles.utils import (geocodificar_direccion, geocodificar_con_cache)
-
+from utiles.utils import geocodificar_direccion, geocodificar_con_cache
 
 
 class Delegacion(ABC):
 
     nombres_existentes = set()
 
-    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
+    def __init__(self, nombre, direccion, delegacion_superior=None, provincia=None):
 
         if nombre in Delegacion.nombres_existentes:
             raise ValueError(f"Nombre duplicado: {nombre}")
@@ -17,34 +16,25 @@ class Delegacion(ABC):
 
         self._nombre = nombre
         self._direccion = direccion
-        self.provincia = provincia
         self._delegacion_superior = delegacion_superior
+        self.provincia = provincia
 
-        #  NO geocodificar aquí
         self._coordenadas = None
-
         self._flota = None
 
     # ======================================================
-    # MÉTODO NUEVO
+    # COORDENADAS
     # ======================================================
-
     def calcular_coordenadas(self):
-        """
-        Calcula coordenadas usando cache para evitar llamadas repetidas
-        """
 
-        if hasattr(self, "_coordenadas") and self._coordenadas:
-            return  # ya calculadas
+        if self._coordenadas:
+            return
 
         self._coordenadas = geocodificar_con_cache(self.direccion)
-
-
 
     # ======================================================
     # PROPIEDADES
     # ======================================================
-
     @property
     def coordenadas(self):
         return self._coordenadas
@@ -76,7 +66,6 @@ class Delegacion(ABC):
     # ======================================================
     # MÉTODOS
     # ======================================================
-
     def asignar_flota(self):
         self._flota = Flota(self)
 
@@ -96,29 +85,28 @@ class Delegacion(ABC):
 # ==========================================================
 # SUBCLASES
 # ==========================================================
-
 from clases.vehiculo import VehiculoCamion, VehiculoFurgoneta
 
 
 class DelegacionCentral(Delegacion):
-    def __init__(self, nombre, direccion,provincia=None, delegacion_superior=None):
-        super().__init__(nombre, direccion, None)
+    def __init__(self, nombre, direccion, provincia=None):
+        super().__init__(nombre, direccion, None, provincia)
 
     def validar_vehiculo(self, vehiculo):
         return isinstance(vehiculo, VehiculoCamion)
 
 
 class DelegacionBase(Delegacion):
-    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
-        super().__init__(nombre, direccion, provincia, delegacion_superior)
+    def __init__(self, nombre, direccion, delegacion_superior=None, provincia=None):
+        super().__init__(nombre, direccion, delegacion_superior, provincia)
 
     def validar_vehiculo(self, vehiculo):
         return isinstance(vehiculo, VehiculoFurgoneta)
 
 
 class DelegacionDespacho(Delegacion):
-    def __init__(self, nombre, direccion, provincia=None, delegacion_superior=None):
-        super().__init__(nombre, direccion, provincia, delegacion_superior)
+    def __init__(self, nombre, direccion, delegacion_superior=None, provincia=None):
+        super().__init__(nombre, direccion, delegacion_superior, provincia)
 
     def validar_vehiculo(self, vehiculo):
         return isinstance(vehiculo, VehiculoFurgoneta)

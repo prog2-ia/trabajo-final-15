@@ -3,252 +3,243 @@
 PROGRAMA: GESTIÓN DE CLIENTES (CRUD + GENERACIÓN AUTOMÁTICA)
 ==========================================================
 
-Este programa permite gestionar clientes dentro de una aplicación logística.
+Adaptado a la nueva arquitectura:
 
-FUNCIONALIDADES PRINCIPALES:
----------------------------
-1. Alta de clientes (introducción interactiva con validación)
-2. Baja de clientes (búsqueda por apellidos + eliminación)
-3. Modificación de clientes (edición completa con validaciones)
-4. Listado de clientes (ordenados, mostrando pedidos asociados)
-5. Generación automática de clientes aleatorios
+✔ Dirección = STRING
+✔ Coordenadas geográficas automáticas
+✔ Delegación más cercana automática
+✔ Distancia al despacho en km
 
-CARACTERÍSTICAS IMPORTANTES:
----------------------------
-- Persistencia de datos (guardar/cargar clientes desde fichero)
-- Validación de DNI (realista)
-- Validación de direcciones (usando geopy a través de la clase Direccion)
-- Uso de estructuras tipo diccionario (clientes[dni] = Cliente)
-- Interfaz por consola tipo menú
-
-ESTRUCTURA GENERAL:
--------------------
-- DATOS BASE (nombres, apellidos, direcciones)
-- FUNCIONES DE GENERACIÓN (clientes y direcciones)
-- CRUD (alta, baja, modificación, listado)
-- MENÚ PRINCIPAL
+FUNCIONALIDADES:
+- Alta / Baja / Modificación / Listado
+- Generación automática de clientes
+- Persistencia JSON
 """
 
+# ==========================================================
+# IMPORTS
+# ==========================================================
 import random
-import string
 import sys
 import os
 
-# ==========================================================
-# CONFIGURACIÓN DE RUTAS
-# ==========================================================
-# Añade la raíz del proyecto al PATH para poder importar módulos
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Alternativa comentada (subir dos niveles)
-"""
-BASE_DIR = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), '..', '..')
-)
-sys.path.append(BASE_DIR)
-"""
-
-# ==========================================================
-# IMPORTACIONES DEL PROYECTO
-# ==========================================================
 from clases.cliente import Cliente
-from clases.direccion import Direccion
 import utiles.utils as utils
-from persistencia.persistencia_clientes import (
-    guardar_clientes,
-    cargar_clientes
-)
+from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
+from persistencia.persistencia_delegaciones import cargar_delegaciones
+from utiles.utils import distancia_km
+
 
 # ==========================================================
-# DATOS BASE (para generación aleatoria)
+# DATOS BASE
 # ==========================================================
-
-# Lista de nombres
 nombres = [
     "Juan", "Maria", "Luis", "Ana", "Pedro", "Lucia",
     "Carlos", "Elena", "Miguel", "Carmen"
 ]
 
-# Lista de apellidos
 apellidos = [
     "Garcia", "Perez", "Lopez", "Sanchez", "Martinez",
     "Gomez", "Fernandez", "Ruiz", "Diaz", "Moreno"
 ]
 
-# ==========================================================
-# DIRECCIONES REALES (simulación + geolocalización)
-# ==========================================================
 direcciones_validas = [
-    ("España", "Alicante", "Alicante", "Avenida Maisonnave", 1, (38.3452, -0.4810)),
-    ("España", "Alicante", "Elche", "Avenida Libertad", 20, (38.2669, -0.6983)),
-    ("España", "Alicante", "Benidorm", "Avenida Mediterraneo", 30, (38.5365, -0.1300)),
-    ("España", "Madrid", "Madrid", "Gran Via", 1, (40.4193, -3.7058)),
-    ("España", "Madrid", "Madrid", "Calle Alcala", 50, (40.4200, -3.6880)),
+    "Avenida Maisonnave 1, Alicante, España",
+    "Avenida Libertad 20, Elche, España",
+    "Avenida Mediterraneo 30, Benidorm, España",
+    "Gran Via 1, Madrid, España",
+    "Calle Alcala 50, Madrid, España"
 ]
 
+
 # ==========================================================
-# FUNCIONES DE GENERACIÓN
+# FUNCIONES AUXILIARES
 # ==========================================================
+def calcular_datos_logisticos(cliente):
 
-def generar_direccion():
-    """
-    Selecciona una dirección aleatoria de la lista y crea
-    un objeto Direccion (sin incluir coordenadas explícitas).
-    """
-    d = random.choice(direcciones_validas)
+    delegaciones = cargar_delegaciones()
 
-    return Direccion(
-        pais=d[0],
-        provincia=d[1],
-        ciudad=d[2],
-        calle=d[3],
-        numero=d[4]
-    )
+    coord = utils.geocodificar_direccion(cliente.direccion)
 
+    # ------------------------------------------------------
+    # ❌ NO GEOLOCALIZADO → BLOQUEAR
+    # ------------------------------------------------------
+    if not coord:
+        print("❌ No se pudo geolocalizar la dirección")
+        return False
 
+    cliente._coordenadas = coord
+
+    mejor = None
+    min_dist = float("inf")
+
+    for d in delegaciones:
+
+        if not d.coordenadas:
+            continue
+
+        dist = distancia_km(coord, d.coordenadas)
+
+        if dist < min_dist:
+            min_dist = dist
+            mejor = d
+
+    # ------------------------------------------------------
+    # ❌ SIN DELEGACIÓN → BLOQUEAR
+    # ------------------------------------------------------
+    if not mejor:
+        print("❌ No se encontró delegación cercana")
+        return False
+
+    # ------------------------------------------------------
+    # 🚨 DETECTAR GEOLOCALIZACIÓN SOSPECHOSA
+    # ------------------------------------------------------
+    if min_dist < 0.1:
+        print("\n⚠️ Dirección sospechosa")
+        print(f"📍 Coincide con despacho: {mejor.nombre}")
+        print("❌ Cliente NO guardado\n")
+        return False
+
+    # ------------------------------------------------------
+    # ✔ OK → ASIGNAR
+    # ------------------------------------------------------
+    cliente._delegacion_cercana = mejor
+    cliente._provincia = mejor.provincia
+    cliente._distancia_despacho = round(min_dist, 2)
+
+    return True
+# ==========================================================
+# GENERACIÓN AUTOMÁTICA
+# ==========================================================
 def generar_cliente():
-    """
-    Genera un cliente aleatorio:
-    - Nombre y apellidos aleatorios
-    - DNI válido generado automáticamente
-    - Dirección aleatoria válida
-    """
 
     apellido1 = random.choice(apellidos)
     apellido2 = random.choice(apellidos)
 
-    # Evitar repetir el mismo apellido
     while apellido2 == apellido1:
         apellido2 = random.choice(apellidos)
 
-    return Cliente(
+    direccion = random.choice(direcciones_validas)
+
+    c = Cliente(
         dni=utils.generar_dni_real(),
         nombre=random.choice(nombres),
         apellidos=f"{apellido1} {apellido2}",
-        direccion=generar_direccion()
+        direccion=direccion
     )
+
+    if not calcular_datos_logisticos(c):
+        return None
+
+    return c
 
 
 # ==========================================================
-# CARGA INICIAL DE CLIENTES (persistencia)
+# CARGA INICIAL
 # ==========================================================
 clientes = cargar_clientes()
 
 
 # ==========================================================
-# CRUD: ALTA CLIENTE
+# ALTA CLIENTE
 # ==========================================================
-
 def alta_cliente_interactiva():
-    """
-    Permite introducir un cliente por consola:
-    - Valida DNI
-    - Valida dirección real
-    - Permite modificar campos antes de confirmar
-    """
 
-    print("\n--- ALTA CLIENTE ---")
+    print("\n--- ALTA CLIENTE PRO ---")
 
-    # valores iniciales (permite reutilizar inputs)
-    dni = ""
-    nombre = ""
-    apellido1 = ""
-    apellido2 = ""
-    pais = "España"
-    provincia = "Alicante"
-    ciudad = ""
-    calle = ""
-    numero = ""
+    # ==========================================================
+    # DNI (AUTO GENERADO SI ENTER)
+    # ==========================================================
+    # ==========================================================
+    # DNI (AUTO + VALIDACIÓN REAL)
+    # ==========================================================
+    while True:
+
+        dni_input = input("DNI (ENTER = automático): ").strip().upper()
+
+        # ------------------------------------------------------
+        # CASO 1: ENTER → generar automático
+        # ------------------------------------------------------
+        if not dni_input:
+
+            while True:
+                dni = utils.generar_dni_real()
+                if dni not in clientes:
+                    print(f"👉 DNI generado: {dni}")
+                    break
+
+            break
+
+        # ------------------------------------------------------
+        # CASO 2: VALIDACIÓN MANUAL
+        # ------------------------------------------------------
+        if not utils.validar_dni_real(dni_input):
+            print("❌ DNI inválido (ej: 12345678Z)")
+            continue
+
+        if dni_input in clientes:
+            print("❌ El cliente ya existe")
+            continue
+
+        dni = dni_input
+        break
+    # ==========================================================
+    # DATOS PERSONALES
+    # ==========================================================
+    nombre = input("Nombre: ").strip()
+    apellido1 = input("Primer apellido: ").strip()
+    apellido2 = input("Segundo apellido: ").strip()
+
+    # ==========================================================
+    # DIRECCIÓN (CON SUGERENCIAS + VALIDACIÓN)
+    # ==========================================================
+    direccion = ""
 
     while True:
 
-        print("\nIntroduce los datos (Enter mantiene valor actual)\n")
+        texto = input("\nDirección: ").strip()
 
-        # ------------------------------
-        # VALIDACIÓN DNI
-        # ------------------------------
-        while True:
 
-            dni_input = input(f"DNI [{dni}]: ") or dni
+        # ------------------------------------------------------
+        # VALIDACIÓN EN TIEMPO REAL
+        # ------------------------------------------------------
+        coord = utils.geocodificar_direccion(texto)
 
-            # cliente temporal para validar DNI
-            c_temp = Cliente(dni_input, nombre, "", None)
-
-            if not c_temp.validar_dni():
-                print("DNI invalido")
-                continue
-
-            if dni_input in clientes:
-                print("El cliente ya existe")
-                continue
-
-            dni = dni_input
-            break
-
-        # datos personales
-        nombre = input(f"Nombre [{nombre}]: ") or nombre
-        apellido1 = input(f"Primer apellido [{apellido1}]: ") or apellido1
-        apellido2 = input(f"Segundo apellido [{apellido2}]: ") or apellido2
-
-        pais = input(f"Pais [{pais}]: ") or pais
-        provincia = input(f"Provincia [{provincia}]: ") or provincia
-
-        # ------------------------------
-        # VALIDACIÓN DIRECCIÓN
-        # ------------------------------
-        while True:
-
-            ciudad = input(f"Ciudad [{ciudad}]: ") or ciudad
-            calle = input(f"Calle [{calle}]: ") or calle
-            numero = input(f"Numero [{numero}]: ") or numero
-
-            # validar que sea numérico
-            if not str(numero).isdigit():
-                print("Numero invalido")
-                continue
-
-            numero_int = int(numero)
-
-            direccion = Direccion(pais, provincia, ciudad, calle, numero_int)
-
-            # validación real (geopy)
-            if not direccion.validar():
-                print("Direccion no valida, vuelva a introducirla")
-                continue
-
-            break
-
-        # crear cliente definitivo
-        c = Cliente(dni, nombre, f"{apellido1} {apellido2}", direccion)
-
-        # resumen
-        print("\nResumen:")
-        print(f"{dni} | {apellido1} {apellido2} {nombre}")
-        print(f"{calle} {numero}, {ciudad}, {provincia}, {pais}")
-
-        confirmacion = input("Confirmar alta (s/n): ")
-
-        if confirmacion.lower() == "s":
-            clientes[dni] = c
-            guardar_clientes(clientes)
-            print("Cliente añadido correctamente")
+        if coord:
+            print("✔ Dirección válida")
+            direccion = texto
             break
         else:
-            print("Alta cancelada")
-            break
+            print("❌ Dirección no válida, intenta de nuevo")
+
+    # ==========================================================
+    # CREAR CLIENTE
+    # ==========================================================
+    c = Cliente(dni, nombre, f"{apellido1} {apellido2}", direccion)
+
+    # ==========================================================
+    # CALCULAR DATOS LOGÍSTICOS
+    # ==========================================================
+    if not calcular_datos_logisticos(c):
+        print("❌ Cliente NO actualizado por error de geolocalización")
+        return
+    # ==========================================================
+    # GUARDAR
+    # ==========================================================
+    clientes[dni] = c
+    guardar_clientes({dni: c})
+
+    print("\n✔ Cliente añadido correctamente")
+    print(f"📍 Delegación: {c.delegacion_cercana.nombre if c.delegacion_cercana else 'N/A'}")
+    print(f"📏 Distancia: {c.distancia_despacho} km")
 
 
 # ==========================================================
-# CRUD: BAJA CLIENTE
+# BAJA CLIENTE
 # ==========================================================
-
 def baja_cliente_interactiva():
-    """
-    Permite eliminar un cliente:
-    - Búsqueda por apellidos
-    - Selección por DNI
-    - Confirmación antes de borrar
-    """
 
     print("\n--- BAJA CLIENTE ---")
 
@@ -256,238 +247,76 @@ def baja_cliente_interactiva():
         print("No hay clientes")
         return
 
-    # búsqueda por apellidos
-    apellidos_buscar = input("Apellidos a buscar: ").strip()
-
-    coincidencias = [
-        c for c in clientes.values()
-        if apellidos_buscar.lower() in c.apellidos.lower()
-    ]
-
-    if not coincidencias:
-        print("No se encontraron clientes")
-        return
-
-    # ordenar resultados
-    coincidencias.sort(key=lambda c: (c.apellidos, c.nombre))
-
-    print("\nClientes encontrados:\n")
-
-    for c in coincidencias:
-        print(f"{c.dni} | {c.apellidos}, {c.nombre}")
-
-    # selección por DNI
-    dni_default = coincidencias[0].dni
-    dni = input(f"\nDNI [{dni_default}]: ").strip() or dni_default
+    dni = input("DNI a eliminar: ").strip()
 
     if dni not in clientes:
-        print("DNI no encontrado")
+        print("No encontrado")
         return
 
-    c = clientes[dni]
-    d = c.direccion
-
-    # formateo limpio de dirección
-    direccion_txt = (
-        f"{utils.limpiar_texto(d._calle)} {d._numero}, "
-        f"{utils.limpiar_texto(d._ciudad)}, "
-        f"{utils.limpiar_texto(d._provincia)}, "
-        f"{utils.limpiar_texto(d._pais)}"
-    )
-
-    print("\nCliente a eliminar:")
-    print(f"{c.dni} | {c.apellidos} {c.nombre} | {direccion_txt}")
-
-    confirmacion = input("Confirmar baja (s/n): ")
-
-    if confirmacion.lower() != "s":
-        print("Baja cancelada")
-        return
-
-    # eliminar
     del clientes[dni]
     guardar_clientes(clientes)
 
-    print("Cliente eliminado correctamente")
+    print("✔ Cliente eliminado")
 
 
 # ==========================================================
-# CRUD: MODIFICAR CLIENTE
+# MODIFICAR CLIENTE
 # ==========================================================
-
 def modificar_cliente_interactiva():
-    """
-    Permite modificar un cliente:
-    - Búsqueda por apellidos
-    - Edición de todos los campos
-    - Validación de DNI y dirección
-    """
 
     print("\n--- MODIFICAR CLIENTE ---")
 
-    if not clientes:
-        print("No hay clientes")
-        return
-
-    apellidos_buscar = input("Apellidos a modificar: ").strip()
-
-    coincidencias = [
-        c for c in clientes.values()
-        if apellidos_buscar.lower() in c.apellidos.lower()
-    ]
-
-    if not coincidencias:
-        print("No se encontraron clientes")
-        return
-
-    coincidencias.sort(key=lambda c: (c.apellidos, c.nombre))
-
-    for c in coincidencias:
-        print(f"{c.dni} | {c.apellidos} {c.nombre}")
-
-    dni_default = coincidencias[0].dni
-    dni = input(f"Seleccione DNI [{dni_default}]: ").strip() or dni_default
+    dni = input("DNI: ").strip()
 
     if dni not in clientes:
-        print("DNI no encontrado")
+        print("No encontrado")
         return
 
     c = clientes[dni]
-    d = c.direccion
 
-    # mostrar datos actuales
-    print("\nDatos actuales:")
-    print(f"{c.dni} | {c.apellidos} {c.nombre}")
-    print(f"{d._calle} {d._numero}, {d._ciudad}, {d._provincia}, {d._pais}")
-
-    # modificar datos
     nombre = input(f"Nombre [{c.nombre}]: ") or c.nombre
+    apellidos = input(f"Apellidos [{c.apellidos}]: ") or c.apellidos
+    direccion = input(f"Dirección [{c.direccion}]: ") or c.direccion
 
-    apellido1, *resto = c.apellidos.split()
-    apellido2 = resto[0] if resto else ""
+    c._nombre = nombre
+    c._apellidos = apellidos
+    c._direccion = direccion
 
-    apellido1 = input(f"Primer apellido [{apellido1}]: ") or apellido1
-    apellido2 = input(f"Segundo apellido [{apellido2}]: ") or apellido2
-
-    pais = input(f"Pais [{d._pais}]: ") or d._pais
-    provincia = input(f"Provincia [{d._provincia}]: ") or d._provincia
-
-    # validar nueva dirección
-    while True:
-
-        ciudad = input(f"Ciudad [{d._ciudad}]: ") or d._ciudad
-        calle = input(f"Calle [{d._calle}]: ") or d._calle
-        numero = input(f"Numero [{d._numero}]: ") or str(d._numero)
-
-        if not numero.isdigit():
-            print("Numero invalido")
-            continue
-
-        direccion_nueva = Direccion(pais, provincia, ciudad, calle, int(numero))
-
-        if not direccion_nueva.validar():
-            print("Direccion no valida")
-            continue
-
-        break
-
-    # validar DNI
-    while True:
-
-        nuevo_dni = input(f"DNI [{c.dni}]: ").strip() or c.dni
-
-        if not utils.validar_dni_real(nuevo_dni):
-            print("DNI invalido")
-            continue
-
-        if nuevo_dni != c.dni and nuevo_dni in clientes:
-            print("El DNI ya existe")
-            continue
-
-        break
-
-    # confirmación
-    print("\nDatos modificados:")
-    print(f"{nuevo_dni} | {apellido1} {apellido2} {nombre}")
-
-    if input("Confirmar modificacion (s/n): ").lower() != "s":
-        print("Cancelado")
+    if not calcular_datos_logisticos(c):
+        print("❌ Dirección no válida")
         return
 
-    # aplicar cambios
-    if nuevo_dni != c.dni:
-        del clientes[c.dni]
+    guardar_clientes({dni: c})
 
-    c._dni = nuevo_dni
-    c._nombre = nombre
-    c._apellidos = f"{apellido1} {apellido2}"
-    c._direccion = direccion_nueva
-
-    clientes[nuevo_dni] = c
-    guardar_clientes(clientes)
-
-    print("Cliente modificado correctamente")
+    print("✔ Cliente modificado")
 
 
 # ==========================================================
-# LISTADO DE CLIENTES
+# LISTAR CLIENTES
 # ==========================================================
-
 def listar_clientes():
-    """
-    Muestra todos los clientes ordenados:
-    - Datos personales
-    - Dirección
-    - Pedidos asociados
-    """
+
+    print("\n--- LISTADO CLIENTES ---")
 
     if not clientes:
         print("No hay clientes")
         return
 
-    clientes_ordenados = sorted(
-        clientes.values(),
-        key=lambda c: (c.apellidos, c.nombre)
-    )
+    for c in sorted(clientes.values(), key=lambda x: (x.apellidos, x.nombre)):
 
-    for c in clientes_ordenados:
-        d = c.direccion
-
-        direccion_txt = f"{d._calle} {d._numero}, {d._ciudad}, {d._provincia}, {d._pais}"
-
-        pedidos_curso = [p.id for p in c._pedidos_en_curso]
-        pedidos_terminados = [p.id for p in c._pedidos_terminados]
-
-        print(
-            f"{c.dni} | {c.apellidos} {c.nombre} | {direccion_txt} | "
-            f"En curso: {pedidos_curso} | Terminados: {pedidos_terminados}"
-        )
+        print("\n------------------------")
+        print(f"{c.nombre} {c.apellidos}")
+        print(f"DNI: {c.dni}")
+        print(f"Dirección: {c.direccion}")
+        print(f"Provincia: {c.provincia}")
+        print(f"Delegación: {c.delegacion_cercana.nombre if c.delegacion_cercana else 'N/A'}")
+        print(f"Distancia: {c.distancia_despacho} km")
 
 
 # ==========================================================
-# GENERACIÓN AUTOMÁTICA
+# MENU
 # ==========================================================
-
-def generar_clientes(n=50):
-    """
-    Genera n clientes aleatorios y los guarda automáticamente
-    """
-    for _ in range(n):
-        c = generar_cliente()
-        clientes[c.dni] = c
-
-    print("Numero de clientes:", len(clientes))
-    guardar_clientes(clientes)
-
-
-# ==========================================================
-# MENÚ PRINCIPAL
-# ==========================================================
-
 def menu():
-    """
-    Menú interactivo principal del programa
-    """
 
     while True:
 
@@ -496,26 +325,18 @@ def menu():
         print("2 Baja cliente")
         print("3 Modificar cliente")
         print("4 Listar clientes")
-        print("5 Generar 50 clientes")
         print("0 Salir")
 
         op = input("Opcion: ")
 
         if op == "1":
             alta_cliente_interactiva()
-
         elif op == "2":
             baja_cliente_interactiva()
-
         elif op == "3":
             modificar_cliente_interactiva()
-
         elif op == "4":
             listar_clientes()
-
-        elif op == "5":
-            generar_clientes()
-
         elif op == "0":
             break
 
@@ -523,6 +344,5 @@ def menu():
 # ==========================================================
 # MAIN
 # ==========================================================
-
 if __name__ == "__main__":
     menu()

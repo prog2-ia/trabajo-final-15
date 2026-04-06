@@ -8,6 +8,8 @@ import sys
 # sys.path.append(BASE_DIR)
 
 from tests.test_15_prueba_delegaciones import ejecutar as test_delegaciones
+from tests.test_10_generar_clientes_aleatorios import ejecutar as test_clientes
+
 
 
 def menu_datos_prueba():
@@ -26,9 +28,9 @@ def menu_datos_prueba():
         opcion = input("\nSeleccione una opción: ").strip()
 
         if opcion == "1":
-                test_delegaciones()
-        # elif opcion == "2":
-            # test_16_prueba_clientes.py
+            test_delegaciones()
+        elif opcion == "2":
+            test_clientes()
         # elif opcion == "3":
             # test_17_prueba_pedidos.py
         # elif opcion == "4":
