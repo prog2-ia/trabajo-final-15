@@ -1,6 +1,7 @@
 import datetime
 import math
 
+
 class Ruta:
     def __init__(self, inicio, fin, distancia):
         self.inicio = inicio
@@ -10,6 +11,7 @@ class Ruta:
     def __repr__(self):
         return f"{self.inicio}-{self.fin}({self.distancia}km)"
 
+
 class Pedido:
     def __init__(self, producto, fecha, ruta, transporte):
         self.producto = producto
@@ -17,7 +19,7 @@ class Pedido:
         self.ruta = ruta
         self.transporte = transporte
 
-    #cost calculator
+    # cost calculator
     def calcular_costo(self):
         matricula_val = float(self.transporte['matricula'].replace('$', ''))
         costo = (matricula_val * self.ruta.distancia) / 100
@@ -32,13 +34,14 @@ class Pedido:
     def __repr__(self):
         return f"Pedido(Producto: {self.producto}, Fecha: {self.fecha}, Ruta: {self.ruta}, Transporte: {self.transporte['tipo']})"
 
+
 destinos = [
     Ruta("Madrid", "Alicante", 420),
-    Ruta("Sevilla", "Huelva", 90,)
+    Ruta("Sevilla", "Huelva", 90, )
 ]
 
-vehiculo = {'matricula': '100$','tipo': 'coche'}
-productos = ['queso','leche']
+vehiculo = {'matricula': '100$', 'tipo': 'coche'}
+productos = ['queso', 'leche']
 
 error_1 = 0
 error_2 = 0
@@ -69,7 +72,7 @@ while error_2 == 0:
 while error_3 == 0:
     print('Elige un transporte:', vehiculo['tipo'])
     trans = input()
-    
+
     if trans == vehiculo['tipo']:
         error_3 = 1
     else:

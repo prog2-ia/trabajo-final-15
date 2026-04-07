@@ -1,4 +1,5 @@
 import time
+
 from geopy.geocoders import Nominatim
 
 # =========================
@@ -7,6 +8,7 @@ from geopy.geocoders import Nominatim
 geolocator = Nominatim(user_agent="delegaciones_app")
 
 cache = {}
+
 
 def obtener_coordenadas(direccion):
     if direccion in cache:
@@ -45,7 +47,6 @@ delegaciones_reales = {
     "Fuenlabrada_1": "Calle Constitución 5, Fuenlabrada, España"
 }
 
-
 # =========================
 # GENERAR DICCIONARIO
 # =========================
@@ -54,7 +55,6 @@ delegaciones = {}
 print("Geocodificando delegaciones reales...\n")
 
 for clave, direccion in delegaciones_reales.items():
-
     print(direccion)
 
     coords = obtener_coordenadas(direccion)
@@ -75,7 +75,6 @@ for clave, direccion in delegaciones_reales.items():
         "coordenadas": coords
     }
 
-
 # =========================
 # GUARDAR FICHERO
 # =========================
@@ -94,6 +93,5 @@ with open("../../datos/obsoletos/dic_delegaciones.py", "w", encoding="utf-8") as
         f.write(linea)
 
     f.write("}\n")
-
 
 print("\nArchivo dic_delegaciones.py generado correctamente")

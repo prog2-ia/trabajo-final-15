@@ -1,27 +1,21 @@
-"""
-==========================================================
-UTILIDADES DE GEOLOCALIZACIÓN (AVANZADO)
-==========================================================
+# ==========================================================
+# GEOLOCALIZACIÓN CENTRALIZADA (VERSIÓN LIMPIA)
+# ==========================================================
 
-- Geocodifica direcciones reales
-- Cache persistente (JSON)
-- Genera direcciones nuevas si faltan
-==========================================================
-"""
-
-from geopy.geocoders import Nominatim
-import time
 import json
 import os
-import random
+import time
+
+from geopy.exc import GeocoderTimedOut, GeocoderRateLimited
+from geopy.geocoders import Nominatim
 
 geolocator = Nominatim(user_agent="logistica_app")
 
 CACHE_FILE = os.path.join(os.path.dirname(__file__), "..", "datos", "cache_direcciones.json")
 
-# -----------------------------------------
-# CARGAR CACHE
-# -----------------------------------------
+# ==========================================================
+# CACHE
+# ==========================================================
 if os.path.exists(CACHE_FILE):
     with open(CACHE_FILE, "r", encoding="utf-8") as f:
         CACHE = json.load(f)
@@ -29,74 +23,98 @@ else:
     CACHE = {}
 
 
-# -----------------------------------------
-# GUARDAR CACHE
-# -----------------------------------------
 def guardar_cache():
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(CACHE, f, indent=4)
 
 
-# -----------------------------------------
-# GEOLOCALIZAR
-# -----------------------------------------
-def geolocalizar_direccion(direccion):
+# ==========================================================
+# NORMALIZAR
+# ==========================================================
+def normalizar_direccion(txt):
+    return " ".join(txt.strip().lower().split())
 
-    if direccion in CACHE:
-        return tuple(CACHE[direccion])
+
+# ==========================================================
+# GEOLOCALIZAR (CON CACHE)
+# ==========================================================
+def geocodificar(direccion):
+    direccion_norm = normalizar_direccion(direccion)
+
+    if direccion_norm in CACHE:
+        print(f"♻️ Cache: {direccion}")
+        return tuple(CACHE[direccion_norm])
+
+    print(f"🌐 Geocodificando: {direccion}")
 
     try:
-        loc = geolocator.geocode(direccion)
+        time.sleep(1)
+
+        loc = geolocator.geocode(direccion_norm, timeout=5)
 
         if loc:
             coord = (loc.latitude, loc.longitude)
-            CACHE[direccion] = coord
+            CACHE[direccion_norm] = coord
             guardar_cache()
-            time.sleep(1)
             return coord
+
+    except GeocoderRateLimited:
+        time.sleep(3)
+        return geocodificar(direccion)
+
+    except GeocoderTimedOut:
+        pass
+
+    # fallback
+    try:
+        partes = direccion_norm.split(",")
+
+        if len(partes) > 1:
+            fallback = ",".join(partes[1:])
+            loc = geolocator.geocode(fallback, timeout=5)
+
+            if loc:
+                coord = (loc.latitude, loc.longitude)
+                CACHE[direccion_norm] = coord
+                guardar_cache()
+                return coord
 
     except:
         pass
 
     return None
 
+# ==========================================================
+# GEOLOCALIZACIÓN LISTA (VERSIÓN CORRECTA)
+# ==========================================================
+def geocodificar_lista(direcciones):
+    """
+    Geocodifica una lista de direcciones usando la función principal
+    del sistema (geocodificar con cache).
 
-# -----------------------------------------
-# GENERAR DIRECCION DINAMICA
-# -----------------------------------------
-def generar_direccion_dinamica(ciudad):
+    Devuelve:
+        coords -> dict {direccion: (lat, lon)}
+        fallidas -> lista de direcciones no geocodificadas
+    """
 
-    for _ in range(5):
+    coords = {}
+    fallidas = []
 
-        try:
-            numero = random.randint(1, 200)
-            query = f"calle {numero}, {ciudad}, España"
+    for d in direcciones:
 
-            loc = geolocator.geocode(query)
+        # 🔥 USAR TU FUNCIÓN NUEVA
+        coord = geocodificar(d)
 
-            if loc:
-                direccion = loc.address
-                coord = (loc.latitude, loc.longitude)
+        if coord is None:
+            fallidas.append(d)
+        else:
+            coords[d] = coord
 
-                if direccion not in CACHE:
-                    CACHE[direccion] = coord
-                    guardar_cache()
-
-                return direccion, coord
-
-            time.sleep(1)
-
-        except:
-            continue
-
-    return None, None
-
+    return coords, fallidas
+# ==========================================================
+# REVERSE GEO
+# ==========================================================
 def direccion_cercana(coord):
-    """
-    Busca una dirección real cercana a unas coordenadas
-    usando reverse geocoding
-    """
-
     lat, lon = coord
 
     try:

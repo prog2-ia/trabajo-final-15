@@ -5,19 +5,15 @@
 - 3 imprime el pedido utilizando la sobrecarga __str__
 ________________________________________________________
 """
-import sys
 import os
-import random
-
+import sys
 from datetime import datetime, timedelta
-
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from clases.pedido import Pedido
 
 
 def test_crear_pedido():
-
     print("Test crear pedido")
 
     fecha = datetime.now() + timedelta(days=2)
@@ -37,8 +33,6 @@ def test_crear_pedido():
 
 
 if __name__ == "__main__":
-
     print("=== CREAR PEDIDO ===")
 
     test_crear_pedido()
-

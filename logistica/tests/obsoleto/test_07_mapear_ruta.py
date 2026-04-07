@@ -9,15 +9,14 @@ AUTOR: Manuel Quiles
 - 4 Dibuja los origenes de cada pedido de la ruta en un mapa por medio de la libreria folium
 ________________________________________________________
 """
-import sys
 import os
-from datetime import datetime, timedelta
 import random
-import folium
+import sys
 import webbrowser
+from datetime import datetime, timedelta
 from pathlib import Path
 
-
+import folium
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -27,7 +26,6 @@ from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
 
 
 def generar_pedidos(n=100):
-
     pedidos = []
     ciudades = list(CIUDADES_ALICANTE.keys())
     niveles_servicio = ["standard", "urgente"]
@@ -63,8 +61,8 @@ def generar_pedidos(n=100):
 
     return pedidos
 
-def mapa_ruta(ruta):
 
+def mapa_ruta(ruta):
     mapa = folium.Map(location=[40, -3], zoom_start=6)
 
     for p in ruta.lista_pedidos:
@@ -89,7 +87,6 @@ if __name__ == "__main__":
     for p in pedidos:
         print(p)
 
-
     ruta = Ruta("R1", 200)
 
     for p in pedidos:
@@ -101,4 +98,3 @@ if __name__ == "__main__":
 
     mapa_ruta(ruta)
     print("Se ha generado el mapa en 'datos/ruta.html'")
-

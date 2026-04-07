@@ -17,7 +17,6 @@ def normalizar(texto):
 # GUARDAR CLIENTES
 # ==========================================================
 def guardar_clientes(clientes_nuevos):
-
     BASE_DIR = encontrar_raiz()
     ruta = os.path.join(BASE_DIR, "datos", "clientes.json")
 
@@ -32,7 +31,6 @@ def guardar_clientes(clientes_nuevos):
         data = {item["dni"]: item for item in data if "dni" in item}
 
     for dni, c in clientes_nuevos.items():
-
         data[dni] = {
             "nombre": c._nombre,
             "apellidos": c._apellidos,
@@ -63,7 +61,6 @@ def guardar_clientes(clientes_nuevos):
 # CARGAR CLIENTES
 # ==========================================================
 def cargar_clientes(nombre_fichero="clientes.json"):
-
     BASE_DIR = encontrar_raiz()
     ruta = os.path.join(BASE_DIR, "datos", nombre_fichero)
 

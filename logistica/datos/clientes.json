@@ -178,5 +178,155 @@
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.3
+    },
+    "61976902K": {
+        "nombre": "Carlos",
+        "apellidos": "Lozano Rodríguez",
+        "direccion": "Passeig del Port, Centre Històric, el Raval Roig, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03002, España",
+        "coordenadas": [
+            38.34103704307989,
+            -0.47319757100815557
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.71
+    },
+    "32360365D": {
+        "nombre": "Lucía",
+        "apellidos": "Núñez Castillo",
+        "direccion": "Centro Comercial Puerta de Alicante, acceso centro comercial, la Florida Baixa, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03007, España",
+        "coordenadas": [
+            38.34180733395217,
+            -0.5172919408983372
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.13
+    },
+    "35375256Z": {
+        "nombre": "Pedro",
+        "apellidos": "Sanz Marín",
+        "direccion": "Sendavia, Sant Gabriel, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03007, España",
+        "coordenadas": [
+            38.32712886191036,
+            -0.5090903261524558
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.13
+    },
+    "12635258R": {
+        "nombre": "Francisco",
+        "apellidos": "Gutiérrez Molina",
+        "direccion": "6, Carrer de José Gutiérrez \"Petén\", Nostra Senyora de Gràcia, Mercat, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03004, España",
+        "coordenadas": [
+            38.34813301737404,
+            -0.4869377042879876
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 0.91
+    },
+    "84328856T": {
+        "nombre": "Antonio",
+        "apellidos": "Molina Espinosa de los Monteros",
+        "direccion": "Juguetilandia, Local 2-B, Avinguda del Doctor Jiménez Díaz, Polígon de Sant Blai, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03005, España",
+        "coordenadas": [
+            38.353369174670824,
+            -0.503127118779127
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.61
+    },
+    "48339980Y": {
+        "nombre": "Javier",
+        "apellidos": "Serrano Rubio",
+        "direccion": "Barranc de Bonhivern, Vistahermosa, el Raval Roig, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03013, España",
+        "coordenadas": [
+            38.33442983858169,
+            -0.4677546481495063
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.32
+    },
+    "13723616E": {
+        "nombre": "Rosa",
+        "apellidos": "Prieto Alonso",
+        "direccion": "Avinguda de Saturn, Polígon Industrial Pla de l'Espartal, Polígon El Baver, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03007, España",
+        "coordenadas": [
+            38.33505163365529,
+            -0.5214733999305515
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.59
+    },
+    "37452403P": {
+        "nombre": "Pedro",
+        "apellidos": "Castillo Espinosa de los Monteros",
+        "direccion": "Serra del Molinet, Vistahermosa, el Raval Roig, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03013, España",
+        "coordenadas": [
+            38.339590632135305,
+            -0.4618821166256003
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.71
+    },
+    "20101847P": {
+        "nombre": "Laura",
+        "apellidos": "Blanco Ortega",
+        "direccion": "Carrer de l'Esportista Joaquín Blume, El Palmeral, Sant Gabriel, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03007, España",
+        "coordenadas": [
+            38.32588348000038,
+            -0.5151605104465891
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 2.6
+    },
+    "70951566Q": {
+        "nombre": "Vicente",
+        "apellidos": "Torres Molina",
+        "direccion": "Avinguda del Cardenal Francisco Álvarez, la Torreta, Alacant / Alicante, l'Alacantí, Alacant / Alicante, Comunitat Valenciana, 03005, España",
+        "coordenadas": [
+            38.35601023063695,
+            -0.5027548431975175
+        ],
+        "delegacion_cercana": "despacho 18",
+        "provincia": "alicante",
+        "pedidos_en_curso": [],
+        "pedidos_terminados": [],
+        "importe_facturado": 0,
+        "distancia_despacho": 1.84
     }
 }

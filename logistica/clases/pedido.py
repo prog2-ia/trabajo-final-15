@@ -1,11 +1,12 @@
 import random
 from datetime import datetime
+
 import utiles.utils as utils
+
 from logistica.datos.obsoletos.dic_ciudades_alicante import CIUDADES_ALICANTE
 
 
 class Pedido:
-
 
     def __init__(self, id, origen, destino, peso, volumen, fecha_entrega, nivel_servicio):
 

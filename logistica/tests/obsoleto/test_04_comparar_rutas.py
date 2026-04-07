@@ -6,9 +6,8 @@
 - 3 Informa de la ruta mas barata
 ________________________________________________________
 """
-import sys
 import os
-
+import sys
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -16,7 +15,6 @@ from clases.ruta import Ruta
 
 
 def test_comparar_rutas():
-
     print("\nTest comparar rutas")
 
     r1 = Ruta("R1")
@@ -35,9 +33,8 @@ def test_comparar_rutas():
     else:
         print("Ruta 2 es más barata")
 
+
 if __name__ == "__main__":
-
     print("=== COMPARAR RUTAS ===")
-
 
     test_comparar_rutas()

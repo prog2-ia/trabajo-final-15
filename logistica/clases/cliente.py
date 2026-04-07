@@ -18,6 +18,7 @@ CAMBIOS IMPORTANTES
 Esto simplifica la persistencia y mejora el rendimiento del sistema
 """
 
+
 class Cliente:
 
     def __init__(self, dni, nombre, apellidos, direccion, provincia=None, delegacion_cercana=None):
@@ -46,7 +47,6 @@ class Cliente:
 
         self._importe_facturado = 0
 
-
     # ==========================================
     # GETTERS
     # ==========================================
@@ -70,7 +70,6 @@ class Cliente:
     @property
     def provincia(self):
         return self._provincia
-
 
     @property
     def coordenadas(self):
@@ -106,7 +105,6 @@ class Cliente:
 
         return self
 
-
     # ==========================================
     # REPRESENTACION
     # ==========================================
@@ -120,6 +118,6 @@ class Cliente:
             f"Provincia: {self._provincia}\n"
             f"Coordenadas: {self._coordenadas}\n"
             f"Delegacion: {self._delegacion_cercana.nombre if self._delegacion_cercana else 'N/A'}\n"
-            f"Importe: {round(self._importe_facturado,2)}\n"
+            f"Importe: {round(self._importe_facturado, 2)}\n"
             f"Distancia al despacho: {self._distancia_despacho} km\n"
         )

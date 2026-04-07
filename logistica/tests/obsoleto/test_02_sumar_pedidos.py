@@ -7,18 +7,16 @@
 - 4 imprime el nuevo pedido suma
 ________________________________________________________
 """
-import sys
 import os
+import sys
 from datetime import datetime, timedelta
-
-
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 from clases.pedido import Pedido
 
-def test_sumar_pedidos():
 
+def test_sumar_pedidos():
     print("\nTest sumar pedidos")
 
     fecha = datetime.now() + timedelta(days=3)
@@ -34,6 +32,7 @@ def test_sumar_pedidos():
     print(p2)
     print('.........')
     print(p3)
+
 
 if __name__ == "__main__":
     print("=== SUMAR PEDIDOS P1 y P2 ===")

@@ -1,15 +1,11 @@
 # menu/menu_principal.py
 
-import os
-import sys
-
 # asegurar acceso a la raiz del proyecto
 # BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 # sys.path.append(BASE_DIR)
 
-from tests.test_15_prueba_delegaciones import ejecutar as test_delegaciones
 from tests.test_10_generar_clientes_aleatorios import ejecutar as test_clientes
-
+from tests.test_15_prueba_delegaciones import ejecutar as test_delegaciones
 
 
 def menu_datos_prueba():
@@ -22,7 +18,7 @@ def menu_datos_prueba():
         print("2. Generación de clientes de prueba y caché de geolocaciones")
         print("3. Generación de pedidos de prueba")
         print("-" * 40)
-        print("4. Generación de vehículos de prueba y flotas" )
+        print("4. Generación de vehículos de prueba y flotas")
         print("0. Volver")
 
         opcion = input("\nSeleccione una opción: ").strip()
@@ -32,13 +28,14 @@ def menu_datos_prueba():
         elif opcion == "2":
             test_clientes()
         # elif opcion == "3":
-            # test_17_prueba_pedidos.py
+        # test_17_prueba_pedidos.py
         # elif opcion == "4":
-            # test_18_prueba_vehículos.py
+        # test_18_prueba_vehículos.py
         elif opcion == "0":
             break
         else:
             print("Opcion no valida")
+
 
 def menu_maestros():
     while True:
@@ -55,18 +52,19 @@ def menu_maestros():
         opcion = input("\nSeleccione una opcion: ").strip()
 
         # if opcion == "1":
-            # ejecutar_clientes()
+        # ejecutar_clientes()
         # elif opcion == "2":
-            # ejecutar_delegaciones()
+        # ejecutar_delegaciones()
 
         # elif opcion == "3":
-            # ejecutar_vehiculos()
+        # ejecutar_vehiculos()
 
         if opcion == "0":
             break
 
         else:
             print("Opcion no valida")
+
 
 def menu_pedidos():
     while True:
@@ -83,19 +81,20 @@ def menu_pedidos():
         opcion = input("\nSeleccione una opcion: ").strip()
 
         # if opcion == "1":
-            # mantenimiento_pedidos.py()
+        # mantenimiento_pedidos.py()
 
         # elif opcion == "2":
-            # busqueda_pedidos.py
+        # busqueda_pedidos.py
 
         # elif opcion == "3":
-            # inform_pedidos.py()
+        # inform_pedidos.py()
 
         if opcion == "0":
             break
 
         else:
             print("Opcion no valida")
+
 
 def menu_rutas():
     while True:
@@ -113,16 +112,16 @@ def menu_rutas():
         opcion = input("\nSeleccione una opcion: ").strip()
 
         # if opcion == "1":
-            # generar_rutas_recogida.py()
+        # generar_rutas_recogida.py()
 
         # elif opcion == "2":
-            # generar_rutas_transporte.py()
+        # generar_rutas_transporte.py()
 
         # elif opcion == "3":
-            # generar_rutas_reparto.py()
+        # generar_rutas_reparto.py()
 
         # elif opcion == "4":
-            # consultar_flotas.py()
+        # consultar_flotas.py()
 
         if opcion == "0":
             break
@@ -132,7 +131,6 @@ def menu_rutas():
 
 
 def menu_principal():
-
     while True:
 
         print("\n" + "=" * 40)
@@ -156,7 +154,7 @@ def menu_principal():
         elif opcion == "3":
             menu_rutas()
 
-        elif opcion =='4':
+        elif opcion == '4':
             menu_datos_prueba()
 
         elif opcion == "0":

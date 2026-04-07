@@ -1,8 +1,8 @@
 # ------------------------------------------
 # PROGRAMA DE PRUEBA validacion de direcciones y obtencion de coordenadas
 # ---
-import sys
 import os
+import sys
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))

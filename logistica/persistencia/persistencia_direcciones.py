@@ -5,8 +5,8 @@ PERSISTENCIA DE DIRECCIONES
 import json
 import os
 
-from utiles.utils import encontrar_raiz
 from clases.direccion import Direccion
+from utiles.utils import encontrar_raiz
 
 
 # ==========================================================
@@ -14,14 +14,12 @@ from clases.direccion import Direccion
 # ==========================================================
 
 def guardar_direcciones(direcciones):
-
     BASE_DIR = encontrar_raiz()
     ruta = os.path.join(BASE_DIR, "datos", "direcciones.json")
 
     data = []
 
     for d in direcciones:
-
         data.append({
             "pais": d.pais,
             "provincia": d.provincia,
@@ -44,7 +42,6 @@ def guardar_direcciones(direcciones):
 # ==========================================================
 
 def cargar_direcciones():
-
     BASE_DIR = encontrar_raiz()
     ruta = os.path.join(BASE_DIR, "datos", "direcciones.json")
 

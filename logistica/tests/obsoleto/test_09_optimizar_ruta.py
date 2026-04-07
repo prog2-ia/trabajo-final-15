@@ -13,14 +13,13 @@ minimizando la distancia recorrida entre destinos consecutivos.
 -----------------------------------------
 """
 
-
-import random
-from math import radians, sin, cos, sqrt, atan2
-import sys
 import os
-import folium
-from pathlib import Path
+import random
+import sys
 import webbrowser
+from pathlib import Path
+
+import folium
 
 # Añadir la carpeta raíz del proyecto al path para poder importar módulos propios
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -108,7 +107,6 @@ def optimizar_ruta(pedidos):
 
     # Mientras queden pedidos por asignar
     while pendientes:
-
         # Seleccionamos el pedido cuyo destino está más cerca de la ciudad actual
         siguiente = min(
             pendientes,
@@ -162,9 +160,8 @@ def calcular_distancia_ruta(ruta):
 
     # Recorremos los pedidos de dos en dos
     for i in range(len(ruta.lista_pedidos) - 1):
-
         p1 = ruta.lista_pedidos[i]
-        p2 = ruta.lista_pedidos[i+1]
+        p2 = ruta.lista_pedidos[i + 1]
 
         # Sumamos la distancia entre destinos consecutivos
         total += utils.distancia_km(
@@ -176,6 +173,7 @@ def calcular_distancia_ruta(ruta):
     ruta.distancia_total = round(total, 2)
 
     return ruta.distancia_total
+
 
 def mapa_ruta_optimizada(ruta_ciudades):
     """
@@ -189,13 +187,12 @@ def mapa_ruta_optimizada(ruta_ciudades):
 
     # Añadimos marcadores
     for i, ciudad in enumerate(ruta_ciudades):
-
         lat, lon = CIUDADES_ALICANTE[ciudad]
         coordenadas.append((lat, lon))
 
         folium.Marker(
             location=[lat, lon],
-            popup=f"{i+1}. {ciudad}",
+            popup=f"{i + 1}. {ciudad}",
             icon=folium.Icon(color="blue" if i != 0 else "green")
         ).add_to(mapa)
 

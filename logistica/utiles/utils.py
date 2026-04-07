@@ -10,11 +10,6 @@ duplicación de código y mejorar la mantenibilidad.
 
 FUNCIONALIDADES PRINCIPALES:
 
-1. 🌍 Geocodificación de direcciones:
-   - Uso de Nominatim (OpenStreetMap)
-   - Sistema de cache en memoria + persistente (JSON)
-   - Manejo de errores (timeout, rate limit)
-   - Normalización de direcciones
 
 2. 📏 Cálculo de distancias:
    - Implementación de fórmula de Haversine
@@ -41,87 +36,22 @@ repetidas a servicios externos (mejorando mucho el rendimiento).
 # IMPORTS
 # ==========================================================
 
-# Librerías para geocodificación
-from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderTimedOut, GeocoderRateLimited
 
+import os
+# Otras utilidades
+import random
+import subprocess
+import sys
 # Funciones matemáticas para cálculo de distancias
 from math import radians, sin, cos, sqrt, atan2
 
-# Otras utilidades
-import random
 import folium
-import os
-import sys
-import subprocess
-import time
 
 # Añadir la raíz del proyecto al path para permitir imports relativos
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 )
 
-# Import de persistencia de cache (JSON)
-from persistencia.geocoding_cache import cargar_cache, guardar_cache
-
-
-# ==========================================================
-# CONFIGURACIÓN GEOCODER
-# ==========================================================
-
-# Instancia del geolocalizador (OpenStreetMap)
-_geolocator = Nominatim(user_agent="logistica_app")
-
-
-# ==========================================================
-# GEOCODIFICACIÓN ROBUSTA
-# ==========================================================
-
-def geocodificar_direccion(txt):
-    """
-    Convierte una dirección en coordenadas (lat, lon).
-    SOLO geocodifica (sin cache).
-    El cache se gestiona fuera.
-    """
-
-    txt = normalizar_direccion(txt)
-
-    try:
-        time.sleep(1)
-
-        location = _geolocator.geocode(txt, timeout=5)
-
-        if location:
-            return (location.latitude, location.longitude)
-
-    except GeocoderRateLimited:
-        print("⚠️ Rate limit, esperando...")
-        time.sleep(3)
-        return geocodificar_direccion(txt)
-
-    except GeocoderTimedOut:
-        pass
-
-    # ------------------------------------------------------
-    # FALLBACK
-    # ------------------------------------------------------
-    try:
-        partes = txt.split(",")
-
-        if len(partes) > 1:
-            fallback = ",".join(partes[1:])
-
-            time.sleep(1)
-
-            location = _geolocator.geocode(fallback, timeout=5)
-
-            if location:
-                return (location.latitude, location.longitude)
-
-    except:
-        pass
-
-    return None
 
 # ==========================================================
 # DISTANCIA HAVERSINE
@@ -148,7 +78,7 @@ def distancia_km(coord1, coord2):
     dlat = radians(lat2 - lat1)
     dlon = radians(lon2 - lon1)
 
-    a = sin(dlat/2)**2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon/2)**2
+    a = sin(dlat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(dlon / 2) ** 2
     c = 2 * atan2(sqrt(a), sqrt(1 - a))
 
     return R * c
@@ -190,10 +120,13 @@ def validar_dni_real(dni):
     letras = "TRWAGMYFPDXBNJZSQVHLCKE"
     return letra == letras[int(numeros) % 23]
 
+
 def generar_dni_real():
     numero = random.randint(10000000, 99999999)
     letras = "TRWAGMYFPDXBNJZSQVHLCKE"
     return f"{numero}{letras[numero % 23]}"
+
+
 # ==========================================================
 # MATRÍCULAS
 # ==========================================================
@@ -334,217 +267,3 @@ def generar_mapa(
         subprocess.run(["open", ruta])
     except:
         print("⚠️ No se pudo abrir automáticamente el mapa")
-
-
-# ==========================================================
-# GEOLOCALIZACIÓN CON LOG
-# ==========================================================
-
-def geocodificar_con_log(direcciones):
-    """
-    Geocodifica direcciones SIN cache (solo diagnóstico).
-    """
-
-    coords = {}
-    fallidas = []
-
-    for d in direcciones:
-
-        coord = geocodificar_direccion(d)
-
-        if coord is None:
-            fallidas.append(d)
-        else:
-            coords[d] = coord
-
-    return coords, fallidas
-
-
-# ==========================================================
-# GEOLOCALIZACIÓN CON CACHE (MÚLTIPLE)
-# ==========================================================
-def geocodificar_con_cache(direccion):
-    """
-    Geocodificación unificada:
-    - Cache en memoria (rápido)
-    - Cache persistente (JSON)
-    """
-
-    cache = obtener_cache()
-
-    direccion_norm = normalizar_direccion(direccion)
-
-    # ------------------------------------------------------
-    # CACHE
-    # ------------------------------------------------------
-    if direccion_norm in cache:
-        print(f"♻️ Cache: {direccion}")
-        return tuple(cache[direccion_norm])
-
-    # ------------------------------------------------------
-    # GEOLOCALIZACIÓN
-    # ------------------------------------------------------
-    print(f"🌐 Geocodificando: {direccion}")
-
-    coord = geocodificar_direccion(direccion)
-
-    if coord:
-        cache[direccion_norm] = coord
-        guardar_cache_global()
-
-    return coord
-
-
-# ==========================================================
-# CACHE GLOBAL UNIFICADO
-# ==========================================================
-
-_cache_global = None
-
-
-def obtener_cache():
-    global _cache_global
-
-    if _cache_global is None:
-        _cache_global = cargar_cache()
-        print(f"💾 Cache cargado: {len(_cache_global)} direcciones")
-
-    return _cache_global
-
-
-def guardar_cache_global():
-    global _cache_global
-
-    if _cache_global is not None:
-        guardar_cache(_cache_global)
-
-
-# ==========================================================
-# NORMALIZAR DIRECCIÓN
-# ==========================================================
-
-def normalizar_direccion(txt):
-    return " ".join(txt.strip().lower().split())
-
-
-# ==========================================================
-# GEOLOCALIZACIÓN PURA (SIN CACHE)
-# ==========================================================
-
-def geocodificar_direccion(txt):
-
-    txt = normalizar_direccion(txt)
-
-    try:
-        time.sleep(1)
-
-        location = _geolocator.geocode(txt, timeout=5)
-
-        if location:
-            return (location.latitude, location.longitude)
-
-    except GeocoderRateLimited:
-        print("⚠️ Rate limit, esperando...")
-        time.sleep(3)
-        return geocodificar_direccion(txt)
-
-    except GeocoderTimedOut:
-        pass
-
-    # fallback
-    try:
-        partes = txt.split(",")
-
-        if len(partes) > 1:
-            fallback = ",".join(partes[1:])
-
-            time.sleep(1)
-
-            location = _geolocator.geocode(fallback, timeout=5)
-
-            if location:
-                return (location.latitude, location.longitude)
-
-    except:
-        pass
-
-    return None
-
-
-# ==========================================================
-# GEOLOCALIZACIÓN CON CACHE (CORE)
-# ==========================================================
-
-_stats = {
-    "cache": 0,
-    "api": 0,
-    "fallidas": 0
-}
-
-
-def geocodificar(direccion):
-    """
-    FUNCIÓN ÚNICA DEL SISTEMA
-    """
-
-    cache = obtener_cache()
-    d_norm = normalizar_direccion(direccion)
-
-    # CACHE
-    if d_norm in cache:
-        print(f"♻️ Cache: {direccion}")
-        _stats["cache"] += 1
-        return tuple(cache[d_norm])
-
-    # API
-    print(f"🌐 Geocodificando: {direccion}")
-    _stats["api"] += 1
-
-    coord = geocodificar_direccion(direccion)
-
-    if coord:
-        cache[d_norm] = coord
-    else:
-        _stats["fallidas"] += 1
-
-    return coord
-
-
-# ==========================================================
-# GEOLOCALIZACIÓN LISTA
-# ==========================================================
-
-def geocodificar_lista(direcciones):
-
-    coords = {}
-    fallidas = []
-
-    for d in direcciones:
-
-        coord = geocodificar(d)
-
-        if coord is None:
-            fallidas.append(d)
-        else:
-            coords[d] = coord
-
-    return coords, fallidas
-
-
-# ==========================================================
-# GUARDADO FINAL + STATS
-# ==========================================================
-
-def cerrar_geocoding():
-    """
-    Guarda cache UNA SOLA VEZ + estadísticas
-    """
-
-    guardar_cache_global()
-
-    print("\n📊 RESUMEN GEOLOCALIZACIÓN:")
-    print(f"♻️ Cache usadas: {_stats['cache']}")
-    print(f"🌐 Llamadas API: {_stats['api']}")
-    print(f"❌ Fallidas: {_stats['fallidas']}")
-    print(f"💾 Total cache: {len(obtener_cache())}\n")
-

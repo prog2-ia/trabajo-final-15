@@ -8,11 +8,10 @@ AUTOR: Manuel Quiles
 - 3 imprime todas la rutas generadas
 ________________________________________________________
 """
-import sys
 import os
-from datetime import datetime, timedelta
 import random
-
+import sys
+from datetime import datetime, timedelta
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -20,6 +19,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')
 from clases.pedido import Pedido
 from clases.ruta import Ruta
 from datos.dic_ciudades_alicante import CIUDADES_ALICANTE
+
 
 def generar_pedidos(n=100):
     pedidos = []
@@ -57,6 +57,7 @@ def generar_pedidos(n=100):
 
     return pedidos
 
+
 def generar_ruta_encadenada(pedidos):
     """
     Genera una ruta encadenada a partir de una lista de pedidos.
@@ -88,7 +89,6 @@ def generar_ruta_encadenada(pedidos):
             # Si el origen del pedido coincide con el destino del último
             # entonces podemos encadenarlo
             if p.origen == ultimo.destino:
-
                 # Añadimos el pedido a la ruta
                 ruta.append(p)
 
@@ -140,7 +140,6 @@ def generar_rutas(pedidos):
 
                 # Si encaja origen-destino
                 if p.origen == ultimo.destino:
-
                     # Añadimos a la ruta
                     ruta.append(p)
 
@@ -163,10 +162,6 @@ def generar_rutas(pedidos):
     # Devolvemos todas las rutas generadas
     return rutas
 
-import folium
-from pathlib import Path
-import webbrowser
-
 
 if __name__ == "__main__":
 
@@ -175,13 +170,12 @@ if __name__ == "__main__":
     rutas = generar_rutas(pedidos)
 
     for i, ruta in enumerate(rutas):
-        print(f"\nRuta {i+1}:")
+        print(f"\nRuta {i + 1}:")
         for p in ruta:
             print(f"{p.origen} → {p.destino}")
 
     print()
     print()
-    ruta=generar_ruta_encadenada(pedidos)
+    ruta = generar_ruta_encadenada(pedidos)
     for p in ruta:
         print(f"{p.origen} → {p.destino}")
-

@@ -10,12 +10,12 @@ AUTOR: Manuel Quiles
 - 4 dibuja la ruta utiliando la libreria matplotlib
 ________________________________________________________
 """
-import sys
 import os
-from datetime import datetime, timedelta
 import random
-import matplotlib.pyplot as plt
+import sys
+from datetime import datetime, timedelta
 
+import matplotlib.pyplot as plt
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -25,7 +25,6 @@ from clases.pedido import Pedido
 
 
 def generar_pedidos(n=100):
-
     pedidos = []
     ciudades = list(CIUDADES_ALICANTE.keys())
     niveles_servicio = ["standard", "urgente"]
@@ -64,7 +63,6 @@ def generar_pedidos(n=100):
 
 # Dibuja un grafo uniendo coordenadas x,y para cada pedido
 def dibujar_ruta(ruta):
-
     xs = []
     ys = []
 
@@ -77,10 +75,11 @@ def dibujar_ruta(ruta):
     plt.xlabel("X")
     plt.ylabel("Y")
 
-    for i,p in enumerate(ruta.lista_pedidos):
+    for i, p in enumerate(ruta.lista_pedidos):
         plt.text(p.x, p.y, p.id)
 
     plt.show()
+
 
 if __name__ == "__main__":
     pedidos = generar_pedidos(10)
@@ -89,7 +88,6 @@ if __name__ == "__main__":
     print(pedidos[0])
     for p in pedidos:
         print(p)
-
 
     ruta = Ruta("R1", 200)
 

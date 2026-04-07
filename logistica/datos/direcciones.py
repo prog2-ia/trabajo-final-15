@@ -26,7 +26,6 @@ direcciones_central_txt = [
     "Ctra. Villaverde a Vallecas, 257, Madrid, España"
 ]
 
-
 # ----------------------------------------------------------
 # BASES
 # ----------------------------------------------------------
@@ -51,12 +50,11 @@ direcciones_base_txt = limpiar_direcciones([
 
     # Toledo
     "Ctra. Toledo-Ocaña s/n Polígono Industrial Santa María de Benquerencia, Toledo, 45007 Toledo",
-    
+
     # Zaragoza
     "Polígono Alcalde Caballero Avda. Alcalde Caballero 72, Zaragoza, 50014 Zaragoza"
 
 ])
-
 
 # ----------------------------------------------------------
 # DESPACHOS
@@ -204,8 +202,7 @@ direcciones_despacho_txt = limpiar_direcciones([
 # ==========================================================
 
 todas_direcciones = (
-    direcciones_central_txt +
-    direcciones_base_txt +
-    direcciones_despacho_txt
+        direcciones_central_txt +
+        direcciones_base_txt +
+        direcciones_despacho_txt
 )
-

@@ -16,12 +16,12 @@ FUNCIONALIDADES:
 - Persistencia JSON
 """
 
+import os
 # ==========================================================
 # IMPORTS
 # ==========================================================
 import random
 import sys
-import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -30,7 +30,6 @@ import utiles.utils as utils
 from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
 from persistencia.persistencia_delegaciones import cargar_delegaciones
 from utiles.utils import distancia_km
-
 
 # ==========================================================
 # DATOS BASE
@@ -58,10 +57,9 @@ direcciones_validas = [
 # FUNCIONES AUXILIARES
 # ==========================================================
 def calcular_datos_logisticos(cliente):
-
     delegaciones = cargar_delegaciones()
 
-    coord = utils.geocodificar_direccion(cliente.direccion)
+    coord = utils.geocodificar(cliente.direccion)
 
     # ------------------------------------------------------
     # ❌ NO GEOLOCALIZADO → BLOQUEAR
@@ -110,11 +108,12 @@ def calcular_datos_logisticos(cliente):
     cliente._distancia_despacho = round(min_dist, 2)
 
     return True
+
+
 # ==========================================================
 # GENERACIÓN AUTOMÁTICA
 # ==========================================================
 def generar_cliente():
-
     apellido1 = random.choice(apellidos)
     apellido2 = random.choice(apellidos)
 
@@ -146,7 +145,6 @@ clientes = cargar_clientes()
 # ALTA CLIENTE
 # ==========================================================
 def alta_cliente_interactiva():
-
     print("\n--- ALTA CLIENTE PRO ---")
 
     # ==========================================================
@@ -201,11 +199,10 @@ def alta_cliente_interactiva():
 
         texto = input("\nDirección: ").strip()
 
-
         # ------------------------------------------------------
         # VALIDACIÓN EN TIEMPO REAL
         # ------------------------------------------------------
-        coord = utils.geocodificar_direccion(texto)
+        coord = utils.geocodificar(texto)
 
         if coord:
             print("✔ Dirección válida")
@@ -240,7 +237,6 @@ def alta_cliente_interactiva():
 # BAJA CLIENTE
 # ==========================================================
 def baja_cliente_interactiva():
-
     print("\n--- BAJA CLIENTE ---")
 
     if not clientes:
@@ -263,7 +259,6 @@ def baja_cliente_interactiva():
 # MODIFICAR CLIENTE
 # ==========================================================
 def modificar_cliente_interactiva():
-
     print("\n--- MODIFICAR CLIENTE ---")
 
     dni = input("DNI: ").strip()
@@ -295,7 +290,6 @@ def modificar_cliente_interactiva():
 # LISTAR CLIENTES
 # ==========================================================
 def listar_clientes():
-
     print("\n--- LISTADO CLIENTES ---")
 
     if not clientes:
@@ -303,7 +297,6 @@ def listar_clientes():
         return
 
     for c in sorted(clientes.values(), key=lambda x: (x.apellidos, x.nombre)):
-
         print("\n------------------------")
         print(f"{c.nombre} {c.apellidos}")
         print(f"DNI: {c.dni}")
@@ -317,7 +310,6 @@ def listar_clientes():
 # MENU
 # ==========================================================
 def menu():
-
     while True:
 
         print("\nGESTION CLIENTES")

@@ -7,7 +7,6 @@ sys.path.append(BASE_DIR)
 
 
 def menu_pedidos():
-
     while True:
 
         print("\n" + "=" * 40)

@@ -7,10 +7,9 @@
 ________________________________________________________
 """
 
-import sys
 import os
+import sys
 from datetime import datetime, timedelta
-
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -18,9 +17,7 @@ from clases.ruta import Ruta
 from clases.pedido import Pedido
 
 
-
 def test_ruta():
-
     print("\nTest ruta")
 
     fecha = datetime.now() + timedelta(days=3)
@@ -37,7 +34,5 @@ def test_ruta():
 
 
 if __name__ == "__main__":
-
     print("=== CREAR RUTA A PARTIR DE VARIOS PEDIDOS ===")
     test_ruta()
-

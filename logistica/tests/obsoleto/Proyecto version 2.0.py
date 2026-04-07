@@ -7,15 +7,15 @@ class Ruta:
     def __repr__(self):
         return f"{self.inicio}-{self.fin}({self.distancia}km)"
 
+
 destinos = [
     Ruta("Madrid", "Alicante", 420),
-    Ruta("Sevilla", "Huelva", 90,)
+    Ruta("Sevilla", "Huelva", 90, )
 ]
 
+vehiculo = {'matricula': '100$', 'tipo': 'coche'}
 
-vehiculo = {'matricula': '100$','tipo': 'coche'}
-
-productos = ['queso','leche']
+productos = ['queso', 'leche']
 
 pedido = []
 error_1 = 0
@@ -30,7 +30,6 @@ while error_1 == 0:
         error_1 = 1
     else:
         print('error')
-
 
 while error_2 == 0:
     print('Elige una ruta:', destinos)
@@ -47,11 +46,10 @@ while error_2 == 0:
     else:
         print('error: ruta no existe')
 
-
 while error_3 == 0:
     print('Elige un transporte:', vehiculo['tipo'])
     trans = input()
-    
+
     if trans == vehiculo['tipo']:
         pedido.append(vehiculo['matricula'])
         error_3 = 1
@@ -59,4 +57,3 @@ while error_3 == 0:
         print('error')
 
 print(pedido)
-

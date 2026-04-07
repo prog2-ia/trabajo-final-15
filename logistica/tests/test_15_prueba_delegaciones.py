@@ -14,8 +14,8 @@ SCRIPT DE TESTING: RED DE DELEGACIONES LOGÍSTICAS
 # IMPORTS
 # ==========================================================
 
-import sys
 import os
+import sys
 
 sys.path.append(
     os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -40,9 +40,9 @@ from persistencia.persistencia_delegaciones import (
 from utiles.utils import (
     generar_matricula,
     distancia_km,
-    generar_mapa,
-    geocodificar_lista
+    generar_mapa
 )
+from utiles.geolocalizacion import geocodificar_lista
 
 from datos.direcciones import (
     direcciones_central_txt,
@@ -50,14 +50,13 @@ from datos.direcciones import (
     direcciones_despacho_txt
 )
 
-
 # ==========================================================
 # EXTRAER PROVINCIA
 # ==========================================================
 
 MAPA_PROVINCIAS = {
-    "valencia": ["valencia", "torrent", "manises", "alboraya","paiporta"],
-    "alicante": ["alicante", "elche", "san vicente", "campello","sant joan d'alacant"],
+    "valencia": ["valencia", "torrent", "manises", "alboraya", "paiporta"],
+    "alicante": ["alicante", "elche", "san vicente", "campello", "sant joan d'alacant"],
     "madrid": ["madrid", "getafe", "fuenlabrada", "alcorcón"],
     "barcelona": ["barcelona", "badalona", "terrassa", "sabadell"],
     "murcia": ["murcia", "lorca", "cartagena"],
@@ -99,7 +98,6 @@ def asignar_base(coord, bases):
 
 
 def imprimir_arbol(delegaciones):
-
     print("\n========== RED LOGÍSTICA ==========\n")
 
     central = next(d for d in delegaciones if isinstance(d, DelegacionCentral))
@@ -135,8 +133,8 @@ def get_color(d):
     else:
         return "green"
 
-def preguntar_regenerar():
 
+def preguntar_regenerar():
     from utiles.utils import encontrar_raiz
     import os
 
@@ -154,6 +152,7 @@ def preguntar_regenerar():
 
     print("✔ Usando delegaciones existentes")
     return False
+
 
 # ==========================================================
 # MAIN
@@ -211,10 +210,9 @@ def ejecutar():
     bases = []
 
     for i, txt in enumerate(direcciones_base_txt):
-
         prov = extraer_provincia(txt)
 
-        b = DelegacionBase(f"Base {i+1}", txt, central, prov)
+        b = DelegacionBase(f"Base {i + 1}", txt, central, prov)
 
         b.asignar_flota()
         poblar_flota(b)
@@ -230,11 +228,10 @@ def ejecutar():
     despachos = []
 
     for i, (txt, coord) in enumerate(coords_despachos.items()):
-
         base = asignar_base(coord, bases)
         prov = extraer_provincia(txt)
 
-        d = DelegacionDespacho(f"Despacho {i+1}", txt, base, prov)
+        d = DelegacionDespacho(f"Despacho {i + 1}", txt, base, prov)
 
         d.asignar_flota()
         poblar_flota(d)

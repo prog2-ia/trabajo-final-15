@@ -2,7 +2,7 @@ import random
 from datetime import datetime, timedelta
 
 from clases.pedido import Pedido
-from datos.ciudades import CIUDADES   # importar diccionario
+from datos.ciudades import CIUDADES  # importar diccionario
 
 # lista de ciudades obtenida del diccionario
 ciudades = list(CIUDADES.keys())
@@ -11,7 +11,6 @@ niveles_servicio = ["standard", "urgente"]
 
 
 def generar_pedidos(n=100):
-
     pedidos = []
 
     for i in range(n):

@@ -2,13 +2,14 @@
 # GENERADOR DE CLIENTES - VERSION PRO FINAL (LIMPIO)
 # ==========================================================
 
-import sys
+import math
 import os
 import random
-import math
-import folium
+import sys
 import webbrowser
 from pathlib import Path
+
+import folium
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -17,7 +18,6 @@ from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
 from persistencia.persistencia_delegaciones import cargar_delegaciones
 from utiles.geolocalizacion import direccion_cercana
 from utiles.utils import distancia_km
-
 
 # ==========================================================
 # DATOS
@@ -50,6 +50,7 @@ apellidos = [
     "Borbon", "Espinosa de los Monteros"
 ]
 
+
 def resetear_clientes():
     """
     Borra completamente el fichero de clientes.
@@ -76,11 +77,11 @@ def resetear_clientes():
 
     print("🗑️ Fichero de clientes eliminado correctamente")
 
+
 # ==========================================================
 # MAPA DE CLIENTES
 # ==========================================================
 def ver_mapa_clientes():
-
     print("\n🗺️ Generando mapa de clientes...")
 
     clientes = cargar_clientes()
@@ -132,7 +133,6 @@ def ver_mapa_clientes():
 # MAPA DE DELEGACIONES
 # ==========================================================
 def ver_mapa_delegaciones():
-
     print("\n🗺️ Generando mapa de delegaciones...")
 
     delegaciones = cargar_delegaciones()
@@ -200,7 +200,6 @@ def contar_clientes_por_despacho(clientes):
 # GENERADOR DE CLIENTES
 # ==========================================================
 def generar_clientes():
-
     print("\n===== GENERADOR FINAL =====")
 
     # ==========================================================
@@ -254,7 +253,6 @@ def generar_clientes():
     # ==========================================================
     print(f"\n🏢 DESPACHOS DE LA PROVINCIA: {provincia.upper()}\n")
 
-
     for d in despachos:
         n_clientes_actuales = conteo.get(d.nombre, 0)
 
@@ -265,7 +263,6 @@ def generar_clientes():
             ciudad = "Desconocida"
 
         print(f"{d.nombre} ({ciudad}) -> {n_clientes_actuales} clientes")
-
 
     # ==========================================================
     # ELEGIR DESPACHO POR NOMBRE REAL
@@ -387,7 +384,6 @@ def generar_clientes():
 # MOSTRAR CLIENTES
 # ==========================================================
 def mostrar_clientes():
-
     print("\n===== LISTADO CLIENTES =====")
 
     clientes = cargar_clientes()
@@ -451,6 +447,8 @@ def ejecutar():
             break
         else:
             print("❌ Opción inválida")
+
+
 # ==========================================================
 # MAIN
 # ==========================================================

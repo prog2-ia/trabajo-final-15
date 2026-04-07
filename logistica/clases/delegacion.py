@@ -1,10 +1,10 @@
 from abc import ABC
+
 from clases.flota import Flota
-from utiles.utils import geocodificar_direccion, geocodificar_con_cache
+from utiles.geolocalizacion import geocodificar
 
 
 class Delegacion(ABC):
-
     nombres_existentes = set()
 
     def __init__(self, nombre, direccion, delegacion_superior=None, provincia=None):
@@ -30,7 +30,7 @@ class Delegacion(ABC):
         if self._coordenadas:
             return
 
-        self._coordenadas = geocodificar_con_cache(self.direccion)
+        self._coordenadas = geocodificar(self.direccion)
 
     # ======================================================
     # PROPIEDADES
@@ -70,7 +70,8 @@ class Delegacion(ABC):
         self._flota = Flota(self)
 
     def validar_direccion(self):
-        coords = geocodificar_direccion(self._direccion)
+        coords = geocodificar(self._direccion)
+
         if coords:
             self._coordenadas = coords
             return True

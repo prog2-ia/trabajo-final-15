@@ -39,12 +39,12 @@ Modelar distintos tipos de transporte dentro del sistema logístico,
 aplicando restricciones y validaciones propias de cada uno.
 """
 
-
 # ==========================================================
 # IMPORTACIONES
 # ==========================================================
 
-from abc import ABC, abstractmethod   # Para definir clase abstracta
+from abc import ABC, abstractmethod  # Para definir clase abstracta
+
 from utiles.utils import validar_matricula_esp  # Validación de matrículas españolas
 
 
@@ -64,7 +64,6 @@ class Vehiculo(ABC):
     matriculas_existentes = set()
 
     def __init__(self, tipo, matricula, disponible=True):
-
         # Atributos privados (encapsulación)
         self._tipo = tipo.lower()
         self._matricula = matricula.upper()
@@ -189,7 +188,6 @@ class VehiculoFurgoneta(Vehiculo):
         super().__init__("furgoneta", matricula, disponible)
 
     def validar_matricula(self):
-
         if not validar_matricula_esp(self._matricula):
             return False
 
@@ -212,7 +210,6 @@ class VehiculoMotocicleta(Vehiculo):
         super().__init__("motocicleta", matricula, disponible)
 
     def validar_matricula(self):
-
         if not validar_matricula_esp(self._matricula):
             return False
 

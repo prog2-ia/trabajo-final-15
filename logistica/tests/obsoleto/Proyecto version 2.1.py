@@ -1,5 +1,6 @@
 import datetime
 
+
 class Ruta:
     def __init__(self, inicio, fin, distancia):
         self.inicio = inicio
@@ -8,6 +9,7 @@ class Ruta:
 
     def __repr__(self):
         return f"{self.inicio}-{self.fin}({self.distancia}km)"
+
 
 # New class
 class Pedido:
@@ -20,13 +22,14 @@ class Pedido:
     def __repr__(self):
         return f"Pedido(Producto: {self.producto}, Fecha: {self.fecha}, Ruta: {self.ruta}, Transporte: {self.transporte})"
 
+
 destinos = [
     Ruta("Madrid", "Alicante", 420),
-    Ruta("Sevilla", "Huelva", 90,)
+    Ruta("Sevilla", "Huelva", 90, )
 ]
 
-vehiculo = {'matricula': '100$','tipo': 'coche'}
-productos = ['queso','leche']
+vehiculo = {'matricula': '100$', 'tipo': 'coche'}
+productos = ['queso', 'leche']
 
 error_1 = 0
 error_2 = 0
@@ -57,7 +60,7 @@ while error_2 == 0:
 while error_3 == 0:
     print('Elige un transporte:', vehiculo['tipo'])
     trans = input()
-    
+
     if trans == vehiculo['tipo']:
         error_3 = 1
     else:

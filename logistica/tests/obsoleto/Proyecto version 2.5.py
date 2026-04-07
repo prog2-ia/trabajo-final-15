@@ -1,6 +1,7 @@
 import datetime
 import math
 
+
 class Ruta:
     # Nuevo parametro tipo_camino
     def __init__(self, inicio, fin, distancia, tipo_camino):
@@ -12,6 +13,7 @@ class Ruta:
     def __repr__(self):
         return f"{self.inicio}-{self.fin} ({self.distancia}km, {self.tipo_camino})"
 
+
 # Nuevo classe
 class Transporte:
     def __init__(self, nombre, costo_por_km, velocidad_km_dia, tipo_ruta_soportado):
@@ -22,6 +24,7 @@ class Transporte:
 
     def __repr__(self):
         return f"{self.nombre}"
+
 
 class Pedido:
     def __init__(self, producto, fecha, ruta, transporte):
@@ -43,6 +46,7 @@ class Pedido:
 
     def __repr__(self):
         return f"Pedido(Producto: {self.producto}, Fecha: {self.fecha}, Ruta: {self.ruta}, Transporte: {self.transporte.nombre})"
+
 
 # Updated data with path_tipe (terrestre)
 destinos = [
@@ -90,13 +94,13 @@ while error_3 == 0:
     nombres_vehiculos = [v.nombre for v in vehiculos]
     print('Elige un transporte:', nombres_vehiculos)
     trans = input()
-    
+
     vehiculo_encontrado = None
     for v in vehiculos:
         if v.nombre == trans:
             vehiculo_encontrado = v
             break
-            
+
     if vehiculo_encontrado:
         # Check for path tipe
         if vehiculo_encontrado.tipo_ruta_soportado == ruta_encontrada.tipo_camino:

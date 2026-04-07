@@ -1,15 +1,10 @@
-
-
-
-import sys
 import os
-
+import sys
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 import matplotlib.pyplot as plt
 import folium
-
 
 from datetime import datetime, timedelta
 from clases.pedido import Pedido
@@ -18,7 +13,6 @@ from tests.generador_pedidos import generar_pedidos
 
 
 def test_crear_pedido():
-
     print("Test crear pedido")
 
     fecha = datetime.now() + timedelta(days=2)
@@ -37,7 +31,6 @@ def test_crear_pedido():
 
 
 def test_error_peso():
-
     print("\nTest error peso")
 
     try:
@@ -59,7 +52,6 @@ def test_error_peso():
 
 
 def test_sumar_pedidos():
-
     print("\nTest sumar pedidos")
 
     fecha = datetime.now() + timedelta(days=3)
@@ -74,7 +66,6 @@ def test_sumar_pedidos():
 
 
 def test_ruta():
-
     print("\nTest ruta")
 
     fecha = datetime.now() + timedelta(days=3)
@@ -92,6 +83,8 @@ def test_ruta():
     print("Peso total:", r.peso_total())
     print("Volumen total:", r.volumen_total())
     print("Coste:", r.calcular_coste())
+
+
 """
     print()
     print(r.generar_albaran_ruta())
@@ -107,8 +100,8 @@ def test_ruta():
     print(f'Coste:{r.calcular_coste()}  Peso:{r.peso_total()}')
 """
 
-def test_comparar_rutas():
 
+def test_comparar_rutas():
     print("\nTest comparar rutas")
 
     r1 = Ruta("R1")
@@ -123,10 +116,7 @@ def test_comparar_rutas():
         print("Ruta 2 es más barata")
 
 
-
-
 def dibujar_ruta(ruta):
-
     xs = []
     ys = []
 
@@ -139,15 +129,13 @@ def dibujar_ruta(ruta):
     plt.xlabel("X")
     plt.ylabel("Y")
 
-    for i,p in enumerate(ruta.lista_pedidos):
+    for i, p in enumerate(ruta.lista_pedidos):
         plt.text(p.x, p.y, p.id)
 
     plt.show()
 
 
-
 def mapa_ruta(ruta):
-
     mapa = folium.Map(location=[40, -3], zoom_start=6)
 
     for p in ruta.lista_pedidos:
@@ -157,6 +145,7 @@ def mapa_ruta(ruta):
         ).add_to(mapa)
 
     mapa.save("ruta.html")
+
 
 if __name__ == "__main__":
 
@@ -174,7 +163,6 @@ if __name__ == "__main__":
     print(pedidos[0])
     for p in pedidos:
         print(p)
-
 
     ruta = Ruta("R1", 200)
 

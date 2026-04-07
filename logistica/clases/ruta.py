@@ -1,4 +1,3 @@
-
 # from geopy.distance import geodesic
 
 class Ruta:
@@ -83,7 +82,6 @@ class Ruta:
         distancia = 0
 
         for i in range(len(self.lista_pedidos) - 1):
-
             p1 = self.lista_pedidos[i]
             p2 = self.lista_pedidos[i + 1]
 
@@ -98,6 +96,7 @@ class Ruta:
         self.distancia_total = distancia
 
         return distancia
+
     # --------------------------------------------------
 
     def calcular_coste(self, precio_km=1.5):
@@ -187,7 +186,3 @@ class Ruta:
             f"{self.recorrido_ciudades()} | "
             f"{self.generar_albaran_ruta()}"
         )
-
-    
-
-

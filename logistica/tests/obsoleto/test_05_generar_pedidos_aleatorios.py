@@ -5,11 +5,10 @@
 - 2 Imprime todos los pedidos generados
 ________________________________________________________
 """
-import sys
 import os
-from datetime import datetime, timedelta
 import random
-
+import sys
+from datetime import datetime, timedelta
 
 # Añadir la carpeta raíz del proyecto al path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
@@ -19,7 +18,6 @@ from clases.pedido import Pedido
 
 
 def generar_pedidos(n=100):
-
     pedidos = []
     ciudades = list(CIUDADES_ALICANTE.keys())
     niveles_servicio = ["standard", "urgente"]
@@ -55,11 +53,10 @@ def generar_pedidos(n=100):
 
     return pedidos
 
+
 if __name__ == "__main__":
 
     print("=== GENERAR 100 pedidos aleatorios ===")
-
-
 
     pedidos = generar_pedidos(100)
 

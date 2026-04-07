@@ -11,7 +11,6 @@ from clases.delegacion import (
     DelegacionBase,
     DelegacionDespacho
 )
-
 from utiles.utils import encontrar_raiz
 
 
@@ -20,7 +19,6 @@ from utiles.utils import encontrar_raiz
 # ==========================================================
 
 def guardar_delegaciones(delegaciones, nombre_fichero="delegaciones.json"):
-
     BASE_DIR = encontrar_raiz()
 
     ruta = os.path.join(BASE_DIR, "datos", nombre_fichero)
@@ -59,8 +57,7 @@ def guardar_delegaciones(delegaciones, nombre_fichero="delegaciones.json"):
 # ==========================================================
 
 def cargar_delegaciones(nombre_fichero="delegaciones.json"):
-
-        # 🔥 LIMPIAR NOMBRES
+    # 🔥 LIMPIAR NOMBRES
     Delegacion.nombres_existentes.clear()
 
     BASE_DIR = encontrar_raiz()
@@ -92,7 +89,6 @@ def cargar_delegaciones(nombre_fichero="delegaciones.json"):
             d = DelegacionBase(nombre, direccion, provincia=provincia)
         else:
             d = DelegacionDespacho(nombre, direccion, provincia=provincia)
-
 
         # 🔥 RESTAURAR COORDENADAS
         coords = item.get("coordenadas")
