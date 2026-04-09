@@ -9,7 +9,7 @@ import random
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from clases.pedido import Pedido
-from persistencia.persistencia_clientes import cargar_clientes
+from persistencia.persistencia_clientes import cargar_clientes, guardar_clientes
 from persistencia.persistencia_pedidos import (
     cargar_pedidos,
     guardar_pedidos,
@@ -18,6 +18,82 @@ from persistencia.persistencia_pedidos import (
     obtener_ruta_pedidos
 )
 
+# ==========================================================
+# ACTUALIZAR CLIENTES CON PEDIDOS
+# ==========================================================
+def actualizar_clientes_con_pedidos():
+    """
+    Actualiza en clientes:
+    - pedidos_en_curso
+    - pedidos_terminados
+    según el estado del pedido
+    """
+
+    print("\n🔄 ACTUALIZANDO CLIENTES CON PEDIDOS...")
+
+    pedidos = cargar_pedidos()
+    clientes = cargar_clientes()
+
+    if not pedidos:
+        print("❌ No hay pedidos")
+        return
+
+    if not clientes:
+        print("❌ No hay clientes")
+        return
+
+    # ------------------------------------------------------
+    # LIMPIAR LISTAS
+    # ------------------------------------------------------
+    for c in clientes.values():
+        c._pedidos_en_curso = []
+        c._pedidos_terminados = []
+
+    # ------------------------------------------------------
+    # CLASIFICACIÓN
+    # ------------------------------------------------------
+    estados_activos = {
+        "generado",
+        "en_recogida",
+        "en_transporte",
+        "en_reparto"
+    }
+
+    for pid, p in pedidos.items():
+
+        origen = clientes.get(p["origen"])
+        destino = clientes.get(p["destino"])
+
+        estado = p.get("estado", "").lower()
+
+        # -------------------------
+        # PEDIDOS EN CURSO
+        # -------------------------
+        if estado in estados_activos:
+
+            if origen:
+                origen._pedidos_en_curso.append(pid)
+
+            if destino:
+                destino._pedidos_en_curso.append(pid)
+
+        # -------------------------
+        # PEDIDOS TERMINADOS
+        # -------------------------
+        elif estado == "entregado":
+
+            if origen:
+                origen._pedidos_terminados.append(pid)
+
+            if destino:
+                destino._pedidos_terminados.append(pid)
+
+    # ------------------------------------------------------
+    # GUARDAR
+    # ------------------------------------------------------
+    guardar_clientes(clientes)
+
+    print("✔ Clientes actualizados correctamente")
 
 # ==========================================================
 # PESO (90% < 2kg)
@@ -294,6 +370,7 @@ def ejecutar():
         print("1. Borrar todos los pedidos")
         print("2. Generar pedidos")
         print("3. Listar pedidos")
+        print("4. Actualizar clientes con pedidos")
         print("0. Salir")
 
         op = input("Opción: ").strip()
@@ -304,6 +381,8 @@ def ejecutar():
             generar_pedidos()
         elif op == "3":
             listar_pedidos()
+        elif op == "4":
+            actualizar_clientes_con_pedidos()
         elif op == "0":
             break
         else:

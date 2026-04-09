@@ -10,7 +10,9 @@
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "52"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.05
@@ -26,7 +28,11 @@
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "1",
+            "30",
+            "81"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.11
@@ -42,7 +48,13 @@
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "36",
+            "53",
+            "74",
+            "76",
+            "91"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.79
@@ -52,8 +64,8 @@
         "apellidos": "Lozano Serrano",
         "direccion": "Carrer de Muro d'Alcoi, Bonavista, Elx / Elche, el Baix Vinalopó, Alacant / Alicante, Comunitat Valenciana, 03207, España",
         "coordenadas": [
-            38.2964418024444,
-            -0.685412752290601
+            38.2981686,
+            -0.6858893
         ],
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
@@ -61,7 +73,7 @@
         "pedidos_en_curso": [],
         "pedidos_terminados": [],
         "importe_facturado": 0,
-        "distancia_despacho": 3.22
+        "distancia_despacho": 3.38
     },
     "46721333F": {
         "nombre": "Rubén",
@@ -74,7 +86,13 @@
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "7",
+            "18",
+            "77",
+            "78",
+            "98"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.45
@@ -90,7 +108,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "25"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.67
@@ -106,7 +126,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "66"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.85
@@ -122,7 +144,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "99"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.01
@@ -138,7 +162,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "32",
+            "93"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.64
@@ -154,7 +181,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "38",
+            "67"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.51
@@ -170,7 +200,12 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "61",
+            "73",
+            "76",
+            "99"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.78
@@ -186,7 +221,13 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "20",
+            "23",
+            "26",
+            "51",
+            "94"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.25
@@ -202,7 +243,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "21",
+            "89"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.17
@@ -218,7 +262,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "10"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.81
@@ -234,7 +280,11 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "17",
+            "82",
+            "97"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.26
@@ -250,7 +300,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "55",
+            "57"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.57
@@ -266,7 +319,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "13",
+            "32"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.96
@@ -282,7 +338,12 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "10",
+            "43",
+            "71",
+            "86"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.36
@@ -298,7 +359,11 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "70",
+            "72",
+            "89"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.41
@@ -314,7 +379,13 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "16",
+            "27",
+            "37",
+            "75",
+            "90"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.2
@@ -330,7 +401,10 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "79",
+            "85"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.95
@@ -378,7 +452,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "5"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.5
@@ -394,7 +470,9 @@
         "delegacion_cercana": "despacho 13",
         "provincia": "Valencia",
         "poblacion": "València",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "39"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.34
@@ -410,7 +488,12 @@
         "delegacion_cercana": "despacho 3",
         "provincia": "Toledo",
         "poblacion": "Chozas de Canales",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "3",
+            "21",
+            "52",
+            "62"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.28
@@ -426,7 +509,12 @@
         "delegacion_cercana": "despacho 3",
         "provincia": "Toledo",
         "poblacion": "Chozas de Canales",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "3",
+            "35",
+            "45",
+            "84"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.68
@@ -442,7 +530,11 @@
         "delegacion_cercana": "despacho 3",
         "provincia": "Toledo",
         "poblacion": "Chozas de Canales",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "27",
+            "44",
+            "91"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.18
@@ -474,7 +566,12 @@
         "delegacion_cercana": "despacho 20",
         "provincia": "Madrid",
         "poblacion": "Valdemoro",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "15",
+            "29",
+            "71",
+            "84"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.37
@@ -490,7 +587,10 @@
         "delegacion_cercana": "despacho 20",
         "provincia": "Toledo",
         "poblacion": "Seseña",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "47",
+            "72"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.1
@@ -506,7 +606,9 @@
         "delegacion_cercana": "despacho 20",
         "provincia": "Toledo",
         "poblacion": "Seseña",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "19"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.55
@@ -522,7 +624,10 @@
         "delegacion_cercana": "despacho 20",
         "provincia": "Toledo",
         "poblacion": "Seseña",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "8",
+            "17"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.53
@@ -554,7 +659,10 @@
         "delegacion_cercana": "despacho 20",
         "provincia": "Toledo",
         "poblacion": "Valdemoro",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "45",
+            "95"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.15
@@ -570,7 +678,10 @@
         "delegacion_cercana": "despacho 27",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "14",
+            "96"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.69
@@ -586,7 +697,10 @@
         "delegacion_cercana": "despacho 27",
         "provincia": "Madrid",
         "poblacion": "Leganés",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "68",
+            "86"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.58
@@ -602,7 +716,10 @@
         "delegacion_cercana": "despacho 27",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "69",
+            "77"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.48
@@ -618,7 +735,14 @@
         "delegacion_cercana": "despacho 27",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "24",
+            "37",
+            "39",
+            "41",
+            "46",
+            "65"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.98
@@ -634,7 +758,13 @@
         "delegacion_cercana": "despacho 27",
         "provincia": "Madrid",
         "poblacion": "Getafe",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "6",
+            "38",
+            "65",
+            "80",
+            "83"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.74
@@ -650,7 +780,11 @@
         "delegacion_cercana": "despacho 41",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "31",
+            "87",
+            "100"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.02
@@ -666,7 +800,12 @@
         "delegacion_cercana": "despacho 41",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "1",
+            "2",
+            "14",
+            "24"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.12
@@ -682,7 +821,10 @@
         "delegacion_cercana": "despacho 41",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "28",
+            "55"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.21
@@ -698,7 +840,9 @@
         "delegacion_cercana": "despacho 41",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "19"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.96
@@ -714,7 +858,11 @@
         "delegacion_cercana": "despacho 41",
         "provincia": "Madrid",
         "poblacion": "Madrid",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "12",
+            "50",
+            "100"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.27
@@ -730,7 +878,13 @@
         "delegacion_cercana": "despacho 30",
         "provincia": "Madrid",
         "poblacion": "Pinto",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "11",
+            "35",
+            "40",
+            "53",
+            "67"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.26
@@ -746,7 +900,13 @@
         "delegacion_cercana": "despacho 30",
         "provincia": "Madrid",
         "poblacion": "Getafe",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "13",
+            "28",
+            "46",
+            "57",
+            "88"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.96
@@ -762,7 +922,9 @@
         "delegacion_cercana": "despacho 30",
         "provincia": "Madrid",
         "poblacion": "Getafe",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "9"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.11
@@ -778,7 +940,14 @@
         "delegacion_cercana": "despacho 30",
         "provincia": "Madrid",
         "poblacion": "Getafe",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "4",
+            "25",
+            "49",
+            "70",
+            "74",
+            "98"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.04
@@ -794,7 +963,9 @@
         "delegacion_cercana": "despacho 30",
         "provincia": "Madrid",
         "poblacion": "Pinto",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "30"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.37
@@ -810,7 +981,11 @@
         "delegacion_cercana": "despacho 16",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "2",
+            "8",
+            "87"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.93
@@ -826,7 +1001,9 @@
         "delegacion_cercana": "despacho 16",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "29"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.28
@@ -842,7 +1019,11 @@
         "delegacion_cercana": "despacho 16",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "12",
+            "48",
+            "54"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.35
@@ -858,7 +1039,13 @@
         "delegacion_cercana": "despacho 16",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "47",
+            "58",
+            "59",
+            "61",
+            "80"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.2
@@ -874,7 +1061,13 @@
         "delegacion_cercana": "despacho 16",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "15",
+            "44",
+            "82",
+            "93",
+            "96"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.06
@@ -890,7 +1083,14 @@
         "delegacion_cercana": "despacho 18",
         "provincia": "Alicante",
         "poblacion": "Alicante",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "11",
+            "18",
+            "22",
+            "41",
+            "56",
+            "78"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.87
@@ -906,7 +1106,9 @@
         "delegacion_cercana": "despacho 18",
         "provincia": "Alicante",
         "poblacion": "Alicante",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "69"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.92
@@ -922,7 +1124,9 @@
         "delegacion_cercana": "despacho 18",
         "provincia": "Alicante",
         "poblacion": "Alicante",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "48"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.33
@@ -954,7 +1158,13 @@
         "delegacion_cercana": "despacho 18",
         "provincia": "Alicante",
         "poblacion": "Alicante",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "4",
+            "31",
+            "59",
+            "75",
+            "79"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.72
@@ -970,7 +1180,12 @@
         "delegacion_cercana": "despacho 45",
         "provincia": "Barcelona",
         "poblacion": "Barcelona",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "43",
+            "58",
+            "64",
+            "73"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.48
@@ -986,7 +1201,11 @@
         "delegacion_cercana": "despacho 45",
         "provincia": "Barcelona",
         "poblacion": "Barcelona",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "40",
+            "60",
+            "64"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.26
@@ -1002,7 +1221,13 @@
         "delegacion_cercana": "despacho 45",
         "provincia": "Barcelona",
         "poblacion": "Barcelona",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "5",
+            "26",
+            "33",
+            "42",
+            "92"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.96
@@ -1018,7 +1243,13 @@
         "delegacion_cercana": "despacho 45",
         "provincia": "Barcelona",
         "poblacion": "Barcelona",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "7",
+            "16",
+            "42",
+            "50",
+            "95"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 0.97
@@ -1034,7 +1265,13 @@
         "delegacion_cercana": "despacho 45",
         "provincia": "Barcelona",
         "poblacion": "Barcelona",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "20",
+            "23",
+            "54",
+            "66",
+            "97"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.44
@@ -1050,7 +1287,15 @@
         "delegacion_cercana": "despacho 11",
         "provincia": "Barcelona",
         "poblacion": "Sabadell",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "34",
+            "36",
+            "60",
+            "81",
+            "83",
+            "92",
+            "94"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.66
@@ -1066,7 +1311,9 @@
         "delegacion_cercana": "despacho 11",
         "provincia": "Barcelona",
         "poblacion": "Sabadell",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "6"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.73
@@ -1082,7 +1329,14 @@
         "delegacion_cercana": "despacho 11",
         "provincia": "Barcelona",
         "poblacion": "Sentmenat",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "9",
+            "22",
+            "49",
+            "51",
+            "63",
+            "68"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.49
@@ -1098,7 +1352,9 @@
         "delegacion_cercana": "despacho 11",
         "provincia": "Barcelona",
         "poblacion": "Sabadell",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "33"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 2.3
@@ -1114,7 +1370,12 @@
         "delegacion_cercana": "despacho 11",
         "provincia": "Barcelona",
         "poblacion": "Sabadell",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "56",
+            "62",
+            "85",
+            "88"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 1.24

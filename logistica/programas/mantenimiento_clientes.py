@@ -1,23 +1,13 @@
 """
 ==========================================================
-PROGRAMA: GESTIÓN DE CLIENTES (VERSIÓN FINAL CORREGIDA PRO)
+PROGRAMA: GESTIÓN DE CLIENTES (VERSIÓN FINAL PRO DEFINITIVA)
 ==========================================================
-
-✔ Dirección = STRING
-✔ Coordenadas geográficas
-✔ Población y provincia
-✔ Delegación cercana automática
-✔ Distancia al despacho
-
-✔ Compatible con nueva persistencia (sobrescribir=True)
-✔ Sin problemas de memoria (recarga dinámica)
 """
 
 # ==========================================================
 # IMPORTS
 # ==========================================================
 import os
-import random
 import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -26,34 +16,58 @@ from clases.cliente import Cliente
 import utiles.utils as utils
 from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
 from persistencia.persistencia_delegaciones import cargar_delegaciones
+from persistencia.persistencia_pedidos import cargar_pedidos
 from utiles.utils import distancia_km
 from utiles.geolocalizacion import geocodificar
 
 
 # ==========================================================
-# DATOS BASE
+# NORMALIZADOR
 # ==========================================================
-nombres = [
-    "Juan", "Maria", "Luis", "Ana", "Pedro", "Lucia",
-    "Carlos", "Elena", "Miguel", "Carmen"
-]
-
-apellidos = [
-    "Garcia", "Perez", "Lopez", "Sanchez", "Martinez",
-    "Gomez", "Fernandez", "Ruiz", "Diaz", "Moreno"
-]
-
-direcciones_validas = [
-    "Avenida Maisonnave 1, Alicante, España",
-    "Avenida Libertad 20, Elche, España",
-    "Avenida Mediterraneo 30, Benidorm, España",
-    "Gran Via 1, Madrid, España",
-    "Calle Alcala 50, Madrid, España"
-]
+def normalizar(txt):
+    return (txt or "").strip().lower()
 
 
 # ==========================================================
-# FUNCIONES AUXILIARES
+# 🔥 SELECCIÓN DE CLIENTE (REUTILIZABLE)
+# ==========================================================
+def seleccionar_cliente(clientes):
+
+    entrada = input("\nDNI o nombre/apellidos: ").strip()
+    entrada_norm = normalizar(entrada)
+
+    encontrados = {}
+
+    for c in clientes.values():
+        nombre = f"{c.nombre} {c.apellidos}"
+
+        if entrada.upper() == c.dni or entrada_norm in normalizar(nombre):
+            encontrados[c.dni] = c
+
+    if not encontrados:
+        print("❌ No encontrado")
+        return None
+
+    if len(encontrados) == 1:
+        return list(encontrados.values())[0]
+
+    # múltiples → elegir
+    lista = list(encontrados.values())
+
+    print("\nCoincidencias:")
+    for i, c in enumerate(lista, 1):
+        print(f"{i}. {c.dni} | {c.nombre} {c.apellidos}")
+
+    try:
+        idx = int(input("Selecciona: ")) - 1
+        return lista[idx]
+    except:
+        print("❌ Selección inválida")
+        return None
+
+
+# ==========================================================
+# FUNCION LOGÍSTICA
 # ==========================================================
 def calcular_datos_logisticos(cliente):
 
@@ -90,8 +104,6 @@ def calcular_datos_logisticos(cliente):
 
     if min_dist < 0.1:
         print("\n⚠️ Dirección sospechosa")
-        print(f"📍 Coincide con despacho: {mejor.nombre}")
-        print("❌ Cliente NO guardado\n")
         return False
 
     cliente._delegacion_cercana = mejor
@@ -105,71 +117,44 @@ def calcular_datos_logisticos(cliente):
 # ==========================================================
 def alta_cliente_interactiva():
 
-    global clientes
     clientes = cargar_clientes()
 
-    print("\n--- ALTA CLIENTE PRO ---")
+    print("\n--- ALTA CLIENTE ---")
 
-    # DNI
     while True:
+        dni = input("DNI (ENTER auto): ").strip().upper()
 
-        dni_input = input("DNI (ENTER = automático): ").strip().upper()
+        if not dni:
+            dni = utils.generar_dni_real()
 
-        if not dni_input:
-
-            while True:
-                dni = utils.generar_dni_real()
-                if dni not in clientes:
-                    print(f"👉 DNI generado: {dni}")
-                    break
-
-            break
-
-        if not utils.validar_dni_real(dni_input):
+        if not utils.validar_dni_real(dni):
             print("❌ DNI inválido")
             continue
 
-        if dni_input in clientes:
-            print("❌ El cliente ya existe")
+        if dni in clientes:
+            print("❌ Ya existe")
             continue
 
-        dni = dni_input
         break
 
-    # DATOS
     nombre = input("Nombre: ").strip()
-    apellido1 = input("Primer apellido: ").strip()
-    apellido2 = input("Segundo apellido: ").strip()
+    apellidos = input("Apellidos: ").strip()
 
-    # DIRECCIÓN
     while True:
-
-        direccion = input("\nDirección: ").strip()
-
-        coord = geocodificar(direccion)
-
-        if coord:
-            print("✔ Dirección válida")
+        direccion = input("Dirección: ").strip()
+        if geocodificar(direccion):
             break
-        else:
-            print("❌ Dirección no válida")
+        print("❌ Dirección inválida")
 
-    c = Cliente(dni, nombre, f"{apellido1} {apellido2}", direccion)
+    c = Cliente(dni, nombre, apellidos, direccion)
 
     if not calcular_datos_logisticos(c):
-        print("❌ Cliente NO guardado")
         return
 
     clientes[dni] = c
     guardar_clientes({dni: c})
 
-    clientes = cargar_clientes()
-
-    print("\n✔ Cliente añadido correctamente")
-    print(f"📍 Delegación: {c.delegacion_cercana.nombre if c.delegacion_cercana else 'N/A'}")
-    print(f"📏 Distancia: {c.distancia_despacho} km")
-    print(f"🌍 Población: {c.poblacion}")
-    print(f"🗺️ Provincia: {c.provincia}")
+    print("✔ Cliente creado")
 
 
 # ==========================================================
@@ -177,23 +162,22 @@ def alta_cliente_interactiva():
 # ==========================================================
 def baja_cliente_interactiva():
 
-    global clientes
     clientes = cargar_clientes()
 
     print("\n--- BAJA CLIENTE ---")
 
-    dni = input("DNI: ").strip()
-
-    if dni not in clientes:
-        print("❌ No encontrado")
+    c = seleccionar_cliente(clientes)
+    if not c:
         return
 
-    del clientes[dni]
+    confirm = input(f"¿Eliminar {c.nombre} {c.apellidos}? (s/n): ").lower()
 
-    # 🔥 CLAVE
+    if confirm != "s":
+        print("❌ Cancelado")
+        return
+
+    del clientes[c.dni]
     guardar_clientes(clientes, sobrescribir=True)
-
-    clientes = cargar_clientes()
 
     print("✔ Eliminado")
 
@@ -203,67 +187,127 @@ def baja_cliente_interactiva():
 # ==========================================================
 def modificar_cliente_interactiva():
 
-    global clientes
     clientes = cargar_clientes()
 
     print("\n--- MODIFICAR CLIENTE ---")
 
-    dni = input("DNI: ").strip()
-
-    if dni not in clientes:
-        print("❌ No encontrado")
+    c = seleccionar_cliente(clientes)
+    if not c:
         return
 
-    c_original = clientes[dni]
+    nombre = input(f"Nombre [{c.nombre}]: ") or c.nombre
+    apellidos = input(f"Apellidos [{c.apellidos}]: ") or c.apellidos
+    direccion = input(f"Dirección [{c.direccion}]: ") or c.direccion
 
-    nuevo_nombre = input(f"\nNombre [{c_original.nombre}]: ").strip() or c_original.nombre
-    nuevos_apellidos = input(f"Apellidos [{c_original.apellidos}]: ").strip() or c_original.apellidos
-    nueva_direccion = input(f"Dirección [{c_original.direccion}]: ").strip() or c_original.direccion
-
-    coord = geocodificar(nueva_direccion)
-
-    if not coord:
-        print("❌ Dirección no válida")
+    if not geocodificar(direccion):
+        print("❌ Dirección inválida")
         return
 
-    c_temp = Cliente(dni, nuevo_nombre, nuevos_apellidos, nueva_direccion)
-    c_temp._coordenadas = coord
+    nuevo = Cliente(c.dni, nombre, apellidos, direccion)
 
-    try:
-        c_temp.actualizar_datos_geo()
-    except:
-        pass
-
-    c_temp._poblacion = input(f"Población [{c_temp.poblacion}]: ").strip() or c_temp.poblacion
-    c_temp._provincia = input(f"Provincia [{c_temp.provincia}]: ").strip() or c_temp.provincia
-
-    if not calcular_datos_logisticos(c_temp):
+    if not calcular_datos_logisticos(nuevo):
         return
 
-    clientes[dni] = c_temp
-    guardar_clientes({dni: c_temp})
+    clientes[c.dni] = nuevo
+    guardar_clientes({c.dni: nuevo})
 
-    clientes = cargar_clientes()
-
-    print("✔ Cliente modificado correctamente")
+    print("✔ Modificado")
 
 
 # ==========================================================
-# LISTAR
+# LISTAR CLIENTES (PRO)
 # ==========================================================
 def listar_clientes():
 
-    global clientes
     clientes = cargar_clientes()
-
-    print("\n--- LISTADO CLIENTES ---")
+    pedidos = cargar_pedidos()
 
     if not clientes:
         print("No hay clientes")
         return
 
-    for c in clientes.values():
-        print(f"{c.dni} | {c.nombre} {c.apellidos} | {c.poblacion} | {c.provincia}")
+    entrada = input("\nDNI, nombre/apellidos o T (todos): ").strip()
+    entrada_norm = normalizar(entrada)
+
+    if entrada_norm == "t":
+        clientes_filtrados = clientes
+        modo_todos = True
+    else:
+        clientes_filtrados = {}
+
+        for c in clientes.values():
+            nombre = f"{c.nombre} {c.apellidos}"
+
+            if entrada.upper() == c.dni or entrada_norm in normalizar(nombre):
+                clientes_filtrados[c.dni] = c
+
+        if not clientes_filtrados:
+            print("❌ No encontrado")
+            return
+
+        if len(clientes_filtrados) > 1:
+            lista = list(clientes_filtrados.values())
+
+            for i, c in enumerate(lista, 1):
+                print(f"{i}. {c.dni} | {c.nombre} {c.apellidos}")
+
+            idx = int(input("Selecciona: ")) - 1
+            clientes_filtrados = {lista[idx].dni: lista[idx]}
+
+        modo_todos = False
+
+    estado_filtro = None
+
+    if modo_todos:
+
+        print("\n1 generado 2 recogida 3 transporte 4 reparto 5 entregado T todos")
+
+        mapa = {
+            "1": "generado",
+            "2": "en_recogida",
+            "3": "en_transporte",
+            "4": "en_reparto",
+            "5": "entregado"
+        }
+
+        op = input("Estado: ").strip().lower()
+
+        if op != "t":
+            estado_filtro = mapa.get(op)
+
+    print(
+        f"{'DNI':<12}{'NOMBRE':<25}{'POBLACIÓN':<18}"
+        f"{'PED':<6}{'ORIGEN':<18}{'DESTINO':<18}{'ESTADO':<12}"
+    )
+    print("-" * 110)
+
+    for c in clientes_filtrados.values():
+
+        lista_ids = getattr(c, "_pedidos_en_curso", []) + getattr(c, "_pedidos_terminados", [])
+
+        for pid in lista_ids:
+
+            p = pedidos.get(pid)
+            if not p:
+                continue
+
+            estado = p["estado"]
+
+            if estado_filtro and estado != estado_filtro:
+                continue
+
+            o = clientes.get(p["origen"])
+            d = clientes.get(p["destino"])
+
+            print(
+                f"{c.dni:<12}"
+                f"{(c.nombre + ' ' + c.apellidos)[:24]:<25}"
+                f"{(c.poblacion or 'N/A')[:17]:<18}"
+                f"{pid:<6}"
+                f"{(o.poblacion if o else 'N/A'):<18}"
+                f"{(d.poblacion if d else 'N/A'):<18}"
+                f"{estado:<12}"
+            )
 
 
 # ==========================================================
