@@ -1,1014 +1,1034 @@
 {
-  "C. Torno, 14, Sant Vicent del Raspeig, Alicante, Espa\u00f1a": [
-    38.4053958,
-    -0.5400405
-  ],
-  "Albacete, Castilla-La Mancha, Espa\u00f1a": [
-    38.9950921,
-    -1.8559154
-  ],
-  "Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, Espa\u00f1a": [
-    41.3825802,
-    2.177073
-  ],
-  "Calle de Teresa Cajal, La Faceda, Tarazona, Tarazona y el Moncayo, Zaragoza, Arag\u00f3n, 50500, Espa\u00f1a": [
-    41.8961659,
-    -1.7234796
-  ],
-  "197, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.991062,
-    -0.6916609
-  ],
-  "Carrer Almansa 8, Elche, Espa\u00f1a": [
-    38.2819015,
-    -0.714054
-  ],
-  "Avenida del Pilar, 24, 45500 Torrijos, Toledo": [
-    39.9806352,
-    -4.2782601
-  ],
-  "Av. Generalitat 23, El Campello, Espa\u00f1a": [
-    38.4281857,
-    -0.3957666
-  ],
-  "Calle Gibraltar, 8, 45500 Torrijos, Toledo": [
-    39.9791866,
-    -4.2801269
-  ],
-  "Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
-    38.3436365,
-    -0.4881708
-  ],
-  "C/ Mar Roja, 51, 08040 Barcelona": [
-    41.3236188,
-    2.1417169
-  ],
-  "Plaza Mayor, 47, 02630 La Roda, Albacete": [
-    39.2066188,
-    -2.1582046
-  ],
-  "Calle Domenico Veneciano, 5, 45223 Sese\u00f1a, Toledo": [
-    40.1353977,
-    -3.6685683
-  ],
-  "Calle Sant Bartomeu 39, El Campello, Espa\u00f1a": [
-    38.4218487,
-    -0.3918554
-  ],
-  "Pl. Camachos, 2, 30002 Murcia": [
-    37.9816597,
-    -1.1312087
-  ],
-  "Aeropuerto de Valencia, Manises": [
-    39.4881796,
-    -0.4813204
-  ],
-  "Val\u00e8ncia, Comarca de Val\u00e8ncia, Val\u00e8ncia / Valencia, Comunitat Valenciana, Espa\u00f1a": [
-    39.4697065,
-    -0.3763353
-  ],
-  "Avenida Mare Nostrum, 7, 46120 Alboraya": [
-    39.4934627,
-    -0.3249751
-  ],
-  "Avenida Reyes Cat\u00f3licos, 150, 02600 Villarrobledo, Albacete": [
-    39.2612457,
-    -2.6001877
-  ],
-  "Toledo, Castilla-La Mancha, Espa\u00f1a": [
-    39.8558913,
-    -4.024265
-  ],
-  "Madrid, Comunidad de Madrid, Espa\u00f1a": [
-    40.416782,
-    -3.703507
-  ],
-  "Calle Camp de Turia, 1, 46940 Manises": [
-    39.4993274,
-    -0.4899786
-  ],
-  "Calle Dinamarca, 4, 45005 Toledo": [
-    39.8788982,
-    -4.0286345
-  ],
-  "Calle Constituci\u00f3n 5, Fuenlabrada, Espa\u00f1a": [
-    40.2823784,
-    -3.790263
-  ],
-  "Av. Jaime I 11, Sant Joan d'Alacant, Espa\u00f1a": [
-    38.397112,
-    -0.4341073
-  ],
-  "Avinguda de la Llibertat 11, Elche, Espa\u00f1a": [
-    38.2706062,
-    -0.7021147
-  ],
-  "Calle Gran V\u00eda, 54, 02400 Hell\u00edn, Albacete": [
-    38.5085853,
-    -1.6934041
-  ],
-  "Calle del Prado, 7, 45600 Talavera de la Reina, Toledo": [
-    39.9618674,
-    -4.827878
-  ],
-  "Pol\u00edgono Industrial El Tapiado, 30500 Molina de Segura, Murcia": [
-    38.0682295,
-    -1.2174088
-  ],
-  "Murcia, \u00c1rea Metropolitana de Murcia, Regi\u00f3n de Murcia, Espa\u00f1a": [
-    37.9923795,
-    -1.1305431
-  ],
-  "Zaragoza, Arag\u00f3n, Espa\u00f1a": [
-    41.6521342,
-    -0.8809428
-  ],
-  "Calle Resina 39, Madrid, Espa\u00f1a": [
-    40.3357627,
-    -3.7091824
-  ],
-  "La Dalia, 76, Calle San Pascual, Yecla, Altiplano, Regi\u00f3n de Murcia, 30510, Espa\u00f1a": [
-    38.6131881,
-    -1.1114882
-  ],
-  "Calle Ricardo del Arco, 1, 50015 Zaragoza": [
-    41.6595668,
-    -0.8760803
-  ],
-  "47, Calle Toledo, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6122017,
-    -4.0413166
-  ],
-  "Avenida de la Horchata, 19, 46120 Alboraya": [
-    39.496148,
-    -0.3539835
-  ],
-  "Calle Hermanos Lumi\u00e8re, 02600 Villarrobledo, Albacete": [
-    39.2695979,
-    -2.5880314
-  ],
-  "Calle Mayor, 45, 30500 Molina de Segura, Murcia": [
-    38.0495602,
-    -1.210042
-  ],
-  "Calle Europa, 4, 46900 Torrent": [
-    39.4292145,
-    -0.4787362
-  ],
-  "Pol\u00edgono Industrial El Salvador, 02630 La Roda, Albacete": [
-    39.1906096,
-    -2.1440941
-  ],
-  "Carretera de Ja\u00e9n, km 2, 02300 Alcaraz, Albacete": [
-    38.6956555,
-    -2.4855938
-  ],
-  "Carrer Bernat Metge, 92, 08205 Sabadell": [
-    41.5316813,
-    2.1004662
-  ],
-  "Paseo Echegaray y Caballero, 8, 50003 Zaragoza": [
-    41.6586971,
-    -0.8904151
-  ],
-  "Calle Jazm\u00edn, 34, 28033 Madrid": [
-    40.5055903,
-    -3.5110611
-  ],
-  "Calle 33, Distrito IV, Alcal\u00e1 de Henares, Comunidad de Madrid, 28805, Espa\u00f1a": [
-    40.5098411,
-    -3.3443802
-  ],
-  "Calle Alcudia, Colonia Espa\u00f1a, Espa\u00f1a, Comunidad de Ciudad y Tierra de Segovia, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6199533,
-    -4.0355697
-  ],
-  "Calle Mar de Arag\u00f3n, 183, 50014 Zaragoza": [
-    41.6674198,
-    -0.8542484
-  ],
-  "Calle Aureliano Ibarra, 16, 03009 Alicante": [
-    38.3587035,
-    -0.4929938
-  ],
-  "Calle O, 134, Pol\u00edgono Malpica, 50016 Zaragoza": [
-    41.6558309,
-    -0.7887138
-  ],
-  "Carrer 21, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
-    39.0917848,
-    -0.5420714
-  ],
-  "Muntaner, 200, 08036 Barcelona": [
-    41.3929252,
-    2.1513059
-  ],
-  "Calle Valle Incl\u00e1n 13, Alicante, Espa\u00f1a": [
-    38.3739258,
-    -0.4914623
-  ],
-  "Calle Uno, Villa Jard\u00edn, Poblaci\u00f3n Valent\u00edn Letelier, Rengo, Provincia de Cachapoal, Regi\u00f3n del Libertador General Bernardo O'Higgins, 2940640, Chile": [
-    -34.4030424,
-    -70.8488545
-  ],
-  "Calle Feria, 98, 02005 Albacete": [
-    38.9967518,
-    -1.8633537
-  ],
-  "Calle Joaqu\u00edn Rodrigo, 19, 45311 Dosbarrios, Toledo": [
-    39.885062,
-    -3.4752912
-  ],
-  "171, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.99117,
-    -0.6926212
-  ],
-  "Carrer de Guillermo Stewart Howie, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.350379,
-    -0.553276
-  ],
-  "Calle San Antonio 44, Calle de San Antonio, Sobradiel, Ribera Alta del Ebro, Zaragoza, Arag\u00f3n, 50620, Espa\u00f1a": [
-    41.7384148,
-    -1.03994
-  ],
-  "Calle K, 8, 50016 Zaragoza": [
-    41.6325055,
-    -0.8500109
-  ],
-  "Ctra. Villaverde a Vallecas, 257, Madrid, Espa\u00f1a": [
-    40.3675866,
-    -3.6686455
-  ],
-  "Calle Teruel, 56, 50180 Utebo": [
-    41.7033057,
-    -0.9937165
-  ],
-  "Calle La Marina 66 A, Urbanizaci\u00f3n La Marina-El Oasis, San Fulgencio, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
-    38.1254494,
-    -0.6778478
-  ],
-  "Avenida Castilla-La Mancha, 45200 Illescas, Toledo": [
-    40.1274393,
-    -3.8460283
-  ],
-  "Calle N\u00ba 133, Roche Bajo, Roche, La Uni\u00f3n, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30369, Espa\u00f1a": [
-    37.6266637,
-    -0.9236162
-  ],
-  "Edificio Samfer, 84, Calle Murcia, Barrio de las Cruces, Los \u00c1ngeles, Almer\u00eda, Andaluc\u00eda, 04004, Espa\u00f1a": [
-    36.843916,
-    -2.4583907
-  ],
-  "C/ Bernat Descoll, 39, 46026 Valencia": [
-    39.4514222,
-    -0.3803622
-  ],
-  "Calle R\u00edo Jarama, 132, 45007 Toledo": [
-    39.8796513,
-    -3.9307397
-  ],
-  "Farmacia - Calle Toledo 129, 129, Calle de Toledo, Las Acacias, Arganzuela, Madrid, Comunidad de Madrid, 28005, Espa\u00f1a": [
-    40.4058907,
-    -3.7116862
-  ],
-  "Calle Santa B\u00e1rbara, 55, 45161 Pol\u00e1n, Toledo": [
-    39.7871989,
-    -4.171125
-  ],
-  "Calle D, 73, Pol\u00edgono Malpica, 50016 Zaragoza": [
-    41.6553028,
-    -0.7911368
-  ],
-  "Calle La Tahona, El Pino, Valencia de Alc\u00e1ntara, C\u00e1ceres, Extremadura, 10514, Espa\u00f1a": [
-    39.3329694,
-    -7.2797918
-  ],
-  "Calle Diseminado 86, Madridejos, Toledo, Castilla-La Mancha, 45710, Espa\u00f1a": [
-    39.4872139,
-    -3.5300061
-  ],
-  "Calle Fuente el Saz, Alalpardo, Valdeolmos-Alalpardo, Comunidad de Madrid, 28130, Espa\u00f1a": [
-    40.6284082,
-    -3.4783657
-  ],
-  "Pol\u00edgono Industrial La Casaza, 50180 Utebo": [
-    41.7104922,
-    -1.017434
-  ],
-  "Avenida Toledo, 3, 45600 Talavera de la Reina, Toledo": [
-    39.962907,
-    -4.8249654
-  ],
-  "Carrer de Sant Roc, Xert, el Baix Maestrat, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12360, Espa\u00f1a": [
-    40.516247,
-    0.1594833
-  ],
-  "Carrer de la Uni\u00f3, la Barona, Vall d'Alba, la Plana Alta, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12194, Espa\u00f1a": [
-    40.1652626,
-    -0.0610435
-  ],
-  "Avenida Portugal, 32, 45290 Pantoja, Toledo": [
-    40.054036,
-    -3.8384128
-  ],
-  "Avinguda Onze de Setembre, 111, 08208 Sabadell": [
-    41.5534208,
-    2.1044223
-  ],
-  "Calle Churruca 23, Alicante, Espa\u00f1a": [
-    38.339335,
-    -0.4913975
-  ],
-  "Bimordiscos Pet Products, 198, Calle Atenas, Pol\u00edgono Industrial Romica, Romica, Albacete, Castilla-La Mancha, 02007, Espa\u00f1a": [
-    39.0526926,
-    -1.8350607
-  ],
-  "Avenida Madrid 134 / Calle Rioja, Avenida de Madrid, Delicias, Zaragoza, Arag\u00f3n, 50017, Espa\u00f1a": [
-    41.6522043,
-    -0.9099625
-  ],
-  "Calle Castell\u00f3n, Llanos, Sexmo de Casarrubios, Espa\u00f1a, Comunidad de Ciudad y Tierra de Segovia, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6254807,
-    -4.0340641
-  ],
-  "Calle Edison, 45600 Talavera de la Reina, Toledo": [
-    39.9611332,
-    -4.9252478
-  ],
-  "Calle Cottolengo 25, Sant Vicent del Raspeig, Alicante, Espa\u00f1a": [
-    38.3867285,
-    -0.5093643
-  ],
-  "Calle Sierra de Albarrac\u00edn, 2, 28946 Fuenlabrada, Madrid": [
-    40.2725927,
-    -3.7545639
-  ],
-  "Av. Euro 9, Alicante, Espa\u00f1a": [
-    38.3394392,
-    -0.5722345
-  ],
-  "Calle Cerro de los Santos 6, 03290 Elche": [
-    38.2443955,
-    -0.6836217
-  ],
-  "Calle Federico Garc\u00eda Lorca, 6, 02001 Albacete": [
-    38.9983166,
-    -1.8477831
-  ],
-  "167, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9912391,
-    -0.6932653
-  ],
-  "Calle del Tajo, Santa Mar\u00eda de Benquerencia, Toledo, Castilla-La Mancha, 45007, Espa\u00f1a": [
-    39.8742518,
-    -3.9375451
-  ],
-  "Camino de San Antonio, 4-5, 50013 Zaragoza": [
-    41.6215153,
-    -0.8570013
-  ],
-  "Carrer de Sant Gon\u00e7al, 7, 08912 Badalona": [
-    41.4494811,
-    2.2406312
-  ],
-  "Calle R\u00edo Almanzora, 4, 28906 Getafe, Madrid": [
-    40.2722118,
-    -3.7078402
-  ],
-  "Calle 8 / Carrer 8, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
-    41.3736818,
-    0.3000788
-  ],
-  "Camino Hondo, 25, 46120 Alboraya": [
-    39.4951095,
-    -0.3358304
-  ],
-  "191, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9910579,
-    -0.6918315
-  ],
-  "Carrer dels Voluntaris, 87, 08225 Terrassa, Barcelona": [
-    41.5775453,
-    2.0134222
-  ],
-  "Calle Industrias 14, Alcorc\u00f3n, Espa\u00f1a": [
-    40.340689,
-    -3.812384
-  ],
-  "173, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9911229,
-    -0.6926234
-  ],
-  "Calle Par\u00eds, 6, 45003 Toledo": [
-    39.68193,
-    -3.9812604
-  ],
-  "Avenida Espioca, 84, Silla, Valencia, Espa\u00f1a": [
-    39.3744635,
-    -0.4152312
-  ],
-  "Riera de Montalegre, 12, 08916 Badalona": [
-    41.4710186,
-    2.2518258
-  ],
-  "Calle Mart\u00edn Soler, 11, 03203 Elche": [
-    38.2950237,
-    -0.6160184
-  ],
-  "Avenida Castilla-La Mancha, s/n, 45003 Toledo": [
-    40.097566,
-    -4.0478397
-  ],
-  "Gran Via 1, Madrid, Espa\u00f1a": [
-    40.4192229,
-    -3.6983182
-  ],
-  "Avenida al Vedat, 5, 46900 Torrent": [
-    39.4361556,
-    -0.4660599
-  ],
-  "Carrer d'Holanda N\u00famero 27, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2338736,
-    -0.5412762
-  ],
-  "Calle 4, Alumbres, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30399, Espa\u00f1a": [
-    37.6104015,
-    -0.9351234
-  ],
-  "Carrer d'Holanda N\u00famero 78, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2321401,
-    -0.5371075
-  ],
-  "174, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9911458,
-    -0.6922563
-  ],
-  "24, Calle Cuatro Evangelistas, San Pedro-Mortero, Distrito 2, Albacete, Castilla-La Mancha, 02006, Espa\u00f1a": [
-    38.9829304,
-    -1.8737594
-  ],
-  "193, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9910538,
-    -0.6917736
-  ],
-  "Pol\u00edgono Industrial El Labradorcico, 30880 \u00c1guilas, Murcia": [
-    37.4215694,
-    -1.585459
-  ],
-  "79, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.616563,
-    -4.0347378
-  ],
-  "carrer 6, Torrellano, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03320, Espa\u00f1a": [
-    38.2953988,
-    -0.5894492
-  ],
-  "Carrer-16, Urbanitzaci\u00f3 Serelles, Alcoi / Alcoy, l'Alcoi\u00e0, Alacant / Alicante, Comunitat Valenciana, 03803, Espa\u00f1a": [
-    38.7124497,
-    -0.4788312
-  ],
-  "Carrer 100, Urbanitzaci\u00f3 Entretarongers, Urbanitzaci\u00f3 Mas de Traver, Riba-roja de T\u00faria, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46183, Espa\u00f1a": [
-    39.5536829,
-    -0.5393955
-  ],
-  "Eduardo Bosc\u00e1, 14, 46023 Valencia": [
-    39.4655386,
-    -0.3573094
-  ],
-  "182, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
-    38.2571337,
-    -0.7081757
-  ],
-  "Calle de San Roque, Alhama de Arag\u00f3n, Comunidad de Calatayud, Zaragoza, Arag\u00f3n, Espa\u00f1a": [
-    41.293743,
-    -1.8971727
-  ],
-  "Calle Zaragoza 38, Calle Zaragoza, Garrapinillos, Distrito Rural, Zaragoza, Arag\u00f3n, 50190, Espa\u00f1a": [
-    41.6814011,
-    -1.0277782
-  ],
-  "Calle Toledo, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6143296,
-    -4.0388096
-  ],
-  "196, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.99136,
-    -0.6916777
-  ],
-  "Calle Oficial Provisional N.\u00ba 37, Pol\u00edgono Industrial APD/21, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
-    38.3401108,
-    -0.5346392
-  ],
-  "Carrer 32, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
-    39.3942791,
-    -0.3942243
-  ],
-  "Calle 17, Alarilla, Fuentidue\u00f1a de Tajo, Comunidad de Madrid, Espa\u00f1a": [
-    40.0766808,
-    -3.1293139
-  ],
-  "Calle 1, Piedrasmuchas, Ruiz de Luna, Talavera de la Reina, Toledo, Castilla-La Mancha, 45600, Espa\u00f1a": [
-    39.9810216,
-    -4.8405339
-  ],
-  "Calle Carpinteros 7, Getafe, Espa\u00f1a": [
-    40.309782,
-    -3.7021359
-  ],
-  "53, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6174049,
-    -4.0329301
-  ],
-  "Calle de la Cava, Torrelaguna, Comunidad de Madrid, 28180, Espa\u00f1a": [
-    40.8269066,
-    -3.5363737
-  ],
-  "Carrer del 28 de Desembre, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03130, Espa\u00f1a": [
-    38.1910873,
-    -0.5849315
-  ],
-  "Calle 10, Caba\u00f1as de la Sagra, Toledo, Castilla-La Mancha, 45520, Espa\u00f1a": [
-    39.9956954,
-    -3.9530472
-  ],
-  "Calle Oficial Provisional N.\u00ba 23, Ciutat d'Ass\u00eds, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
-    38.34859,
-    -0.5322841
-  ],
-  "Ctra. Castell\u00f3n, km 233, Zaragoza": [
-    41.6318141,
-    -0.8585924
-  ],
-  "73, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6163964,
-    -4.0343776
-  ],
-  "Carrer de Luxemburg N\u00famero 46, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2343573,
-    -0.5391724
-  ],
-  "Calle Francia, Ejea de los Caballeros, Cinco Villas, Zaragoza, Arag\u00f3n, 50600, Espa\u00f1a": [
-    42.128874,
-    -1.1482462
-  ],
-  "Carrer 104, Urbanitzaci\u00f3 Entretarongers, Vallesa de Mandor, Urbanitzaci\u00f3 Mas de Traver, Riba-roja de T\u00faria, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46183, Espa\u00f1a": [
-    39.5522386,
-    -0.5368291
-  ],
-  "Carrer de la Neu, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.3500198,
-    -0.5475131
-  ],
-  "Calle Varsovia, 6, Pol\u00edgono Industrial Romica, 02007 Albacete": [
-    39.0541695,
-    -1.8417708
-  ],
-  "174, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
-    38.2579643,
-    -0.7081166
-  ],
-  "Calle Gustavo Adolfo Becker 26, Urbanizaci\u00f3n La Marina-El Oasis, San Fulgencio, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
-    38.1263409,
-    -0.6776926
-  ],
-  "Calle Blasco Iba\u00f1ez, 76, Calle Vicente Blasco Ib\u00e1\u00f1ez, Fraternidad, Elda, el Vinalop\u00f3 Mitj\u00e0 / El Vinalop\u00f3 Medio, Alacant / Alicante, Comunitat Valenciana, 03600, Espa\u00f1a": [
-    38.4774918,
-    -0.786885
-  ],
-  "Calle de San Isidro y Camino Natural del Tajo - GR 113, Real Cortijo de San Isidro, Aranjuez, Comunidad de Madrid, 28300, Espa\u00f1a": [
-    40.0539596,
-    -3.5653939
-  ],
-  "185, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9908329,
-    -0.6925186
-  ],
-  "Carrer del Mercat 13, Sant Joan d'Alacant, Espa\u00f1a": [
-    38.3993843,
-    -0.4343824
-  ],
-  "Padre Tom\u00e1s de Monta\u00f1ana, 26, 46023 Valencia": [
-    39.4630198,
-    -0.3525246
-  ],
-  "Carrer 23, Villariesso, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
-    39.0924524,
-    -0.5430492
-  ],
-  "PasDulce S.L. (Oficinas), 47, Calle Bar\u00f3n del Solar, La Estacada, Jumilla, Altiplano, Regi\u00f3n de Murcia, 30520, Espa\u00f1a": [
-    38.4742034,
-    -1.3342174
-  ],
-  "75, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6166427,
-    -4.0345614
-  ],
-  "Carrer del Maestrat, la Serratella, l'Alt Maestrat, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12140, Espa\u00f1a": [
-    40.3129972,
-    0.0299971
-  ],
-  "Calle Doctor Fleming, 60, Calle Doctor Fleming, Urbanitzaci\u00f3 L'Almadrava, el Campello, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03550, Espa\u00f1a": [
-    38.4277305,
-    -0.3977332
-  ],
-  "PR-AB 66 Calle Huerta del Molino, Huerta del Molino, Villaverde de Guadalimar, Albacete, Castilla-La Mancha, 02460, Espa\u00f1a": [
-    38.4566921,
-    -2.520026
-  ],
-  "Carrer Pego, 90, Carrer de Pego, Bonavista, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03207, Espa\u00f1a": [
-    38.3005734,
-    -0.6855302
-  ],
-  "Calle Somosierra, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6200748,
-    -4.0302483
-  ],
-  "Calle Nueve, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
-    38.6374263,
-    -0.8822623
-  ],
-  "Calle 25, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3593462,
-    -3.6654675
-  ],
-  "Calle 40, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3643884,
-    -3.6622833
-  ],
-  "Calle 29 de Marzo, Zeneta, Murcia, \u00c1rea Metropolitana de Murcia, Regi\u00f3n de Murcia, 30588, Espa\u00f1a": [
-    38.0069172,
-    -1.0044267
-  ],
-  "172, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9911952,
-    -0.6922624
-  ],
-  "178, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
-    38.2576426,
-    -0.7080826
-  ],
-  "Carrer de Baix, Palanques, els Ports, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12311, Espa\u00f1a": [
-    40.717753,
-    -0.1806595
-  ],
-  "Calle Carretera, Pi\u00f1u\u00e9car, Pi\u00f1u\u00e9car-Gandullas, Comunidad de Madrid, 28737, Espa\u00f1a": [
-    41.0330887,
-    -3.5984634
-  ],
-  "24, Calle Sagunto, Campillo y Suertes, Ceheg\u00edn, Noroeste, Regi\u00f3n de Murcia, 30430, Espa\u00f1a": [
-    38.0953364,
-    -1.8003937
-  ],
-  "Calle Oficial Provisional N.\u00ba 24, Ciutat d'Ass\u00eds, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
-    38.3474559,
-    -0.5317305
-  ],
-  "Calle 4, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02008, Espa\u00f1a": [
-    39.0044154,
-    -1.818081
-  ],
-  "Calle Sierra de Guadarrama, 45200 Illescas, Toledo": [
-    40.1669188,
-    -3.8183469
-  ],
-  "Calle Trueno, 125, 03006 Alicante": [
-    38.3532003,
-    -0.5514162
-  ],
-  "Calle 50, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3633475,
-    -3.6573409
-  ],
-  "Calle E con Calle G, Calle E, Pol\u00edgono Industrial Malpica, Santa Isabel, Zaragoza, Arag\u00f3n, 50057, Espa\u00f1a": [
-    41.6530801,
-    -0.7791535
-  ],
-  "Calle 5 / Carrer 5, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
-    41.3730265,
-    0.2997558
-  ],
-  "Calle Hogar 68, Torres Bellas, Casco Antiguo, Alcorc\u00f3n, Comunidad de Madrid, 28921, Espa\u00f1a": [
-    40.3512287,
-    -3.8258356
-  ],
-  "Calle Valle-Incl\u00e1n 58, 58, Calle de Valle-Incl\u00e1n, Las \u00c1guilas, Latina, Madrid, Comunidad de Madrid, 28044, Espa\u00f1a": [
-    40.3759655,
-    -3.7750653
-  ],
-  "195, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9910659,
-    -0.6917155
-  ],
-  "Calle Vicente Guill\u00e9n Zamorano, Parque Empresarial Sierra Norte - Pol\u00edgono Industrial P29, Pol\u00edgono 29, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6230865,
-    -4.0253069
-  ],
-  "Calle Montreal, 76, 46900 Torrent": [
-    39.4247048,
-    -0.4655529
-  ],
-  "49, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6176753,
-    -4.0322046
-  ],
-  "Calle 15, Alarilla, Fuentidue\u00f1a de Tajo, Comunidad de Madrid, Espa\u00f1a": [
-    40.0789804,
-    -3.1291762
-  ],
-  "Los Ca\u00f1os, 30, Calle Armando Mu\u00f1oz Calero, El Hornillo, \u00c1guilas, Alto Guadalent\u00edn, Regi\u00f3n de Murcia, 30880, Espa\u00f1a": [
-    37.4049255,
-    -1.5879607
-  ],
-  "Carrer 31, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
-    39.3952111,
-    -0.3964488
-  ],
-  "Calle 7, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
-    38.6389103,
-    -0.88554
-  ],
-  "Calle 3, Eurovillas-Las Villas, Nuevo Bazt\u00e1n, Comunidad de Madrid, 28514, Espa\u00f1a": [
-    40.3581394,
-    -3.2466855
-  ],
-  "Carrer 35, Urbanitzaci\u00f3 Montecolorado, la Pobla de Vallbona, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46185, Espa\u00f1a": [
-    39.6121403,
-    -0.55678
-  ],
-  "Calle Moledero, La Aparecida, La Palma, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30593, Espa\u00f1a": [
-    37.6697345,
-    -0.9561684
-  ],
-  "Carrer del Mistral, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.3484195,
-    -0.5558578
-  ],
-  "Calle del Prado, Meco, Comunidad de Madrid, 28880, Espa\u00f1a": [
-    40.5540865,
-    -3.3264135
-  ],
-  "Carrer del Tro, Pol\u00edgon Industrial El Pla de la Vall-llonga, la Serreta, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.3532003,
-    -0.5514162
-  ],
-  "Calle 20, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3566878,
-    -3.6654673
-  ],
-  "Calle 15, Urbanitzaci\u00f3 Lloma d'Horquera, Vilamarxant, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46191, Espa\u00f1a": [
-    39.535865,
-    -0.6315021
-  ],
-  "Calle B-27, La Almozara, Zaragoza, Arag\u00f3n, 50011, Espa\u00f1a": [
-    41.6659526,
-    -0.9346172
-  ],
-  "Carrer 25, Villariesso, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46294, Espa\u00f1a": [
-    39.0927354,
-    -0.5441564
-  ],
-  "Calle 6, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
-    39.0070171,
-    -1.8166744
-  ],
-  "Carrer del Tro, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.3501463,
-    -0.5561194
-  ],
-  "Calle Villanueva, Valencia del Mombuey, Badajoz, Extremadura, Espa\u00f1a": [
-    38.242774,
-    -7.1206108
-  ],
-  "182, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9909454,
-    -0.6922213
-  ],
-  "Carrer d'Holanda N\u00famero 64, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2328051,
-    -0.5382124
-  ],
-  "Carrer 45, Urbanitzaci\u00f3 Montecolorado, la Pobla de Vallbona, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46185, Espa\u00f1a": [
-    39.6093294,
-    -0.5592513
-  ],
-  "Calle Mesones, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
-    40.7597995,
-    -3.4640038
-  ],
-  "Carrer 20, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
-    39.0896593,
-    -0.5420792
-  ],
-  "178, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9910514,
-    -0.692231
-  ],
-  "Calle 52, Pozo Estrecho, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30594, Espa\u00f1a": [
-    37.7129867,
-    -0.9991275
-  ],
-  "Calle Ocho, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
-    38.6389935,
-    -0.8838886
-  ],
-  "Calle 3, Pol\u00edgono Industrial Valdeferr\u00edn, Ejea de los Caballeros, Cinco Villas, Zaragoza, Arag\u00f3n, 50600, Espa\u00f1a": [
-    42.1283927,
-    -1.172754
-  ],
-  "Carrer dels Velluters, Parc Empresarial l'Horta Vella, B\u00e9tera, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46117, Espa\u00f1a": [
-    39.5832832,
-    -0.4399505
-  ],
-  "Calle 6, Los Conejos, Romeral, Molina de Segura, Vega Media del Segura, Regi\u00f3n de Murcia, 30509, Espa\u00f1a": [
-    38.0969882,
-    -1.1840741
-  ],
-  "Calle Provisional Los Berrocales 122, Los Berrocales, Madrid, Comunidad de Madrid, 28051, Espa\u00f1a": [
-    40.3706493,
-    -3.5722463
-  ],
-  "Calle 23, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3600908,
-    -3.6670608
-  ],
-  "Calle 6, Piedrasmuchas, Ruiz de Luna, Talavera de la Reina, Toledo, Castilla-La Mancha, 45600, Espa\u00f1a": [
-    39.9802448,
-    -4.8371452
-  ],
-  "156, Calle de la Playa de Nares, Puerto de Mazarr\u00f3n, Mazarr\u00f3n, Bajo Guadalent\u00edn, Regi\u00f3n de Murcia, 30860, Espa\u00f1a": [
-    37.5590037,
-    -1.2854208
-  ],
-  "163, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9912638,
-    -0.6929911
-  ],
-  "Calle Cubillo, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
-    40.7610653,
-    -3.4649569
-  ],
-  "Carrer Pego 1, Carrer de Pego, Bonavista, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03207, Espa\u00f1a": [
-    38.2967198,
-    -0.6844556
-  ],
-  "Calle 45, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
-    40.3592759,
-    -3.6589061
-  ],
-  "184, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9909045,
-    -0.6922038
-  ],
-  "47, Calle Albacete, Barriada Santa Ana, Puertollano, Ciudad Real, Castilla-La Mancha, 13500, Espa\u00f1a": [
-    38.6897361,
-    -4.1027234
-  ],
-  "85, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6162803,
-    -4.0348755
-  ],
-  "Calle Victor Jara (T\u00fanel Z-40), T\u00fanel de Santa Isabel, Santa Isabel, Zaragoza, Arag\u00f3n, 50058, Espa\u00f1a": [
-    41.6699386,
-    -0.8364741
-  ],
-  "Calle 52, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28018, Espa\u00f1a": [
-    40.3640289,
-    -3.6568706
-  ],
-  "Calle Cantueso, 71, Calle Cantueso, La Torreta y El Monastil, Elda, el Vinalop\u00f3 Mitj\u00e0 / El Vinalop\u00f3 Medio, Alacant / Alicante, Comunitat Valenciana, 03600, Espa\u00f1a": [
-    38.4933076,
-    -0.7938189
-  ],
-  "Carrer de Luxemburg N\u00famero 51, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2365208,
-    -0.5397144
-  ],
-  "Calle Provisional Berrocales 84, Los Berrocales, Madrid, Comunidad de Madrid, 28052, Espa\u00f1a": [
-    40.3797131,
-    -3.571857
-  ],
-  "Carrer d'Holanda N\u00famero 86, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2326801,
-    -0.5363339
-  ],
-  "Calle Orihuela, Barrio Nuevo, Orihuela, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03325, Espa\u00f1a": [
-    38.0903494,
-    -0.8944092
-  ],
-  "Calle Mayor, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
-    40.7602584,
-    -3.4676255
-  ],
-  "Calle en proyecto n\u00ba 46, Algemes\u00ed, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46680, Espa\u00f1a": [
-    39.1954441,
-    -0.4230049
-  ],
-  "164, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9912571,
-    -0.6930649
-  ],
-  "Carrer del Nou d'Octubre, les Carolines Baixes, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03012, Espa\u00f1a": [
-    38.3560609,
-    -0.4829012
-  ],
-  "Carrer d'Holanda N\u00famero 47, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2334567,
-    -0.5376345
-  ],
-  "192, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9913499,
-    -0.6918
-  ],
-  "Calle 2 / Carrer 2, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
-    41.3739438,
-    0.3011846
-  ],
-  "Carrer 43, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
-    39.3956037,
-    -0.394941
-  ],
-  "Carrer Riu Guadalquivir (33-35-37-39-41), Urbanitzaci\u00f3 Sol i Llum, Sant Vicent del Raspeig / San Vicente del Raspeig, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03699, Espa\u00f1a": [
-    38.3941804,
-    -0.5044174
-  ],
-  "Calle del Paso, Villamayor de G\u00e1llego, Zaragoza, Arag\u00f3n, 50162, Espa\u00f1a": [
-    41.6847724,
-    -0.7723792
-  ],
-  "Calle del Cedro, 57, Calle del Cedro, Los Robles, Torrelodones, Comunidad de Madrid, 28250, Espa\u00f1a": [
-    40.5837385,
-    -3.9269556
-  ],
-  "Calle 7, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
-    39.0074414,
-    -1.8196878
-  ],
-  "Calle del Pilar (GR-68), Barrio Los Altos, Pe\u00f1arrubia, Elche de la Sierra, Albacete, Castilla-La Mancha, Espa\u00f1a": [
-    38.4263816,
-    -2.184531
-  ],
-  "Calle Calatayud.  SL-Z 52, Tobed, Comunidad de Calatayud, Zaragoza, Arag\u00f3n, 50325, Espa\u00f1a": [
-    41.3376957,
-    -1.4017935
-  ],
-  "Calle Mayor 39, Calle Mayor, Garrapinillos, Distrito Rural, Zaragoza, Arag\u00f3n, 50190, Espa\u00f1a": [
-    41.6830377,
-    -1.0272536
-  ],
-  "Carrer del Vent, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
-    38.3491666,
-    -0.5552735
-  ],
-  "61, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6170647,
-    -4.0335176
-  ],
-  "Fisioterapia Portalegre efisio.es, 77, Calle de Portalegre, Abrantes, Carabanchel, Madrid, Comunidad de Madrid, 28025, Espa\u00f1a": [
-    40.3852911,
-    -3.723475
-  ],
-  "Carrer de Luxemburg N\u00famero 55, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
-    38.2349955,
-    -0.5388692
-  ],
-  "Calle 2, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
-    39.0051694,
-    -1.8200328
-  ],
-  "58, Calle Andr\u00f3meda, La Felipa, Chinchilla de Montearag\u00f3n, Albacete, Castilla-La Mancha, 02156, Espa\u00f1a": [
-    39.0396485,
-    -1.7066168
-  ],
-  "47, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
-    40.6178255,
-    -4.0316231
-  ],
-  "Calle Peroni\u00f1o, 90, Calle Pero Ni\u00f1o, Casas de Sevilla, Barrio de la Concepci\u00f3n, San Antonio Abad, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30205, Espa\u00f1a": [
-    37.6094138,
-    -1.0031766
-  ],
-  "Calle 53, La Uni\u00f3n, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30366, Espa\u00f1a": [
-    37.6238536,
-    -0.8801092
-  ],
-  "Calle 5, Los Conejos, Romeral, Molina de Segura, Vega Media del Segura, Regi\u00f3n de Murcia, 30509, Espa\u00f1a": [
-    38.096184,
-    -1.1840473
-  ],
-  "198, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
-    37.9913645,
-    -0.6916223
-  ],
-  "Calle 28 de marzo, Turleque, Toledo, Castilla-La Mancha, 45789, Espa\u00f1a": [
-    39.6001061,
-    -3.6143413
-  ],
-  "Calle 1, Urbanizaci\u00f3n Huerta de Monroy, Universidad, Albacete, Castilla-La Mancha, 02008, Espa\u00f1a": [
-    38.969326,
-    -1.8493734
-  ],
-  "Calle 6 / Carrer 6, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
-    41.3740399,
-    0.3005827
-  ]
+    "C. Torno, 14, Sant Vicent del Raspeig, Alicante, Espa\u00f1a": [
+        38.4053958,
+        -0.5400405
+    ],
+    "Albacete, Castilla-La Mancha, Espa\u00f1a": [
+        38.9950921,
+        -1.8559154
+    ],
+    "Barcelona, Barcelon\u00e8s, Barcelona, Catalunya, Espa\u00f1a": [
+        41.3825802,
+        2.177073
+    ],
+    "Calle de Teresa Cajal, La Faceda, Tarazona, Tarazona y el Moncayo, Zaragoza, Arag\u00f3n, 50500, Espa\u00f1a": [
+        41.8961659,
+        -1.7234796
+    ],
+    "197, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.991062,
+        -0.6916609
+    ],
+    "Carrer Almansa 8, Elche, Espa\u00f1a": [
+        38.2819015,
+        -0.714054
+    ],
+    "Avenida del Pilar, 24, 45500 Torrijos, Toledo": [
+        39.9806352,
+        -4.2782601
+    ],
+    "Av. Generalitat 23, El Campello, Espa\u00f1a": [
+        38.4281857,
+        -0.3957666
+    ],
+    "Calle Gibraltar, 8, 45500 Torrijos, Toledo": [
+        39.9791866,
+        -4.2801269
+    ],
+    "Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
+        38.3436365,
+        -0.4881708
+    ],
+    "C/ Mar Roja, 51, 08040 Barcelona": [
+        41.3236188,
+        2.1417169
+    ],
+    "Plaza Mayor, 47, 02630 La Roda, Albacete": [
+        39.2066188,
+        -2.1582046
+    ],
+    "Calle Domenico Veneciano, 5, 45223 Sese\u00f1a, Toledo": [
+        40.1353977,
+        -3.6685683
+    ],
+    "Calle Sant Bartomeu 39, El Campello, Espa\u00f1a": [
+        38.4218487,
+        -0.3918554
+    ],
+    "Pl. Camachos, 2, 30002 Murcia": [
+        37.9816597,
+        -1.1312087
+    ],
+    "Aeropuerto de Valencia, Manises": [
+        39.4881796,
+        -0.4813204
+    ],
+    "Val\u00e8ncia, Comarca de Val\u00e8ncia, Val\u00e8ncia / Valencia, Comunitat Valenciana, Espa\u00f1a": [
+        39.4697065,
+        -0.3763353
+    ],
+    "Avenida Mare Nostrum, 7, 46120 Alboraya": [
+        39.4934627,
+        -0.3249751
+    ],
+    "Avenida Reyes Cat\u00f3licos, 150, 02600 Villarrobledo, Albacete": [
+        39.2612457,
+        -2.6001877
+    ],
+    "Toledo, Castilla-La Mancha, Espa\u00f1a": [
+        39.8558913,
+        -4.024265
+    ],
+    "Madrid, Comunidad de Madrid, Espa\u00f1a": [
+        40.416782,
+        -3.703507
+    ],
+    "Calle Camp de Turia, 1, 46940 Manises": [
+        39.4993274,
+        -0.4899786
+    ],
+    "Calle Dinamarca, 4, 45005 Toledo": [
+        39.8788982,
+        -4.0286345
+    ],
+    "Calle Constituci\u00f3n 5, Fuenlabrada, Espa\u00f1a": [
+        40.2823784,
+        -3.790263
+    ],
+    "Av. Jaime I 11, Sant Joan d'Alacant, Espa\u00f1a": [
+        38.397112,
+        -0.4341073
+    ],
+    "Avinguda de la Llibertat 11, Elche, Espa\u00f1a": [
+        38.2706062,
+        -0.7021147
+    ],
+    "Calle Gran V\u00eda, 54, 02400 Hell\u00edn, Albacete": [
+        38.5085853,
+        -1.6934041
+    ],
+    "Calle del Prado, 7, 45600 Talavera de la Reina, Toledo": [
+        39.9618674,
+        -4.827878
+    ],
+    "Pol\u00edgono Industrial El Tapiado, 30500 Molina de Segura, Murcia": [
+        38.0682295,
+        -1.2174088
+    ],
+    "Murcia, \u00c1rea Metropolitana de Murcia, Regi\u00f3n de Murcia, Espa\u00f1a": [
+        37.9923795,
+        -1.1305431
+    ],
+    "Zaragoza, Arag\u00f3n, Espa\u00f1a": [
+        41.6521342,
+        -0.8809428
+    ],
+    "Calle Resina 39, Madrid, Espa\u00f1a": [
+        40.3357627,
+        -3.7091824
+    ],
+    "La Dalia, 76, Calle San Pascual, Yecla, Altiplano, Regi\u00f3n de Murcia, 30510, Espa\u00f1a": [
+        38.6131881,
+        -1.1114882
+    ],
+    "Calle Ricardo del Arco, 1, 50015 Zaragoza": [
+        41.6595668,
+        -0.8760803
+    ],
+    "47, Calle Toledo, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6122017,
+        -4.0413166
+    ],
+    "Avenida de la Horchata, 19, 46120 Alboraya": [
+        39.496148,
+        -0.3539835
+    ],
+    "Calle Hermanos Lumi\u00e8re, 02600 Villarrobledo, Albacete": [
+        39.2695979,
+        -2.5880314
+    ],
+    "Calle Mayor, 45, 30500 Molina de Segura, Murcia": [
+        38.0495602,
+        -1.210042
+    ],
+    "Calle Europa, 4, 46900 Torrent": [
+        39.4292145,
+        -0.4787362
+    ],
+    "Pol\u00edgono Industrial El Salvador, 02630 La Roda, Albacete": [
+        39.1906096,
+        -2.1440941
+    ],
+    "Carretera de Ja\u00e9n, km 2, 02300 Alcaraz, Albacete": [
+        38.6956555,
+        -2.4855938
+    ],
+    "Carrer Bernat Metge, 92, 08205 Sabadell": [
+        41.5316813,
+        2.1004662
+    ],
+    "Paseo Echegaray y Caballero, 8, 50003 Zaragoza": [
+        41.6586971,
+        -0.8904151
+    ],
+    "Calle Jazm\u00edn, 34, 28033 Madrid": [
+        40.5055903,
+        -3.5110611
+    ],
+    "Calle 33, Distrito IV, Alcal\u00e1 de Henares, Comunidad de Madrid, 28805, Espa\u00f1a": [
+        40.5098411,
+        -3.3443802
+    ],
+    "Calle Alcudia, Colonia Espa\u00f1a, Espa\u00f1a, Comunidad de Ciudad y Tierra de Segovia, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6199533,
+        -4.0355697
+    ],
+    "Calle Mar de Arag\u00f3n, 183, 50014 Zaragoza": [
+        41.6674198,
+        -0.8542484
+    ],
+    "Calle Aureliano Ibarra, 16, 03009 Alicante": [
+        38.3587035,
+        -0.4929938
+    ],
+    "Calle O, 134, Pol\u00edgono Malpica, 50016 Zaragoza": [
+        41.6558309,
+        -0.7887138
+    ],
+    "Carrer 21, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
+        39.0917848,
+        -0.5420714
+    ],
+    "Muntaner, 200, 08036 Barcelona": [
+        41.3929252,
+        2.1513059
+    ],
+    "Calle Valle Incl\u00e1n 13, Alicante, Espa\u00f1a": [
+        38.3739258,
+        -0.4914623
+    ],
+    "Calle Uno, Villa Jard\u00edn, Poblaci\u00f3n Valent\u00edn Letelier, Rengo, Provincia de Cachapoal, Regi\u00f3n del Libertador General Bernardo O'Higgins, 2940640, Chile": [
+        -34.4030424,
+        -70.8488545
+    ],
+    "Calle Feria, 98, 02005 Albacete": [
+        38.9967518,
+        -1.8633537
+    ],
+    "Calle Joaqu\u00edn Rodrigo, 19, 45311 Dosbarrios, Toledo": [
+        39.885062,
+        -3.4752912
+    ],
+    "171, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.99117,
+        -0.6926212
+    ],
+    "Carrer de Guillermo Stewart Howie, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.350379,
+        -0.553276
+    ],
+    "Calle San Antonio 44, Calle de San Antonio, Sobradiel, Ribera Alta del Ebro, Zaragoza, Arag\u00f3n, 50620, Espa\u00f1a": [
+        41.7384148,
+        -1.03994
+    ],
+    "Calle K, 8, 50016 Zaragoza": [
+        41.6325055,
+        -0.8500109
+    ],
+    "Ctra. Villaverde a Vallecas, 257, Madrid, Espa\u00f1a": [
+        40.3675866,
+        -3.6686455
+    ],
+    "Calle Teruel, 56, 50180 Utebo": [
+        41.7033057,
+        -0.9937165
+    ],
+    "Calle La Marina 66 A, Urbanizaci\u00f3n La Marina-El Oasis, San Fulgencio, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
+        38.1254494,
+        -0.6778478
+    ],
+    "Avenida Castilla-La Mancha, 45200 Illescas, Toledo": [
+        40.1274393,
+        -3.8460283
+    ],
+    "Calle N\u00ba 133, Roche Bajo, Roche, La Uni\u00f3n, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30369, Espa\u00f1a": [
+        37.6266637,
+        -0.9236162
+    ],
+    "Edificio Samfer, 84, Calle Murcia, Barrio de las Cruces, Los \u00c1ngeles, Almer\u00eda, Andaluc\u00eda, 04004, Espa\u00f1a": [
+        36.843916,
+        -2.4583907
+    ],
+    "C/ Bernat Descoll, 39, 46026 Valencia": [
+        39.4514222,
+        -0.3803622
+    ],
+    "Calle R\u00edo Jarama, 132, 45007 Toledo": [
+        39.8796513,
+        -3.9307397
+    ],
+    "Farmacia - Calle Toledo 129, 129, Calle de Toledo, Las Acacias, Arganzuela, Madrid, Comunidad de Madrid, 28005, Espa\u00f1a": [
+        40.4058907,
+        -3.7116862
+    ],
+    "Calle Santa B\u00e1rbara, 55, 45161 Pol\u00e1n, Toledo": [
+        39.7871989,
+        -4.171125
+    ],
+    "Calle D, 73, Pol\u00edgono Malpica, 50016 Zaragoza": [
+        41.6553028,
+        -0.7911368
+    ],
+    "Calle La Tahona, El Pino, Valencia de Alc\u00e1ntara, C\u00e1ceres, Extremadura, 10514, Espa\u00f1a": [
+        39.3329694,
+        -7.2797918
+    ],
+    "Calle Diseminado 86, Madridejos, Toledo, Castilla-La Mancha, 45710, Espa\u00f1a": [
+        39.4872139,
+        -3.5300061
+    ],
+    "Calle Fuente el Saz, Alalpardo, Valdeolmos-Alalpardo, Comunidad de Madrid, 28130, Espa\u00f1a": [
+        40.6284082,
+        -3.4783657
+    ],
+    "Pol\u00edgono Industrial La Casaza, 50180 Utebo": [
+        41.7104922,
+        -1.017434
+    ],
+    "Avenida Toledo, 3, 45600 Talavera de la Reina, Toledo": [
+        39.962907,
+        -4.8249654
+    ],
+    "Carrer de Sant Roc, Xert, el Baix Maestrat, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12360, Espa\u00f1a": [
+        40.516247,
+        0.1594833
+    ],
+    "Carrer de la Uni\u00f3, la Barona, Vall d'Alba, la Plana Alta, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12194, Espa\u00f1a": [
+        40.1652626,
+        -0.0610435
+    ],
+    "Avenida Portugal, 32, 45290 Pantoja, Toledo": [
+        40.054036,
+        -3.8384128
+    ],
+    "Avinguda Onze de Setembre, 111, 08208 Sabadell": [
+        41.5534208,
+        2.1044223
+    ],
+    "Calle Churruca 23, Alicante, Espa\u00f1a": [
+        38.339335,
+        -0.4913975
+    ],
+    "Bimordiscos Pet Products, 198, Calle Atenas, Pol\u00edgono Industrial Romica, Romica, Albacete, Castilla-La Mancha, 02007, Espa\u00f1a": [
+        39.0526926,
+        -1.8350607
+    ],
+    "Avenida Madrid 134 / Calle Rioja, Avenida de Madrid, Delicias, Zaragoza, Arag\u00f3n, 50017, Espa\u00f1a": [
+        41.6522043,
+        -0.9099625
+    ],
+    "Calle Castell\u00f3n, Llanos, Sexmo de Casarrubios, Espa\u00f1a, Comunidad de Ciudad y Tierra de Segovia, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6254807,
+        -4.0340641
+    ],
+    "Calle Edison, 45600 Talavera de la Reina, Toledo": [
+        39.9611332,
+        -4.9252478
+    ],
+    "Calle Cottolengo 25, Sant Vicent del Raspeig, Alicante, Espa\u00f1a": [
+        38.3867285,
+        -0.5093643
+    ],
+    "Calle Sierra de Albarrac\u00edn, 2, 28946 Fuenlabrada, Madrid": [
+        40.2725927,
+        -3.7545639
+    ],
+    "Av. Euro 9, Alicante, Espa\u00f1a": [
+        38.3394392,
+        -0.5722345
+    ],
+    "Calle Cerro de los Santos 6, 03290 Elche": [
+        38.2443955,
+        -0.6836217
+    ],
+    "Calle Federico Garc\u00eda Lorca, 6, 02001 Albacete": [
+        38.9983166,
+        -1.8477831
+    ],
+    "167, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9912391,
+        -0.6932653
+    ],
+    "Calle del Tajo, Santa Mar\u00eda de Benquerencia, Toledo, Castilla-La Mancha, 45007, Espa\u00f1a": [
+        39.8742518,
+        -3.9375451
+    ],
+    "Camino de San Antonio, 4-5, 50013 Zaragoza": [
+        41.6215153,
+        -0.8570013
+    ],
+    "Carrer de Sant Gon\u00e7al, 7, 08912 Badalona": [
+        41.4494811,
+        2.2406312
+    ],
+    "Calle R\u00edo Almanzora, 4, 28906 Getafe, Madrid": [
+        40.2722118,
+        -3.7078402
+    ],
+    "Calle 8 / Carrer 8, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
+        41.3736818,
+        0.3000788
+    ],
+    "Camino Hondo, 25, 46120 Alboraya": [
+        39.4951095,
+        -0.3358304
+    ],
+    "191, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9910579,
+        -0.6918315
+    ],
+    "Carrer dels Voluntaris, 87, 08225 Terrassa, Barcelona": [
+        41.5775453,
+        2.0134222
+    ],
+    "Calle Industrias 14, Alcorc\u00f3n, Espa\u00f1a": [
+        40.340689,
+        -3.812384
+    ],
+    "173, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9911229,
+        -0.6926234
+    ],
+    "Calle Par\u00eds, 6, 45003 Toledo": [
+        39.68193,
+        -3.9812604
+    ],
+    "Avenida Espioca, 84, Silla, Valencia, Espa\u00f1a": [
+        39.3744635,
+        -0.4152312
+    ],
+    "Riera de Montalegre, 12, 08916 Badalona": [
+        41.4710186,
+        2.2518258
+    ],
+    "Calle Mart\u00edn Soler, 11, 03203 Elche": [
+        38.2950237,
+        -0.6160184
+    ],
+    "Avenida Castilla-La Mancha, s/n, 45003 Toledo": [
+        40.097566,
+        -4.0478397
+    ],
+    "Gran Via 1, Madrid, Espa\u00f1a": [
+        40.4192229,
+        -3.6983182
+    ],
+    "Avenida al Vedat, 5, 46900 Torrent": [
+        39.4361556,
+        -0.4660599
+    ],
+    "Carrer d'Holanda N\u00famero 27, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2338736,
+        -0.5412762
+    ],
+    "Calle 4, Alumbres, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30399, Espa\u00f1a": [
+        37.6104015,
+        -0.9351234
+    ],
+    "Carrer d'Holanda N\u00famero 78, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2321401,
+        -0.5371075
+    ],
+    "174, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9911458,
+        -0.6922563
+    ],
+    "24, Calle Cuatro Evangelistas, San Pedro-Mortero, Distrito 2, Albacete, Castilla-La Mancha, 02006, Espa\u00f1a": [
+        38.9829304,
+        -1.8737594
+    ],
+    "193, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9910538,
+        -0.6917736
+    ],
+    "Pol\u00edgono Industrial El Labradorcico, 30880 \u00c1guilas, Murcia": [
+        37.4215694,
+        -1.585459
+    ],
+    "79, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.616563,
+        -4.0347378
+    ],
+    "carrer 6, Torrellano, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03320, Espa\u00f1a": [
+        38.2953988,
+        -0.5894492
+    ],
+    "Carrer-16, Urbanitzaci\u00f3 Serelles, Alcoi / Alcoy, l'Alcoi\u00e0, Alacant / Alicante, Comunitat Valenciana, 03803, Espa\u00f1a": [
+        38.7124497,
+        -0.4788312
+    ],
+    "Carrer 100, Urbanitzaci\u00f3 Entretarongers, Urbanitzaci\u00f3 Mas de Traver, Riba-roja de T\u00faria, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46183, Espa\u00f1a": [
+        39.5536829,
+        -0.5393955
+    ],
+    "Eduardo Bosc\u00e1, 14, 46023 Valencia": [
+        39.4655386,
+        -0.3573094
+    ],
+    "182, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
+        38.2571337,
+        -0.7081757
+    ],
+    "Calle de San Roque, Alhama de Arag\u00f3n, Comunidad de Calatayud, Zaragoza, Arag\u00f3n, Espa\u00f1a": [
+        41.293743,
+        -1.8971727
+    ],
+    "Calle Zaragoza 38, Calle Zaragoza, Garrapinillos, Distrito Rural, Zaragoza, Arag\u00f3n, 50190, Espa\u00f1a": [
+        41.6814011,
+        -1.0277782
+    ],
+    "Calle Toledo, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6143296,
+        -4.0388096
+    ],
+    "196, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.99136,
+        -0.6916777
+    ],
+    "Calle Oficial Provisional N.\u00ba 37, Pol\u00edgono Industrial APD/21, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
+        38.3401108,
+        -0.5346392
+    ],
+    "Carrer 32, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
+        39.3942791,
+        -0.3942243
+    ],
+    "Calle 17, Alarilla, Fuentidue\u00f1a de Tajo, Comunidad de Madrid, Espa\u00f1a": [
+        40.0766808,
+        -3.1293139
+    ],
+    "Calle 1, Piedrasmuchas, Ruiz de Luna, Talavera de la Reina, Toledo, Castilla-La Mancha, 45600, Espa\u00f1a": [
+        39.9810216,
+        -4.8405339
+    ],
+    "Calle Carpinteros 7, Getafe, Espa\u00f1a": [
+        40.309782,
+        -3.7021359
+    ],
+    "53, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6174049,
+        -4.0329301
+    ],
+    "Calle de la Cava, Torrelaguna, Comunidad de Madrid, 28180, Espa\u00f1a": [
+        40.8269066,
+        -3.5363737
+    ],
+    "Carrer del 28 de Desembre, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03130, Espa\u00f1a": [
+        38.1910873,
+        -0.5849315
+    ],
+    "Calle 10, Caba\u00f1as de la Sagra, Toledo, Castilla-La Mancha, 45520, Espa\u00f1a": [
+        39.9956954,
+        -3.9530472
+    ],
+    "Calle Oficial Provisional N.\u00ba 23, Ciutat d'Ass\u00eds, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
+        38.34859,
+        -0.5322841
+    ],
+    "Ctra. Castell\u00f3n, km 233, Zaragoza": [
+        41.6318141,
+        -0.8585924
+    ],
+    "73, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6163964,
+        -4.0343776
+    ],
+    "Carrer de Luxemburg N\u00famero 46, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2343573,
+        -0.5391724
+    ],
+    "Calle Francia, Ejea de los Caballeros, Cinco Villas, Zaragoza, Arag\u00f3n, 50600, Espa\u00f1a": [
+        42.128874,
+        -1.1482462
+    ],
+    "Carrer 104, Urbanitzaci\u00f3 Entretarongers, Vallesa de Mandor, Urbanitzaci\u00f3 Mas de Traver, Riba-roja de T\u00faria, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46183, Espa\u00f1a": [
+        39.5522386,
+        -0.5368291
+    ],
+    "Carrer de la Neu, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.3500198,
+        -0.5475131
+    ],
+    "Calle Varsovia, 6, Pol\u00edgono Industrial Romica, 02007 Albacete": [
+        39.0541695,
+        -1.8417708
+    ],
+    "174, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
+        38.2579643,
+        -0.7081166
+    ],
+    "Calle Gustavo Adolfo Becker 26, Urbanizaci\u00f3n La Marina-El Oasis, San Fulgencio, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, Espa\u00f1a": [
+        38.1263409,
+        -0.6776926
+    ],
+    "Calle Blasco Iba\u00f1ez, 76, Calle Vicente Blasco Ib\u00e1\u00f1ez, Fraternidad, Elda, el Vinalop\u00f3 Mitj\u00e0 / El Vinalop\u00f3 Medio, Alacant / Alicante, Comunitat Valenciana, 03600, Espa\u00f1a": [
+        38.4774918,
+        -0.786885
+    ],
+    "Calle de San Isidro y Camino Natural del Tajo - GR 113, Real Cortijo de San Isidro, Aranjuez, Comunidad de Madrid, 28300, Espa\u00f1a": [
+        40.0539596,
+        -3.5653939
+    ],
+    "185, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9908329,
+        -0.6925186
+    ],
+    "Carrer del Mercat 13, Sant Joan d'Alacant, Espa\u00f1a": [
+        38.3993843,
+        -0.4343824
+    ],
+    "Padre Tom\u00e1s de Monta\u00f1ana, 26, 46023 Valencia": [
+        39.4630198,
+        -0.3525246
+    ],
+    "Carrer 23, Villariesso, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
+        39.0924524,
+        -0.5430492
+    ],
+    "PasDulce S.L. (Oficinas), 47, Calle Bar\u00f3n del Solar, La Estacada, Jumilla, Altiplano, Regi\u00f3n de Murcia, 30520, Espa\u00f1a": [
+        38.4742034,
+        -1.3342174
+    ],
+    "75, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6166427,
+        -4.0345614
+    ],
+    "Carrer del Maestrat, la Serratella, l'Alt Maestrat, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12140, Espa\u00f1a": [
+        40.3129972,
+        0.0299971
+    ],
+    "Calle Doctor Fleming, 60, Calle Doctor Fleming, Urbanitzaci\u00f3 L'Almadrava, el Campello, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03550, Espa\u00f1a": [
+        38.4277305,
+        -0.3977332
+    ],
+    "PR-AB 66 Calle Huerta del Molino, Huerta del Molino, Villaverde de Guadalimar, Albacete, Castilla-La Mancha, 02460, Espa\u00f1a": [
+        38.4566921,
+        -2.520026
+    ],
+    "Carrer Pego, 90, Carrer de Pego, Bonavista, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03207, Espa\u00f1a": [
+        38.3005734,
+        -0.6855302
+    ],
+    "Calle Somosierra, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6200748,
+        -4.0302483
+    ],
+    "Calle Nueve, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
+        38.6374263,
+        -0.8822623
+    ],
+    "Calle 25, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3593462,
+        -3.6654675
+    ],
+    "Calle 40, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3643884,
+        -3.6622833
+    ],
+    "Calle 29 de Marzo, Zeneta, Murcia, \u00c1rea Metropolitana de Murcia, Regi\u00f3n de Murcia, 30588, Espa\u00f1a": [
+        38.0069172,
+        -1.0044267
+    ],
+    "172, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9911952,
+        -0.6922624
+    ],
+    "178, Carrer Concepci\u00f3n Arenal, el Pla de Sant Josep, Sector V, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03204, Espa\u00f1a": [
+        38.2576426,
+        -0.7080826
+    ],
+    "Carrer de Baix, Palanques, els Ports, Castell\u00f3 / Castell\u00f3n, Comunitat Valenciana, 12311, Espa\u00f1a": [
+        40.717753,
+        -0.1806595
+    ],
+    "Calle Carretera, Pi\u00f1u\u00e9car, Pi\u00f1u\u00e9car-Gandullas, Comunidad de Madrid, 28737, Espa\u00f1a": [
+        41.0330887,
+        -3.5984634
+    ],
+    "24, Calle Sagunto, Campillo y Suertes, Ceheg\u00edn, Noroeste, Regi\u00f3n de Murcia, 30430, Espa\u00f1a": [
+        38.0953364,
+        -1.8003937
+    ],
+    "Calle Oficial Provisional N.\u00ba 24, Ciutat d'Ass\u00eds, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03007, Espa\u00f1a": [
+        38.3474559,
+        -0.5317305
+    ],
+    "Calle 4, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02008, Espa\u00f1a": [
+        39.0044154,
+        -1.818081
+    ],
+    "Calle Sierra de Guadarrama, 45200 Illescas, Toledo": [
+        40.1669188,
+        -3.8183469
+    ],
+    "Calle Trueno, 125, 03006 Alicante": [
+        38.3532003,
+        -0.5514162
+    ],
+    "Calle 50, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3633475,
+        -3.6573409
+    ],
+    "Calle E con Calle G, Calle E, Pol\u00edgono Industrial Malpica, Santa Isabel, Zaragoza, Arag\u00f3n, 50057, Espa\u00f1a": [
+        41.6530801,
+        -0.7791535
+    ],
+    "Calle 5 / Carrer 5, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
+        41.3730265,
+        0.2997558
+    ],
+    "Calle Hogar 68, Torres Bellas, Casco Antiguo, Alcorc\u00f3n, Comunidad de Madrid, 28921, Espa\u00f1a": [
+        40.3512287,
+        -3.8258356
+    ],
+    "Calle Valle-Incl\u00e1n 58, 58, Calle de Valle-Incl\u00e1n, Las \u00c1guilas, Latina, Madrid, Comunidad de Madrid, 28044, Espa\u00f1a": [
+        40.3759655,
+        -3.7750653
+    ],
+    "195, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9910659,
+        -0.6917155
+    ],
+    "Calle Vicente Guill\u00e9n Zamorano, Parque Empresarial Sierra Norte - Pol\u00edgono Industrial P29, Pol\u00edgono 29, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6230865,
+        -4.0253069
+    ],
+    "Calle Montreal, 76, 46900 Torrent": [
+        39.4247048,
+        -0.4655529
+    ],
+    "49, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6176753,
+        -4.0322046
+    ],
+    "Calle 15, Alarilla, Fuentidue\u00f1a de Tajo, Comunidad de Madrid, Espa\u00f1a": [
+        40.0789804,
+        -3.1291762
+    ],
+    "Los Ca\u00f1os, 30, Calle Armando Mu\u00f1oz Calero, El Hornillo, \u00c1guilas, Alto Guadalent\u00edn, Regi\u00f3n de Murcia, 30880, Espa\u00f1a": [
+        37.4049255,
+        -1.5879607
+    ],
+    "Carrer 31, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
+        39.3952111,
+        -0.3964488
+    ],
+    "Calle 7, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
+        38.6389103,
+        -0.88554
+    ],
+    "Calle 3, Eurovillas-Las Villas, Nuevo Bazt\u00e1n, Comunidad de Madrid, 28514, Espa\u00f1a": [
+        40.3581394,
+        -3.2466855
+    ],
+    "Carrer 35, Urbanitzaci\u00f3 Montecolorado, la Pobla de Vallbona, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46185, Espa\u00f1a": [
+        39.6121403,
+        -0.55678
+    ],
+    "Calle Moledero, La Aparecida, La Palma, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30593, Espa\u00f1a": [
+        37.6697345,
+        -0.9561684
+    ],
+    "Carrer del Mistral, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.3484195,
+        -0.5558578
+    ],
+    "Calle del Prado, Meco, Comunidad de Madrid, 28880, Espa\u00f1a": [
+        40.5540865,
+        -3.3264135
+    ],
+    "Carrer del Tro, Pol\u00edgon Industrial El Pla de la Vall-llonga, la Serreta, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.3532003,
+        -0.5514162
+    ],
+    "Calle 20, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3566878,
+        -3.6654673
+    ],
+    "Calle 15, Urbanitzaci\u00f3 Lloma d'Horquera, Vilamarxant, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46191, Espa\u00f1a": [
+        39.535865,
+        -0.6315021
+    ],
+    "Calle B-27, La Almozara, Zaragoza, Arag\u00f3n, 50011, Espa\u00f1a": [
+        41.6659526,
+        -0.9346172
+    ],
+    "Carrer 25, Villariesso, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46294, Espa\u00f1a": [
+        39.0927354,
+        -0.5441564
+    ],
+    "Calle 6, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
+        39.0070171,
+        -1.8166744
+    ],
+    "Carrer del Tro, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.3501463,
+        -0.5561194
+    ],
+    "Calle Villanueva, Valencia del Mombuey, Badajoz, Extremadura, Espa\u00f1a": [
+        38.242774,
+        -7.1206108
+    ],
+    "182, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9909454,
+        -0.6922213
+    ],
+    "Carrer d'Holanda N\u00famero 64, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2328051,
+        -0.5382124
+    ],
+    "Carrer 45, Urbanitzaci\u00f3 Montecolorado, la Pobla de Vallbona, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46185, Espa\u00f1a": [
+        39.6093294,
+        -0.5592513
+    ],
+    "Calle Mesones, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
+        40.7597995,
+        -3.4640038
+    ],
+    "Carrer 20, Gavarda, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46270, Espa\u00f1a": [
+        39.0896593,
+        -0.5420792
+    ],
+    "178, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9910514,
+        -0.692231
+    ],
+    "Calle 52, Pozo Estrecho, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30594, Espa\u00f1a": [
+        37.7129867,
+        -0.9991275
+    ],
+    "Calle Ocho, Pol\u00edgono Industrial El Rubial, Villena, l'Alt Vinalop\u00f3 / El Alto Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03400, Espa\u00f1a": [
+        38.6389935,
+        -0.8838886
+    ],
+    "Calle 3, Pol\u00edgono Industrial Valdeferr\u00edn, Ejea de los Caballeros, Cinco Villas, Zaragoza, Arag\u00f3n, 50600, Espa\u00f1a": [
+        42.1283927,
+        -1.172754
+    ],
+    "Carrer dels Velluters, Parc Empresarial l'Horta Vella, B\u00e9tera, el Camp de T\u00faria, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46117, Espa\u00f1a": [
+        39.5832832,
+        -0.4399505
+    ],
+    "Calle 6, Los Conejos, Romeral, Molina de Segura, Vega Media del Segura, Regi\u00f3n de Murcia, 30509, Espa\u00f1a": [
+        38.0969882,
+        -1.1840741
+    ],
+    "Calle Provisional Los Berrocales 122, Los Berrocales, Madrid, Comunidad de Madrid, 28051, Espa\u00f1a": [
+        40.3706493,
+        -3.5722463
+    ],
+    "Calle 23, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3600908,
+        -3.6670608
+    ],
+    "Calle 6, Piedrasmuchas, Ruiz de Luna, Talavera de la Reina, Toledo, Castilla-La Mancha, 45600, Espa\u00f1a": [
+        39.9802448,
+        -4.8371452
+    ],
+    "156, Calle de la Playa de Nares, Puerto de Mazarr\u00f3n, Mazarr\u00f3n, Bajo Guadalent\u00edn, Regi\u00f3n de Murcia, 30860, Espa\u00f1a": [
+        37.5590037,
+        -1.2854208
+    ],
+    "163, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9912638,
+        -0.6929911
+    ],
+    "Calle Cubillo, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
+        40.7610653,
+        -3.4649569
+    ],
+    "Carrer Pego 1, Carrer de Pego, Bonavista, Elx / Elche, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03207, Espa\u00f1a": [
+        38.2967198,
+        -0.6844556
+    ],
+    "Calle 45, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28053, Espa\u00f1a": [
+        40.3592759,
+        -3.6589061
+    ],
+    "184, Calle de las Rosas, Urbanizaci\u00f3n La Torreta, Ba\u00f1os de Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9909045,
+        -0.6922038
+    ],
+    "47, Calle Albacete, Barriada Santa Ana, Puertollano, Ciudad Real, Castilla-La Mancha, 13500, Espa\u00f1a": [
+        38.6897361,
+        -4.1027234
+    ],
+    "85, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6162803,
+        -4.0348755
+    ],
+    "Calle Victor Jara (T\u00fanel Z-40), T\u00fanel de Santa Isabel, Santa Isabel, Zaragoza, Arag\u00f3n, 50058, Espa\u00f1a": [
+        41.6699386,
+        -0.8364741
+    ],
+    "Calle 52, Mercamadrid, Casco Hist\u00f3rico de Vallecas, Villa de Vallecas, Madrid, Comunidad de Madrid, 28018, Espa\u00f1a": [
+        40.3640289,
+        -3.6568706
+    ],
+    "Calle Cantueso, 71, Calle Cantueso, La Torreta y El Monastil, Elda, el Vinalop\u00f3 Mitj\u00e0 / El Vinalop\u00f3 Medio, Alacant / Alicante, Comunitat Valenciana, 03600, Espa\u00f1a": [
+        38.4933076,
+        -0.7938189
+    ],
+    "Carrer de Luxemburg N\u00famero 51, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2365208,
+        -0.5397144
+    ],
+    "Calle Provisional Berrocales 84, Los Berrocales, Madrid, Comunidad de Madrid, 28052, Espa\u00f1a": [
+        40.3797131,
+        -3.571857
+    ],
+    "Carrer d'Holanda N\u00famero 86, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2326801,
+        -0.5363339
+    ],
+    "Calle Orihuela, Barrio Nuevo, Orihuela, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03325, Espa\u00f1a": [
+        38.0903494,
+        -0.8944092
+    ],
+    "Calle Mayor, Valdepi\u00e9lagos, Comunidad de Madrid, 28170, Espa\u00f1a": [
+        40.7602584,
+        -3.4676255
+    ],
+    "Calle en proyecto n\u00ba 46, Algemes\u00ed, la Ribera Alta, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46680, Espa\u00f1a": [
+        39.1954441,
+        -0.4230049
+    ],
+    "164, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9912571,
+        -0.6930649
+    ],
+    "Carrer del Nou d'Octubre, les Carolines Baixes, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03012, Espa\u00f1a": [
+        38.3560609,
+        -0.4829012
+    ],
+    "Carrer d'Holanda N\u00famero 47, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2334567,
+        -0.5376345
+    ],
+    "192, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9913499,
+        -0.6918
+    ],
+    "Calle 2 / Carrer 2, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
+        41.3739438,
+        0.3011846
+    ],
+    "Carrer 43, Pol\u00edgon Industrial El Bony, Catarroja, l'Horta Sud, Val\u00e8ncia / Valencia, Comunitat Valenciana, 46470, Espa\u00f1a": [
+        39.3956037,
+        -0.394941
+    ],
+    "Carrer Riu Guadalquivir (33-35-37-39-41), Urbanitzaci\u00f3 Sol i Llum, Sant Vicent del Raspeig / San Vicente del Raspeig, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03699, Espa\u00f1a": [
+        38.3941804,
+        -0.5044174
+    ],
+    "Calle del Paso, Villamayor de G\u00e1llego, Zaragoza, Arag\u00f3n, 50162, Espa\u00f1a": [
+        41.6847724,
+        -0.7723792
+    ],
+    "Calle del Cedro, 57, Calle del Cedro, Los Robles, Torrelodones, Comunidad de Madrid, 28250, Espa\u00f1a": [
+        40.5837385,
+        -3.9269556
+    ],
+    "Calle 7, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
+        39.0074414,
+        -1.8196878
+    ],
+    "Calle del Pilar (GR-68), Barrio Los Altos, Pe\u00f1arrubia, Elche de la Sierra, Albacete, Castilla-La Mancha, Espa\u00f1a": [
+        38.4263816,
+        -2.184531
+    ],
+    "Calle Calatayud.  SL-Z 52, Tobed, Comunidad de Calatayud, Zaragoza, Arag\u00f3n, 50325, Espa\u00f1a": [
+        41.3376957,
+        -1.4017935
+    ],
+    "Calle Mayor 39, Calle Mayor, Garrapinillos, Distrito Rural, Zaragoza, Arag\u00f3n, 50190, Espa\u00f1a": [
+        41.6830377,
+        -1.0272536
+    ],
+    "Carrer del Vent, Pol\u00edgon Industrial El Pla de la Vall-llonga, Alacant / Alicante, l'Alacant\u00ed, Alacant / Alicante, Comunitat Valenciana, 03113, Espa\u00f1a": [
+        38.3491666,
+        -0.5552735
+    ],
+    "61, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6170647,
+        -4.0335176
+    ],
+    "Fisioterapia Portalegre efisio.es, 77, Calle de Portalegre, Abrantes, Carabanchel, Madrid, Comunidad de Madrid, 28025, Espa\u00f1a": [
+        40.3852911,
+        -3.723475
+    ],
+    "Carrer de Luxemburg N\u00famero 55, Monte y Mar, Gran Alacant, Santa Pola, el Baix Vinalop\u00f3, Alacant / Alicante, Comunitat Valenciana, 03195, Espa\u00f1a": [
+        38.2349955,
+        -0.5388692
+    ],
+    "Calle 2, Pol\u00edgono Ajusa, La Torrecica, Albacete, Castilla-La Mancha, 02001, Espa\u00f1a": [
+        39.0051694,
+        -1.8200328
+    ],
+    "58, Calle Andr\u00f3meda, La Felipa, Chinchilla de Montearag\u00f3n, Albacete, Castilla-La Mancha, 02156, Espa\u00f1a": [
+        39.0396485,
+        -1.7066168
+    ],
+    "47, Calle Mayor, Llanos, Colonia Espa\u00f1a, Espa\u00f1a, Galapagar, Comunidad de Madrid, 28292, Espa\u00f1a": [
+        40.6178255,
+        -4.0316231
+    ],
+    "Calle Peroni\u00f1o, 90, Calle Pero Ni\u00f1o, Casas de Sevilla, Barrio de la Concepci\u00f3n, San Antonio Abad, Cartagena, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30205, Espa\u00f1a": [
+        37.6094138,
+        -1.0031766
+    ],
+    "Calle 53, La Uni\u00f3n, Campo de Cartagena y Mar Menor, Regi\u00f3n de Murcia, 30366, Espa\u00f1a": [
+        37.6238536,
+        -0.8801092
+    ],
+    "Calle 5, Los Conejos, Romeral, Molina de Segura, Vega Media del Segura, Regi\u00f3n de Murcia, 30509, Espa\u00f1a": [
+        38.096184,
+        -1.1840473
+    ],
+    "198, Calle de los Gladiolos, Urbanizaci\u00f3n La Torreta, Europa, Torrevieja, el Baix Segura / La Vega Baja, Alacant / Alicante, Comunitat Valenciana, 03184, Espa\u00f1a": [
+        37.9913645,
+        -0.6916223
+    ],
+    "Calle 28 de marzo, Turleque, Toledo, Castilla-La Mancha, 45789, Espa\u00f1a": [
+        39.6001061,
+        -3.6143413
+    ],
+    "Calle 1, Urbanizaci\u00f3n Huerta de Monroy, Universidad, Albacete, Castilla-La Mancha, 02008, Espa\u00f1a": [
+        38.969326,
+        -1.8493734
+    ],
+    "Calle 6 / Carrer 6, Poblado de Viviendas E.N.H.E.R. / Poblat de vivendes de la E.N.H.E.R., Mequinenza / Mequinensa, Bajo Cinca / Baix Cinca, Zaragoza, Arag\u00f3n, 50170, Espa\u00f1a": [
+        41.3740399,
+        0.3005827
+    ],
+    "blas valero 45, elche, alicante": [
+        38.26794,
+        -0.7016676
+    ],
+    "blas valero 34, elche": [
+        38.2670851,
+        -0.7015176
+    ],
+    "camino de valdeserrano, la fuente, centro - el arroyo - la fuente, fuenlabrada, comunidad de madrid, 28944, espa\u00f1a": [
+        40.2711354,
+        -3.7910279
+    ],
+    "4, calle de valdemoro, el pinar, centro - el arroyo - la fuente, fuenlabrada, comunidad de madrid, 28944, espa\u00f1a": [
+        40.2822177,
+        -3.787591
+    ],
+    "camino viejo de sese\u00f1a a valdemoro, valdemoro, comunidad de madrid, 45223, espa\u00f1a": [
+        40.1477779,
+        -3.6913123
+    ]
 }

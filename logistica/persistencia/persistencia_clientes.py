@@ -16,33 +16,40 @@ def normalizar(texto):
 # ==========================================================
 # GUARDAR CLIENTES
 # ==========================================================
-def guardar_clientes(clientes_nuevos):
+def guardar_clientes(clientes_nuevos, sobrescribir=False):
+
     BASE_DIR = encontrar_raiz()
     ruta = os.path.join(BASE_DIR, "datos", "clientes.json")
 
-    if os.path.exists(ruta):
-        with open(ruta, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    else:
+    # 🔥 CLAVE
+    if sobrescribir:
         data = {}
+    else:
+        if os.path.exists(ruta):
+            with open(ruta, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            data = {}
 
-    # soportar formato antiguo lista
-    if isinstance(data, list):
-        data = {item["dni"]: item for item in data if "dni" in item}
+        # soportar formato antiguo lista
+        if isinstance(data, list):
+            data = {item["dni"]: item for item in data if "dni" in item}
 
+    # ------------------------------------------------------
+    # GUARDADO
+    # ------------------------------------------------------
     for dni, c in clientes_nuevos.items():
         data[dni] = {
             "nombre": c._nombre,
             "apellidos": c._apellidos,
             "direccion": c._direccion,
             "coordenadas": c._coordenadas,
-
             "delegacion_cercana": (
                 normalizar(c._delegacion_cercana.nombre)
                 if c._delegacion_cercana else None
             ),
-
             "provincia": getattr(c, "_provincia", None),
+            "poblacion": getattr(c, "_poblacion", None),
             "pedidos_en_curso": c._pedidos_en_curso,
             "pedidos_terminados": c._pedidos_terminados,
             "importe_facturado": c._importe_facturado,
@@ -54,8 +61,7 @@ def guardar_clientes(clientes_nuevos):
     with open(ruta, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-    print(f"✔ Clientes guardados: {len(clientes_nuevos)}")
-
+    print(f"✔ Clientes guardados: {len(data)}")
 
 # ==========================================================
 # CARGAR CLIENTES
@@ -101,6 +107,7 @@ def cargar_clientes(nombre_fichero="clientes.json"):
 
         coords = item.get("coordenadas")
         c._coordenadas = tuple(coords) if coords else None
+        c._poblacion = item.get("poblacion")
         c._provincia = item.get("provincia")
         c._pedidos_en_curso = item.get("pedidos_en_curso", [])
         c._pedidos_terminados = item.get("pedidos_terminados", [])

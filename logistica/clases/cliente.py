@@ -1,27 +1,29 @@
 """
-CLASE CLIENTE
+CLASE CLIENTE (VERSIÓN PRO FINAL)
 
-Este módulo define la clase Cliente del sistema logístico.
+✔ Dirección = STRING
+✔ Coordenadas geográficas
+✔ Población real (reverse geocoding)
+✔ Provincia real (reverse geocoding)
+✔ Delegación cercana
+✔ Distancia al despacho
 
-FUNCIONALIDAD
-
-Representa un cliente que puede:
-- Ser origen o destino de pedidos
-- Tener pedidos en curso y finalizados
-- Acumular importe facturado
-
-CAMBIOS IMPORTANTES
-- La dirección ahora es un STRING (no objeto Direccion)
-- Se añade coordenadas geográficas
-- Se añade delegación cercana (objeto Delegacion)
-
-Esto simplifica la persistencia y mejora el rendimiento del sistema
+OPTIMIZACIÓN:
+✔ Reverse geocoding unificado (1 sola llamada)
+✔ Cache interno en geolocalización
 """
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from utiles.geolocalizacion import obtener_datos_geo
 
 
 class Cliente:
 
-    def __init__(self, dni, nombre, apellidos, direccion, provincia=None, delegacion_cercana=None):
+    def __init__(self, dni, nombre, apellidos, direccion,
+                 provincia=None, delegacion_cercana=None):
 
         # ==========================
         # DATOS BASICOS
@@ -29,13 +31,21 @@ class Cliente:
         self._dni = dni
         self._nombre = nombre
         self._apellidos = apellidos
-
-        # direccion ahora es STRING
         self._direccion = direccion
-        self._provincia = provincia
 
-        # nueva arquitectura
+        # ==========================
+        # DATOS GEO
+        # ==========================
         self._coordenadas = None
+        self._poblacion = None
+        self._provincia = None
+
+
+
+
+        # ==========================
+        # LOGÍSTICA
+        # ==========================
         self._delegacion_cercana = delegacion_cercana
         self._distancia_despacho = None
 
@@ -44,13 +54,28 @@ class Cliente:
         # ==========================
         self._pedidos_en_curso = []
         self._pedidos_terminados = []
-
         self._importe_facturado = 0
 
-    # ==========================================
-    # GETTERS
-    # ==========================================
+    # ======================================================
+    # MÉTODO CLAVE (NUEVO)
+    # ======================================================
+    def actualizar_datos_geo(self):
+        """
+        Actualiza población y provincia a partir de coordenadas.
+        """
 
+        if not self._coordenadas:
+            return
+
+        from utiles.geolocalizacion import obtener_datos_geo
+
+        poblacion, provincia = obtener_datos_geo(self._coordenadas)
+
+        self._poblacion = poblacion
+        self._provincia = provincia
+    # ======================================================
+    # GETTERS
+    # ======================================================
     @property
     def dni(self):
         return self._dni
@@ -68,8 +93,14 @@ class Cliente:
         return self._direccion
 
     @property
+    def poblacion(self):
+        return self._poblacion or "N/A"
+
+    @property
     def provincia(self):
-        return self._provincia
+        return self._provincia or "N/A"
+
+
 
     @property
     def coordenadas(self):
@@ -87,10 +118,9 @@ class Cliente:
     def distancia_despacho(self):
         return self._distancia_despacho
 
-    # ==========================================
+    # ======================================================
     # OPERADORES
-    # ==========================================
-
+    # ======================================================
     def __add__(self, pedido):
         self._pedidos_en_curso.append(pedido)
         return self
@@ -105,19 +135,19 @@ class Cliente:
 
         return self
 
-    # ==========================================
+    # ======================================================
     # REPRESENTACION
-    # ==========================================
-
+    # ======================================================
     def __str__(self):
 
         return (
             f"DNI: {self._dni}\n"
             f"{self._apellidos}, {self._nombre}\n"
             f"Direccion: {self._direccion}\n"
+            f"Población: {self._poblacion}\n"
             f"Provincia: {self._provincia}\n"
             f"Coordenadas: {self._coordenadas}\n"
             f"Delegacion: {self._delegacion_cercana.nombre if self._delegacion_cercana else 'N/A'}\n"
+            f"Distancia despacho: {self._distancia_despacho} km\n"
             f"Importe: {round(self._importe_facturado, 2)}\n"
-            f"Distancia al despacho: {self._distancia_despacho} km\n"
         )

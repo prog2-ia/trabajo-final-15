@@ -1,0 +1,1002 @@
+{
+    "1": {
+        "origen": "99206331V",
+        "destino": "18809413J",
+        "peso": 1.67,
+        "volumen": 16.8,
+        "km": 347.68,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.888667",
+        "fecha_entrega": null
+    },
+    "2": {
+        "origen": "18809413J",
+        "destino": "16238424X",
+        "peso": 1.41,
+        "volumen": 6.11,
+        "km": 350.28,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.888898",
+        "fecha_entrega": null
+    },
+    "3": {
+        "origen": "81367755B",
+        "destino": "45559832Y",
+        "peso": 71.45,
+        "volumen": 319.31,
+        "km": 0.82,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.888952",
+        "fecha_entrega": null
+    },
+    "4": {
+        "origen": "48001619K",
+        "destino": "94617367J",
+        "peso": 1.42,
+        "volumen": 10.09,
+        "km": 352.69,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889012",
+        "fecha_entrega": null
+    },
+    "5": {
+        "origen": "28237274J",
+        "destino": "44079229M",
+        "peso": 0.32,
+        "volumen": 2.56,
+        "km": 303.37,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889044",
+        "fecha_entrega": null
+    },
+    "6": {
+        "origen": "43643305T",
+        "destino": "30794414J",
+        "peso": 0.53,
+        "volumen": 2.04,
+        "km": 505.6,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889083",
+        "fecha_entrega": null
+    },
+    "7": {
+        "origen": "75045401N",
+        "destino": "46721333F",
+        "peso": 1.57,
+        "volumen": 9.59,
+        "km": 425.24,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889112",
+        "fecha_entrega": null
+    },
+    "8": {
+        "origen": "16238424X",
+        "destino": "91299988Q",
+        "peso": 32.48,
+        "volumen": 121.3,
+        "km": 331.23,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889138",
+        "fecha_entrega": null
+    },
+    "9": {
+        "origen": "29059976M",
+        "destino": "61560182S",
+        "peso": 97.97,
+        "volumen": 1000,
+        "km": 510.96,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889168",
+        "fecha_entrega": null
+    },
+    "10": {
+        "origen": "54984164L",
+        "destino": "17137078P",
+        "peso": 1.21,
+        "volumen": 10.46,
+        "km": 4.14,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889206",
+        "fecha_entrega": null
+    },
+    "11": {
+        "origen": "80752025Z",
+        "destino": "86372247W",
+        "peso": 0.21,
+        "volumen": 3.54,
+        "km": 350.32,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889239",
+        "fecha_entrega": null
+    },
+    "12": {
+        "origen": "76711440T",
+        "destino": "17477228B",
+        "peso": 1.07,
+        "volumen": 19.79,
+        "km": 354.12,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889268",
+        "fecha_entrega": null
+    },
+    "13": {
+        "origen": "25332870A",
+        "destino": "23298714J",
+        "peso": 0.3,
+        "volumen": 1.24,
+        "km": 296.88,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889291",
+        "fecha_entrega": null
+    },
+    "14": {
+        "origen": "36815318T",
+        "destino": "18809413J",
+        "peso": 1.19,
+        "volumen": 5.01,
+        "km": 6.68,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889314",
+        "fecha_entrega": null
+    },
+    "15": {
+        "origen": "36393741J",
+        "destino": "49165138Q",
+        "peso": 41.5,
+        "volumen": 196.55,
+        "km": 329.03,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889345",
+        "fecha_entrega": null
+    },
+    "16": {
+        "origen": "19801926F",
+        "destino": "75045401N",
+        "peso": 0.29,
+        "volumen": 5.7,
+        "km": 302.32,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889370",
+        "fecha_entrega": null
+    },
+    "17": {
+        "origen": "91299988Q",
+        "destino": "16804608A",
+        "peso": 1.19,
+        "volumen": 7.75,
+        "km": 294.64,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889435",
+        "fecha_entrega": null
+    },
+    "18": {
+        "origen": "86372247W",
+        "destino": "46721333F",
+        "peso": 0.43,
+        "volumen": 3.67,
+        "km": 24.0,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889514",
+        "fecha_entrega": null
+    },
+    "19": {
+        "origen": "39852617B",
+        "destino": "44141308F",
+        "peso": 0.62,
+        "volumen": 2.39,
+        "km": 31.01,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889538",
+        "fecha_entrega": null
+    },
+    "20": {
+        "origen": "82416694N",
+        "destino": "62052904P",
+        "peso": 1.62,
+        "volumen": 5.54,
+        "km": 302.38,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889562",
+        "fecha_entrega": null
+    },
+    "21": {
+        "origen": "81367755B",
+        "destino": "99784695T",
+        "peso": 1.51,
+        "volumen": 13.4,
+        "km": 321.58,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889585",
+        "fecha_entrega": null
+    },
+    "22": {
+        "origen": "86372247W",
+        "destino": "29059976M",
+        "peso": 1.59,
+        "volumen": 10.92,
+        "km": 421.45,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889618",
+        "fecha_entrega": null
+    },
+    "23": {
+        "origen": "62052904P",
+        "destino": "82416694N",
+        "peso": 1.1,
+        "volumen": 8.27,
+        "km": 302.38,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889642",
+        "fecha_entrega": null
+    },
+    "24": {
+        "origen": "98224464C",
+        "destino": "18809413J",
+        "peso": 0.47,
+        "volumen": 5.75,
+        "km": 6.84,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889664",
+        "fecha_entrega": null
+    },
+    "25": {
+        "origen": "70519165S",
+        "destino": "94617367J",
+        "peso": 0.18,
+        "volumen": 1.14,
+        "km": 300.63,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889713",
+        "fecha_entrega": null
+    },
+    "26": {
+        "origen": "82416694N",
+        "destino": "44079229M",
+        "peso": 0.66,
+        "volumen": 6.06,
+        "km": 300.21,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889745",
+        "fecha_entrega": null
+    },
+    "27": {
+        "origen": "10660690Y",
+        "destino": "19801926F",
+        "peso": 1.98,
+        "volumen": 10.27,
+        "km": 322.93,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889767",
+        "fecha_entrega": null
+    },
+    "28": {
+        "origen": "23298714J",
+        "destino": "81170117N",
+        "peso": 0.53,
+        "volumen": 2.86,
+        "km": 14.68,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889788",
+        "fecha_entrega": null
+    },
+    "29": {
+        "origen": "84836274S",
+        "destino": "36393741J",
+        "peso": 0.67,
+        "volumen": 10.36,
+        "km": 332.22,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889810",
+        "fecha_entrega": null
+    },
+    "30": {
+        "origen": "99206331V",
+        "destino": "54654710V",
+        "peso": 0.99,
+        "volumen": 3.99,
+        "km": 337.42,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889832",
+        "fecha_entrega": null
+    },
+    "31": {
+        "origen": "24312211S",
+        "destino": "48001619K",
+        "peso": 0.25,
+        "volumen": 1.01,
+        "km": 360.7,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889853",
+        "fecha_entrega": null
+    },
+    "32": {
+        "origen": "25332870A",
+        "destino": "75139689T",
+        "peso": 1.81,
+        "volumen": 17.95,
+        "km": 1.88,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889874",
+        "fecha_entrega": null
+    },
+    "33": {
+        "origen": "44079229M",
+        "destino": "28664537M",
+        "peso": 1.18,
+        "volumen": 4.26,
+        "km": 23.43,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889896",
+        "fecha_entrega": null
+    },
+    "34": {
+        "origen": "90970499W",
+        "destino": "58965854H",
+        "peso": 1.18,
+        "volumen": 11.01,
+        "km": 433.62,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889917",
+        "fecha_entrega": null
+    },
+    "35": {
+        "origen": "80752025Z",
+        "destino": "45559832Y",
+        "peso": 0.87,
+        "volumen": 3.12,
+        "km": 33.71,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889940",
+        "fecha_entrega": null
+    },
+    "36": {
+        "origen": "58965854H",
+        "destino": "68932435D",
+        "peso": 1.51,
+        "volumen": 15.77,
+        "km": 437.5,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889960",
+        "fecha_entrega": null
+    },
+    "37": {
+        "origen": "98224464C",
+        "destino": "19801926F",
+        "peso": 1.42,
+        "volumen": 10.02,
+        "km": 303.77,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.889981",
+        "fecha_entrega": null
+    },
+    "38": {
+        "origen": "43643305T",
+        "destino": "62236257M",
+        "peso": 1.9,
+        "volumen": 13.49,
+        "km": 298.11,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890001",
+        "fecha_entrega": null
+    },
+    "39": {
+        "origen": "32721674B",
+        "destino": "98224464C",
+        "peso": 1.42,
+        "volumen": 6.06,
+        "km": 301.77,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890033",
+        "fecha_entrega": null
+    },
+    "40": {
+        "origen": "14308484T",
+        "destino": "80752025Z",
+        "peso": 0.31,
+        "volumen": 1.59,
+        "km": 510.34,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890081",
+        "fecha_entrega": null
+    },
+    "41": {
+        "origen": "98224464C",
+        "destino": "86372247W",
+        "peso": 1.52,
+        "volumen": 8.94,
+        "km": 357.74,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890103",
+        "fecha_entrega": null
+    },
+    "42": {
+        "origen": "44079229M",
+        "destino": "75045401N",
+        "peso": 1.08,
+        "volumen": 4.35,
+        "km": 1.68,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890122",
+        "fecha_entrega": null
+    },
+    "43": {
+        "origen": "54984164L",
+        "destino": "77606277E",
+        "peso": 1.5,
+        "volumen": 11.36,
+        "km": 304.33,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890151",
+        "fecha_entrega": null
+    },
+    "44": {
+        "origen": "10660690Y",
+        "destino": "49165138Q",
+        "peso": 0.18,
+        "volumen": 0.97,
+        "km": 350.5,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890175",
+        "fecha_entrega": null
+    },
+    "45": {
+        "origen": "45559832Y",
+        "destino": "34823453G",
+        "peso": 0.62,
+        "volumen": 4.7,
+        "km": 32.76,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890195",
+        "fecha_entrega": null
+    },
+    "46": {
+        "origen": "98224464C",
+        "destino": "23298714J",
+        "peso": 2.0,
+        "volumen": 11.26,
+        "km": 8.68,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890215",
+        "fecha_entrega": null
+    },
+    "47": {
+        "origen": "19469927J",
+        "destino": "45501786N",
+        "peso": 1.11,
+        "volumen": 9.87,
+        "km": 329.57,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890234",
+        "fecha_entrega": null
+    },
+    "48": {
+        "origen": "18673559C",
+        "destino": "17477228B",
+        "peso": 0.57,
+        "volumen": 5.09,
+        "km": 18.12,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890256",
+        "fecha_entrega": null
+    },
+    "49": {
+        "origen": "94617367J",
+        "destino": "29059976M",
+        "peso": 0.42,
+        "volumen": 1.41,
+        "km": 511.59,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890278",
+        "fecha_entrega": null
+    },
+    "50": {
+        "origen": "76711440T",
+        "destino": "75045401N",
+        "peso": 0.46,
+        "volumen": 3.73,
+        "km": 504.3,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890298",
+        "fecha_entrega": null
+    },
+    "51": {
+        "origen": "82416694N",
+        "destino": "29059976M",
+        "peso": 1.41,
+        "volumen": 12.37,
+        "km": 314.88,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890318",
+        "fecha_entrega": null
+    },
+    "52": {
+        "origen": "81367755B",
+        "destino": "34613549K",
+        "peso": 0.5,
+        "volumen": 2.6,
+        "km": 352.7,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890338",
+        "fecha_entrega": null
+    },
+    "53": {
+        "origen": "80752025Z",
+        "destino": "68932435D",
+        "peso": 1.31,
+        "volumen": 12.8,
+        "km": 339.54,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890360",
+        "fecha_entrega": null
+    },
+    "54": {
+        "origen": "17477228B",
+        "destino": "62052904P",
+        "peso": 18.2,
+        "volumen": 86.19,
+        "km": 426.13,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890404",
+        "fecha_entrega": null
+    },
+    "55": {
+        "origen": "81170117N",
+        "destino": "65512172F",
+        "peso": 84.61,
+        "volumen": 303.17,
+        "km": 303.5,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890425",
+        "fecha_entrega": null
+    },
+    "56": {
+        "origen": "80521136E",
+        "destino": "86372247W",
+        "peso": 0.11,
+        "volumen": 0.43,
+        "km": 416.92,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890445",
+        "fecha_entrega": null
+    },
+    "57": {
+        "origen": "65512172F",
+        "destino": "23298714J",
+        "peso": 1.64,
+        "volumen": 8.23,
+        "km": 295.39,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890467",
+        "fecha_entrega": null
+    },
+    "58": {
+        "origen": "19469927J",
+        "destino": "77606277E",
+        "peso": 0.51,
+        "volumen": 5.91,
+        "km": 422.36,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890487",
+        "fecha_entrega": null
+    },
+    "59": {
+        "origen": "19469927J",
+        "destino": "48001619K",
+        "peso": 1.63,
+        "volumen": 21.62,
+        "km": 18.73,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890507",
+        "fecha_entrega": null
+    },
+    "60": {
+        "origen": "58965854H",
+        "destino": "14308484T",
+        "peso": 1.88,
+        "volumen": 13.36,
+        "km": 20.09,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890525",
+        "fecha_entrega": null
+    },
+    "61": {
+        "origen": "19469927J",
+        "destino": "10324290G",
+        "peso": 96.86,
+        "volumen": 438.02,
+        "km": 133.51,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890546",
+        "fecha_entrega": null
+    },
+    "62": {
+        "origen": "80521136E",
+        "destino": "81367755B",
+        "peso": 0.43,
+        "volumen": 2.04,
+        "km": 541.46,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890567",
+        "fecha_entrega": null
+    },
+    "63": {
+        "origen": "29059976M",
+        "destino": "90970499W",
+        "peso": 1.35,
+        "volumen": 4.95,
+        "km": 436.73,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890587",
+        "fecha_entrega": null
+    },
+    "64": {
+        "origen": "14308484T",
+        "destino": "77606277E",
+        "peso": 2.6,
+        "volumen": 11.71,
+        "km": 0.21,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890609",
+        "fecha_entrega": null
+    },
+    "65": {
+        "origen": "98224464C",
+        "destino": "43643305T",
+        "peso": 1.08,
+        "volumen": 16.2,
+        "km": 4.65,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890629",
+        "fecha_entrega": null
+    },
+    "66": {
+        "origen": "16128418J",
+        "destino": "62052904P",
+        "peso": 1.49,
+        "volumen": 5.15,
+        "km": 304.45,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890649",
+        "fecha_entrega": null
+    },
+    "67": {
+        "origen": "62236257M",
+        "destino": "80752025Z",
+        "peso": 1.93,
+        "volumen": 8.3,
+        "km": 297.77,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890670",
+        "fecha_entrega": null
+    },
+    "68": {
+        "origen": "20830669Y",
+        "destino": "29059976M",
+        "peso": 1.39,
+        "volumen": 7.41,
+        "km": 510.9,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890688",
+        "fecha_entrega": null
+    },
+    "69": {
+        "origen": "57624310H",
+        "destino": "85442002S",
+        "peso": 1.14,
+        "volumen": 7.1,
+        "km": 355.76,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890709",
+        "fecha_entrega": null
+    },
+    "70": {
+        "origen": "82021721H",
+        "destino": "94617367J",
+        "peso": 1.82,
+        "volumen": 9.06,
+        "km": 300.46,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890738",
+        "fecha_entrega": null
+    },
+    "71": {
+        "origen": "54984164L",
+        "destino": "36393741J",
+        "peso": 1.86,
+        "volumen": 11.02,
+        "km": 290.94,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890758",
+        "fecha_entrega": null
+    },
+    "72": {
+        "origen": "45501786N",
+        "destino": "82021721H",
+        "peso": 1.58,
+        "volumen": 17.76,
+        "km": 292.07,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890776",
+        "fecha_entrega": null
+    },
+    "73": {
+        "origen": "10324290G",
+        "destino": "77606277E",
+        "peso": 1.02,
+        "volumen": 5.45,
+        "km": 304.42,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890796",
+        "fecha_entrega": null
+    },
+    "74": {
+        "origen": "68932435D",
+        "destino": "94617367J",
+        "peso": 1.86,
+        "volumen": 24.97,
+        "km": 341.99,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890814",
+        "fecha_entrega": null
+    },
+    "75": {
+        "origen": "19801926F",
+        "destino": "48001619K",
+        "peso": 1.14,
+        "volumen": 15.06,
+        "km": 125.97,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890833",
+        "fecha_entrega": null
+    },
+    "76": {
+        "origen": "10324290G",
+        "destino": "68932435D",
+        "peso": 1.24,
+        "volumen": 7.65,
+        "km": 134.19,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890860",
+        "fecha_entrega": null
+    },
+    "77": {
+        "origen": "46721333F",
+        "destino": "57624310H",
+        "peso": 0.87,
+        "volumen": 6.61,
+        "km": 346.96,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890879",
+        "fecha_entrega": null
+    },
+    "78": {
+        "origen": "86372247W",
+        "destino": "46721333F",
+        "peso": 0.71,
+        "volumen": 4.73,
+        "km": 24.0,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890927",
+        "fecha_entrega": null
+    },
+    "79": {
+        "origen": "21623370N",
+        "destino": "48001619K",
+        "peso": 1.11,
+        "volumen": 7.93,
+        "km": 123.57,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890951",
+        "fecha_entrega": null
+    },
+    "80": {
+        "origen": "43643305T",
+        "destino": "19469927J",
+        "peso": 1.93,
+        "volumen": 8.95,
+        "km": 344.22,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.890980",
+        "fecha_entrega": null
+    },
+    "81": {
+        "origen": "58965854H",
+        "destino": "99206331V",
+        "peso": 1.66,
+        "volumen": 9.79,
+        "km": 435.11,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891000",
+        "fecha_entrega": null
+    },
+    "82": {
+        "origen": "16804608A",
+        "destino": "49165138Q",
+        "peso": 0.9,
+        "volumen": 3.68,
+        "km": 133.64,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891018",
+        "fecha_entrega": null
+    },
+    "83": {
+        "origen": "43643305T",
+        "destino": "58965854H",
+        "peso": 0.97,
+        "volumen": 4.36,
+        "km": 506.63,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891038",
+        "fecha_entrega": null
+    },
+    "84": {
+        "origen": "45559832Y",
+        "destino": "36393741J",
+        "peso": 66.79,
+        "volumen": 467.63,
+        "km": 30.38,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891056",
+        "fecha_entrega": null
+    },
+    "85": {
+        "origen": "21623370N",
+        "destino": "80521136E",
+        "peso": 0.12,
+        "volumen": 0.89,
+        "km": 315.0,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891074",
+        "fecha_entrega": null
+    },
+    "86": {
+        "origen": "54984164L",
+        "destino": "20830669Y",
+        "peso": 1.74,
+        "volumen": 8.98,
+        "km": 301.52,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891092",
+        "fecha_entrega": null
+    },
+    "87": {
+        "origen": "16238424X",
+        "destino": "24312211S",
+        "peso": 0.3,
+        "volumen": 1.22,
+        "km": 352.15,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891117",
+        "fecha_entrega": null
+    },
+    "88": {
+        "origen": "80521136E",
+        "destino": "23298714J",
+        "peso": 1.68,
+        "volumen": 12.05,
+        "km": 504.46,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891137",
+        "fecha_entrega": null
+    },
+    "89": {
+        "origen": "82021721H",
+        "destino": "99784695T",
+        "peso": 0.2,
+        "volumen": 0.9,
+        "km": 1.83,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891166",
+        "fecha_entrega": null
+    },
+    "90": {
+        "origen": "90970499W",
+        "destino": "19801926F",
+        "peso": 1.28,
+        "volumen": 9.77,
+        "km": 132.03,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891187",
+        "fecha_entrega": null
+    },
+    "91": {
+        "origen": "10660690Y",
+        "destino": "68932435D",
+        "peso": 1.58,
+        "volumen": 10.2,
+        "km": 352.6,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891205",
+        "fecha_entrega": null
+    },
+    "92": {
+        "origen": "58965854H",
+        "destino": "44079229M",
+        "peso": 1.48,
+        "volumen": 5.24,
+        "km": 20.49,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891231",
+        "fecha_entrega": null
+    },
+    "93": {
+        "origen": "49165138Q",
+        "destino": "75139689T",
+        "peso": 33.36,
+        "volumen": 151.93,
+        "km": 134.42,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891252",
+        "fecha_entrega": null
+    },
+    "94": {
+        "origen": "82416694N",
+        "destino": "58965854H",
+        "peso": 1.7,
+        "volumen": 11.8,
+        "km": 312.09,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891278",
+        "fecha_entrega": null
+    },
+    "95": {
+        "origen": "75045401N",
+        "destino": "34823453G",
+        "peso": 1.44,
+        "volumen": 17.13,
+        "km": 509.58,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891296",
+        "fecha_entrega": null
+    },
+    "96": {
+        "origen": "49165138Q",
+        "destino": "36815318T",
+        "peso": 1.02,
+        "volumen": 3.77,
+        "km": 343.34,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891315",
+        "fecha_entrega": null
+    },
+    "97": {
+        "origen": "62052904P",
+        "destino": "16804608A",
+        "peso": 1.69,
+        "volumen": 6.99,
+        "km": 304.08,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891334",
+        "fecha_entrega": null
+    },
+    "98": {
+        "origen": "94617367J",
+        "destino": "46721333F",
+        "peso": 0.57,
+        "volumen": 2.32,
+        "km": 342.43,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891353",
+        "fecha_entrega": null
+    },
+    "99": {
+        "origen": "10324290G",
+        "destino": "80024253P",
+        "peso": 1.96,
+        "volumen": 29.47,
+        "km": 0.28,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891371",
+        "fecha_entrega": null
+    },
+    "100": {
+        "origen": "76711440T",
+        "destino": "24312211S",
+        "peso": 1.93,
+        "volumen": 17.94,
+        "km": 3.22,
+        "estado": "generado",
+        "fecha_pedido": "2026-04-09 03:45:14.891391",
+        "fecha_entrega": null
+    }
+}

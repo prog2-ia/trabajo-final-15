@@ -1,11 +1,22 @@
 # menu/menu_principal.py
 
 # asegurar acceso a la raiz del proyecto
-# BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-# sys.path.append(BASE_DIR)
 
-from tests.test_10_generar_clientes_aleatorios import ejecutar as test_clientes
-from tests.test_15_prueba_delegaciones import ejecutar as test_delegaciones
+import os
+import sys
+
+# ==========================================================
+# AÑADIR RAÍZ DEL PROYECTO
+# ==========================================================
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(BASE_DIR)
+
+from tests.test_10_generar_clientes import ejecutar as test_clientes
+from tests.test_15_generar_delegaciones import ejecutar as test_delegaciones
+from tests.test_16_generar_pedidos import ejecutar as test_pedidos
+from programas.mantenimiento_clientes import ejecutar as mantenimiento_clientes
+from programas.mantenimiento_pedidos import ejecutar as mantenimiento_pedidos
+
 
 
 def menu_datos_prueba():
@@ -27,7 +38,8 @@ def menu_datos_prueba():
             test_delegaciones()
         elif opcion == "2":
             test_clientes()
-        # elif opcion == "3":
+        elif opcion == "3":
+            test_pedidos()
         # test_17_prueba_pedidos.py
         # elif opcion == "4":
         # test_18_prueba_vehículos.py
@@ -51,8 +63,8 @@ def menu_maestros():
 
         opcion = input("\nSeleccione una opcion: ").strip()
 
-        # if opcion == "1":
-        # ejecutar_clientes()
+        if opcion == "1":
+            mantenimiento_clientes()
         # elif opcion == "2":
         # ejecutar_delegaciones()
 
@@ -80,8 +92,8 @@ def menu_pedidos():
 
         opcion = input("\nSeleccione una opcion: ").strip()
 
-        # if opcion == "1":
-        # mantenimiento_pedidos.py()
+        if opcion == "1":
+            mantenimiento_pedidos()
 
         # elif opcion == "2":
         # busqueda_pedidos.py

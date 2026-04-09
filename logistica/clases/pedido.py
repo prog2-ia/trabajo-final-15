@@ -1,176 +1,252 @@
-import random
+# ==========================================================
+# CLASE PEDIDO (UNIDAD)
+# ==========================================================
+from abc import ABC
 from datetime import datetime
 
-import utiles.utils as utils
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from logistica.datos.obsoletos.dic_ciudades_alicante import CIUDADES_ALICANTE
+from utiles.utils import distancia_km
 
 
 class Pedido:
 
-    def __init__(self, id, origen, destino, peso, volumen, fecha_entrega, nivel_servicio):
+    _contador = 0
 
-        self.id = id
+    def __init__(self, origen, destino, peso, volumen, fecha_entrega=None, nivel_servicio="standard"):
 
-        # Atributos protegidos
+        # ==========================
+        # ID AUTOINCREMENTAL
+        # ==========================
+        Pedido._contador += 1
+        self._id = Pedido._contador
+
+        # ==========================
+        # CLIENTES
+        # ==========================
         self._origen = origen
         self._destino = destino
-        self._peso = peso if peso > 0 else None
-        self._volumen = volumen if volumen > 0 else None
 
-        # Atributos privados
-        self.__fecha_entrega = fecha_entrega if fecha_entrega >= datetime.now() else None
-        self.__nivel_servicio = nivel_servicio if nivel_servicio in ["standard", "urgente"] else None
+        # ==========================
+        # DATOS LOGÍSTICOS
+        # ==========================
+        self._peso = peso
+        self._volumen = volumen
+        self._nivel_servicio = nivel_servicio
 
-        # Coordenadas simuladas
-        self.x = random.uniform(0, 100)
-        self.y = random.uniform(0, 100)
+        # ==========================
+        # FECHAS
+        # ==========================
+        self._fecha_pedido = datetime.now()   # 🔥 AUTOMÁTICO
+        self._fecha_entrega = fecha_entrega
 
-        # Coordenadas reales (o None si no existen)
-        coords_origen = CIUDADES_ALICANTE.get(origen)
-        coords_destino = CIUDADES_ALICANTE.get(destino)
+        # ==========================
+        # ESTADO
+        # ==========================
+        self._estado_pedido = "generado"
 
-        if coords_origen:
-            self.lat, self.lon = coords_origen
-        else:
-            self.lat, self.lon = (None, None)
-
-        if coords_destino:
-            self.lat_des, self.lon_des = coords_destino
-        else:
-            self.lat_des, self.lon_des = (None, None)
-
-        # Distancia
+        # ==========================
+        # DISTANCIA REAL
+        # ==========================
         self._km = self.calcular_distancia()
 
+
     # ==========================================
-    # GETTERS Y SETTERS
+    # PROPIEDADES
     # ==========================================
-
     @property
-    def origen(self):
-        return self._origen
-
-    @origen.setter
-    def origen(self, valor):
-        if valor in CIUDADES_ALICANTE:
-            self._origen = valor
-
-    @property
-    def destino(self):
-        return self._destino
-
-    @destino.setter
-    def destino(self, valor):
-        if valor in CIUDADES_ALICANTE:
-            self._destino = valor
-
-    @property
-    def peso(self):
-        return self._peso
-
-    @peso.setter
-    def peso(self, valor):
-        if valor > 0:
-            self._peso = valor
-        else:
-            return None
-
-    @property
-    def volumen(self):
-        return self._volumen
-
-    @volumen.setter
-    def volumen(self, valor):
-        if valor > 0:
-            self._volumen = valor
-        else:
-            return None
-
-    @property
-    def fecha_entrega(self):
-        return self.__fecha_entrega
-
-    @fecha_entrega.setter
-    def fecha_entrega(self, valor):
-        if valor >= datetime.now():
-            self.__fecha_entrega = valor
-        else:
-            return None
-
-    @property
-    def nivel_servicio(self):
-        return self.__nivel_servicio
-
-    @nivel_servicio.setter
-    def nivel_servicio(self, valor):
-        if valor in ["standard", "urgente"]:
-            self.__nivel_servicio = valor
-        else:
-            return None
+    def id(self):
+        return self._id
 
     @property
     def km(self):
         return self._km
 
+    @property
+    def estado_pedido(self):
+        return self._estado_pedido
+
+    @property
+    def fecha_pedido(self):
+        return self._fecha_pedido
+
     # ==========================================
-    # MÉTODOS
+    # DISTANCIA
     # ==========================================
-
-    def coordenadas_origen(self):
-        return CIUDADES_ALICANTE.get(self._origen)
-
-    def coordenadas_destino(self):
-        return CIUDADES_ALICANTE.get(self._destino)
-
     def calcular_distancia(self):
-        if None in (self.lat, self.lon, self.lat_des, self.lon_des):
-            return None
 
-        return utils.distancia_km(
-            (self.lat, self.lon),
-            (self.lat_des, self.lon_des)
-        )
+        if not self._origen.coordenadas or not self._destino.coordenadas:
+            return 0
+
+        from utiles.utils import distancia_km
+
+        return round(distancia_km(
+            self._origen.coordenadas,
+            self._destino.coordenadas
+        ), 2)
+
+    # ======================================================
+    # PROPIEDADES
+    # ======================================================
+    @property
+    def id(self):
+        return self._id
+
+    @property
+    def origen(self):
+        return self._origen
+
+    @property
+    def destino(self):
+        return self._destino
+
+    @property
+    def peso(self):
+        return self._peso
+
+    @property
+    def volumen(self):
+        return self._volumen
+
+    @property
+    def km(self):
+        return self._km
+
+    # ======================================================
+    def __str__(self):
+        return f"{self._id} | {self._origen.nombre} → {self._destino.nombre} | {self._km} km"
+
+    # ==========================================================
+    # GRUPOS DE PEDIDOS (CLASE BASE ABSTRACTA)
+    # ==========================================================
+
+
+class GrupoPedidos(ABC):
+    _contador = 0
+
+    def __init__(self):
+        # ==========================
+        # ID PROPIO DEL GRUPO
+        # ==========================
+        GrupoPedidos._contador += 1
+        self._id = GrupoPedidos._contador
+
+        # ==========================
+        # LISTA DE PEDIDOS
+        # ==========================
+        self._pedidos = []
+
+        # ==========================
+        # FECHA CREACIÓN
+        # ==========================
+        self._fecha_creacion = datetime.now()
+
+        # ==========================
+        # ESTADO DEL GRUPO
+        # ==========================
+        self._estado_pedidos = "generado"
 
     # ==========================================
-    # POLIMORFISMO (OPERADOR +)
+    # PROPIEDADES
     # ==========================================
+    @property
+    def id(self):
+        return self._id
 
-    def __add__(self, other):
+    @property
+    def pedidos(self):
+        return self._pedidos
 
-        if not isinstance(other, Pedido):
-            return None
+    @property
+    def estado(self):
+        return self._estado_pedidos
 
-        if self._peso is None or other._peso is None:
-            return None
+    @property
+    def fecha_creacion(self):
+        return self._fecha_creacion
 
-        if self._volumen is None or other._volumen is None:
-            return None
-
-        return Pedido(
-            f"{self.id}-{other.id}",
-            self._origen,
-            other._destino,
-            self._peso + other._peso,
-            self._volumen + other._volumen,
-            self.__fecha_entrega if self.__fecha_entrega else datetime.now(),
-            self.__nivel_servicio if self.__nivel_servicio else "standard"
-        )
+    # ==========================================
+    # MÉTODO BASE (sobrescribible)
+    # ==========================================
+    def agregar_pedido(self, pedido):
+        """
+        Método genérico: añadir pedido al grupo
+        (se puede especializar en subclases)
+        """
+        self._pedidos.append(pedido)
 
     # ==========================================
     # REPRESENTACIÓN
     # ==========================================
-
     def __str__(self):
-
-        if None in (self._peso, self._volumen, self.__fecha_entrega, self.__nivel_servicio, self._km):
-            return "Pedido inválido"
-
         return (
-            f"Pedido:{self.id} {self._origen} → {self._destino} "
-            f"{self._km:.1f} km Peso:{self._peso} kg "
-            f"Vol:{self._volumen} l. "
-            f"Entrega:{self.__fecha_entrega.date()} "
-            f"Hora:{self.__fecha_entrega.strftime('%H:%M')} "
-            f"Servicio:{self.__nivel_servicio}"
+            f"Grupo {self._id} | "
+            f"Pedidos: {len(self._pedidos)} | "
+            f"Estado: {self._estado_pedidos}"
         )
+
+# ==========================================================
+# GRUPO RECOGIDA
+# ==========================================================
+class GrupoPedidosRecogida(GrupoPedidos):
+    _contador = 0
+
+    def __init__(self):
+        super().__init__()
+
+        GrupoPedidosRecogida._contador += 1
+        self._id_recogida = GrupoPedidosRecogida._contador
+
+    def agregar_pedido(self, pedido):
+        """
+        Añade pedido y actualiza estado individual
+        """
+        pedido._estado_pedido = "en_recogida"
+        self._pedidos.append(pedido)
+
+# ==========================================================
+# GRUPO TRANSPORTE
+# ==========================================================
+class GrupoPedidosTransporte(GrupoPedidos):
+    _contador = 0
+
+    def __init__(self):
+        super().__init__()
+
+        GrupoPedidosTransporte._contador += 1
+        self._id_transporte = GrupoPedidosTransporte._contador
+
+    def agregar_pedido(self, pedido):
+        pedido._estado_pedido = "en_transporte"
+        self._pedidos.append(pedido)
+
+# ==========================================================
+# GRUPO REPARTO
+# ==========================================================
+class GrupoPedidosReparto(GrupoPedidos):
+    _contador = 0
+
+    def __init__(self):
+        super().__init__()
+
+        GrupoPedidosReparto._contador += 1
+        self._id_reparto = GrupoPedidosReparto._contador
+
+    def agregar_pedido(self, pedido):
+        pedido._estado_pedido = "en_reparto"
+        self._pedidos.append(pedido)
+
+# ==========================================================
+# MÉTODO FINALIZAR PEDIDO (MUY IMPORTANTE)
+# ==========================================================
+def finalizar_pedido(pedido):
+    """
+    Marca un pedido como entregado y fija fecha de entrega
+    """
+
+    from datetime import datetime
+
+    pedido._estado_pedido = "entregado"
+    pedido._fecha_entrega = datetime.now()

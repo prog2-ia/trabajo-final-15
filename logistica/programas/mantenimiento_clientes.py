@@ -1,25 +1,22 @@
 """
 ==========================================================
-PROGRAMA: GESTIÓN DE CLIENTES (CRUD + GENERACIÓN AUTOMÁTICA)
+PROGRAMA: GESTIÓN DE CLIENTES (VERSIÓN FINAL CORREGIDA PRO)
 ==========================================================
 
-Adaptado a la nueva arquitectura:
-
 ✔ Dirección = STRING
-✔ Coordenadas geográficas automáticas
-✔ Delegación más cercana automática
-✔ Distancia al despacho en km
+✔ Coordenadas geográficas
+✔ Población y provincia
+✔ Delegación cercana automática
+✔ Distancia al despacho
 
-FUNCIONALIDADES:
-- Alta / Baja / Modificación / Listado
-- Generación automática de clientes
-- Persistencia JSON
+✔ Compatible con nueva persistencia (sobrescribir=True)
+✔ Sin problemas de memoria (recarga dinámica)
 """
 
-import os
 # ==========================================================
 # IMPORTS
 # ==========================================================
+import os
 import random
 import sys
 
@@ -30,6 +27,8 @@ import utiles.utils as utils
 from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
 from persistencia.persistencia_delegaciones import cargar_delegaciones
 from utiles.utils import distancia_km
+from utiles.geolocalizacion import geocodificar
+
 
 # ==========================================================
 # DATOS BASE
@@ -57,18 +56,19 @@ direcciones_validas = [
 # FUNCIONES AUXILIARES
 # ==========================================================
 def calcular_datos_logisticos(cliente):
+
     delegaciones = cargar_delegaciones()
 
-    coord = utils.geocodificar(cliente.direccion)
+    coord = geocodificar(cliente.direccion)
 
-    # ------------------------------------------------------
-    # ❌ NO GEOLOCALIZADO → BLOQUEAR
-    # ------------------------------------------------------
     if not coord:
         print("❌ No se pudo geolocalizar la dirección")
         return False
 
     cliente._coordenadas = coord
+
+    if not cliente._poblacion or not cliente._provincia:
+        cliente.actualizar_datos_geo()
 
     mejor = None
     min_dist = float("inf")
@@ -84,82 +84,37 @@ def calcular_datos_logisticos(cliente):
             min_dist = dist
             mejor = d
 
-    # ------------------------------------------------------
-    # ❌ SIN DELEGACIÓN → BLOQUEAR
-    # ------------------------------------------------------
     if not mejor:
         print("❌ No se encontró delegación cercana")
         return False
 
-    # ------------------------------------------------------
-    # 🚨 DETECTAR GEOLOCALIZACIÓN SOSPECHOSA
-    # ------------------------------------------------------
     if min_dist < 0.1:
         print("\n⚠️ Dirección sospechosa")
         print(f"📍 Coincide con despacho: {mejor.nombre}")
         print("❌ Cliente NO guardado\n")
         return False
 
-    # ------------------------------------------------------
-    # ✔ OK → ASIGNAR
-    # ------------------------------------------------------
     cliente._delegacion_cercana = mejor
-    cliente._provincia = mejor.provincia
     cliente._distancia_despacho = round(min_dist, 2)
 
     return True
 
 
 # ==========================================================
-# GENERACIÓN AUTOMÁTICA
-# ==========================================================
-def generar_cliente():
-    apellido1 = random.choice(apellidos)
-    apellido2 = random.choice(apellidos)
-
-    while apellido2 == apellido1:
-        apellido2 = random.choice(apellidos)
-
-    direccion = random.choice(direcciones_validas)
-
-    c = Cliente(
-        dni=utils.generar_dni_real(),
-        nombre=random.choice(nombres),
-        apellidos=f"{apellido1} {apellido2}",
-        direccion=direccion
-    )
-
-    if not calcular_datos_logisticos(c):
-        return None
-
-    return c
-
-
-# ==========================================================
-# CARGA INICIAL
-# ==========================================================
-clientes = cargar_clientes()
-
-
-# ==========================================================
 # ALTA CLIENTE
 # ==========================================================
 def alta_cliente_interactiva():
+
+    global clientes
+    clientes = cargar_clientes()
+
     print("\n--- ALTA CLIENTE PRO ---")
 
-    # ==========================================================
-    # DNI (AUTO GENERADO SI ENTER)
-    # ==========================================================
-    # ==========================================================
-    # DNI (AUTO + VALIDACIÓN REAL)
-    # ==========================================================
+    # DNI
     while True:
 
         dni_input = input("DNI (ENTER = automático): ").strip().upper()
 
-        # ------------------------------------------------------
-        # CASO 1: ENTER → generar automático
-        # ------------------------------------------------------
         if not dni_input:
 
             while True:
@@ -170,11 +125,8 @@ def alta_cliente_interactiva():
 
             break
 
-        # ------------------------------------------------------
-        # CASO 2: VALIDACIÓN MANUAL
-        # ------------------------------------------------------
         if not utils.validar_dni_real(dni_input):
-            print("❌ DNI inválido (ej: 12345678Z)")
+            print("❌ DNI inválido")
             continue
 
         if dni_input in clientes:
@@ -183,143 +135,152 @@ def alta_cliente_interactiva():
 
         dni = dni_input
         break
-    # ==========================================================
-    # DATOS PERSONALES
-    # ==========================================================
+
+    # DATOS
     nombre = input("Nombre: ").strip()
     apellido1 = input("Primer apellido: ").strip()
     apellido2 = input("Segundo apellido: ").strip()
 
-    # ==========================================================
-    # DIRECCIÓN (CON SUGERENCIAS + VALIDACIÓN)
-    # ==========================================================
-    direccion = ""
-
+    # DIRECCIÓN
     while True:
 
-        texto = input("\nDirección: ").strip()
+        direccion = input("\nDirección: ").strip()
 
-        # ------------------------------------------------------
-        # VALIDACIÓN EN TIEMPO REAL
-        # ------------------------------------------------------
-        coord = utils.geocodificar(texto)
+        coord = geocodificar(direccion)
 
         if coord:
             print("✔ Dirección válida")
-            direccion = texto
             break
         else:
-            print("❌ Dirección no válida, intenta de nuevo")
+            print("❌ Dirección no válida")
 
-    # ==========================================================
-    # CREAR CLIENTE
-    # ==========================================================
     c = Cliente(dni, nombre, f"{apellido1} {apellido2}", direccion)
 
-    # ==========================================================
-    # CALCULAR DATOS LOGÍSTICOS
-    # ==========================================================
     if not calcular_datos_logisticos(c):
-        print("❌ Cliente NO actualizado por error de geolocalización")
+        print("❌ Cliente NO guardado")
         return
-    # ==========================================================
-    # GUARDAR
-    # ==========================================================
+
     clientes[dni] = c
     guardar_clientes({dni: c})
+
+    clientes = cargar_clientes()
 
     print("\n✔ Cliente añadido correctamente")
     print(f"📍 Delegación: {c.delegacion_cercana.nombre if c.delegacion_cercana else 'N/A'}")
     print(f"📏 Distancia: {c.distancia_despacho} km")
+    print(f"🌍 Población: {c.poblacion}")
+    print(f"🗺️ Provincia: {c.provincia}")
 
 
 # ==========================================================
-# BAJA CLIENTE
+# BAJA
 # ==========================================================
 def baja_cliente_interactiva():
+
+    global clientes
+    clientes = cargar_clientes()
+
     print("\n--- BAJA CLIENTE ---")
 
-    if not clientes:
-        print("No hay clientes")
-        return
-
-    dni = input("DNI a eliminar: ").strip()
+    dni = input("DNI: ").strip()
 
     if dni not in clientes:
-        print("No encontrado")
+        print("❌ No encontrado")
         return
 
     del clientes[dni]
-    guardar_clientes(clientes)
 
-    print("✔ Cliente eliminado")
+    # 🔥 CLAVE
+    guardar_clientes(clientes, sobrescribir=True)
+
+    clientes = cargar_clientes()
+
+    print("✔ Eliminado")
 
 
 # ==========================================================
-# MODIFICAR CLIENTE
+# MODIFICAR
 # ==========================================================
 def modificar_cliente_interactiva():
+
+    global clientes
+    clientes = cargar_clientes()
+
     print("\n--- MODIFICAR CLIENTE ---")
 
     dni = input("DNI: ").strip()
 
     if dni not in clientes:
-        print("No encontrado")
+        print("❌ No encontrado")
         return
 
-    c = clientes[dni]
+    c_original = clientes[dni]
 
-    nombre = input(f"Nombre [{c.nombre}]: ") or c.nombre
-    apellidos = input(f"Apellidos [{c.apellidos}]: ") or c.apellidos
-    direccion = input(f"Dirección [{c.direccion}]: ") or c.direccion
+    nuevo_nombre = input(f"\nNombre [{c_original.nombre}]: ").strip() or c_original.nombre
+    nuevos_apellidos = input(f"Apellidos [{c_original.apellidos}]: ").strip() or c_original.apellidos
+    nueva_direccion = input(f"Dirección [{c_original.direccion}]: ").strip() or c_original.direccion
 
-    c._nombre = nombre
-    c._apellidos = apellidos
-    c._direccion = direccion
+    coord = geocodificar(nueva_direccion)
 
-    if not calcular_datos_logisticos(c):
+    if not coord:
         print("❌ Dirección no válida")
         return
 
-    guardar_clientes({dni: c})
+    c_temp = Cliente(dni, nuevo_nombre, nuevos_apellidos, nueva_direccion)
+    c_temp._coordenadas = coord
 
-    print("✔ Cliente modificado")
+    try:
+        c_temp.actualizar_datos_geo()
+    except:
+        pass
+
+    c_temp._poblacion = input(f"Población [{c_temp.poblacion}]: ").strip() or c_temp.poblacion
+    c_temp._provincia = input(f"Provincia [{c_temp.provincia}]: ").strip() or c_temp.provincia
+
+    if not calcular_datos_logisticos(c_temp):
+        return
+
+    clientes[dni] = c_temp
+    guardar_clientes({dni: c_temp})
+
+    clientes = cargar_clientes()
+
+    print("✔ Cliente modificado correctamente")
 
 
 # ==========================================================
-# LISTAR CLIENTES
+# LISTAR
 # ==========================================================
 def listar_clientes():
+
+    global clientes
+    clientes = cargar_clientes()
+
     print("\n--- LISTADO CLIENTES ---")
 
     if not clientes:
         print("No hay clientes")
         return
 
-    for c in sorted(clientes.values(), key=lambda x: (x.apellidos, x.nombre)):
-        print("\n------------------------")
-        print(f"{c.nombre} {c.apellidos}")
-        print(f"DNI: {c.dni}")
-        print(f"Dirección: {c.direccion}")
-        print(f"Provincia: {c.provincia}")
-        print(f"Delegación: {c.delegacion_cercana.nombre if c.delegacion_cercana else 'N/A'}")
-        print(f"Distancia: {c.distancia_despacho} km")
+    for c in clientes.values():
+        print(f"{c.dni} | {c.nombre} {c.apellidos} | {c.poblacion} | {c.provincia}")
 
 
 # ==========================================================
 # MENU
 # ==========================================================
-def menu():
+def ejecutar():
+
     while True:
 
         print("\nGESTION CLIENTES")
-        print("1 Alta cliente")
-        print("2 Baja cliente")
-        print("3 Modificar cliente")
-        print("4 Listar clientes")
+        print("1 Alta")
+        print("2 Baja")
+        print("3 Modificar")
+        print("4 Listar")
         print("0 Salir")
 
-        op = input("Opcion: ")
+        op = input("Opción: ")
 
         if op == "1":
             alta_cliente_interactiva()
@@ -337,4 +298,4 @@ def menu():
 # MAIN
 # ==========================================================
 if __name__ == "__main__":
-    menu()
+    ejecutar()
