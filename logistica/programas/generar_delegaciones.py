@@ -1,6 +1,6 @@
 """
 ==========================================================
-MÓDULO: test_15_generar_delegaciones.py
+MÓDULO: generar_delegaciones.py
 ==========================================================
 
 Generación automática de delegaciones logísticas.

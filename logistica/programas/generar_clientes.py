@@ -136,7 +136,7 @@ def ver_mapa_delegaciones():
         return
 
     base_dir = encontrar_raiz()
-    ruta = os.path.join(base_dir, "datos", "mapa_delegaciones.html")
+    ruta = os.path.join(base_dir, "datos", "../tests/mapa_delegaciones.html")
 
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
 

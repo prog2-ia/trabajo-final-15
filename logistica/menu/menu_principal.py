@@ -11,9 +11,9 @@ import sys
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(BASE_DIR)
 
-from tests.test_10_generar_clientes import ejecutar as test_clientes
-from tests.test_15_generar_delegaciones import ejecutar as test_delegaciones
-from tests.test_16_generar_pedidos import ejecutar as test_pedidos
+from programas.generar_clientes import ejecutar as generar_clientes
+from programas.generar_delegaciones import ejecutar as generar_delegaciones
+from programas.generar_pedidos import ejecutar as generar_pedidos
 
 from programas.mantenimiento_clientes import ejecutar as mantenimiento_clientes
 from programas.mantenimiento_delegaciones import ejecutar as mantenimiento_delegaciones
@@ -39,11 +39,11 @@ def menu_datos_prueba():
         opcion = input("\nSeleccione una opción: ").strip()
 
         if opcion == "1":
-            test_delegaciones()
+            generar_delegaciones()
         elif opcion == "2":
-            test_clientes()
+            generar_clientes()
         elif opcion == "3":
-            test_pedidos()
+            generar_pedidos()
         # test_17_prueba_pedidos.py
         # elif opcion == "4":
         # test_18_prueba_vehículos.py
