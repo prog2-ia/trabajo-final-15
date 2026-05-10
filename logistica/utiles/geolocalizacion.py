@@ -6,8 +6,11 @@ import json
 import os
 import time
 
-from geopy.exc import GeocoderTimedOut, GeocoderRateLimited
-from geopy.geocoders import Nominatim
+from typing import Optional
+
+
+from geopy.exc import GeocoderTimedOut, GeocoderRateLimited # type: ignore[import-untyped]
+from geopy.geocoders import Nominatim # type: ignore[import-untyped]
 
 # ==========================================================
 # CONFIG
@@ -28,10 +31,11 @@ if os.path.exists(CACHE_FILE):
     with open(CACHE_FILE, "r", encoding="utf-8") as f:
         CACHE = json.load(f)
 else:
-    CACHE = {}
+    CACHE = dict()
 
-CACHE_DATOS_GEO = {}
-
+# CACHE_DATOS_GEO = {}
+# CACHE_DATOS_GEO: dict[tuple[float, float], tuple[str | None, str | None]] = {}
+CACHE_DATOS_GEO: dict[tuple[float, float], tuple[Optional[str], Optional[str]]] = {}
 
 def guardar_cache():
     with open(CACHE_FILE, "w", encoding="utf-8") as f:

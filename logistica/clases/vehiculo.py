@@ -1,77 +1,78 @@
 """
 CLASES VEHÍCULO DEL SISTEMA LOGÍSTICO
 
-Este módulo define la jerarquía de vehículos utilizados en el sistema logístico.
-
-DESCRIPCIÓN GENERAL
-------------------
-La clase Vehiculo es una clase abstracta que representa un medio de transporte.
-A partir de ella se definen distintos tipos de vehículos:
-
-- Camión
-- Furgoneta
-- Motocicleta
-- Mochila
-
-Cada tipo de vehículo tiene sus propias reglas de validación.
-
-RESPONSABILIDADES
-----------------
-Cada vehículo se encarga de:
-
-- almacenar su información básica (tipo, matrícula, estado)
-- validar su matrícula
-- controlar su disponibilidad
-- proporcionar una descripción del tipo de vehículo
-
-CONCEPTOS UTILIZADOS
---------------------
-- Clase abstracta (ABC)
-- Herencia (Vehiculo → subclases)
-- Encapsulación (atributos privados + propiedades)
-- Polimorfismo (validar_matricula, descripcion)
-- Validación de datos
-- Uso de conjuntos para unicidad
-
-OBJETIVO
---------
-Modelar distintos tipos de transporte dentro del sistema logístico,
-aplicando restricciones y validaciones propias de cada uno.
+Modelo refactorizado:
+✔ Cada vehículo conoce directamente su delegación
+✔ Las delegaciones ya NO almacenan flotas
+✔ Relación:
+    Delegacion 1 ---- * Vehiculos
 """
 
 # ==========================================================
 # IMPORTACIONES
 # ==========================================================
+from abc import ABC, abstractmethod
 
-from abc import ABC, abstractmethod  # Para definir clase abstracta
-
-from utiles.utils import validar_matricula_esp  # Validación de matrículas españolas
+from utiles.utils import validar_matricula_esp
 
 
 # ==========================================================
 # CLASE ABSTRACTA VEHICULO
 # ==========================================================
-
 class Vehiculo(ABC):
-    """
-    Clase base abstracta para todos los vehículos.
 
-    No se puede instanciar directamente.
-    Define atributos y comportamientos comunes.
-    """
+    # ======================================================
+    # REGISTROS GLOBALES
+    # ======================================================
 
-    # Conjunto para controlar que no haya matrículas duplicadas
     matriculas_existentes = set()
 
-    def __init__(self, tipo, matricula, disponible=True):
-        # Atributos privados (encapsulación)
+    _vehiculos = []
+
+    # ======================================================
+    # CONSTRUCTOR
+    # ======================================================
+
+    def __init__(
+            self,
+            tipo,
+            matricula,
+            disponible=True,
+            delegacion=None
+    ):
+
         self._tipo = tipo.lower()
+
         self._matricula = matricula.upper()
+
         self._disponible = disponible
 
-    # ------------------------------------------------------
-    # PROPIEDADES (GETTERS)
-    # ------------------------------------------------------
+        self._delegacion = None
+
+        # --------------------------------------------------
+        # VALIDAR UNICIDAD
+        # --------------------------------------------------
+        if self._matricula in Vehiculo.matriculas_existentes:
+
+            raise ValueError(
+                f"La matrícula '{self._matricula}' ya existe"
+            )
+
+        Vehiculo.matriculas_existentes.add(
+            self._matricula
+        )
+
+        Vehiculo._vehiculos.append(self)
+
+        # --------------------------------------------------
+        # ASIGNAR DELEGACIÓN
+        # --------------------------------------------------
+        if delegacion:
+            self.asignar_delegacion(delegacion)
+
+    # ======================================================
+    # PROPIEDADES
+    # ======================================================
 
     @property
     def tipo(self):
@@ -85,162 +86,196 @@ class Vehiculo(ABC):
     def disponible(self):
         return self._disponible
 
-    # ------------------------------------------------------
-    # GESTIÓN DE DISPONIBILIDAD
-    # ------------------------------------------------------
+    @property
+    def delegacion(self):
+        return self._delegacion
+
+    # ======================================================
+    # DISPONIBILIDAD
+    # ======================================================
 
     def ocupar(self):
-        """
-        Marca el vehículo como no disponible.
-        """
         self._disponible = False
 
     def liberar(self):
-        """
-        Marca el vehículo como disponible.
-        """
         self._disponible = True
 
-    # ------------------------------------------------------
-    # VALIDACIÓN DE UNICIDAD
-    # ------------------------------------------------------
+    # ======================================================
+    # GESTIÓN DE DELEGACIÓN
+    # ======================================================
 
-    def validar_unicidad(self):
-        """
-        Comprueba que la matrícula no esté repetida en el sistema.
+    def asignar_delegacion(self, delegacion):
 
-        Usa un conjunto (set) para asegurar unicidad.
-        """
+        if not delegacion.validar_vehiculo(self):
 
-        if self._matricula in Vehiculo.matriculas_existentes:
-            return False
+            raise ValueError(
+                f"La delegación '{delegacion.nombre}' "
+                f"no admite vehículos tipo '{self.tipo}'"
+            )
 
-        Vehiculo.matriculas_existentes.add(self._matricula)
-        return True
+        self._delegacion = delegacion
 
-    # ------------------------------------------------------
+    def quitar_delegacion(self):
+
+        self._delegacion = None
+
+    # ======================================================
+    # MÉTODOS DE CLASE
+    # ======================================================
+
+    @classmethod
+    def vehiculos_registrados(cls):
+
+        return cls._vehiculos
+
+    # ======================================================
     # MÉTODOS ABSTRACTOS
-    # ------------------------------------------------------
+    # ======================================================
 
     @abstractmethod
     def validar_matricula(self):
-        """
-        Método abstracto que valida la matrícula según el tipo de vehículo.
-        """
         pass
 
     @abstractmethod
     def descripcion(self):
-        """
-        Devuelve una descripción del vehículo.
-        """
         pass
 
-    # ------------------------------------------------------
-    # REPRESENTACIÓN EN TEXTO
-    # ------------------------------------------------------
+    # ======================================================
+    # REPRESENTACIÓN
+    # ======================================================
 
     def __str__(self):
-        """
-        Devuelve una representación en texto del vehículo.
-        """
 
-        estado = "Disponible" if self._disponible else "No disponible"
-        return f"{self._tipo} {self._matricula} ({estado})"
+        estado = (
+            "Disponible"
+            if self._disponible
+            else "No disponible"
+        )
+
+        delegacion = (
+            self._delegacion.nombre
+            if self._delegacion
+            else "Sin delegación"
+        )
+
+        return (
+            f"{self._tipo} "
+            f"{self._matricula} "
+            f"({estado}) "
+            f"| Delegación: {delegacion}"
+        )
 
 
 # ==========================================================
-# CAMION
+# CAMIÓN
 # ==========================================================
-
 class VehiculoCamion(Vehiculo):
-    """
-    Vehículo de gran capacidad para transporte pesado.
-    """
 
-    def __init__(self, matricula, disponible=True):
-        super().__init__("camion", matricula, disponible)
+    def __init__(
+            self,
+            matricula,
+            disponible=True,
+            delegacion=None
+    ):
+
+        super().__init__(
+            "camion",
+            matricula,
+            disponible,
+            delegacion
+        )
 
     def validar_matricula(self):
-        """
-        Valida matrícula española estándar.
-        """
 
-        if not validar_matricula_esp(self._matricula):
-            return False
-
-        return self.validar_unicidad()
+        return validar_matricula_esp(
+            self._matricula
+        )
 
     def descripcion(self):
+
         return "Vehiculo de gran capacidad"
 
 
 # ==========================================================
 # FURGONETA
 # ==========================================================
-
 class VehiculoFurgoneta(Vehiculo):
-    """
-    Vehículo de reparto medio.
-    """
 
-    def __init__(self, matricula, disponible=True):
-        super().__init__("furgoneta", matricula, disponible)
+    def __init__(
+            self,
+            matricula,
+            disponible=True,
+            delegacion=None
+    ):
+
+        super().__init__(
+            "furgoneta",
+            matricula,
+            disponible,
+            delegacion
+        )
 
     def validar_matricula(self):
-        if not validar_matricula_esp(self._matricula):
-            return False
 
-        return self.validar_unicidad()
+        return validar_matricula_esp(
+            self._matricula
+        )
 
     def descripcion(self):
+
         return "Vehiculo de reparto medio"
 
 
 # ==========================================================
 # MOTOCICLETA
 # ==========================================================
-
 class VehiculoMotocicleta(Vehiculo):
-    """
-    Vehículo rápido para transporte urbano.
-    """
 
-    def __init__(self, matricula, disponible=True):
-        super().__init__("motocicleta", matricula, disponible)
+    def __init__(
+            self,
+            matricula,
+            disponible=True,
+            delegacion=None
+    ):
+
+        super().__init__(
+            "motocicleta",
+            matricula,
+            disponible,
+            delegacion
+        )
 
     def validar_matricula(self):
-        if not validar_matricula_esp(self._matricula):
-            return False
 
-        return self.validar_unicidad()
+        return validar_matricula_esp(
+            self._matricula
+        )
 
     def descripcion(self):
+
         return "Vehiculo rapido urbano"
 
 
 # ==========================================================
 # MOCHILA
 # ==========================================================
-
 class VehiculoMochila(Vehiculo):
-    """
-    Representa un repartidor a pie o bicicleta.
 
-    Utiliza un formato de identificación distinto a una matrícula tradicional.
-    """
+    def __init__(
+            self,
+            matricula,
+            disponible=True,
+            delegacion=None
+    ):
 
-    def __init__(self, matricula, disponible=True):
-        super().__init__("mochila", matricula, disponible)
+        super().__init__(
+            "mochila",
+            matricula,
+            disponible,
+            delegacion
+        )
 
     def validar_matricula(self):
-        """
-        Valida formato especial: Nombre-Numero
-        Ejemplo: Alicante-1
-        """
-
-        if not self._matricula:
-            return False
 
         if "-" not in self._matricula:
             return False
@@ -258,7 +293,8 @@ class VehiculoMochila(Vehiculo):
         if not numero.isdigit():
             return False
 
-        return self.validar_unicidad()
+        return True
 
     def descripcion(self):
+
         return "Reparto ligero"

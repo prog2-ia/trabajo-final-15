@@ -1,5 +1,5 @@
 # ==========================================================
-# GENERADOR DE CLIENTES - VERSION PRO FINAL (CORREGIDO)
+# GENERADOR DE CLIENTES - 
 # ==========================================================
 
 import math

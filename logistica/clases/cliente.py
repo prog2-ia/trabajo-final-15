@@ -1,5 +1,5 @@
 """
-CLASE CLIENTE (VERSIÓN PRO FINAL)
+CLASE CLIENTE
 
 ✔ Dirección = STRING
 ✔ Coordenadas geográficas
@@ -57,7 +57,7 @@ class Cliente:
         self._importe_facturado = 0
 
     # ======================================================
-    # MÉTODO CLAVE (NUEVO)
+    # MÉTODO CLAVE
     # ======================================================
     def actualizar_datos_geo(self):
         """
@@ -99,7 +99,6 @@ class Cliente:
     @property
     def provincia(self):
         return self._provincia or "N/A"
-
 
 
     @property
