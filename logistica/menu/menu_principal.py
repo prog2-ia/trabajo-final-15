@@ -14,10 +14,11 @@ sys.path.append(BASE_DIR)
 from programas.generar_clientes import ejecutar as generar_clientes
 from programas.generar_delegaciones import ejecutar as generar_delegaciones
 from programas.generar_pedidos import ejecutar as generar_pedidos
+from programas.generar_vehiculos import ejecutar as generar_vehiculos
 
 from programas.mantenimiento_clientes import ejecutar as mantenimiento_clientes
 from programas.mantenimiento_delegaciones import ejecutar as mantenimiento_delegaciones
-
+from programas.mantenimiento_vehiculos import ejecutar as mantenimiento_vehiculos
 from programas.mantenimiento_pedidos import ejecutar as mantenimiento_pedidos
 
 
@@ -31,9 +32,8 @@ def menu_datos_prueba():
         print("1. Generación de delegaciones de prueba y cache de geolocaciones")
         print("2. Generación de clientes de prueba y caché de geolocaciones")
         print("3. Generación de pedidos de prueba")
+        print("4. Generación de vehículos de prueba ")
         print("-" * 40)
-
-        print("4. Generación de vehículos de prueba y flotas (no elige esa opcion)")
         print("0. Volver")
 
         opcion = input("\nSeleccione una opción: ").strip()
@@ -44,6 +44,8 @@ def menu_datos_prueba():
             generar_clientes()
         elif opcion == "3":
             generar_pedidos()
+        elif opcion =="4":
+            generar_vehiculos()
         # test_17_prueba_pedidos.py
         # elif opcion == "4":
         # test_18_prueba_vehículos.py
@@ -72,8 +74,8 @@ def menu_maestros():
         elif opcion == "2":
             mantenimiento_delegaciones()
 
-        # elif opcion == "3":
-        # ejecutar_vehiculos()
+        elif opcion == "3":
+            mantenimiento_vehiculos()
 
         if opcion == "0":
             break

@@ -1,0 +1,7 @@
+Manuel, 65
+Ama, 35
+Maria, 41
+Julia, 30
+Pablo, 32
+Andres, 22
+
