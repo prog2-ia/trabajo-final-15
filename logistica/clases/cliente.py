@@ -117,6 +117,39 @@ class Cliente:
     def distancia_despacho(self):
         return self._distancia_despacho
 
+    # ==========================================================
+    # PEDIDOS EN CURSO
+    # ==========================================================
+    @property
+    def pedidos_en_curso(self):
+        return self._pedidos_en_curso
+
+    @pedidos_en_curso.setter
+    def pedidos_en_curso(self, valor):
+        self._pedidos_en_curso = valor
+
+    # ==========================================================
+    # PEDIDOS TERMINADOS
+    # ==========================================================
+    @property
+    def pedidos_terminados(self):
+        return self._pedidos_terminados
+
+    @pedidos_terminados.setter
+    def pedidos_terminados(self, valor):
+        self._pedidos_terminados = valor
+
+    # ==========================================================
+    # IMPORTE FACTURADO
+    # ==========================================================
+    @property
+    def importe_facturado(self):
+        return self._importe_facturado
+
+    @importe_facturado.setter
+    def importe_facturado(self, valor):
+        self._importe_facturado = valor
+
     # ======================================================
     # OPERADORES
     # ======================================================

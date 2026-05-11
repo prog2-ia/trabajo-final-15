@@ -410,8 +410,11 @@ def alta_vehiculo(
         v = VehiculoCamion(
             matricula,
             True,
-            delegacion
+            delegacion,
+            20000,
+            40000
         )
+
 
     # ======================================================
     # BASE → FURGONETA
@@ -432,8 +435,11 @@ def alta_vehiculo(
         v = VehiculoFurgoneta(
             matricula,
             True,
-            delegacion
+            delegacion,
+            3500,
+            10000
         )
+
 
     # ======================================================
     # DESPACHO
@@ -460,8 +466,11 @@ def alta_vehiculo(
             v = VehiculoFurgoneta(
                 matricula,
                 True,
-                delegacion
+                delegacion,
+                1000,
+                4000
             )
+
 
         # --------------------------------------------------
         # MOTOCICLETA
@@ -475,8 +484,11 @@ def alta_vehiculo(
             v = VehiculoMotocicleta(
                 matricula,
                 True,
-                delegacion
+                delegacion,
+                30,
+                30
             )
+
 
         # --------------------------------------------------
         # MOCHILA
@@ -488,11 +500,14 @@ def alta_vehiculo(
                 vehiculos
             )
 
-            v = VehiculoMochila(
+            vehiculo = VehiculoMochila(
                 matricula,
                 True,
-                delegacion
+                delegacion,
+                30,
+                30
             )
+
 
         else:
 
@@ -665,25 +680,41 @@ def listado_vehiculos(
     # ======================================================
     # MOSTRAR
     # ======================================================
-    print("\n")
+    print("\n" + "=" * 140)
+    print("LISTADO DE VEHÍCULOS")
+    print("=" * 140)
 
+    # ======================================================
+    # CABECERA
+    # ======================================================
     print(
         f"{'TIPO':<15}"
-        f"{'MATRÍCULA':<20}"
-        f"{'DISPONIBLE':<15}"
-        f"{'DELEGACIÓN'}"
+        f"{'MATRICULA':<20}"
+        f"{'DISPONIBLE':<12}"
+        f"{'CARGA MAX':<15}"
+        f"{'CUBICAJE':<15}"
+        f"{'DELEGACION'}"
     )
 
-    print("-" * 90)
+    print("-" * 140)
 
-    for v in resultado:
-
+    # ======================================================
+    # DATOS
+    # ======================================================
+    for v in vehiculos:
         print(
             f"{v.tipo:<15}"
             f"{v.matricula:<20}"
-            f"{str(v.disponible):<15}"
+            f"{str(v.disponible):<12}"
+            f"{str(v.carga_maxima):<15}"
+            f"{str(v.cubicaje):<15}"
             f"{v.delegacion.nombre}"
         )
+
+
+    print("\n")
+
+
 
 
 # ==========================================================

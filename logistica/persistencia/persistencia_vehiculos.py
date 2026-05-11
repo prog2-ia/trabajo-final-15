@@ -3,16 +3,7 @@
 MÓDULO: persistencia_vehiculos.py
 ==========================================================
 
-Persistencia de vehículos en fichero texto.
-
-FORMATO:
-tipo|matricula|disponible|delegacion
-
-RESPONSABILIDADES:
-✔ Guardar vehículos
-✔ Cargar vehículos
-✔ Reconstruir relaciones
-✔ Mantener unicidad
+Persistencia de vehículos del sistema logístico.
 """
 
 # ==========================================================
@@ -37,7 +28,7 @@ from utiles.utils import (
 )
 
 # ==========================================================
-# RUTA FICHERO
+# RUTA
 # ==========================================================
 RUTA_VEHICULOS = os.path.join(
     encontrar_raiz(),
@@ -52,7 +43,9 @@ RUTA_VEHICULOS = os.path.join(
 def guardar_vehiculos(vehiculos):
 
     os.makedirs(
-        os.path.dirname(RUTA_VEHICULOS),
+        os.path.dirname(
+            RUTA_VEHICULOS
+        ),
         exist_ok=True
     )
 
@@ -65,14 +58,12 @@ def guardar_vehiculos(vehiculos):
         for v in vehiculos:
 
             linea = (
-
                 f"{v.tipo}|"
-
                 f"{v.matricula}|"
-
                 f"{v.disponible}|"
-
-                f"{v.delegacion.nombre}\n"
+                f"{v.delegacion.nombre}|"
+                f"{v.carga_maxima}|"
+                f"{v.cubicaje}\n"
             )
 
             f.write(linea)
@@ -88,17 +79,13 @@ def guardar_vehiculos(vehiculos):
 # ==========================================================
 def cargar_vehiculos():
 
-    # ======================================================
-    # LIMPIAR REGISTROS
-    # ======================================================
     Vehiculo._vehiculos.clear()
 
     Vehiculo.matriculas_existentes.clear()
 
-    # ======================================================
-    # VALIDAR FICHERO
-    # ======================================================
-    if not os.path.exists(RUTA_VEHICULOS):
+    if not os.path.exists(
+            RUTA_VEHICULOS
+    ):
 
         print(
             "\n❌ No existe fichero "
@@ -107,10 +94,9 @@ def cargar_vehiculos():
 
         return []
 
-    # ======================================================
-    # CARGAR DELEGACIONES
-    # ======================================================
-    delegaciones = cargar_delegaciones()
+    delegaciones = (
+        cargar_delegaciones()
+    )
 
     mapa_delegaciones = {
 
@@ -121,9 +107,6 @@ def cargar_vehiculos():
 
     vehiculos = []
 
-    # ======================================================
-    # LEER FICHERO
-    # ======================================================
     with open(
             RUTA_VEHICULOS,
             "r",
@@ -141,11 +124,21 @@ def cargar_vehiculos():
                 tipo,
                 matricula,
                 disponible,
-                nombre_delegacion
+                nombre_delegacion,
+                carga_maxima,
+                cubicaje
             ) = linea.split("|")
 
             disponible = (
                     disponible == "True"
+            )
+
+            carga_maxima = (
+                float(carga_maxima)
+            )
+
+            cubicaje = (
+                float(cubicaje)
             )
 
             delegacion = (
@@ -154,15 +147,17 @@ def cargar_vehiculos():
                 ]
             )
 
-            # --------------------------------------------------
+            # ==================================================
             # CREAR VEHÍCULO
-            # --------------------------------------------------
+            # ==================================================
             if tipo == "camion":
 
                 v = VehiculoCamion(
                     matricula,
                     disponible,
-                    delegacion
+                    delegacion,
+                    carga_maxima,
+                    cubicaje
                 )
 
             elif tipo == "furgoneta":
@@ -170,7 +165,9 @@ def cargar_vehiculos():
                 v = VehiculoFurgoneta(
                     matricula,
                     disponible,
-                    delegacion
+                    delegacion,
+                    carga_maxima,
+                    cubicaje
                 )
 
             elif tipo == "motocicleta":
@@ -178,7 +175,9 @@ def cargar_vehiculos():
                 v = VehiculoMotocicleta(
                     matricula,
                     disponible,
-                    delegacion
+                    delegacion,
+                    carga_maxima,
+                    cubicaje
                 )
 
             else:
@@ -186,7 +185,9 @@ def cargar_vehiculos():
                 v = VehiculoMochila(
                     matricula,
                     disponible,
-                    delegacion
+                    delegacion,
+                    carga_maxima,
+                    cubicaje
                 )
 
             vehiculos.append(v)

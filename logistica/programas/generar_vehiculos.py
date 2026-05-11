@@ -64,158 +64,13 @@ from persistencia.persistencia_vehiculos import (
     guardar_vehiculos,
     cargar_vehiculos
 )
+
 from utiles.utils import (
     generar_matricula,
     encontrar_raiz
 )
-"""
-# ==========================================================
-# RUTA FICHERO
-# ==========================================================
-RUTA_VEHICULOS = os.path.join(
-    encontrar_raiz(),
-    "datos",
-    "vehiculos.txt"
-)
 
 
-# ==========================================================
-# GUARDAR VEHÍCULOS
-# ==========================================================
-def guardar_vehiculos(vehiculos):
-
-    os.makedirs(
-        os.path.dirname(RUTA_VEHICULOS),
-        exist_ok=True
-    )
-
-    with open(
-            RUTA_VEHICULOS,
-            "w",
-            encoding="utf-8"
-    ) as f:
-
-        for v in vehiculos:
-
-            linea = (
-                f"{v.tipo}|"
-                f"{v.matricula}|"
-                f"{v.disponible}|"
-                f"{v.delegacion.nombre}\n"
-            )
-
-            f.write(linea)
-
-    print(
-        f"\n✔ Vehículos guardados en:"
-        f"\n{RUTA_VEHICULOS}"
-    )
-
-
-# ==========================================================
-# CARGAR VEHÍCULOS
-# ==========================================================
-def cargar_vehiculos():
-
-    # ======================================================
-    # LIMPIAR REGISTROS EN MEMORIA
-    # ======================================================
-    Vehiculo._vehiculos.clear()
-
-    Vehiculo.matriculas_existentes.clear()
-
-    # ======================================================
-    # VALIDAR FICHERO
-    # ======================================================
-    if not os.path.exists(RUTA_VEHICULOS):
-
-        print(
-            "\n❌ No existe fichero "
-            "de vehículos"
-        )
-
-        return []
-
-    delegaciones = cargar_delegaciones()
-
-    mapa_delegaciones = {
-
-        d.nombre: d
-
-        for d in delegaciones
-    }
-
-    vehiculos = []
-
-    with open(
-            RUTA_VEHICULOS,
-            "r",
-            encoding="utf-8"
-    ) as f:
-
-        for linea in f:
-
-            linea = linea.strip()
-
-            if not linea:
-                continue
-
-            (
-                tipo,
-                matricula,
-                disponible,
-                nombre_delegacion
-            ) = linea.split("|")
-
-            disponible = (
-                    disponible == "True"
-            )
-
-            delegacion = (
-                mapa_delegaciones[
-                    nombre_delegacion
-                ]
-            )
-
-            # --------------------------------------------------
-            # CREAR VEHÍCULO
-            # --------------------------------------------------
-            if tipo == "camion":
-
-                v = VehiculoCamion(
-                    matricula,
-                    disponible,
-                    delegacion
-                )
-
-            elif tipo == "furgoneta":
-
-                v = VehiculoFurgoneta(
-                    matricula,
-                    disponible,
-                    delegacion
-                )
-
-            elif tipo == "motocicleta":
-
-                v = VehiculoMotocicleta(
-                    matricula,
-                    disponible,
-                    delegacion
-                )
-
-            else:
-
-                v = VehiculoMochila(
-                    matricula,
-                    disponible,
-                    delegacion
-                )
-
-            vehiculos.append(v)
-
-    return vehiculos
-"""
 # ==========================================================
 # GENERAR CAMIONES
 # ==========================================================
@@ -231,7 +86,11 @@ def generar_camiones(delegacion):
 
             True,
 
-            delegacion
+            delegacion,
+
+            carga_maxima=20000,
+
+            cubicaje=40000
         )
 
         vehiculos.append(v)
@@ -254,7 +113,11 @@ def generar_furgonetas_base(delegacion):
 
             True,
 
-            delegacion
+            delegacion,
+
+            carga_maxima=3500,
+
+            cubicaje=10000
         )
 
         vehiculos.append(v)
@@ -280,7 +143,11 @@ def generar_vehiculos_despacho(delegacion):
 
             True,
 
-            delegacion
+            delegacion,
+
+            carga_maxima=1000,
+
+            cubicaje=4000
         )
 
         vehiculos.append(v)
@@ -296,7 +163,11 @@ def generar_vehiculos_despacho(delegacion):
 
             True,
 
-            delegacion
+            delegacion,
+
+            carga_maxima=30,
+
+            cubicaje=30
         )
 
         vehiculos.append(v)
@@ -321,7 +192,11 @@ def generar_vehiculos_despacho(delegacion):
 
             True,
 
-            delegacion
+            delegacion,
+
+            carga_maxima=30,
+
+            cubicaje=30
         )
 
         vehiculos.append(v)
@@ -448,24 +323,49 @@ def listar_vehiculos():
     if not vehiculos:
         return
 
-    print("\n" + "=" * 100)
+    print("\n" + "=" * 140)
     print("LISTADO DE VEHÍCULOS")
-    print("=" * 100)
+    print("=" * 140)
 
+    # ======================================================
+    # CABECERA
+    # ======================================================
+    print(
+        f"{'TIPO':<15}"
+        f"{'MATRICULA':<20}"
+        f"{'DISPONIBLE':<12}"
+        f"{'CARGA MAX':<15}"
+        f"{'CUBICAJE':<15}"
+        f"{'DELEGACION'}"
+    )
+
+    print("-" * 140)
+
+    # ======================================================
+    # DATOS
+    # ======================================================
     for v in vehiculos:
 
         print(
             f"{v.tipo:<15}"
             f"{v.matricula:<20}"
             f"{str(v.disponible):<12}"
+            f"{str(v.carga_maxima):<15}"
+            f"{str(v.cubicaje):<15}"
             f"{v.delegacion.nombre}"
         )
 
+
 def ejecutar():
+
     print('Se va a generar el archivo de vehiculos')
+
     opcion = input('Desea continuar? [S/N]')
+
     if opcion == 's' or opcion == 'S':
+
         generar_vehiculos()
+
         listar_vehiculos()
 
 
@@ -474,4 +374,3 @@ def ejecutar():
 # ==========================================================
 if __name__ == "__main__":
     ejecutar()
-

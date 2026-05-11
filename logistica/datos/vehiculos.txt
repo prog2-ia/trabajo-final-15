@@ -1,547 +1,545 @@
-camion|5223 YMB|True|Central Madrid
-camion|4825 CJX|True|Central Madrid
-camion|9706 SDS|True|Central Madrid
-camion|4369 PHS|True|Central Madrid
-camion|5324 FMX|True|Central Madrid
-camion|4528 VVH|True|Central Madrid
-camion|8273 FYF|True|Central Madrid
-camion|6627 CNZ|True|Central Madrid
-camion|1645 FGB|True|Central Madrid
-camion|6133 HZM|True|Central Madrid
-furgoneta|8483 CZP|True|Base 1 (Alicante)
-furgoneta|7325 FKL|True|Base 1 (Alicante)
-furgoneta|8519 FJS|True|Base 1 (Alicante)
-furgoneta|1671 YNX|True|Base 1 (Alicante)
-furgoneta|7334 JWV|True|Base 1 (Alicante)
-furgoneta|2449 VYP|True|Base 2 Valencia
-furgoneta|1126 XPH|True|Base 2 Valencia
-furgoneta|3430 PVZ|True|Base 2 Valencia
-furgoneta|2767 VNV|True|Base 2 Valencia
-furgoneta|2411 NSC|True|Base 2 Valencia
-furgoneta|8983 NVG|True|Base 3
-furgoneta|2428 XBN|True|Base 3
-furgoneta|6589 VPX|True|Base 3
-furgoneta|8735 BMD|True|Base 3
-furgoneta|6467 JYH|True|Base 3
-furgoneta|6874 TGM|True|Base 4
-furgoneta|2149 HLT|True|Base 4
-furgoneta|9089 PTX|True|Base 4
-furgoneta|8250 YZR|True|Base 4
-furgoneta|6725 TTM|True|Base 4
-furgoneta|2081 JHT|True|Base 5
-furgoneta|1070 FZV|True|Base 5
-furgoneta|6700 DYF|True|Base 5
-furgoneta|6998 XWK|True|Base 5
-furgoneta|7715 NMV|True|Base 5
-furgoneta|1630 MVR|True|Base 6
-furgoneta|8430 PLJ|True|Base 6
-furgoneta|3378 FMZ|True|Base 6
-furgoneta|1605 TJR|True|Base 6
-furgoneta|4992 LTL|True|Base 6
-furgoneta|7348 WCM|True|Base 7
-furgoneta|1973 WBR|True|Base 7
-furgoneta|4402 PCJ|True|Base 7
-furgoneta|7779 MZG|True|Base 7
-furgoneta|9938 WZC|True|Base 7
-furgoneta|7127 ZBK|True|Base 8
-furgoneta|3025 BMN|True|Base 8
-furgoneta|6678 DXR|True|Base 8
-furgoneta|3298 LHW|True|Base 8
-furgoneta|8642 WWJ|True|Base 8
-furgoneta|7636 FHB|True|Despacho 1
-furgoneta|6970 PCZ|True|Despacho 1
-furgoneta|7555 DTT|True|Despacho 1
-motocicleta|7529 VXM|True|Despacho 1
-motocicleta|2811 ZPT|True|Despacho 1
-motocicleta|5623 BBB|True|Despacho 1
-mochila|DESPACHO1-1|True|Despacho 1
-mochila|DESPACHO1-2|True|Despacho 1
-mochila|DESPACHO1-3|True|Despacho 1
-furgoneta|8102 PGF|True|Despacho 2
-furgoneta|7171 LXG|True|Despacho 2
-furgoneta|4130 BLR|True|Despacho 2
-motocicleta|5030 JKS|True|Despacho 2
-motocicleta|8817 PPB|True|Despacho 2
-motocicleta|5769 YRK|True|Despacho 2
-mochila|DESPACHO2-1|True|Despacho 2
-mochila|DESPACHO2-2|True|Despacho 2
-mochila|DESPACHO2-3|True|Despacho 2
-furgoneta|6567 PNW|True|Despacho 3
-furgoneta|7219 XWB|True|Despacho 3
-furgoneta|9421 CCB|True|Despacho 3
-motocicleta|3085 DMH|True|Despacho 3
-motocicleta|2365 JMR|True|Despacho 3
-motocicleta|9003 SLZ|True|Despacho 3
-mochila|DESPACHO3-1|True|Despacho 3
-mochila|DESPACHO3-2|True|Despacho 3
-mochila|DESPACHO3-3|True|Despacho 3
-furgoneta|9225 CDM|True|Despacho 4
-furgoneta|8144 GRN|True|Despacho 4
-furgoneta|1815 BFX|True|Despacho 4
-motocicleta|5911 XXY|True|Despacho 4
-motocicleta|8506 JFY|True|Despacho 4
-motocicleta|6925 JGW|True|Despacho 4
-mochila|DESPACHO4-1|True|Despacho 4
-mochila|DESPACHO4-2|True|Despacho 4
-mochila|DESPACHO4-3|True|Despacho 4
-furgoneta|5535 MDS|True|Despacho 5
-furgoneta|1580 TPC|True|Despacho 5
-furgoneta|3233 BRH|True|Despacho 5
-motocicleta|1804 TJH|True|Despacho 5
-motocicleta|4536 ZDH|True|Despacho 5
-motocicleta|4308 XPH|True|Despacho 5
-mochila|DESPACHO5-1|True|Despacho 5
-mochila|DESPACHO5-2|True|Despacho 5
-mochila|DESPACHO5-3|True|Despacho 5
-furgoneta|8174 YZJ|True|Despacho 6
-furgoneta|7262 JVV|True|Despacho 6
-furgoneta|7592 SVL|True|Despacho 6
-motocicleta|4003 JCW|True|Despacho 6
-motocicleta|6775 YJY|True|Despacho 6
-motocicleta|7621 PXH|True|Despacho 6
-mochila|DESPACHO6-1|True|Despacho 6
-mochila|DESPACHO6-2|True|Despacho 6
-mochila|DESPACHO6-3|True|Despacho 6
-furgoneta|2811 RXP|True|Despacho 7
-furgoneta|8200 PXW|True|Despacho 7
-furgoneta|3812 VDG|True|Despacho 7
-motocicleta|1620 SFN|True|Despacho 7
-motocicleta|9248 HJJ|True|Despacho 7
-motocicleta|9042 GRX|True|Despacho 7
-mochila|DESPACHO7-1|True|Despacho 7
-mochila|DESPACHO7-2|True|Despacho 7
-mochila|DESPACHO7-3|True|Despacho 7
-furgoneta|6662 PHL|True|Despacho 8
-furgoneta|9924 LCH|True|Despacho 8
-furgoneta|2586 KNH|True|Despacho 8
-motocicleta|9641 NGW|True|Despacho 8
-motocicleta|8138 SHF|True|Despacho 8
-motocicleta|4327 WLK|True|Despacho 8
-mochila|DESPACHO8-1|True|Despacho 8
-mochila|DESPACHO8-2|True|Despacho 8
-mochila|DESPACHO8-3|True|Despacho 8
-furgoneta|3663 SCS|True|Despacho 9
-furgoneta|2867 XLT|True|Despacho 9
-furgoneta|4415 XDG|True|Despacho 9
-motocicleta|8875 CZL|True|Despacho 9
-motocicleta|3732 JZH|True|Despacho 9
-motocicleta|8205 JCY|True|Despacho 9
-mochila|DESPACHO9-1|True|Despacho 9
-mochila|DESPACHO9-2|True|Despacho 9
-mochila|DESPACHO9-3|True|Despacho 9
-furgoneta|3850 MTN|True|Despacho 10
-furgoneta|1476 XTB|True|Despacho 10
-furgoneta|4871 RVK|True|Despacho 10
-motocicleta|1034 LDN|True|Despacho 10
-motocicleta|3760 YCS|True|Despacho 10
-motocicleta|1938 XLC|True|Despacho 10
-mochila|DESPACHO10-1|True|Despacho 10
-mochila|DESPACHO10-2|True|Despacho 10
-mochila|DESPACHO10-3|True|Despacho 10
-furgoneta|9394 YPL|True|Despacho 11
-furgoneta|6711 NSB|True|Despacho 11
-furgoneta|9949 HLB|True|Despacho 11
-motocicleta|8494 ZDP|True|Despacho 11
-motocicleta|2959 FWP|True|Despacho 11
-motocicleta|8789 FGD|True|Despacho 11
-mochila|DESPACHO11-1|True|Despacho 11
-mochila|DESPACHO11-2|True|Despacho 11
-mochila|DESPACHO11-3|True|Despacho 11
-furgoneta|7340 NGM|True|Despacho 12
-furgoneta|1897 SCZ|True|Despacho 12
-furgoneta|7341 LKT|True|Despacho 12
-motocicleta|7581 FWJ|True|Despacho 12
-motocicleta|1180 JKR|True|Despacho 12
-motocicleta|5198 LMT|True|Despacho 12
-mochila|DESPACHO12-1|True|Despacho 12
-mochila|DESPACHO12-2|True|Despacho 12
-mochila|DESPACHO12-3|True|Despacho 12
-furgoneta|1511 CCW|True|Despacho 13
-furgoneta|7541 BYG|True|Despacho 13
-furgoneta|2153 DJV|True|Despacho 13
-motocicleta|1106 XVC|True|Despacho 13
-motocicleta|8516 VCW|True|Despacho 13
-motocicleta|4361 RSH|True|Despacho 13
-mochila|DESPACHO13-1|True|Despacho 13
-mochila|DESPACHO13-2|True|Despacho 13
-mochila|DESPACHO13-3|True|Despacho 13
-furgoneta|9118 NBG|True|Despacho 14
-furgoneta|3914 ZXB|True|Despacho 14
-furgoneta|6044 XWY|True|Despacho 14
-motocicleta|6221 LFF|True|Despacho 14
-motocicleta|2652 XLW|True|Despacho 14
-motocicleta|8050 ZGF|True|Despacho 14
-mochila|DESPACHO14-1|True|Despacho 14
-mochila|DESPACHO14-2|True|Despacho 14
-mochila|DESPACHO14-3|True|Despacho 14
-furgoneta|7159 KLR|True|Despacho 15
-furgoneta|5944 CNM|True|Despacho 15
-furgoneta|5762 JRF|True|Despacho 15
-motocicleta|9374 JVW|True|Despacho 15
-motocicleta|2229 DLS|True|Despacho 15
-motocicleta|9804 KSG|True|Despacho 15
-mochila|DESPACHO15-1|True|Despacho 15
-mochila|DESPACHO15-2|True|Despacho 15
-mochila|DESPACHO15-3|True|Despacho 15
-furgoneta|2168 TFX|True|Despacho 16
-furgoneta|5531 VJK|True|Despacho 16
-furgoneta|1197 TCT|True|Despacho 16
-motocicleta|9486 CWJ|True|Despacho 16
-motocicleta|9475 NXS|True|Despacho 16
-motocicleta|2468 DWB|True|Despacho 16
-mochila|DESPACHO16-1|True|Despacho 16
-mochila|DESPACHO16-2|True|Despacho 16
-mochila|DESPACHO16-3|True|Despacho 16
-furgoneta|5169 YRT|True|Despacho 17
-furgoneta|8107 CVG|True|Despacho 17
-furgoneta|3499 GVT|True|Despacho 17
-motocicleta|5184 DSG|True|Despacho 17
-motocicleta|5830 SJC|True|Despacho 17
-motocicleta|8826 YDK|True|Despacho 17
-mochila|DESPACHO17-1|True|Despacho 17
-mochila|DESPACHO17-2|True|Despacho 17
-mochila|DESPACHO17-3|True|Despacho 17
-furgoneta|4636 MLB|True|Despacho 18
-furgoneta|1299 XHJ|True|Despacho 18
-furgoneta|4049 KZS|True|Despacho 18
-motocicleta|3224 MGB|True|Despacho 18
-motocicleta|6827 YSP|True|Despacho 18
-motocicleta|7229 DXR|True|Despacho 18
-mochila|DESPACHO18-1|True|Despacho 18
-mochila|DESPACHO18-2|True|Despacho 18
-mochila|DESPACHO18-3|True|Despacho 18
-furgoneta|4627 MGG|True|Despacho 19
-furgoneta|4633 VCX|True|Despacho 19
-furgoneta|5718 BBS|True|Despacho 19
-motocicleta|6465 JFC|True|Despacho 19
-motocicleta|1873 BSM|True|Despacho 19
-motocicleta|2239 NYY|True|Despacho 19
-mochila|DESPACHO19-1|True|Despacho 19
-mochila|DESPACHO19-2|True|Despacho 19
-mochila|DESPACHO19-3|True|Despacho 19
-furgoneta|8523 WFF|True|Despacho 20
-furgoneta|6898 PFX|True|Despacho 20
-furgoneta|7797 BGV|True|Despacho 20
-motocicleta|9064 DJC|True|Despacho 20
-motocicleta|9094 NHL|True|Despacho 20
-motocicleta|6634 XGZ|True|Despacho 20
-mochila|DESPACHO20-1|True|Despacho 20
-mochila|DESPACHO20-2|True|Despacho 20
-mochila|DESPACHO20-3|True|Despacho 20
-furgoneta|1985 LCM|True|Despacho 21
-furgoneta|4454 VRT|True|Despacho 21
-furgoneta|6175 HGG|True|Despacho 21
-motocicleta|2971 NWH|True|Despacho 21
-motocicleta|8174 FKY|True|Despacho 21
-motocicleta|8073 XRB|True|Despacho 21
-mochila|DESPACHO21-1|True|Despacho 21
-mochila|DESPACHO21-2|True|Despacho 21
-mochila|DESPACHO21-3|True|Despacho 21
-furgoneta|5100 XYJ|True|Despacho 22
-furgoneta|4754 BDZ|True|Despacho 22
-furgoneta|3459 WGK|True|Despacho 22
-motocicleta|4224 LGL|True|Despacho 22
-motocicleta|9071 KBW|True|Despacho 22
-motocicleta|9169 KYR|True|Despacho 22
-mochila|DESPACHO22-1|True|Despacho 22
-mochila|DESPACHO22-2|True|Despacho 22
-mochila|DESPACHO22-3|True|Despacho 22
-furgoneta|3942 BWJ|True|Despacho 23
-furgoneta|8203 TZD|True|Despacho 23
-furgoneta|8708 CSM|True|Despacho 23
-motocicleta|4943 PMN|True|Despacho 23
-motocicleta|8082 FWP|True|Despacho 23
-motocicleta|5080 BLN|True|Despacho 23
-mochila|DESPACHO23-1|True|Despacho 23
-mochila|DESPACHO23-2|True|Despacho 23
-mochila|DESPACHO23-3|True|Despacho 23
-furgoneta|4924 NPW|True|Despacho 24
-furgoneta|3080 VYS|True|Despacho 24
-furgoneta|1543 GGN|True|Despacho 24
-motocicleta|7072 CLK|True|Despacho 24
-motocicleta|8379 MHP|True|Despacho 24
-motocicleta|6555 RHB|True|Despacho 24
-mochila|DESPACHO24-1|True|Despacho 24
-mochila|DESPACHO24-2|True|Despacho 24
-mochila|DESPACHO24-3|True|Despacho 24
-furgoneta|5026 TMJ|True|Despacho 25
-furgoneta|4993 JLK|True|Despacho 25
-furgoneta|9780 LDX|True|Despacho 25
-motocicleta|1703 HSJ|True|Despacho 25
-motocicleta|2311 MNX|True|Despacho 25
-motocicleta|4812 VCP|True|Despacho 25
-mochila|DESPACHO25-1|True|Despacho 25
-mochila|DESPACHO25-2|True|Despacho 25
-mochila|DESPACHO25-3|True|Despacho 25
-furgoneta|8308 RMR|True|Despacho 26
-furgoneta|5335 YJJ|True|Despacho 26
-furgoneta|5795 GVR|True|Despacho 26
-motocicleta|1722 PZS|True|Despacho 26
-motocicleta|3228 YZD|True|Despacho 26
-motocicleta|9588 XWF|True|Despacho 26
-mochila|DESPACHO26-1|True|Despacho 26
-mochila|DESPACHO26-2|True|Despacho 26
-mochila|DESPACHO26-3|True|Despacho 26
-furgoneta|6902 HJT|True|Despacho 27
-furgoneta|5373 RSH|True|Despacho 27
-furgoneta|3306 YFV|True|Despacho 27
-motocicleta|6591 VSZ|True|Despacho 27
-motocicleta|4211 TNS|True|Despacho 27
-motocicleta|1136 LCP|True|Despacho 27
-mochila|DESPACHO27-1|True|Despacho 27
-mochila|DESPACHO27-2|True|Despacho 27
-mochila|DESPACHO27-3|True|Despacho 27
-furgoneta|6962 DYC|True|Despacho 28
-furgoneta|7089 XRJ|True|Despacho 28
-furgoneta|2869 LND|True|Despacho 28
-motocicleta|3187 PKN|True|Despacho 28
-motocicleta|5443 VFC|True|Despacho 28
-motocicleta|9402 BKK|True|Despacho 28
-mochila|DESPACHO28-1|True|Despacho 28
-mochila|DESPACHO28-2|True|Despacho 28
-mochila|DESPACHO28-3|True|Despacho 28
-furgoneta|3414 MLX|True|Despacho 29
-furgoneta|4872 THY|True|Despacho 29
-furgoneta|5715 TLW|True|Despacho 29
-motocicleta|1788 KPV|True|Despacho 29
-motocicleta|6062 XJH|True|Despacho 29
-motocicleta|1401 KKZ|True|Despacho 29
-mochila|DESPACHO29-1|True|Despacho 29
-mochila|DESPACHO29-2|True|Despacho 29
-mochila|DESPACHO29-3|True|Despacho 29
-furgoneta|7771 GCW|True|Despacho 30
-furgoneta|3791 SVC|True|Despacho 30
-furgoneta|1663 KGH|True|Despacho 30
-motocicleta|7793 SCW|True|Despacho 30
-motocicleta|4978 JBP|True|Despacho 30
-motocicleta|9142 GMS|True|Despacho 30
-mochila|DESPACHO30-1|True|Despacho 30
-mochila|DESPACHO30-2|True|Despacho 30
-mochila|DESPACHO30-3|True|Despacho 30
-furgoneta|9267 NYD|True|Despacho 31
-furgoneta|5534 FHL|True|Despacho 31
-furgoneta|8424 MTN|True|Despacho 31
-motocicleta|5867 VNG|True|Despacho 31
-motocicleta|6593 JBS|True|Despacho 31
-motocicleta|7894 KSW|True|Despacho 31
-mochila|DESPACHO31-1|True|Despacho 31
-mochila|DESPACHO31-2|True|Despacho 31
-mochila|DESPACHO31-3|True|Despacho 31
-furgoneta|7872 LYG|True|Despacho 32
-furgoneta|5258 BWL|True|Despacho 32
-furgoneta|4783 XLH|True|Despacho 32
-motocicleta|6458 WLV|True|Despacho 32
-motocicleta|1335 NLT|True|Despacho 32
-motocicleta|9633 RZR|True|Despacho 32
-mochila|DESPACHO32-1|True|Despacho 32
-mochila|DESPACHO32-2|True|Despacho 32
-mochila|DESPACHO32-3|True|Despacho 32
-furgoneta|8324 JKJ|True|Despacho 33
-furgoneta|2908 BFY|True|Despacho 33
-furgoneta|2716 RBT|True|Despacho 33
-motocicleta|7073 BKG|True|Despacho 33
-motocicleta|7600 FGC|True|Despacho 33
-motocicleta|5930 CNW|True|Despacho 33
-mochila|DESPACHO33-1|True|Despacho 33
-mochila|DESPACHO33-2|True|Despacho 33
-mochila|DESPACHO33-3|True|Despacho 33
-furgoneta|5045 NRN|True|Despacho 34
-furgoneta|4487 SJB|True|Despacho 34
-furgoneta|7879 NGY|True|Despacho 34
-motocicleta|4512 ZYF|True|Despacho 34
-motocicleta|7694 TDM|True|Despacho 34
-motocicleta|7262 SYN|True|Despacho 34
-mochila|DESPACHO34-1|True|Despacho 34
-mochila|DESPACHO34-2|True|Despacho 34
-mochila|DESPACHO34-3|True|Despacho 34
-furgoneta|6372 YLK|True|Despacho 35
-furgoneta|4551 YHP|True|Despacho 35
-furgoneta|5036 KGN|True|Despacho 35
-motocicleta|1384 NTN|True|Despacho 35
-motocicleta|9270 YHR|True|Despacho 35
-motocicleta|3806 GRZ|True|Despacho 35
-mochila|DESPACHO35-1|True|Despacho 35
-mochila|DESPACHO35-2|True|Despacho 35
-mochila|DESPACHO35-3|True|Despacho 35
-furgoneta|7304 WVV|True|Despacho 36
-furgoneta|4127 BDS|True|Despacho 36
-furgoneta|6207 HSN|True|Despacho 36
-motocicleta|4028 PGS|True|Despacho 36
-motocicleta|5560 DXZ|True|Despacho 36
-motocicleta|6824 RCV|True|Despacho 36
-mochila|DESPACHO36-1|True|Despacho 36
-mochila|DESPACHO36-2|True|Despacho 36
-mochila|DESPACHO36-3|True|Despacho 36
-furgoneta|2237 KBL|True|Despacho 37
-furgoneta|4699 RYS|True|Despacho 37
-furgoneta|1969 DVV|True|Despacho 37
-motocicleta|2595 VTT|True|Despacho 37
-motocicleta|6696 FTS|True|Despacho 37
-motocicleta|4277 FKX|True|Despacho 37
-mochila|DESPACHO37-1|True|Despacho 37
-mochila|DESPACHO37-2|True|Despacho 37
-mochila|DESPACHO37-3|True|Despacho 37
-furgoneta|6251 GLS|True|Despacho 38
-furgoneta|8112 MJN|True|Despacho 38
-furgoneta|4586 NLV|True|Despacho 38
-motocicleta|4615 CBW|True|Despacho 38
-motocicleta|4689 BJS|True|Despacho 38
-motocicleta|9916 VMT|True|Despacho 38
-mochila|DESPACHO38-1|True|Despacho 38
-mochila|DESPACHO38-2|True|Despacho 38
-mochila|DESPACHO38-3|True|Despacho 38
-furgoneta|2756 SFJ|True|Despacho 39
-furgoneta|2700 HZF|True|Despacho 39
-furgoneta|1417 ZML|True|Despacho 39
-motocicleta|1158 NSG|True|Despacho 39
-motocicleta|4127 MCL|True|Despacho 39
-motocicleta|8604 NTT|True|Despacho 39
-mochila|DESPACHO39-1|True|Despacho 39
-mochila|DESPACHO39-2|True|Despacho 39
-mochila|DESPACHO39-3|True|Despacho 39
-furgoneta|4398 GHG|True|Despacho 40
-furgoneta|1310 BCR|True|Despacho 40
-furgoneta|5735 BZM|True|Despacho 40
-motocicleta|2851 LNR|True|Despacho 40
-motocicleta|3848 FBK|True|Despacho 40
-motocicleta|2190 KKB|True|Despacho 40
-mochila|DESPACHO40-1|True|Despacho 40
-mochila|DESPACHO40-2|True|Despacho 40
-mochila|DESPACHO40-3|True|Despacho 40
-furgoneta|4633 NFZ|True|Despacho 41
-furgoneta|1919 KRP|True|Despacho 41
-furgoneta|6632 DMW|True|Despacho 41
-motocicleta|6617 VNJ|True|Despacho 41
-motocicleta|3754 YKT|True|Despacho 41
-motocicleta|5484 HVG|True|Despacho 41
-mochila|DESPACHO41-1|True|Despacho 41
-mochila|DESPACHO41-2|True|Despacho 41
-mochila|DESPACHO41-3|True|Despacho 41
-furgoneta|5958 WKG|True|Despacho 42
-furgoneta|9729 CKM|True|Despacho 42
-furgoneta|3048 ZNK|True|Despacho 42
-motocicleta|3150 ZCP|True|Despacho 42
-motocicleta|1572 VSM|True|Despacho 42
-motocicleta|6516 PXP|True|Despacho 42
-mochila|DESPACHO42-1|True|Despacho 42
-mochila|DESPACHO42-2|True|Despacho 42
-mochila|DESPACHO42-3|True|Despacho 42
-furgoneta|2103 MHK|True|Despacho 43
-furgoneta|7954 GJZ|True|Despacho 43
-furgoneta|2569 XJJ|True|Despacho 43
-motocicleta|8970 ZMM|True|Despacho 43
-motocicleta|2753 DBH|True|Despacho 43
-motocicleta|6667 ZRL|True|Despacho 43
-mochila|DESPACHO43-1|True|Despacho 43
-mochila|DESPACHO43-2|True|Despacho 43
-mochila|DESPACHO43-3|True|Despacho 43
-furgoneta|9770 BDF|True|Despacho 44
-furgoneta|7108 HRR|True|Despacho 44
-furgoneta|2558 KBS|True|Despacho 44
-motocicleta|5768 NLT|True|Despacho 44
-motocicleta|8070 SYW|True|Despacho 44
-motocicleta|8228 FXS|True|Despacho 44
-mochila|DESPACHO44-1|True|Despacho 44
-mochila|DESPACHO44-2|True|Despacho 44
-mochila|DESPACHO44-3|True|Despacho 44
-furgoneta|7500 VRT|True|Despacho 45
-furgoneta|1522 TJH|True|Despacho 45
-furgoneta|7991 JWF|True|Despacho 45
-motocicleta|5046 PNC|True|Despacho 45
-motocicleta|2553 FBH|True|Despacho 45
-motocicleta|3230 FSG|True|Despacho 45
-mochila|DESPACHO45-1|True|Despacho 45
-mochila|DESPACHO45-2|True|Despacho 45
-mochila|DESPACHO45-3|True|Despacho 45
-furgoneta|7133 JHC|True|Despacho 46
-furgoneta|6537 YXL|True|Despacho 46
-furgoneta|5614 XGT|True|Despacho 46
-motocicleta|7279 FMB|True|Despacho 46
-motocicleta|7030 SDC|True|Despacho 46
-motocicleta|2543 KBG|True|Despacho 46
-mochila|DESPACHO46-1|True|Despacho 46
-mochila|DESPACHO46-2|True|Despacho 46
-mochila|DESPACHO46-3|True|Despacho 46
-furgoneta|5255 ZXC|True|Despacho 47
-furgoneta|6489 XPY|True|Despacho 47
-furgoneta|7859 KKW|True|Despacho 47
-motocicleta|2384 VWG|True|Despacho 47
-motocicleta|1144 SZS|True|Despacho 47
-motocicleta|8025 GCT|True|Despacho 47
-mochila|DESPACHO47-1|True|Despacho 47
-mochila|DESPACHO47-2|True|Despacho 47
-mochila|DESPACHO47-3|True|Despacho 47
-furgoneta|5296 PLF|True|Despacho 48
-furgoneta|4129 HDF|True|Despacho 48
-furgoneta|1043 KHV|True|Despacho 48
-motocicleta|5738 KFP|True|Despacho 48
-motocicleta|6769 RDX|True|Despacho 48
-motocicleta|9167 WDB|True|Despacho 48
-mochila|DESPACHO48-1|True|Despacho 48
-mochila|DESPACHO48-2|True|Despacho 48
-mochila|DESPACHO48-3|True|Despacho 48
-furgoneta|6384 JDW|True|Despacho 49
-furgoneta|9817 NPM|True|Despacho 49
-furgoneta|5089 JKV|True|Despacho 49
-motocicleta|1595 KVD|True|Despacho 49
-motocicleta|1064 MBT|True|Despacho 49
-motocicleta|4689 FWF|True|Despacho 49
-mochila|DESPACHO49-1|True|Despacho 49
-mochila|DESPACHO49-2|True|Despacho 49
-mochila|DESPACHO49-3|True|Despacho 49
-furgoneta|5285 YSL|True|Despacho 50
-furgoneta|4362 CGB|True|Despacho 50
-furgoneta|7300 YTR|True|Despacho 50
-motocicleta|5670 FYG|True|Despacho 50
-motocicleta|6554 BBV|True|Despacho 50
-motocicleta|7205 WZX|True|Despacho 50
-mochila|DESPACHO50-1|True|Despacho 50
-mochila|DESPACHO50-2|True|Despacho 50
-mochila|DESPACHO50-3|True|Despacho 50
-furgoneta|4795 DYG|True|Despacho 51
-furgoneta|5111 ZFB|True|Despacho 51
-furgoneta|4977 LMT|True|Despacho 51
-motocicleta|6878 MZY|True|Despacho 51
-motocicleta|2765 BWD|True|Despacho 51
-motocicleta|5338 XXV|True|Despacho 51
-mochila|DESPACHO51-1|True|Despacho 51
-mochila|DESPACHO51-2|True|Despacho 51
-mochila|DESPACHO51-3|True|Despacho 51
-furgoneta|3021 FLC|True|Despacho 52
-furgoneta|2086 PZS|True|Despacho 52
-furgoneta|8439 CDW|True|Despacho 52
-motocicleta|8139 HVR|True|Despacho 52
-motocicleta|8260 YVG|True|Despacho 52
-motocicleta|7244 LCZ|True|Despacho 52
-mochila|DESPACHO52-1|True|Despacho 52
-mochila|DESPACHO52-2|True|Despacho 52
-mochila|DESPACHO52-3|True|Despacho 52
-furgoneta|7806 YDF|True|Despacho 53
-furgoneta|5987 GSX|True|Despacho 53
-furgoneta|3180 LCR|True|Despacho 53
-motocicleta|9710 KSH|True|Despacho 53
-motocicleta|2457 BVN|True|Despacho 53
-motocicleta|4922 FTX|True|Despacho 53
-mochila|DESPACHO53-1|True|Despacho 53
-mochila|DESPACHO53-2|True|Despacho 53
-mochila|DESPACHO53-3|True|Despacho 53
-furgoneta|3998 STF|True|Despacho 54
-furgoneta|7733 LHC|True|Despacho 54
-furgoneta|1840 WHT|True|Despacho 54
-motocicleta|8484 JHS|True|Despacho 54
-motocicleta|2297 RBJ|True|Despacho 54
-motocicleta|4652 XMH|True|Despacho 54
-mochila|DESPACHO54-1|True|Despacho 54
-mochila|DESPACHO54-2|True|Despacho 54
-mochila|DESPACHO54-3|True|Despacho 54
-furgoneta|7765 JCR|True|Despacho 55
-furgoneta|2595 ZVW|True|Despacho 55
-furgoneta|3529 LCD|True|Despacho 55
-motocicleta|2490 GTS|True|Despacho 55
-motocicleta|6697 XBY|True|Despacho 55
-motocicleta|7267 SPP|True|Despacho 55
-mochila|DESPACHO55-1|True|Despacho 55
-mochila|DESPACHO55-2|True|Despacho 55
-mochila|DESPACHO55-3|True|Despacho 55
-mochila|DESPACHO 55-1|True|Despacho 55
-mochila|DESPACHO 55-2|True|Despacho 55
+camion|4831 MPR|True|Central Madrid|20000|40000
+camion|9388 LHK|True|Central Madrid|20000|40000
+camion|4714 VNK|True|Central Madrid|20000|40000
+camion|3483 BJR|True|Central Madrid|20000|40000
+camion|3173 YZT|True|Central Madrid|20000|40000
+camion|4197 WJN|True|Central Madrid|20000|40000
+camion|4804 YFP|True|Central Madrid|20000|40000
+camion|3906 DSH|True|Central Madrid|20000|40000
+camion|8714 BLT|True|Central Madrid|20000|40000
+camion|9899 XNV|True|Central Madrid|20000|40000
+furgoneta|3235 NYJ|True|Base 1 (Alicante)|3500|10000
+furgoneta|6107 CWJ|True|Base 1 (Alicante)|3500|10000
+furgoneta|6747 HJW|True|Base 1 (Alicante)|3500|10000
+furgoneta|9539 SWR|True|Base 1 (Alicante)|3500|10000
+furgoneta|4178 BCD|True|Base 1 (Alicante)|3500|10000
+furgoneta|1133 VJV|True|Base 2 Valencia|3500|10000
+furgoneta|4601 HPT|True|Base 2 Valencia|3500|10000
+furgoneta|3024 PVG|True|Base 2 Valencia|3500|10000
+furgoneta|3370 NWY|True|Base 2 Valencia|3500|10000
+furgoneta|6752 KHJ|True|Base 2 Valencia|3500|10000
+furgoneta|1563 DNB|True|Base 3|3500|10000
+furgoneta|1273 CRC|True|Base 3|3500|10000
+furgoneta|2219 XKP|True|Base 3|3500|10000
+furgoneta|8636 JFZ|True|Base 3|3500|10000
+furgoneta|7847 MZW|True|Base 3|3500|10000
+furgoneta|2739 DLL|True|Base 4|3500|10000
+furgoneta|2378 XMB|True|Base 4|3500|10000
+furgoneta|1657 KJK|True|Base 4|3500|10000
+furgoneta|7992 JCL|True|Base 4|3500|10000
+furgoneta|2469 YLW|True|Base 4|3500|10000
+furgoneta|5891 NKF|True|Base 5|3500|10000
+furgoneta|4689 JNJ|True|Base 5|3500|10000
+furgoneta|3594 FGP|True|Base 5|3500|10000
+furgoneta|6561 YWH|True|Base 5|3500|10000
+furgoneta|3833 THC|True|Base 5|3500|10000
+furgoneta|1947 WRH|True|Base 6|3500|10000
+furgoneta|4108 GYC|True|Base 6|3500|10000
+furgoneta|7354 NXZ|True|Base 6|3500|10000
+furgoneta|7161 JKD|True|Base 6|3500|10000
+furgoneta|2155 LXL|True|Base 6|3500|10000
+furgoneta|3950 LWV|True|Base 7|3500|10000
+furgoneta|9662 PNK|True|Base 7|3500|10000
+furgoneta|3994 SFB|True|Base 7|3500|10000
+furgoneta|5396 JDP|True|Base 7|3500|10000
+furgoneta|7144 BCD|True|Base 7|3500|10000
+furgoneta|9852 LNS|True|Base 8|3500|10000
+furgoneta|2644 MDX|True|Base 8|3500|10000
+furgoneta|6293 TXZ|True|Base 8|3500|10000
+furgoneta|2142 TFT|True|Base 8|3500|10000
+furgoneta|3273 XCN|True|Base 8|3500|10000
+furgoneta|8885 RXK|True|Despacho 1|1000|4000
+furgoneta|1613 PKC|True|Despacho 1|1000|4000
+furgoneta|6932 SHJ|True|Despacho 1|1000|4000
+motocicleta|7386 VWG|True|Despacho 1|30|30
+motocicleta|5985 YBB|True|Despacho 1|30|30
+motocicleta|4120 MDG|True|Despacho 1|30|30
+mochila|DESPACHO1-1|True|Despacho 1|30|30
+mochila|DESPACHO1-2|True|Despacho 1|30|30
+mochila|DESPACHO1-3|True|Despacho 1|30|30
+furgoneta|4418 HSZ|True|Despacho 2|1000|4000
+furgoneta|6475 ZDN|True|Despacho 2|1000|4000
+furgoneta|1245 BYP|True|Despacho 2|1000|4000
+motocicleta|6660 LJP|True|Despacho 2|30|30
+motocicleta|1591 BWH|True|Despacho 2|30|30
+motocicleta|3019 WMT|True|Despacho 2|30|30
+mochila|DESPACHO2-1|True|Despacho 2|30|30
+mochila|DESPACHO2-2|True|Despacho 2|30|30
+mochila|DESPACHO2-3|True|Despacho 2|30|30
+furgoneta|6153 SNF|True|Despacho 3|1000|4000
+furgoneta|8972 PCY|True|Despacho 3|1000|4000
+furgoneta|5645 BSR|True|Despacho 3|1000|4000
+motocicleta|2838 MNS|True|Despacho 3|30|30
+motocicleta|4451 LSB|True|Despacho 3|30|30
+motocicleta|6416 TYR|True|Despacho 3|30|30
+mochila|DESPACHO3-1|True|Despacho 3|30|30
+mochila|DESPACHO3-2|True|Despacho 3|30|30
+mochila|DESPACHO3-3|True|Despacho 3|30|30
+furgoneta|5888 MSY|True|Despacho 4|1000|4000
+furgoneta|7581 PLM|True|Despacho 4|1000|4000
+furgoneta|8349 PHL|True|Despacho 4|1000|4000
+motocicleta|7316 LPF|True|Despacho 4|30|30
+motocicleta|2010 KWR|True|Despacho 4|30|30
+motocicleta|5074 JYL|True|Despacho 4|30|30
+mochila|DESPACHO4-1|True|Despacho 4|30|30
+mochila|DESPACHO4-2|True|Despacho 4|30|30
+mochila|DESPACHO4-3|True|Despacho 4|30|30
+furgoneta|6507 YTT|True|Despacho 5|1000|4000
+furgoneta|6769 PDJ|True|Despacho 5|1000|4000
+furgoneta|8588 MWY|True|Despacho 5|1000|4000
+motocicleta|3673 WJX|True|Despacho 5|30|30
+motocicleta|8491 JRW|True|Despacho 5|30|30
+motocicleta|4986 BHB|True|Despacho 5|30|30
+mochila|DESPACHO5-1|True|Despacho 5|30|30
+mochila|DESPACHO5-2|True|Despacho 5|30|30
+mochila|DESPACHO5-3|True|Despacho 5|30|30
+furgoneta|8653 BZL|True|Despacho 6|1000|4000
+furgoneta|6313 HJB|True|Despacho 6|1000|4000
+furgoneta|9770 CPN|True|Despacho 6|1000|4000
+motocicleta|8569 RPX|True|Despacho 6|30|30
+motocicleta|4415 YGJ|True|Despacho 6|30|30
+motocicleta|4670 JMH|True|Despacho 6|30|30
+mochila|DESPACHO6-1|True|Despacho 6|30|30
+mochila|DESPACHO6-2|True|Despacho 6|30|30
+mochila|DESPACHO6-3|True|Despacho 6|30|30
+furgoneta|2466 PFL|True|Despacho 7|1000|4000
+furgoneta|3991 RWK|True|Despacho 7|1000|4000
+furgoneta|3587 XHD|True|Despacho 7|1000|4000
+motocicleta|7541 DTR|True|Despacho 7|30|30
+motocicleta|5057 MXP|True|Despacho 7|30|30
+motocicleta|9111 MTV|True|Despacho 7|30|30
+mochila|DESPACHO7-1|True|Despacho 7|30|30
+mochila|DESPACHO7-2|True|Despacho 7|30|30
+mochila|DESPACHO7-3|True|Despacho 7|30|30
+furgoneta|4529 GDB|True|Despacho 8|1000|4000
+furgoneta|2484 VGD|True|Despacho 8|1000|4000
+furgoneta|3481 BLF|True|Despacho 8|1000|4000
+motocicleta|5158 VLX|True|Despacho 8|30|30
+motocicleta|4903 LCV|True|Despacho 8|30|30
+motocicleta|9209 ZNW|True|Despacho 8|30|30
+mochila|DESPACHO8-1|True|Despacho 8|30|30
+mochila|DESPACHO8-2|True|Despacho 8|30|30
+mochila|DESPACHO8-3|True|Despacho 8|30|30
+furgoneta|7761 DKF|True|Despacho 9|1000|4000
+furgoneta|1023 TVM|True|Despacho 9|1000|4000
+furgoneta|1418 WBH|True|Despacho 9|1000|4000
+motocicleta|6557 GHC|True|Despacho 9|30|30
+motocicleta|7501 MVN|True|Despacho 9|30|30
+motocicleta|5881 TWG|True|Despacho 9|30|30
+mochila|DESPACHO9-1|True|Despacho 9|30|30
+mochila|DESPACHO9-2|True|Despacho 9|30|30
+mochila|DESPACHO9-3|True|Despacho 9|30|30
+furgoneta|8605 BWW|True|Despacho 10|1000|4000
+furgoneta|8014 LLZ|True|Despacho 10|1000|4000
+furgoneta|7586 GMY|True|Despacho 10|1000|4000
+motocicleta|2216 YBH|True|Despacho 10|30|30
+motocicleta|6328 VTD|True|Despacho 10|30|30
+motocicleta|3168 JPN|True|Despacho 10|30|30
+mochila|DESPACHO10-1|True|Despacho 10|30|30
+mochila|DESPACHO10-2|True|Despacho 10|30|30
+mochila|DESPACHO10-3|True|Despacho 10|30|30
+furgoneta|8999 ZDC|True|Despacho 11|1000|4000
+furgoneta|6032 WTK|True|Despacho 11|1000|4000
+furgoneta|7279 JHB|True|Despacho 11|1000|4000
+motocicleta|1932 ZFB|True|Despacho 11|30|30
+motocicleta|2093 XBN|True|Despacho 11|30|30
+motocicleta|3928 NLY|True|Despacho 11|30|30
+mochila|DESPACHO11-1|True|Despacho 11|30|30
+mochila|DESPACHO11-2|True|Despacho 11|30|30
+mochila|DESPACHO11-3|True|Despacho 11|30|30
+furgoneta|9233 CKW|True|Despacho 12|1000|4000
+furgoneta|8750 PJS|True|Despacho 12|1000|4000
+furgoneta|2042 KLZ|True|Despacho 12|1000|4000
+motocicleta|3813 JLW|True|Despacho 12|30|30
+motocicleta|5657 CFL|True|Despacho 12|30|30
+motocicleta|8806 DPL|True|Despacho 12|30|30
+mochila|DESPACHO12-1|True|Despacho 12|30|30
+mochila|DESPACHO12-2|True|Despacho 12|30|30
+mochila|DESPACHO12-3|True|Despacho 12|30|30
+furgoneta|6174 NHK|True|Despacho 13|1000|4000
+furgoneta|7767 PWF|True|Despacho 13|1000|4000
+furgoneta|4639 WVY|True|Despacho 13|1000|4000
+motocicleta|4384 XTT|True|Despacho 13|30|30
+motocicleta|5990 HKG|True|Despacho 13|30|30
+motocicleta|9019 MDS|True|Despacho 13|30|30
+mochila|DESPACHO13-1|True|Despacho 13|30|30
+mochila|DESPACHO13-2|True|Despacho 13|30|30
+mochila|DESPACHO13-3|True|Despacho 13|30|30
+furgoneta|5993 LFN|True|Despacho 14|1000|4000
+furgoneta|8179 GTW|True|Despacho 14|1000|4000
+furgoneta|7765 PJD|True|Despacho 14|1000|4000
+motocicleta|7975 KWH|True|Despacho 14|30|30
+motocicleta|2679 TDM|True|Despacho 14|30|30
+motocicleta|5115 HHD|True|Despacho 14|30|30
+mochila|DESPACHO14-1|True|Despacho 14|30|30
+mochila|DESPACHO14-2|True|Despacho 14|30|30
+mochila|DESPACHO14-3|True|Despacho 14|30|30
+furgoneta|9680 SBM|True|Despacho 15|1000|4000
+furgoneta|1993 HJF|True|Despacho 15|1000|4000
+furgoneta|4269 LLB|True|Despacho 15|1000|4000
+motocicleta|8640 YZY|True|Despacho 15|30|30
+motocicleta|4145 LHN|True|Despacho 15|30|30
+motocicleta|9565 RYB|True|Despacho 15|30|30
+mochila|DESPACHO15-1|True|Despacho 15|30|30
+mochila|DESPACHO15-2|True|Despacho 15|30|30
+mochila|DESPACHO15-3|True|Despacho 15|30|30
+furgoneta|6627 ZCJ|True|Despacho 16|1000|4000
+furgoneta|2349 BTJ|True|Despacho 16|1000|4000
+furgoneta|5704 GKB|True|Despacho 16|1000|4000
+motocicleta|9389 JCC|True|Despacho 16|30|30
+motocicleta|9328 TYY|True|Despacho 16|30|30
+motocicleta|1234 YJT|True|Despacho 16|30|30
+mochila|DESPACHO16-1|True|Despacho 16|30|30
+mochila|DESPACHO16-2|True|Despacho 16|30|30
+mochila|DESPACHO16-3|True|Despacho 16|30|30
+furgoneta|9862 WHW|True|Despacho 17|1000|4000
+furgoneta|8882 YVT|True|Despacho 17|1000|4000
+furgoneta|2482 TMN|True|Despacho 17|1000|4000
+motocicleta|5920 SBF|True|Despacho 17|30|30
+motocicleta|5556 PLH|True|Despacho 17|30|30
+motocicleta|8405 XHG|True|Despacho 17|30|30
+mochila|DESPACHO17-1|True|Despacho 17|30|30
+mochila|DESPACHO17-2|True|Despacho 17|30|30
+mochila|DESPACHO17-3|True|Despacho 17|30|30
+furgoneta|3609 NKB|True|Despacho 18|1000|4000
+furgoneta|6821 JPX|True|Despacho 18|1000|4000
+furgoneta|6983 RSL|True|Despacho 18|1000|4000
+motocicleta|4766 XJP|True|Despacho 18|30|30
+motocicleta|4940 NYP|True|Despacho 18|30|30
+motocicleta|3299 WMY|True|Despacho 18|30|30
+mochila|DESPACHO18-1|True|Despacho 18|30|30
+mochila|DESPACHO18-2|True|Despacho 18|30|30
+mochila|DESPACHO18-3|True|Despacho 18|30|30
+furgoneta|6221 CNJ|True|Despacho 19|1000|4000
+furgoneta|7904 DZN|True|Despacho 19|1000|4000
+furgoneta|5798 PDW|True|Despacho 19|1000|4000
+motocicleta|2260 FCT|True|Despacho 19|30|30
+motocicleta|2560 KGJ|True|Despacho 19|30|30
+motocicleta|9953 WJW|True|Despacho 19|30|30
+mochila|DESPACHO19-1|True|Despacho 19|30|30
+mochila|DESPACHO19-2|True|Despacho 19|30|30
+mochila|DESPACHO19-3|True|Despacho 19|30|30
+furgoneta|5398 WST|True|Despacho 20|1000|4000
+furgoneta|7227 PPK|True|Despacho 20|1000|4000
+furgoneta|4299 FHH|True|Despacho 20|1000|4000
+motocicleta|1918 YBR|True|Despacho 20|30|30
+motocicleta|4535 CDD|True|Despacho 20|30|30
+motocicleta|7913 LFH|True|Despacho 20|30|30
+mochila|DESPACHO20-1|True|Despacho 20|30|30
+mochila|DESPACHO20-2|True|Despacho 20|30|30
+mochila|DESPACHO20-3|True|Despacho 20|30|30
+furgoneta|8592 JFV|True|Despacho 21|1000|4000
+furgoneta|7427 PDF|True|Despacho 21|1000|4000
+furgoneta|6327 WTB|True|Despacho 21|1000|4000
+motocicleta|3448 XJT|True|Despacho 21|30|30
+motocicleta|1581 YST|True|Despacho 21|30|30
+motocicleta|4539 MXZ|True|Despacho 21|30|30
+mochila|DESPACHO21-1|True|Despacho 21|30|30
+mochila|DESPACHO21-2|True|Despacho 21|30|30
+mochila|DESPACHO21-3|True|Despacho 21|30|30
+furgoneta|7124 PBS|True|Despacho 22|1000|4000
+furgoneta|1248 GNP|True|Despacho 22|1000|4000
+furgoneta|8554 ZRH|True|Despacho 22|1000|4000
+motocicleta|2764 WHP|True|Despacho 22|30|30
+motocicleta|6189 SHZ|True|Despacho 22|30|30
+motocicleta|7992 FWM|True|Despacho 22|30|30
+mochila|DESPACHO22-1|True|Despacho 22|30|30
+mochila|DESPACHO22-2|True|Despacho 22|30|30
+mochila|DESPACHO22-3|True|Despacho 22|30|30
+furgoneta|6716 YKL|True|Despacho 23|1000|4000
+furgoneta|1977 GST|True|Despacho 23|1000|4000
+furgoneta|4342 KHV|True|Despacho 23|1000|4000
+motocicleta|5212 WHV|True|Despacho 23|30|30
+motocicleta|1094 GRS|True|Despacho 23|30|30
+motocicleta|2678 RKS|True|Despacho 23|30|30
+mochila|DESPACHO23-1|True|Despacho 23|30|30
+mochila|DESPACHO23-2|True|Despacho 23|30|30
+mochila|DESPACHO23-3|True|Despacho 23|30|30
+furgoneta|7153 NBN|True|Despacho 24|1000|4000
+furgoneta|5424 MCS|True|Despacho 24|1000|4000
+furgoneta|5735 BBK|True|Despacho 24|1000|4000
+motocicleta|2303 MLY|True|Despacho 24|30|30
+motocicleta|9133 XSV|True|Despacho 24|30|30
+motocicleta|1620 DPV|True|Despacho 24|30|30
+mochila|DESPACHO24-1|True|Despacho 24|30|30
+mochila|DESPACHO24-2|True|Despacho 24|30|30
+mochila|DESPACHO24-3|True|Despacho 24|30|30
+furgoneta|8233 MHT|True|Despacho 25|1000|4000
+furgoneta|8746 YLH|True|Despacho 25|1000|4000
+furgoneta|8556 FMG|True|Despacho 25|1000|4000
+motocicleta|4362 RFX|True|Despacho 25|30|30
+motocicleta|7657 RRM|True|Despacho 25|30|30
+motocicleta|8097 PVB|True|Despacho 25|30|30
+mochila|DESPACHO25-1|True|Despacho 25|30|30
+mochila|DESPACHO25-2|True|Despacho 25|30|30
+mochila|DESPACHO25-3|True|Despacho 25|30|30
+furgoneta|6345 KKL|True|Despacho 26|1000|4000
+furgoneta|8629 CKF|True|Despacho 26|1000|4000
+furgoneta|2978 MXP|True|Despacho 26|1000|4000
+motocicleta|8808 GLK|True|Despacho 26|30|30
+motocicleta|6276 BTJ|True|Despacho 26|30|30
+motocicleta|2820 TDG|True|Despacho 26|30|30
+mochila|DESPACHO26-1|True|Despacho 26|30|30
+mochila|DESPACHO26-2|True|Despacho 26|30|30
+mochila|DESPACHO26-3|True|Despacho 26|30|30
+furgoneta|6883 JRH|True|Despacho 27|1000|4000
+furgoneta|9615 NWL|True|Despacho 27|1000|4000
+furgoneta|8179 WND|True|Despacho 27|1000|4000
+motocicleta|4040 RDL|True|Despacho 27|30|30
+motocicleta|8836 BSJ|True|Despacho 27|30|30
+motocicleta|4770 CSJ|True|Despacho 27|30|30
+mochila|DESPACHO27-1|True|Despacho 27|30|30
+mochila|DESPACHO27-2|True|Despacho 27|30|30
+mochila|DESPACHO27-3|True|Despacho 27|30|30
+furgoneta|7871 GHN|True|Despacho 28|1000|4000
+furgoneta|8329 STG|True|Despacho 28|1000|4000
+furgoneta|3629 NTN|True|Despacho 28|1000|4000
+motocicleta|9726 PYY|True|Despacho 28|30|30
+motocicleta|3460 JCW|True|Despacho 28|30|30
+motocicleta|6679 XSY|True|Despacho 28|30|30
+mochila|DESPACHO28-1|True|Despacho 28|30|30
+mochila|DESPACHO28-2|True|Despacho 28|30|30
+mochila|DESPACHO28-3|True|Despacho 28|30|30
+furgoneta|8380 SJS|True|Despacho 29|1000|4000
+furgoneta|4194 WRB|True|Despacho 29|1000|4000
+furgoneta|2324 BCM|True|Despacho 29|1000|4000
+motocicleta|3479 PVR|True|Despacho 29|30|30
+motocicleta|3596 LYX|True|Despacho 29|30|30
+motocicleta|8057 LLH|True|Despacho 29|30|30
+mochila|DESPACHO29-1|True|Despacho 29|30|30
+mochila|DESPACHO29-2|True|Despacho 29|30|30
+mochila|DESPACHO29-3|True|Despacho 29|30|30
+furgoneta|7038 VKL|True|Despacho 30|1000|4000
+furgoneta|1107 HXX|True|Despacho 30|1000|4000
+furgoneta|3926 VBT|True|Despacho 30|1000|4000
+motocicleta|6091 CCF|True|Despacho 30|30|30
+motocicleta|8889 GZT|True|Despacho 30|30|30
+motocicleta|6588 LPJ|True|Despacho 30|30|30
+mochila|DESPACHO30-1|True|Despacho 30|30|30
+mochila|DESPACHO30-2|True|Despacho 30|30|30
+mochila|DESPACHO30-3|True|Despacho 30|30|30
+furgoneta|1257 PRK|True|Despacho 31|1000|4000
+furgoneta|2501 SND|True|Despacho 31|1000|4000
+furgoneta|7834 ZVH|True|Despacho 31|1000|4000
+motocicleta|1764 FZK|True|Despacho 31|30|30
+motocicleta|5691 ZFV|True|Despacho 31|30|30
+motocicleta|1014 DHY|True|Despacho 31|30|30
+mochila|DESPACHO31-1|True|Despacho 31|30|30
+mochila|DESPACHO31-2|True|Despacho 31|30|30
+mochila|DESPACHO31-3|True|Despacho 31|30|30
+furgoneta|4185 BYZ|True|Despacho 32|1000|4000
+furgoneta|1777 YKB|True|Despacho 32|1000|4000
+furgoneta|3948 WFR|True|Despacho 32|1000|4000
+motocicleta|9565 BSL|True|Despacho 32|30|30
+motocicleta|2247 MRP|True|Despacho 32|30|30
+motocicleta|6944 MHM|True|Despacho 32|30|30
+mochila|DESPACHO32-1|True|Despacho 32|30|30
+mochila|DESPACHO32-2|True|Despacho 32|30|30
+mochila|DESPACHO32-3|True|Despacho 32|30|30
+furgoneta|4393 XRN|True|Despacho 33|1000|4000
+furgoneta|2209 TXS|True|Despacho 33|1000|4000
+furgoneta|1893 YXX|True|Despacho 33|1000|4000
+motocicleta|3997 ZXW|True|Despacho 33|30|30
+motocicleta|8265 SGL|True|Despacho 33|30|30
+motocicleta|8751 CJS|True|Despacho 33|30|30
+mochila|DESPACHO33-1|True|Despacho 33|30|30
+mochila|DESPACHO33-2|True|Despacho 33|30|30
+mochila|DESPACHO33-3|True|Despacho 33|30|30
+furgoneta|8977 FJN|True|Despacho 34|1000|4000
+furgoneta|2575 DKP|True|Despacho 34|1000|4000
+furgoneta|2946 KBR|True|Despacho 34|1000|4000
+motocicleta|7567 PCT|True|Despacho 34|30|30
+motocicleta|6967 JCR|True|Despacho 34|30|30
+motocicleta|9564 DBS|True|Despacho 34|30|30
+mochila|DESPACHO34-1|True|Despacho 34|30|30
+mochila|DESPACHO34-2|True|Despacho 34|30|30
+mochila|DESPACHO34-3|True|Despacho 34|30|30
+furgoneta|4209 KXK|True|Despacho 35|1000|4000
+furgoneta|4173 HLM|True|Despacho 35|1000|4000
+furgoneta|7600 CRF|True|Despacho 35|1000|4000
+motocicleta|1970 SFJ|True|Despacho 35|30|30
+motocicleta|2007 ZVR|True|Despacho 35|30|30
+motocicleta|7905 ZYT|True|Despacho 35|30|30
+mochila|DESPACHO35-1|True|Despacho 35|30|30
+mochila|DESPACHO35-2|True|Despacho 35|30|30
+mochila|DESPACHO35-3|True|Despacho 35|30|30
+furgoneta|2968 FMH|True|Despacho 36|1000|4000
+furgoneta|7884 DSW|True|Despacho 36|1000|4000
+furgoneta|6085 BHJ|True|Despacho 36|1000|4000
+motocicleta|3476 NLC|True|Despacho 36|30|30
+motocicleta|4032 LXB|True|Despacho 36|30|30
+motocicleta|8062 KZK|True|Despacho 36|30|30
+mochila|DESPACHO36-1|True|Despacho 36|30|30
+mochila|DESPACHO36-2|True|Despacho 36|30|30
+mochila|DESPACHO36-3|True|Despacho 36|30|30
+furgoneta|8543 GGR|True|Despacho 37|1000|4000
+furgoneta|2788 NGH|True|Despacho 37|1000|4000
+furgoneta|2630 ZGF|True|Despacho 37|1000|4000
+motocicleta|9508 XMF|True|Despacho 37|30|30
+motocicleta|1714 YZG|True|Despacho 37|30|30
+motocicleta|3508 LWF|True|Despacho 37|30|30
+mochila|DESPACHO37-1|True|Despacho 37|30|30
+mochila|DESPACHO37-2|True|Despacho 37|30|30
+mochila|DESPACHO37-3|True|Despacho 37|30|30
+furgoneta|1215 RMV|True|Despacho 38|1000|4000
+furgoneta|5588 LXJ|True|Despacho 38|1000|4000
+furgoneta|8878 DCB|True|Despacho 38|1000|4000
+motocicleta|6454 GBH|True|Despacho 38|30|30
+motocicleta|9329 SNW|True|Despacho 38|30|30
+motocicleta|5345 NBH|True|Despacho 38|30|30
+mochila|DESPACHO38-1|True|Despacho 38|30|30
+mochila|DESPACHO38-2|True|Despacho 38|30|30
+mochila|DESPACHO38-3|True|Despacho 38|30|30
+furgoneta|3187 DSX|True|Despacho 39|1000|4000
+furgoneta|2581 JMP|True|Despacho 39|1000|4000
+furgoneta|4534 TGN|True|Despacho 39|1000|4000
+motocicleta|3197 PCY|True|Despacho 39|30|30
+motocicleta|6826 VSY|True|Despacho 39|30|30
+motocicleta|5001 HJZ|True|Despacho 39|30|30
+mochila|DESPACHO39-1|True|Despacho 39|30|30
+mochila|DESPACHO39-2|True|Despacho 39|30|30
+mochila|DESPACHO39-3|True|Despacho 39|30|30
+furgoneta|1030 MSK|True|Despacho 40|1000|4000
+furgoneta|6770 ZKT|True|Despacho 40|1000|4000
+furgoneta|7415 MXT|True|Despacho 40|1000|4000
+motocicleta|6068 WCP|True|Despacho 40|30|30
+motocicleta|5213 XTR|True|Despacho 40|30|30
+motocicleta|5676 NMJ|True|Despacho 40|30|30
+mochila|DESPACHO40-1|True|Despacho 40|30|30
+mochila|DESPACHO40-2|True|Despacho 40|30|30
+mochila|DESPACHO40-3|True|Despacho 40|30|30
+furgoneta|6564 MHT|True|Despacho 41|1000|4000
+furgoneta|1560 GZW|True|Despacho 41|1000|4000
+furgoneta|5527 TCN|True|Despacho 41|1000|4000
+motocicleta|6340 PGY|True|Despacho 41|30|30
+motocicleta|4927 KSG|True|Despacho 41|30|30
+motocicleta|5582 CJR|True|Despacho 41|30|30
+mochila|DESPACHO41-1|True|Despacho 41|30|30
+mochila|DESPACHO41-2|True|Despacho 41|30|30
+mochila|DESPACHO41-3|True|Despacho 41|30|30
+furgoneta|5175 KNP|True|Despacho 42|1000|4000
+furgoneta|1326 YVK|True|Despacho 42|1000|4000
+furgoneta|3233 PMW|True|Despacho 42|1000|4000
+motocicleta|8644 NRH|True|Despacho 42|30|30
+motocicleta|4296 DGR|True|Despacho 42|30|30
+motocicleta|8965 NPK|True|Despacho 42|30|30
+mochila|DESPACHO42-1|True|Despacho 42|30|30
+mochila|DESPACHO42-2|True|Despacho 42|30|30
+mochila|DESPACHO42-3|True|Despacho 42|30|30
+furgoneta|7106 SNZ|True|Despacho 43|1000|4000
+furgoneta|2260 BMG|True|Despacho 43|1000|4000
+furgoneta|4941 DTS|True|Despacho 43|1000|4000
+motocicleta|2686 DBV|True|Despacho 43|30|30
+motocicleta|6836 LYG|True|Despacho 43|30|30
+motocicleta|5453 DNR|True|Despacho 43|30|30
+mochila|DESPACHO43-1|True|Despacho 43|30|30
+mochila|DESPACHO43-2|True|Despacho 43|30|30
+mochila|DESPACHO43-3|True|Despacho 43|30|30
+furgoneta|1754 JRF|True|Despacho 44|1000|4000
+furgoneta|2784 SMZ|True|Despacho 44|1000|4000
+furgoneta|9499 SMN|True|Despacho 44|1000|4000
+motocicleta|7418 SYG|True|Despacho 44|30|30
+motocicleta|5337 TWS|True|Despacho 44|30|30
+motocicleta|6619 JXY|True|Despacho 44|30|30
+mochila|DESPACHO44-1|True|Despacho 44|30|30
+mochila|DESPACHO44-2|True|Despacho 44|30|30
+mochila|DESPACHO44-3|True|Despacho 44|30|30
+furgoneta|2599 HPM|True|Despacho 45|1000|4000
+furgoneta|5625 RDZ|True|Despacho 45|1000|4000
+furgoneta|9460 XSC|True|Despacho 45|1000|4000
+motocicleta|7118 GLY|True|Despacho 45|30|30
+motocicleta|5129 ZHJ|True|Despacho 45|30|30
+motocicleta|7799 LHR|True|Despacho 45|30|30
+mochila|DESPACHO45-1|True|Despacho 45|30|30
+mochila|DESPACHO45-2|True|Despacho 45|30|30
+mochila|DESPACHO45-3|True|Despacho 45|30|30
+furgoneta|8319 CGC|True|Despacho 46|1000|4000
+furgoneta|2573 BWC|True|Despacho 46|1000|4000
+furgoneta|9418 YWZ|True|Despacho 46|1000|4000
+motocicleta|4267 RGP|True|Despacho 46|30|30
+motocicleta|8912 VHS|True|Despacho 46|30|30
+motocicleta|4289 LWB|True|Despacho 46|30|30
+mochila|DESPACHO46-1|True|Despacho 46|30|30
+mochila|DESPACHO46-2|True|Despacho 46|30|30
+mochila|DESPACHO46-3|True|Despacho 46|30|30
+furgoneta|9601 PNY|True|Despacho 47|1000|4000
+furgoneta|5240 WNY|True|Despacho 47|1000|4000
+furgoneta|5621 FRX|True|Despacho 47|1000|4000
+motocicleta|7739 GYH|True|Despacho 47|30|30
+motocicleta|4495 ZYF|True|Despacho 47|30|30
+motocicleta|7019 JNM|True|Despacho 47|30|30
+mochila|DESPACHO47-1|True|Despacho 47|30|30
+mochila|DESPACHO47-2|True|Despacho 47|30|30
+mochila|DESPACHO47-3|True|Despacho 47|30|30
+furgoneta|3194 PSX|True|Despacho 48|1000|4000
+furgoneta|8419 GKH|True|Despacho 48|1000|4000
+furgoneta|8793 CZX|True|Despacho 48|1000|4000
+motocicleta|7962 ZVZ|True|Despacho 48|30|30
+motocicleta|1250 VMK|True|Despacho 48|30|30
+motocicleta|9899 PYK|True|Despacho 48|30|30
+mochila|DESPACHO48-1|True|Despacho 48|30|30
+mochila|DESPACHO48-2|True|Despacho 48|30|30
+mochila|DESPACHO48-3|True|Despacho 48|30|30
+furgoneta|3129 ZDF|True|Despacho 49|1000|4000
+furgoneta|4407 FCR|True|Despacho 49|1000|4000
+furgoneta|8638 DDY|True|Despacho 49|1000|4000
+motocicleta|1076 LBJ|True|Despacho 49|30|30
+motocicleta|6196 WKS|True|Despacho 49|30|30
+motocicleta|5733 PZS|True|Despacho 49|30|30
+mochila|DESPACHO49-1|True|Despacho 49|30|30
+mochila|DESPACHO49-2|True|Despacho 49|30|30
+mochila|DESPACHO49-3|True|Despacho 49|30|30
+furgoneta|2758 XGB|True|Despacho 50|1000|4000
+furgoneta|5452 JKL|True|Despacho 50|1000|4000
+furgoneta|8306 HVT|True|Despacho 50|1000|4000
+motocicleta|2408 TSM|True|Despacho 50|30|30
+motocicleta|4398 WVK|True|Despacho 50|30|30
+motocicleta|9407 NJK|True|Despacho 50|30|30
+mochila|DESPACHO50-1|True|Despacho 50|30|30
+mochila|DESPACHO50-2|True|Despacho 50|30|30
+mochila|DESPACHO50-3|True|Despacho 50|30|30
+furgoneta|1658 DDM|True|Despacho 51|1000|4000
+furgoneta|8107 CWZ|True|Despacho 51|1000|4000
+furgoneta|6311 VGY|True|Despacho 51|1000|4000
+motocicleta|6729 DDS|True|Despacho 51|30|30
+motocicleta|4760 KJM|True|Despacho 51|30|30
+motocicleta|9257 NJB|True|Despacho 51|30|30
+mochila|DESPACHO51-1|True|Despacho 51|30|30
+mochila|DESPACHO51-2|True|Despacho 51|30|30
+mochila|DESPACHO51-3|True|Despacho 51|30|30
+furgoneta|8783 TCD|True|Despacho 52|1000|4000
+furgoneta|6631 FFB|True|Despacho 52|1000|4000
+furgoneta|3411 DWF|True|Despacho 52|1000|4000
+motocicleta|6264 VYC|True|Despacho 52|30|30
+motocicleta|9542 VZV|True|Despacho 52|30|30
+motocicleta|5076 BHL|True|Despacho 52|30|30
+mochila|DESPACHO52-1|True|Despacho 52|30|30
+mochila|DESPACHO52-2|True|Despacho 52|30|30
+mochila|DESPACHO52-3|True|Despacho 52|30|30
+furgoneta|3624 CGF|True|Despacho 53|1000|4000
+furgoneta|2287 DKJ|True|Despacho 53|1000|4000
+furgoneta|3326 WLP|True|Despacho 53|1000|4000
+motocicleta|3668 JBG|True|Despacho 53|30|30
+motocicleta|9974 DCV|True|Despacho 53|30|30
+motocicleta|7446 GYJ|True|Despacho 53|30|30
+mochila|DESPACHO53-1|True|Despacho 53|30|30
+mochila|DESPACHO53-2|True|Despacho 53|30|30
+mochila|DESPACHO53-3|True|Despacho 53|30|30
+furgoneta|2441 NGT|True|Despacho 54|1000|4000
+furgoneta|3400 ZDS|True|Despacho 54|1000|4000
+furgoneta|9997 SST|True|Despacho 54|1000|4000
+motocicleta|2677 DZW|True|Despacho 54|30|30
+motocicleta|1017 HBX|True|Despacho 54|30|30
+motocicleta|3849 VDJ|True|Despacho 54|30|30
+mochila|DESPACHO54-1|True|Despacho 54|30|30
+mochila|DESPACHO54-2|True|Despacho 54|30|30
+mochila|DESPACHO54-3|True|Despacho 54|30|30
+furgoneta|7379 GDV|True|Despacho 55|1000|4000
+furgoneta|9039 LNF|True|Despacho 55|1000|4000
+furgoneta|2669 GZD|True|Despacho 55|1000|4000
+motocicleta|4202 MLY|True|Despacho 55|30|30
+motocicleta|1661 KYM|True|Despacho 55|30|30
+motocicleta|9275 BRY|True|Despacho 55|30|30
+mochila|DESPACHO55-1|True|Despacho 55|30|30
+mochila|DESPACHO55-2|True|Despacho 55|30|30
+mochila|DESPACHO55-3|True|Despacho 55|30|30

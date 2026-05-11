@@ -310,6 +310,140 @@ def listar_clientes():
             )
 
 
+
+# ==========================================================
+# LISTADO RESUMIDO CLIENTES
+# ==========================================================
+def listar_clientes_resumido():
+
+    clientes = cargar_clientes()
+
+    if not clientes:
+        print("\n❌ No existen clientes")
+        return
+
+    print("\n=== LISTADO RESUMIDO CLIENTES ===\n")
+
+    print(
+        f"{'DNI':<12}"
+        f"{'NOMBRE':<15}"
+        f"{'APELLIDOS':<25}"
+        f"{'DIRECCIÓN'}"
+    )
+
+    print("-" * 90)
+
+    for c in clientes.values():
+
+        print(
+            f"{c.dni:<12}"
+            f"{c.nombre:<15}"
+            f"{c.apellidos:<25}"
+            f"{c.direccion}"
+        )
+# ==========================================================
+# BUSCAR CLIENTE DETALLADO
+# ==========================================================
+def listar_cliente_detallado():
+
+    clientes = cargar_clientes()
+
+    if not clientes:
+        print("\n❌ No existen clientes")
+        return
+
+    print("\nBUSCAR CLIENTE")
+    print("1 Buscar por DNI")
+    print("2 Buscar por nombre y apellidos")
+
+    op = input("Opción: ")
+
+    cliente_encontrado = None
+
+    # ======================================================
+    # BUSQUEDA POR DNI
+    # ======================================================
+    if op == "1":
+
+        dni = input("DNI: ").strip().upper()
+
+        cliente_encontrado = clientes.get(dni)
+
+    # ======================================================
+    # BUSQUEDA POR NOMBRE
+    # ======================================================
+    elif op == "2":
+
+        nombre = input("Nombre: ").strip().lower()
+        apellidos = input("Apellidos: ").strip().lower()
+
+        for c in clientes.values():
+
+            if (
+                c.nombre.lower() == nombre and
+                c.apellidos.lower() == apellidos
+            ):
+                cliente_encontrado = c
+                break
+
+    else:
+        print("\n❌ Opción incorrecta")
+        return
+
+    # ======================================================
+    # NO ENCONTRADO
+    # ======================================================
+    if not cliente_encontrado:
+        print("\n❌ Cliente no encontrado")
+        return
+
+    c = cliente_encontrado
+
+    print("\n" + "=" * 70)
+
+    print(f"DNI:                 {c.dni}")
+    print(f"Nombre:              {c.nombre}")
+    print(f"Apellidos:           {c.apellidos}")
+    print(f"Dirección:           {c.direccion}")
+    print(f"Población:           {c.poblacion}")
+    print(f"Provincia:           {c.provincia}")
+    print(f"Coordenadas:         {c.coordenadas}")
+
+    delegacion = (
+        c.delegacion_cercana.nombre
+        if c.delegacion_cercana
+        else "N/A"
+    )
+
+    print(f"Delegación cercana:  {delegacion}")
+    print(f"Distancia despacho:  {c.distancia_despacho} km")
+
+    print(f"Pedidos en curso:    {len(c.pedidos_en_curso)}")
+    print(f"Pedidos terminados:  {len(c.pedidos_terminados)}")
+
+    print(f"Importe facturado:   {c.importe_facturado} €")
+
+    # ======================================================
+    # PEDIDOS EN CURSO
+    # ======================================================
+    if c.pedidos_en_curso:
+
+        print("\nPedidos en curso:")
+
+        for p in c.pedidos_en_curso:
+            print(f"   - {p}")
+
+    # ======================================================
+    # PEDIDOS TERMINADOS
+    # ======================================================
+    if c.pedidos_terminados:
+
+        print("\nPedidos terminados:")
+
+        for p in c.pedidos_terminados:
+            print(f"   - {p}")
+
+    print("\n" + "=" * 70)
 # ==========================================================
 # MENU
 # ==========================================================
@@ -321,19 +455,31 @@ def ejecutar():
         print("1 Alta")
         print("2 Baja")
         print("3 Modificar")
-        print("4 Listar")
+        print("4 Listar pedidos clientes")
+        print("5 Listado resumido clientes")
+        print("6 Listado detallado clientes")
         print("0 Salir")
 
         op = input("Opción: ")
 
         if op == "1":
             alta_cliente_interactiva()
+
         elif op == "2":
             baja_cliente_interactiva()
+
         elif op == "3":
             modificar_cliente_interactiva()
+
         elif op == "4":
             listar_clientes()
+
+        elif op == "5":
+            listar_clientes_resumido()
+
+        elif op == "6":
+            listar_cliente_detallado()
+
         elif op == "0":
             break
 
