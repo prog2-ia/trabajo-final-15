@@ -70,7 +70,10 @@
         "delegacion_cercana": "despacho 12",
         "provincia": "Alicante",
         "poblacion": "Elche",
-        "pedidos_en_curso": [],
+        "pedidos_en_curso": [
+            "34",
+            "90"
+        ],
         "pedidos_terminados": [],
         "importe_facturado": 0,
         "distancia_despacho": 3.38

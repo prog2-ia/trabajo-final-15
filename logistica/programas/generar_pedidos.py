@@ -224,7 +224,7 @@ def generar_pedidos():
                 "peso": peso,
                 "volumen": volumen,
                 "km": p.km,
-                "estado": p.estado_pedido,
+                "estado": p.estado,
                 "fecha_pedido": str(p.fecha_pedido),
                 "fecha_entrega": None
             }

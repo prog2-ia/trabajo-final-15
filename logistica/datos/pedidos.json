@@ -5,7 +5,7 @@
         "peso": 1.67,
         "volumen": 16.8,
         "km": 347.68,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.888667",
         "fecha_entrega": null
     },
@@ -45,7 +45,7 @@
         "peso": 0.32,
         "volumen": 2.56,
         "km": 303.37,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889044",
         "fecha_entrega": null
     },
@@ -75,7 +75,7 @@
         "peso": 32.48,
         "volumen": 121.3,
         "km": 331.23,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889138",
         "fecha_entrega": null
     },
@@ -95,7 +95,7 @@
         "peso": 1.21,
         "volumen": 10.46,
         "km": 4.14,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889206",
         "fecha_entrega": null
     },
@@ -125,7 +125,7 @@
         "peso": 0.3,
         "volumen": 1.24,
         "km": 296.88,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889291",
         "fecha_entrega": null
     },
@@ -155,7 +155,7 @@
         "peso": 0.29,
         "volumen": 5.7,
         "km": 302.32,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889370",
         "fecha_entrega": null
     },
@@ -195,7 +195,7 @@
         "peso": 1.62,
         "volumen": 5.54,
         "km": 302.38,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889562",
         "fecha_entrega": null
     },
@@ -245,7 +245,7 @@
         "peso": 0.18,
         "volumen": 1.14,
         "km": 300.63,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889713",
         "fecha_entrega": null
     },
@@ -255,7 +255,7 @@
         "peso": 0.66,
         "volumen": 6.06,
         "km": 300.21,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889745",
         "fecha_entrega": null
     },
@@ -285,7 +285,7 @@
         "peso": 0.67,
         "volumen": 10.36,
         "km": 332.22,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889810",
         "fecha_entrega": null
     },
@@ -295,7 +295,7 @@
         "peso": 0.99,
         "volumen": 3.99,
         "km": 337.42,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889832",
         "fecha_entrega": null
     },
@@ -315,7 +315,7 @@
         "peso": 1.81,
         "volumen": 17.95,
         "km": 1.88,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889874",
         "fecha_entrega": null
     },
@@ -335,7 +335,7 @@
         "peso": 1.18,
         "volumen": 11.01,
         "km": 433.62,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.889917",
         "fecha_entrega": null
     },
@@ -385,7 +385,7 @@
         "peso": 1.42,
         "volumen": 6.06,
         "km": 301.77,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890033",
         "fecha_entrega": null
     },
@@ -425,7 +425,7 @@
         "peso": 1.5,
         "volumen": 11.36,
         "km": 304.33,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890151",
         "fecha_entrega": null
     },
@@ -465,7 +465,7 @@
         "peso": 1.11,
         "volumen": 9.87,
         "km": 329.57,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890234",
         "fecha_entrega": null
     },
@@ -505,7 +505,7 @@
         "peso": 1.41,
         "volumen": 12.37,
         "km": 314.88,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890318",
         "fecha_entrega": null
     },
@@ -535,7 +535,7 @@
         "peso": 18.2,
         "volumen": 86.19,
         "km": 426.13,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890404",
         "fecha_entrega": null
     },
@@ -565,7 +565,7 @@
         "peso": 1.64,
         "volumen": 8.23,
         "km": 295.39,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890467",
         "fecha_entrega": null
     },
@@ -575,7 +575,7 @@
         "peso": 0.51,
         "volumen": 5.91,
         "km": 422.36,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890487",
         "fecha_entrega": null
     },
@@ -585,7 +585,7 @@
         "peso": 1.63,
         "volumen": 21.62,
         "km": 18.73,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890507",
         "fecha_entrega": null
     },
@@ -605,7 +605,7 @@
         "peso": 96.86,
         "volumen": 438.02,
         "km": 133.51,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890546",
         "fecha_entrega": null
     },
@@ -655,7 +655,7 @@
         "peso": 1.49,
         "volumen": 5.15,
         "km": 304.45,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890649",
         "fecha_entrega": null
     },
@@ -665,7 +665,7 @@
         "peso": 1.93,
         "volumen": 8.3,
         "km": 297.77,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890670",
         "fecha_entrega": null
     },
@@ -695,7 +695,7 @@
         "peso": 1.82,
         "volumen": 9.06,
         "km": 300.46,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890738",
         "fecha_entrega": null
     },
@@ -705,7 +705,7 @@
         "peso": 1.86,
         "volumen": 11.02,
         "km": 290.94,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890758",
         "fecha_entrega": null
     },
@@ -725,7 +725,7 @@
         "peso": 1.02,
         "volumen": 5.45,
         "km": 304.42,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890796",
         "fecha_entrega": null
     },
@@ -735,7 +735,7 @@
         "peso": 1.86,
         "volumen": 24.97,
         "km": 341.99,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890814",
         "fecha_entrega": null
     },
@@ -745,7 +745,7 @@
         "peso": 1.14,
         "volumen": 15.06,
         "km": 125.97,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890833",
         "fecha_entrega": null
     },
@@ -755,7 +755,7 @@
         "peso": 1.24,
         "volumen": 7.65,
         "km": 134.19,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890860",
         "fecha_entrega": null
     },
@@ -765,7 +765,7 @@
         "peso": 0.87,
         "volumen": 6.61,
         "km": 346.96,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890879",
         "fecha_entrega": null
     },
@@ -785,7 +785,7 @@
         "peso": 1.11,
         "volumen": 7.93,
         "km": 123.57,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.890951",
         "fecha_entrega": null
     },
@@ -815,7 +815,7 @@
         "peso": 0.9,
         "volumen": 3.68,
         "km": 133.64,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891018",
         "fecha_entrega": null
     },
@@ -845,7 +845,7 @@
         "peso": 0.12,
         "volumen": 0.89,
         "km": 315.0,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891074",
         "fecha_entrega": null
     },
@@ -855,7 +855,7 @@
         "peso": 1.74,
         "volumen": 8.98,
         "km": 301.52,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891092",
         "fecha_entrega": null
     },
@@ -865,7 +865,7 @@
         "peso": 0.3,
         "volumen": 1.22,
         "km": 352.15,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891117",
         "fecha_entrega": null
     },
@@ -885,7 +885,7 @@
         "peso": 0.2,
         "volumen": 0.9,
         "km": 1.83,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891166",
         "fecha_entrega": null
     },
@@ -895,7 +895,7 @@
         "peso": 1.28,
         "volumen": 9.77,
         "km": 132.03,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891187",
         "fecha_entrega": null
     },
@@ -925,7 +925,7 @@
         "peso": 33.36,
         "volumen": 151.93,
         "km": 134.42,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891252",
         "fecha_entrega": null
     },
@@ -935,7 +935,7 @@
         "peso": 1.7,
         "volumen": 11.8,
         "km": 312.09,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891278",
         "fecha_entrega": null
     },
@@ -955,7 +955,7 @@
         "peso": 1.02,
         "volumen": 3.77,
         "km": 343.34,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891315",
         "fecha_entrega": null
     },
@@ -985,7 +985,7 @@
         "peso": 1.96,
         "volumen": 29.47,
         "km": 0.28,
-        "estado": "generado",
+        "estado": "en_recogida",
         "fecha_pedido": "2026-04-09 03:45:14.891371",
         "fecha_entrega": null
     },

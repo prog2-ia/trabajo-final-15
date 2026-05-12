@@ -93,7 +93,7 @@ class Pedido:
         # ==================================================
         # ESTADO DEL PEDIDO
         # ==================================================
-        self._estado_pedido = "generado"
+        self._estado = "generado"
 
         # ==================================================
         # DISTANCIA REAL
@@ -131,8 +131,8 @@ class Pedido:
         return self._km
 
     @property
-    def estado_pedido(self):
-        return self._estado_pedido
+    def estado(self):
+        return self._estado
 
     @property
     def fecha_pedido(self):
@@ -202,7 +202,7 @@ class GrupoPedidos(ABC):
         # ==================================================
         # ESTADO DEL GRUPO
         # ==================================================
-        self._estado_pedidos = "generado"
+        self._estado = "generado"
 
     # ======================================================
     # PROPIEDADES
@@ -217,7 +217,7 @@ class GrupoPedidos(ABC):
 
     @property
     def estado(self):
-        return self._estado_pedidos
+        return self._estado
 
     @property
     def fecha_creacion(self):
@@ -242,7 +242,7 @@ class GrupoPedidos(ABC):
         return (
             f"Grupo {self._id} | "
             f"Pedidos: {len(self._pedidos)} | "
-            f"Estado: {self._estado_pedidos}"
+            f"Estado: {self._estado}"
         )
 
 
@@ -267,7 +267,7 @@ class GrupoPedidosRecogida(GrupoPedidos):
         Cambia estado del pedido a 'en_recogida'
         y lo añade al grupo.
         """
-        pedido._estado_pedido = "en_recogida"
+        pedido._estado = "en_recogida"
         self._pedidos.append(pedido)
 
 
@@ -288,7 +288,7 @@ class GrupoPedidosTransporte(GrupoPedidos):
         self._id_transporte = GrupoPedidosTransporte._contador
 
     def agregar_pedido(self, pedido):
-        pedido._estado_pedido = "en_transporte"
+        pedido._estado = "en_transporte"
         self._pedidos.append(pedido)
 
 
@@ -309,7 +309,7 @@ class GrupoPedidosReparto(GrupoPedidos):
         self._id_reparto = GrupoPedidosReparto._contador
 
     def agregar_pedido(self, pedido):
-        pedido._estado_pedido = "en_reparto"
+        pedido._estado = "en_reparto"
         self._pedidos.append(pedido)
 
 
@@ -324,5 +324,5 @@ def finalizar_pedido(pedido):
     ✔ Asigna fecha de entrega actual
     """
 
-    pedido._estado_pedido = "entregado"
+    pedido._estado = "entregado"
     pedido._fecha_entrega = datetime.now()

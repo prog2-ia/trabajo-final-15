@@ -20,7 +20,7 @@ from programas.mantenimiento_clientes import ejecutar as mantenimiento_clientes
 from programas.mantenimiento_delegaciones import ejecutar as mantenimiento_delegaciones
 from programas.mantenimiento_vehiculos import ejecutar as mantenimiento_vehiculos
 from programas.mantenimiento_pedidos import ejecutar as mantenimiento_pedidos
-
+from programas.generar_rutas_recogida import ejecutar as generar_rutas_recogida
 
 
 def menu_datos_prueba():
@@ -122,24 +122,23 @@ def menu_rutas():
         print("=" * 40)
 
         print("1. Generar rutas de recogida")
-        print("2. Generar rutas de transporte")
-        print("3. Generar rutas de reparto")
-        print("4. Consultar estado de flotas")
+        # print("2. Generar rutas de transporte")
+        # print("3. Generar rutas de reparto")
         print("0. Volver")
 
         opcion = input("\nSeleccione una opcion: ").strip()
 
-        # if opcion == "1":
-        # generar_rutas_recogida.py()
+        if opcion == "1":
+            generar_rutas_recogida()
 
         # elif opcion == "2":
-        # generar_rutas_transporte.py()
+        # generar_rutas_transporte.()
 
         # elif opcion == "3":
-        # generar_rutas_reparto.py()
+        # generar_rutas_reparto()
 
         # elif opcion == "4":
-        # consultar_flotas.py()
+        # consultar_flotas()
 
         if opcion == "0":
             break

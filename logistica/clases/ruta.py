@@ -1,25 +1,32 @@
 # from geopy.distance import geodesic
+from datetime import datetime
 
 class Ruta:
     """
     Representa una ruta logística formada por varios pedidos.
     """
 
-    def __init__(self, id_ruta, distancia=0):
-        """
-        Constructor de la ruta.
-
-        Parámetros
-        ----------
-        id_ruta : str
-            Identificador de la ruta
-        distancia : float
-            Distancia total estimada de la ruta
-        """
+    def __init__(
+            self,
+            id_ruta,
+            delegacion=None,
+            tipo_ruta="recogida",
+            distancia=0
+    ):
 
         self.id_ruta = id_ruta
+
+        self.delegacion = delegacion
+
+        self.tipo_ruta = tipo_ruta
+
+        self.fecha_creacion = datetime.now()
+
         self.lista_pedidos = []
+
         self.distancia_total = distancia
+
+  
 
     # --------------------------------------------------
 
