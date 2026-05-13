@@ -180,19 +180,15 @@ def filtrar_pedidos(clientes, pedidos):
 def mostrar_pedidos_formateados(pedidos, clientes):
     print(
         f"{'ID':<8}"
-        f"{'DELEGACIÓN':<25}"
-        f"{'ORIGEN':<40}"
-        f"{'DESTINO':<40}"
-        f"{'PESO':>7}"
-        f"{'VOL':>7}"
-        f"{'ESTADO':>12}"
+        f"{'DELEGACIÓN':<30}"
+        f"{'ORIGEN':<30}"
+        f"{'DESTINO':<55}"
+        f"{'PESO':>10}"
+        f"{'VOL':>10}"
+        f"{'ESTADO':>15}"
     )
+    print("-" * 175)
 
-    print("-" * 145)
-
-    # ======================================================
-    # ORDENAR POR DELEGACIÓN
-    # ======================================================
     # ======================================================
     # ORDENAR POR POBLACIÓN Y DELEGACIÓN
     # ======================================================
@@ -262,39 +258,51 @@ def mostrar_pedidos_formateados(pedidos, clientes):
         # ======================================================
         if o:
 
-            nombre_o = f"{o.nombre} {o.apellidos}"[:20]
-            direccion_o = (
-                (o.direccion[:15] + "...")
-                if len(o.direccion) > 15
-                else o.direccion
+            o_txt = (
+                f"{o.nombre} "
+                f"{o.apellidos}"
             )
 
-            pob_o = o.poblacion or "N/A"
-            o_txt = f"{nombre_o} | {direccion_o} | {pob_o}"
-
         else:
+
             o_txt = "N/A"
+
 
         # ======================================================
         # DESTINO
         # ======================================================
-        if d:
+        if d and d.delegacion_cercana:
 
-            nombre_d = f"{d.nombre} {d.apellidos}"[:20]
-            direccion_d = (
-                (d.direccion[:15] + "...")
-                if len(d.direccion) > 15
-                else d.direccion
+            nombre_d = (
+                f"{d.nombre} "
+                f"{d.apellidos}"
             )
 
-            pob_d = d.poblacion or "N/A"
-            d_txt = f"{nombre_d} | {direccion_d} | {pob_d}"
+            delegacion_d = (
+                d.delegacion_cercana.nombre
+            )
+
+            poblacion_d = (
+                d.delegacion_cercana.poblacion
+                if hasattr(
+                    d.delegacion_cercana,
+                    "poblacion"
+                )
+                else "N/A"
+            )
+
+            d_txt = (
+                f"{nombre_d} | "
+                f"{delegacion_d} | "
+                f"{poblacion_d}"
+            )
 
         else:
+
             d_txt = "N/A"
 
-        o_txt = o_txt[:39]
-        d_txt = d_txt[:39]
+        o_txt = o_txt[:29]
+        d_txt = d_txt[:54]
 
         # ======================================================
         # DELEGACIÓN
@@ -326,12 +334,12 @@ def mostrar_pedidos_formateados(pedidos, clientes):
 
         print(
             f"{pid:<8}"
-            f"{delegacion:<25}"
-            f"{o_txt:<40}"
-            f"{d_txt:<40}"
-            f"{peso:>7}"
-            f"{volumen:>7}"
-            f"{estado:>12}"
+            f"{delegacion:<30}"
+            f"{o_txt:<30}"
+            f"{d_txt:<55}"
+            f"{peso:>10}"
+            f"{volumen:>10}"
+            f"{estado:>15}"
         )
 
 
