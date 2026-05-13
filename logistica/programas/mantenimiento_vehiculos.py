@@ -674,7 +674,8 @@ def listado_vehiculos(
 
             v for v in vehiculos
 
-            if v.delegacion == delegacion
+            if v.delegacion.nombre.lower()
+               == delegacion.nombre.lower()
         ]
 
     # ======================================================
@@ -701,7 +702,7 @@ def listado_vehiculos(
     # ======================================================
     # DATOS
     # ======================================================
-    for v in vehiculos:
+    for v in resultado:
         print(
             f"{v.tipo:<15}"
             f"{v.matricula:<20}"

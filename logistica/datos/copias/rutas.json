@@ -1,0 +1,94 @@
+{
+    "1": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 12",
+        "fecha": "2026-05-12 00:27:08.182051",
+        "distancia_total": 10.34,
+        "lista_pedidos": [
+            "1",
+            "30",
+            "34",
+            "90",
+            "77",
+            "74"
+        ]
+    },
+    "2": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-12 02:09:32.864926",
+        "distancia_total": 13.51,
+        "lista_pedidos": [
+            "96",
+            "93",
+            "29",
+            "54",
+            "87",
+            "8",
+            "47",
+            "61",
+            "59",
+            "58"
+        ]
+    },
+    "3": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 13",
+        "fecha": "2026-05-12 02:46:41.214733",
+        "distancia_total": 18.02,
+        "lista_pedidos": [
+            "57",
+            "43",
+            "10",
+            "86",
+            "71",
+            "73",
+            "99",
+            "76",
+            "79",
+            "85",
+            "25",
+            "13",
+            "70",
+            "89",
+            "16",
+            "20",
+            "94",
+            "26",
+            "51",
+            "75",
+            "82",
+            "32",
+            "5",
+            "66",
+            "67",
+            "39"
+        ]
+    },
+    "4": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 18",
+        "fecha": "2026-05-12 21:51:06.131590",
+        "distancia_total": 7.51,
+        "lista_pedidos": [
+            "18",
+            "4"
+        ],
+        "vehiculo": "DESPACHO18-1",
+        "peso_total": 1.8499999999999999,
+        "volumen_total": 13.76
+    },
+    "5": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 18",
+        "fecha": "2026-05-13 01:40:34.380952",
+        "distancia_total": 8.22,
+        "lista_pedidos": [
+            "78",
+            "48"
+        ],
+        "vehiculo": "DESPACHO18-2",
+        "peso_total": 1.2799999999999998,
+        "volumen_total": 9.82
+    }
+}

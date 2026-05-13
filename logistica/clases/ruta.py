@@ -11,7 +11,11 @@ class Ruta:
             id_ruta,
             delegacion=None,
             tipo_ruta="recogida",
-            distancia=0
+            distancia=0,
+            vehiculo=None,
+            peso_total=0,
+            volumen_total=0,
+            finalizada=False
     ):
 
         self.id_ruta = id_ruta
@@ -26,7 +30,15 @@ class Ruta:
 
         self.distancia_total = distancia
 
-  
+        self.vehiculo = vehiculo
+
+        self.peso_total_ruta = peso_total
+
+        self.volumen_total_ruta = volumen_total
+
+        self.finalizada = finalizada
+
+
 
     # --------------------------------------------------
 
@@ -188,8 +200,9 @@ class Ruta:
 
         return (
             f"Ruta {self.id_ruta} | "
-            f"{len(self.lista_pedidos)} pedidos | "
-            f"{self.distancia_total:} km | "
-            f"{self.recorrido_ciudades()} | "
-            f"{self.generar_albaran_ruta()}"
+            f"Tipo: {self.tipo_ruta} | "
+            f"Vehículo: {self.vehiculo.matricula if self.vehiculo else 'Sin vehículo'} | "
+            f"Pedidos: {len(self.lista_pedidos)} | "
+            f"Finalizada: {self.finalizada}"
         )
+

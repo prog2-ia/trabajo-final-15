@@ -365,7 +365,70 @@ def listar_cliente_detallado():
     # ======================================================
     if op == "1":
 
-        dni = input("DNI: ").strip().upper()
+        dni = input("DNI (T = todos): ").strip().upper()
+
+        # ======================================================
+        # TODOS LOS CLIENTES
+        # ======================================================
+
+        if dni == "T":
+
+            for c in clientes.values():
+
+                print("\n" + "=" * 70)
+
+                print(f"DNI:                 {c.dni}")
+                print(f"Nombre:              {c.nombre}")
+                print(f"Apellidos:           {c.apellidos}")
+                print(f"Dirección:           {c.direccion}")
+                print(f"Población:           {c.poblacion}")
+                print(f"Provincia:           {c.provincia}")
+                print(f"Coordenadas:         {c.coordenadas}")
+
+                delegacion = (
+                    c.delegacion_cercana.nombre
+                    if c.delegacion_cercana
+                    else "N/A"
+                )
+
+                print(f"Delegación cercana:  {delegacion}")
+                print(f"Distancia despacho:  {c.distancia_despacho} km")
+
+                print(f"Pedidos en curso:    {len(c.pedidos_en_curso)}")
+                print(f"Pedidos terminados:  {len(c.pedidos_terminados)}")
+
+                print(f"Importe facturado:   {c.importe_facturado} €")
+
+                # ==================================================
+                # PEDIDOS EN CURSO
+                # ==================================================
+                if c.pedidos_en_curso:
+
+                    print("\nPedidos en curso:")
+
+                    for p in c.pedidos_en_curso:
+                        print(f"   - {p}")
+
+                # ==================================================
+                # PEDIDOS TERMINADOS
+                # ==================================================
+                if c.pedidos_terminados:
+
+                    print("\nPedidos terminados:")
+
+                    for p in c.pedidos_terminados:
+                        print(f"   - {p}")
+
+                print("\n" + "=" * 70)
+
+            return
+
+        # ======================================================
+        # CLIENTE INDIVIDUAL
+        # ======================================================
+
+        # cliente_encontrado = clientes.get(dni)
+        # dni = input("DNI: ").strip().upper()
 
         cliente_encontrado = clientes.get(dni)
 

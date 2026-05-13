@@ -121,7 +121,7 @@ def menu_rutas():
         print("   GESTION DE RUTAS")
         print("=" * 40)
 
-        print("1. Generar rutas de recogida")
+        print("1. Rutas de recogida")
         # print("2. Generar rutas de transporte")
         # print("3. Generar rutas de reparto")
         print("0. Volver")

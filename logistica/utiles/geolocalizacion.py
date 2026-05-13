@@ -1,5 +1,14 @@
 # ==========================================================
-# GEOLOCALIZACIÓN CENTRALIZADA (VERSIÓN FINAL)
+# GEOLOCALIZACIÓN CENTRALIZADA
+# ==========================================================
+# Funcionalidades:
+# - Geocodificación dirección -> coordenadas
+# - Reverse geocoding coordenadas -> población/provincia
+# - Cache persistente JSON
+# - Cache en memoria
+# - Reintentos automáticos
+# - Protección contra rate-limit
+# - Timeouts robustos
 # ==========================================================
 
 import json
@@ -8,14 +17,33 @@ import time
 
 from typing import Optional
 
+from geopy.exc import (
+    GeocoderTimedOut,
+    GeocoderRateLimited
+)  # type: ignore[import-untyped]
 
-from geopy.exc import GeocoderTimedOut, GeocoderRateLimited # type: ignore[import-untyped]
-from geopy.geocoders import Nominatim # type: ignore[import-untyped]
+from geopy.geocoders import (
+    Nominatim
+)  # type: ignore[import-untyped]
+
 
 # ==========================================================
-# CONFIG
+# CONFIGURACIÓN
 # ==========================================================
-geolocator = Nominatim(user_agent="logistica_app")
+
+geolocator = Nominatim(
+    user_agent="logistica_app"
+)
+
+TIMEOUT = 10
+REINTENTOS = 3
+ESPERA_REINTENTO = 2
+ESPERA_PETICION = 1
+
+
+# ==========================================================
+# CACHE FILE
+# ==========================================================
 
 CACHE_FILE = os.path.join(
     os.path.dirname(__file__),
@@ -24,86 +52,196 @@ CACHE_FILE = os.path.join(
     "cache_direcciones.json"
 )
 
+
 # ==========================================================
-# CACHE COORDENADAS
+# CARGA CACHE PERSISTENTE
 # ==========================================================
+
 if os.path.exists(CACHE_FILE):
+
     with open(CACHE_FILE, "r", encoding="utf-8") as f:
+
         CACHE = json.load(f)
+
 else:
+
     CACHE = dict()
 
-# CACHE_DATOS_GEO = {}
-# CACHE_DATOS_GEO: dict[tuple[float, float], tuple[str | None, str | None]] = {}
-CACHE_DATOS_GEO: dict[tuple[float, float], tuple[Optional[str], Optional[str]]] = {}
+
+# ==========================================================
+# CACHE GEO EN MEMORIA
+# ==========================================================
+
+CACHE_DATOS_GEO: dict[
+    tuple[float, float],
+    tuple[Optional[str], Optional[str]]
+] = {}
+
+
+# ==========================================================
+# GUARDAR CACHE
+# ==========================================================
 
 def guardar_cache():
+
+    os.makedirs(
+        os.path.dirname(CACHE_FILE),
+        exist_ok=True
+    )
+
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(CACHE, f, indent=4)
+
+        json.dump(
+            CACHE,
+            f,
+            indent=4,
+            ensure_ascii=False
+        )
 
 
 # ==========================================================
-# NORMALIZAR
+# NORMALIZAR DIRECCIÓN
 # ==========================================================
+
 def normalizar_direccion(txt):
-    return " ".join(txt.strip().lower().split())
+
+    return " ".join(
+        txt.strip().lower().split()
+    )
 
 
 # ==========================================================
 # GEO → COORDENADAS
 # ==========================================================
+
 def geocodificar(direccion):
+
+    if not direccion:
+        return None
 
     direccion_norm = normalizar_direccion(direccion)
 
+    # ------------------------------------------------------
+    # CACHE
+    # ------------------------------------------------------
+
     if direccion_norm in CACHE:
+
         print(f"♻️ Cache: {direccion}")
+
         return tuple(CACHE[direccion_norm])
 
     print(f"🌐 Geocodificando: {direccion}")
 
+    # ------------------------------------------------------
+    # REINTENTOS
+    # ------------------------------------------------------
+
+    for intento in range(REINTENTOS):
+
+        try:
+
+            time.sleep(ESPERA_PETICION)
+
+            loc = geolocator.geocode(
+                direccion_norm,
+                timeout=TIMEOUT
+            )
+
+            if loc:
+
+                coord = (
+                    loc.latitude,
+                    loc.longitude
+                )
+
+                CACHE[direccion_norm] = coord
+
+                guardar_cache()
+
+                return coord
+
+            break
+
+        except GeocoderRateLimited:
+
+            print(
+                f"⚠️ Rate limit "
+                f"(intento {intento + 1})"
+            )
+
+            time.sleep(5)
+
+        except GeocoderTimedOut:
+
+            print(
+                f"⚠️ Timeout GEO "
+                f"(intento {intento + 1})"
+            )
+
+            time.sleep(ESPERA_REINTENTO)
+
+        except Exception as e:
+
+            print(f"⚠️ Error geocode: {e}")
+
+            time.sleep(ESPERA_REINTENTO)
+
+    # ------------------------------------------------------
+    # FALLBACK SIN CALLE
+    # ------------------------------------------------------
+
     try:
-        time.sleep(1)
 
-        loc = geolocator.geocode(direccion_norm, timeout=5)
-
-        if loc:
-            coord = (loc.latitude, loc.longitude)
-            CACHE[direccion_norm] = coord
-            guardar_cache()
-            return coord
-
-    except GeocoderRateLimited:
-        print("⚠️ Rate limit, esperando...")
-        time.sleep(3)
-        return geocodificar(direccion)
-
-    except GeocoderTimedOut:
-        pass
-
-    # fallback sin calle
-    try:
         partes = direccion_norm.split(",")
 
         if len(partes) > 1:
+
             fallback = ",".join(partes[1:])
 
-            loc = geolocator.geocode(fallback, timeout=5)
+            print(f"🔄 Fallback: {fallback}")
 
-            if loc:
-                coord = (loc.latitude, loc.longitude)
-                CACHE[direccion_norm] = coord
-                guardar_cache()
-                return coord
+            for intento in range(REINTENTOS):
 
-    except:
+                try:
+
+                    time.sleep(ESPERA_PETICION)
+
+                    loc = geolocator.geocode(
+                        fallback,
+                        timeout=TIMEOUT
+                    )
+
+                    if loc:
+
+                        coord = (
+                            loc.latitude,
+                            loc.longitude
+                        )
+
+                        CACHE[direccion_norm] = coord
+
+                        guardar_cache()
+
+                        return coord
+
+                    break
+
+                except Exception:
+
+                    time.sleep(ESPERA_REINTENTO)
+
+    except Exception:
+
         pass
 
     return None
 
+
 # ==========================================================
-# GEOLOCALIZAR LISTA (RESTAURADA)
+# GEOLOCALIZAR LISTA
 # ==========================================================
+
 def geocodificar_lista(direcciones):
     """
     Devuelve:
@@ -112,6 +250,7 @@ def geocodificar_lista(direcciones):
     """
 
     coords = {}
+
     fallidas = []
 
     for d in direcciones:
@@ -119,97 +258,189 @@ def geocodificar_lista(direcciones):
         coord = geocodificar(d)
 
         if coord is None:
+
             fallidas.append(d)
+
         else:
+
             coords[d] = coord
 
     return coords, fallidas
+
+
 # ==========================================================
 # REVERSE GEO → DATOS
 # ==========================================================
+
 def obtener_datos_geo(coord):
 
     if not coord:
         return None, None
 
+    # ------------------------------------------------------
+    # CACHE MEMORIA
+    # ------------------------------------------------------
+
     if coord in CACHE_DATOS_GEO:
+
         return CACHE_DATOS_GEO[coord]
 
     lat, lon = coord
 
-    try:
-        time.sleep(1)
+    # ------------------------------------------------------
+    # REINTENTOS
+    # ------------------------------------------------------
 
-        location = geolocator.reverse((lat, lon), exactly_one=True)
+    for intento in range(REINTENTOS):
 
-        if location and "address" in location.raw:
+        try:
 
-            addr = location.raw["address"]
+            time.sleep(ESPERA_PETICION)
 
-            # -----------------------------
-            # POBLACIÓN
-            # -----------------------------
-            # --------------------------------------------------
-            # POBLACIÓN (VERSIÓN DEFINITIVA ESPAÑA)
-            # --------------------------------------------------
-            poblacion = (
-                    addr.get("city")  # Madrid, Elche
-                    or addr.get("town")  # pueblos
-                    or addr.get("village")
-                    or addr.get("municipality")
+            location = geolocator.reverse(
+                (lat, lon),
+                exactly_one=True,
+                timeout=TIMEOUT
             )
 
-            # 🔥 fallback urbano (MUY IMPORTANTE en Madrid)
-            if not poblacion:
+            if location and "address" in location.raw:
+
+                addr = location.raw["address"]
+
+                # ==================================================
+                # POBLACIÓN
+                # ==================================================
+
                 poblacion = (
-                        addr.get("city_district")  # Villaverde
-                        or addr.get("suburb")  # barrios
-                        or addr.get("neighbourhood")
+
+                    addr.get("city")
+
+                    or addr.get("town")
+
+                    or addr.get("village")
+
+                    or addr.get("municipality")
                 )
 
-            # 🔥 fallback final usando texto completo
-            if not poblacion and location.address:
-                partes = location.address.split(",")
-                if len(partes) >= 3:
-                    poblacion = partes[-4].strip()  # suele ser ciudad real
+                # fallback urbano
 
+                if not poblacion:
 
-            # limpiar tipo "Elx / Elche"
-            if poblacion and "/" in poblacion:
-                poblacion = poblacion.split("/")[-1].strip()
+                    poblacion = (
 
-            # -----------------------------
-            # PROVINCIA
-            # -----------------------------
-            provincia = (
+                        addr.get("city_district")
+
+                        or addr.get("suburb")
+
+                        or addr.get("neighbourhood")
+                    )
+
+                # fallback usando address completo
+
+                if not poblacion and location.address:
+
+                    partes = location.address.split(",")
+
+                    if len(partes) >= 4:
+
+                        poblacion = partes[-4].strip()
+
+                # limpieza "Elx / Elche"
+
+                if poblacion and "/" in poblacion:
+
+                    poblacion = (
+                        poblacion.split("/")[-1].strip()
+                    )
+
+                # ==================================================
+                # PROVINCIA
+                # ==================================================
+
+                provincia = (
+
                     addr.get("province")
+
                     or addr.get("state_district")
+
                     or addr.get("county")
+
                     or addr.get("state")
+                )
+
+                if provincia:
+
+                    provincia = provincia.strip()
+
+                    if "/" in provincia:
+
+                        partes = [
+
+                            p.strip()
+
+                            for p in provincia.split("/")
+
+                            if p.strip()
+                        ]
+
+                        provincia = (
+                            partes[-1]
+                            if partes
+                            else provincia
+                        )
+
+                    # normalización Madrid
+
+                    if "Madrid" in provincia:
+
+                        provincia = "Madrid"
+
+                resultado = (
+                    poblacion,
+                    provincia
+                )
+
+                # --------------------------------------------------
+                # CACHE MEMORIA
+                # --------------------------------------------------
+
+                CACHE_DATOS_GEO[coord] = resultado
+
+                print(
+                    f"🌍 GEO OK: "
+                    f"{poblacion} | {provincia}"
+                )
+
+                return resultado
+
+            break
+
+        except GeocoderRateLimited:
+
+            print(
+                f"⚠️ Rate limit reverse GEO "
+                f"(intento {intento + 1})"
             )
-            # provincia = addr.get("province")
 
-            if provincia:
-                provincia = provincia.strip()
+            time.sleep(5)
 
-                if "/" in provincia:
-                    partes = [p.strip() for p in provincia.split("/") if p.strip()]
-                    provincia = partes[-1] if partes else provincia
+        except GeocoderTimedOut:
 
-                # 🔥 normalización Madrid
-                if "Madrid" in provincia:
-                    provincia = "Madrid"
+            print(
+                f"⚠️ Timeout reverse GEO "
+                f"(intento {intento + 1})"
+            )
 
-            resultado = (poblacion, provincia)
+            time.sleep(ESPERA_REINTENTO)
 
-            CACHE_DATOS_GEO[coord] = resultado
+        except Exception as e:
 
-            # print(f"🌍 GEO OK: {poblacion} | {provincia}")
+            print(
+                f"⚠️ Error reverse geo: "
+                f"{coord} -> {e}"
+            )
 
-            return resultado
-
-    except Exception as e:
-        print(f"⚠️ Error reverse geo: {coord} -> {e}")
+            time.sleep(ESPERA_REINTENTO)
 
     return None, None
 
@@ -217,6 +448,7 @@ def obtener_datos_geo(coord):
 # ==========================================================
 # REVERSE GEO → DIRECCIÓN
 # ==========================================================
+
 def direccion_cercana(coord):
 
     if not coord:
@@ -224,13 +456,53 @@ def direccion_cercana(coord):
 
     lat, lon = coord
 
-    try:
-        location = geolocator.reverse((lat, lon), exactly_one=True)
+    # ------------------------------------------------------
+    # REINTENTOS
+    # ------------------------------------------------------
 
-        if location:
-            return location.address
+    for intento in range(REINTENTOS):
 
-    except:
-        pass
+        try:
+
+            time.sleep(ESPERA_PETICION)
+
+            location = geolocator.reverse(
+                (lat, lon),
+                exactly_one=True,
+                timeout=TIMEOUT
+            )
+
+            if location:
+
+                return location.address
+
+            break
+
+        except GeocoderRateLimited:
+
+            print(
+                f"⚠️ Rate limit dirección "
+                f"(intento {intento + 1})"
+            )
+
+            time.sleep(5)
+
+        except GeocoderTimedOut:
+
+            print(
+                f"⚠️ Timeout dirección "
+                f"(intento {intento + 1})"
+            )
+
+            time.sleep(ESPERA_REINTENTO)
+
+        except Exception as e:
+
+            print(
+                f"⚠️ Error dirección: "
+                f"{coord} -> {e}"
+            )
+
+            time.sleep(ESPERA_REINTENTO)
 
     return None

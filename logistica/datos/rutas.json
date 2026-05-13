@@ -1,0 +1,33 @@
+{
+    "1": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-13 17:12:05.507751",
+        "distancia_total": 9.91,
+        "lista_pedidos": [
+            "18"
+        ],
+        "vehiculo": "DESPACHO16-1",
+        "peso_total": 4.43,
+        "volumen_total": 18.119999999999997,
+        "finalizada": true
+    },
+    "2": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-13 17:40:23.866269",
+        "distancia_total": 9.12,
+        "lista_pedidos": [
+            "83",
+            "47",
+            "21",
+            "95",
+            "75",
+            "95"
+        ],
+        "vehiculo": "DESPACHO16-2",
+        "peso_total": 4.7700000000000005,
+        "volumen_total": 19.63,
+        "finalizada": false
+    }
+}

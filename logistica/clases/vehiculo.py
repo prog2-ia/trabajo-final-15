@@ -40,6 +40,13 @@ class Vehiculo(ABC):
     matriculas_existentes = set()
 
     # ======================================================
+    # VEHÍCULOS REGISTRADOS
+    # ======================================================
+    @classmethod
+    def vehiculos_registrados(cls):
+        return cls._vehiculos
+
+    # ======================================================
     # CONSTRUCTOR
     # ======================================================
     def __init__(
@@ -131,6 +138,12 @@ class Vehiculo(ABC):
             valor
     ):
         self._disponible = valor
+
+    def asignar_delegacion(self, delegacion):
+        self._delegacion = delegacion
+
+    def quitar_delegacion(self):
+        self._delegacion = None
 
     # ======================================================
     # STR

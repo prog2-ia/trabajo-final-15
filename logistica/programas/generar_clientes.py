@@ -1,5 +1,15 @@
 # ==========================================================
-# GENERADOR DE CLIENTES - 
+# GENERADOR DE CLIENTES
+# ==========================================================
+# Genera clientes aleatorios próximos a una delegación despacho.
+#
+# Funcionalidades:
+# - Generación automática de clientes
+# - Geolocalización y reverse geocoding
+# - Asociación a delegación cercana
+# - Visualización de mapas con folium
+# - Limpieza de clientes sin datos GEO
+# - Persistencia JSON
 # ==========================================================
 
 import math
@@ -7,9 +17,10 @@ import os
 import random
 import sys
 import webbrowser
-from utiles.utils import encontrar_raiz
 
 import folium
+
+from utiles.utils import encontrar_raiz
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -17,18 +28,68 @@ from clases.cliente import Cliente
 from persistencia.persistencia_clientes import guardar_clientes, cargar_clientes
 from persistencia.persistencia_delegaciones import cargar_delegaciones
 from utiles.geolocalizacion import direccion_cercana
-from utiles.utils import distancia_km
+from utiles.utils import (
+    distancia_km,
+    generar_dni_real
+)
+
 
 
 # ==========================================================
-# DATOS
+# DATOS ALEATORIOS
 # ==========================================================
-nombres = [...]
-apellidos = [...]
+
+nombres = [
+    "Juan",
+    "Pedro",
+    "Luis",
+    "Carlos",
+    "Antonio",
+    "Miguel",
+    "Francisco",
+    "David",
+    "José",
+    "Javier",
+    "Ana",
+    "María",
+    "Lucía",
+    "Carmen",
+    "Laura",
+    "Marta",
+    "Sara",
+    "Paula",
+    "Elena",
+    "Cristina"
+]
+
+apellidos = [
+    "García",
+    "Martínez",
+    "López",
+    "Sánchez",
+    "Pérez",
+    "Gómez",
+    "Fernández",
+    "Ruiz",
+    "Díaz",
+    "Moreno",
+    "Muñoz",
+    "Álvarez",
+    "Romero",
+    "Navarro",
+    "Torres",
+    "Vázquez",
+    "Ramos",
+    "Gil",
+    "Serrano",
+    "Ortega"
+]
+
 
 # ==========================================================
 # RESETEAR CLIENTES
 # ==========================================================
+
 def resetear_clientes():
 
     base_dir = encontrar_raiz()
@@ -45,12 +106,14 @@ def resetear_clientes():
         return
 
     os.remove(ruta)
+
     print("🗑️ Fichero de clientes eliminado correctamente")
 
 
 # ==========================================================
 # LIMPIAR CLIENTES SIN GEO
 # ==========================================================
+
 def limpiar_clientes_sin_geo():
 
     print("\n🧹 LIMPIEZA DE CLIENTES SIN GEO")
@@ -72,7 +135,9 @@ def limpiar_clientes_sin_geo():
         provincia_real = getattr(c, "_provincia", None)
 
         if not poblacion_real or not provincia_real:
+
             print(f"❌ Eliminado: {c.nombre} {c.apellidos} ({dni})")
+
             eliminados += 1
             continue
 
@@ -85,9 +150,11 @@ def limpiar_clientes_sin_geo():
     print(f"Eliminados: {eliminados}")
     print(f"Restantes: {len(clientes_filtrados)}")
 
+
 # ==========================================================
 # MAPA DE DELEGACIONES
 # ==========================================================
+
 def ver_mapa_delegaciones():
 
     print("\n🗺️ Generando mapa de delegaciones...")
@@ -109,13 +176,14 @@ def ver_mapa_delegaciones():
 
         lat, lon = d.coordenadas
 
-        # color según tipo
         color = "blue"
 
         if d.__class__.__name__ == "DelegacionCentral":
             color = "red"
+
         elif d.__class__.__name__ == "DelegacionBase":
             color = "green"
+
         elif d.__class__.__name__ == "DelegacionDespacho":
             color = "blue"
 
@@ -136,18 +204,26 @@ def ver_mapa_delegaciones():
         return
 
     base_dir = encontrar_raiz()
-    ruta = os.path.join(base_dir, "datos", "../tests/mapa_delegaciones.html")
+
+    ruta = os.path.join(
+        base_dir,
+        "datos",
+        "../tests/mapa_delegaciones.html"
+    )
 
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
 
     mapa.save(ruta)
 
     print(f"✔ Mapa guardado en: {ruta}")
+
     webbrowser.open(f"file://{ruta}")
+
 
 # ==========================================================
 # MAPA CLIENTES
 # ==========================================================
+
 def ver_mapa_clientes():
 
     print("\n🗺️ Generando mapa de clientes...")
@@ -169,11 +245,19 @@ def ver_mapa_clientes():
 
         lat, lon = c._coordenadas
 
-        deleg = c._delegacion_cercana.nombre if c._delegacion_cercana else "Sin delegación"
+        deleg = (
+            c._delegacion_cercana.nombre
+            if c._delegacion_cercana
+            else "Sin delegación"
+        )
 
         folium.Marker(
             location=[lat, lon],
-            popup=f"<b>{c.nombre} {c.apellidos}</b><br>{c.direccion}<br>🏢 {deleg}",
+            popup=(
+                f"<b>{c.nombre} {c.apellidos}</b><br>"
+                f"{c.direccion}<br>"
+                f"🏢 {deleg}"
+            ),
             icon=folium.Icon(color="blue")
         ).add_to(mapa)
 
@@ -183,7 +267,60 @@ def ver_mapa_clientes():
         print("❌ No hay clientes con coordenadas")
         return
 
+
+    # ======================================================
+    # MOSTRAR SOLO DESPACHOS CON CLIENTES
+    # ======================================================
+
+    despachos_con_clientes = {}
+
+    for c in clientes.values():
+
+        despacho = getattr(c, "_delegacion_cercana", None)
+
+        if despacho:
+            despachos_con_clientes[despacho.nombre] = despacho
+
+    for despacho in despachos_con_clientes.values():
+
+        if not despacho.coordenadas:
+            continue
+
+        lat, lon = despacho.coordenadas
+
+        # número clientes asociados
+        total_clientes = sum(
+
+            1
+
+            for c in clientes.values()
+
+            if (
+                getattr(c, "_delegacion_cercana", None)
+                and c._delegacion_cercana.nombre == despacho.nombre
+            )
+        )
+
+        folium.Marker(
+
+            location=[lat, lon],
+
+            popup=f"""
+            <b>{despacho.nombre}</b><br>
+            {despacho.direccion}<br>
+            🗺️ {despacho.provincia}<br>
+            👥 Clientes: {total_clientes}
+            """,
+
+            icon=folium.Icon(
+                color="orange",
+                icon="building"
+            )
+
+        ).add_to(mapa)
+
     base_dir = encontrar_raiz()
+
     ruta = os.path.join(base_dir, "datos", "mapa_clientes.html")
 
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
@@ -191,23 +328,38 @@ def ver_mapa_clientes():
     mapa.save(ruta)
 
     print(f"✔ Mapa guardado en: {ruta}")
+
     webbrowser.open(f"file://{ruta}")
 
 
 # ==========================================================
 # GENERADOR CLIENTES
 # ==========================================================
+
 def generar_clientes():
 
     print("\n===== GENERADOR FINAL =====")
 
+    # ------------------------------------------------------
+    # VALIDACIÓN LISTAS
+    # ------------------------------------------------------
+
+    if nombres is ... or apellidos is ...:
+
+        print("❌ Debes definir las listas de nombres y apellidos")
+
+        return
+
     clientes_existentes = cargar_clientes()
+
     delegaciones = cargar_delegaciones()
 
     provincia = input("\nProvincia: ").strip().lower()
 
     despachos = [
+
         d for d in delegaciones
+
         if d.__class__.__name__ == "DelegacionDespacho"
         and (d.provincia or "").lower() == provincia
     ]
@@ -219,24 +371,48 @@ def generar_clientes():
     for d in despachos:
         print(d.nombre)
 
-    numero = int(input("\nNúmero despacho: "))
-    despacho = next((d for d in despachos if f"Despacho {numero}".lower() in d.nombre.lower()), None)
+    try:
+        numero = int(input("\nNúmero despacho: "))
 
-    if not despacho:
-        print("❌ No encontrado")
+    except ValueError:
+        print("❌ Número inválido")
         return
 
-    n_clientes = int(input("Número clientes: "))
+    despacho = next(
+        (
+            d for d in despachos
+            if f"Despacho {numero}".lower() in d.nombre.lower()
+        ),
+        None
+    )
+
+    if not despacho:
+        print("❌ Despacho no encontrado")
+        return
+
+    try:
+        n_clientes = int(input("Número clientes: "))
+
+    except ValueError:
+        print("❌ Número inválido")
+        return
 
     nuevos_clientes = {}
+
     generados = 0
 
     lat, lon = despacho.coordenadas
 
-    for i in range(n_clientes):
+    for _ in range(n_clientes):
+
+        # --------------------------------------------------
+        # GENERACIÓN COORDENADA ALEATORIA
+        # --------------------------------------------------
 
         radio = random.uniform(1, 4) / 111
+
         t = 2 * math.pi * random.random()
+
         w = radio * (random.random() ** 0.5)
 
         coord = (
@@ -244,20 +420,55 @@ def generar_clientes():
             lon + w * math.sin(t) / math.cos(math.radians(lat))
         )
 
+        # --------------------------------------------------
+        # DIRECCIÓN
+        # --------------------------------------------------
+
         direccion = direccion_cercana(coord)
 
         if not direccion:
             continue
 
+        # --------------------------------------------------
+        # DATOS PERSONALES
+        # --------------------------------------------------
+
         nombre = random.choice(nombres)
+
         ap1, ap2 = random.choices(apellidos, k=2)
 
-        dni = str(random.randint(10000000, 99999999))
+        # ======================================================
+        # DNI REAL ÚNICO
+        # ======================================================
 
-        c = Cliente(dni, nombre, f"{ap1} {ap2}", direccion)
+        while True:
+
+            dni = generar_dni_real()
+
+            if (
+                    dni not in nuevos_clientes
+                    and dni not in clientes_existentes
+            ):
+                break
+
+
+        # --------------------------------------------------
+        # CREACIÓN CLIENTE
+        # --------------------------------------------------
+
+        c = Cliente(
+            dni,
+            nombre,
+            f"{ap1} {ap2}",
+            direccion
+        )
+
         c._coordenadas = coord
 
-        # GEO
+        # --------------------------------------------------
+        # GEOLOCALIZACIÓN
+        # --------------------------------------------------
+
         c.actualizar_datos_geo()
 
         print("\n🔎 DEBUG GEO:")
@@ -267,29 +478,50 @@ def generar_clientes():
         print(f"🗺️ {c.provincia}")
         print("-" * 40)
 
-        # VALIDACIÓN
-        if not getattr(c, "_poblacion", None) or not getattr(c, "_provincia", None):
-            print("❌ descartado")
+        # --------------------------------------------------
+        # VALIDACIÓN GEO
+        # --------------------------------------------------
+
+        if (
+            not getattr(c, "_poblacion", None)
+            or not getattr(c, "_provincia", None)
+        ):
+
+            print("❌ Cliente descartado")
+
             continue
 
+        # --------------------------------------------------
+        # DELEGACIÓN Y DISTANCIA
+        # --------------------------------------------------
+
         c._delegacion_cercana = despacho
-        c._distancia_despacho = round(distancia_km(coord, despacho.coordenadas), 2)
+
+        c._distancia_despacho = round(
+            distancia_km(coord, despacho.coordenadas),
+            2
+        )
 
         nuevos_clientes[dni] = c
+
         generados += 1
 
+    # ------------------------------------------------------
+    # GUARDAR
+    # ------------------------------------------------------
+
     if nuevos_clientes:
+
         guardar_clientes(nuevos_clientes)
 
     print(f"\n✔ Generados: {generados}")
+
+
 # ==========================================================
 # MOSTRAR CLIENTES
 # ==========================================================
+
 def mostrar_clientes():
-    """
-    Muestra los clientes almacenados con opción de filtrar por provincia.
-    Compatible con nuevos campos (_poblacion, _provincia, distancia).
-    """
 
     print("\n===== LISTADO CLIENTES =====")
 
@@ -299,11 +531,12 @@ def mostrar_clientes():
         print("❌ No hay clientes guardados")
         return
 
-    provincia_filtro = input("\nProvincia (ENTER = todas): ").strip().lower()
+    provincia_filtro = input(
+        "\nProvincia (ENTER = todas): "
+    ).strip().lower()
 
     total = 0
 
-    # Cabecera
     print(
         f"{'DNI':<12}"
         f"{'NOMBRE':<28}"
@@ -312,57 +545,52 @@ def mostrar_clientes():
         f"{'PROVINCIA':<15}"
         f"{'KM':>6}"
     )
+
     print("-" * 116)
 
     for c in clientes.values():
 
-        # ------------------------------------------------------
-        # PROVINCIA (robusta)
-        # ------------------------------------------------------
         prov = ""
 
         if hasattr(c, "provincia") and c.provincia:
             prov = c.provincia.lower()
+
         elif hasattr(c, "_provincia") and c._provincia:
             prov = c._provincia.lower()
 
-        # filtro
         if provincia_filtro and prov != provincia_filtro:
             continue
 
-        # ------------------------------------------------------
-        # DATOS
-        # ------------------------------------------------------
         nombre = f"{c.apellidos}, {c.nombre}"
+
         direccion = c.direccion or "N/A"
 
         poblacion = (
-            c.poblacion if hasattr(c, "poblacion") and c.poblacion
+            c.poblacion
+            if hasattr(c, "poblacion") and c.poblacion
             else getattr(c, "_poblacion", "N/A")
         )
 
         provincia = (
-            c.provincia if hasattr(c, "provincia") and c.provincia
+            c.provincia
+            if hasattr(c, "provincia") and c.provincia
             else getattr(c, "_provincia", "N/A")
         )
 
         distancia = (
             f"{c._distancia_despacho:.2f}"
-            if hasattr(c, "_distancia_despacho") and c._distancia_despacho
+            if hasattr(c, "_distancia_despacho")
+            and c._distancia_despacho
             else "N/A"
         )
 
-        # ------------------------------------------------------
-        # RECORTES (para que no rompa tabla)
-        # ------------------------------------------------------
         nombre = nombre[:27]
         direccion = direccion[:39]
+
         poblacion = poblacion[:14] if poblacion else "N/A"
+
         provincia = provincia[:14] if provincia else "N/A"
 
-        # ------------------------------------------------------
-        # PRINT
-        # ------------------------------------------------------
         print(
             f"{c.dni:<12}"
             f"{nombre:<28}"
@@ -375,13 +603,18 @@ def mostrar_clientes():
         total += 1
 
     print(f"\nTOTAL: {total}")
+
+
 # ==========================================================
-# MENU
+# MENÚ
 # ==========================================================
+
 def ejecutar():
 
     print("\n" + "*" * 40)
-    print("   GENERACION DE DATOS DE PRUEBA DE CLIENTES CON GEOLOCALIZACIÓN")
+
+    print("   GENERACIÓN DE CLIENTES CON GEOLOCALIZACIÓN")
+
     print("*" * 40)
 
     while True:
@@ -391,8 +624,8 @@ def ejecutar():
         print("2. Ver clientes")
         print("3. Ver mapa delegaciones")
         print("4. Ver mapa clientes")
-        print("5. 🔥 Resetear clientes (borrar fichero)")
-        print("6. 🧹 Borrar clientes sin poblacion/provincia")
+        print("5. Resetear clientes")
+        print("6. Limpiar clientes sin GEO")
         print("0. Salir")
         print("==============================")
 
@@ -402,7 +635,7 @@ def ejecutar():
             generar_clientes()
 
         elif op == "2":
-            mostrar_clientes()   # 🔥 IMPORTANTE
+            mostrar_clientes()
 
         elif op == "3":
             ver_mapa_delegaciones()
@@ -411,10 +644,10 @@ def ejecutar():
             ver_mapa_clientes()
 
         elif op == "5":
-            resetear_clientes()   # 🔥 IMPORTANTE
+            resetear_clientes()
 
         elif op == "6":
-            limpiar_clientes_sin_geo()   # 🔥 NUEVO
+            limpiar_clientes_sin_geo()
 
         elif op == "0":
             break

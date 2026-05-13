@@ -8,14 +8,14 @@ de recogida mediante algoritmo TSP.
 
 FUNCIONALIDAD:
 ✔ Selección de despacho
-✔ Filtrado de pedidos pendientes
-✔ Cálculo de distancias
-✔ Optimización de recorrido
-✔ Persistencia de rutas
-✔ Actualización de estados
-✔ Actualización de clientes
-✔ Visualización de rutas en mapa
-✔ Visualización posterior de rutas guardadas
+✔ Selección manual de pedidos
+✔ Selección de vehículo
+✔ Validación de peso y cubicaje
+✔ Optimización de ruta
+✔ Persistencia
+✔ Visualización en mapa
+✔ Recogida parcial de pedidos
+✔ Finalización de rutas
 """
 
 # ==========================================================
@@ -42,10 +42,16 @@ from networkx.algorithms.approximation import (
 )
 
 from clases.ruta import Ruta
+from clases.delegacion import DelegacionDespacho
+from clases.vehiculo import Vehiculo
 
 from persistencia.persistencia_clientes import (
     cargar_clientes,
     guardar_clientes
+)
+
+from persistencia.persistencia_delegaciones import (
+    cargar_delegaciones
 )
 
 from persistencia.persistencia_pedidos import (
@@ -53,18 +59,16 @@ from persistencia.persistencia_pedidos import (
     guardar_pedidos
 )
 
-from persistencia.persistencia_delegaciones import (
-    cargar_delegaciones
-)
-
 from persistencia.persistencia_rutas import (
     añadir_ruta,
     obtener_siguiente_id_ruta,
-    cargar_rutas
+    cargar_rutas,
+    guardar_rutas
 )
 
-from clases.delegacion import (
-    DelegacionDespacho
+from persistencia.persistencia_vehiculos import (
+    cargar_vehiculos,
+    guardar_vehiculos
 )
 
 from utiles.utils import (
@@ -76,7 +80,10 @@ from utiles.utils import (
 # ==========================================================
 # BUSCAR DESPACHO
 # ==========================================================
-def buscar_despacho(nombre, delegaciones):
+def buscar_despacho(
+        nombre,
+        delegaciones
+):
 
     nombre = nombre.strip().lower()
 
@@ -84,8 +91,10 @@ def buscar_despacho(nombre, delegaciones):
 
         if (
                 isinstance(d, DelegacionDespacho)
-                and d.nombre.lower() == nombre
+                and
+                d.nombre.lower() == nombre
         ):
+
             return d
 
     return None
@@ -111,15 +120,15 @@ def obtener_pedidos_despacho(
         if estado != "generado":
             continue
 
-        cliente_origen = clientes.get(
+        cliente = clientes.get(
             p["origen"]
         )
 
-        if not cliente_origen:
+        if not cliente:
             continue
 
         delegacion = (
-            cliente_origen.delegacion_cercana
+            cliente.delegacion_cercana
         )
 
         if not delegacion:
@@ -154,7 +163,9 @@ def crear_grafo_ruta(
 
     for pid, p in pedidos.items():
 
-        cliente = clientes[p["origen"]]
+        cliente = clientes[
+            p["origen"]
+        ]
 
         G.add_node(
             pid,
@@ -199,9 +210,9 @@ def mostrar_ruta(
 ):
 
     print("\n")
-    print("=" * 60)
-    print(" RUTA ÓPTIMA DE RECOGIDA ")
-    print("=" * 60)
+    print("=" * 80)
+    print(" RUTA ÓPTIMA ")
+    print("=" * 80)
 
     total = 0
 
@@ -225,6 +236,7 @@ def mostrar_ruta(
             ]
 
             txt_origen = (
+                f"[{origen}] "
                 f"{cliente.nombre} "
                 f"{cliente.apellidos}"
             )
@@ -240,18 +252,19 @@ def mostrar_ruta(
             ]
 
             txt_destino = (
+                f"[{destino}] "
                 f"{cliente.nombre} "
                 f"{cliente.apellidos}"
             )
 
         print(
-            f"{txt_origen}"
-            f"  -->  "
-            f"{txt_destino}"
-            f"   ({distancia:.2f} km)"
+            f"{txt_origen:<35}"
+            f" --> "
+            f"{txt_destino:<35}"
+            f"{distancia:.2f} km"
         )
 
-    print("-" * 60)
+    print("-" * 80)
 
     print(
         f"TOTAL RUTA: "
@@ -259,170 +272,6 @@ def mostrar_ruta(
     )
 
     return round(total, 2)
-
-
-# ==========================================================
-# VISUALIZAR MAPA
-# ==========================================================
-def visualizar_ruta_mapa(
-        ruta_optima,
-        pedidos,
-        clientes,
-        despacho,
-        nombre_fichero
-):
-
-    BASE_DIR = encontrar_raiz()
-
-    ruta_html = os.path.join(
-        BASE_DIR,
-        "datos",
-        nombre_fichero
-    )
-
-    mapa = folium.Map(
-        location=despacho.coordenadas,
-        zoom_start=11
-    )
-
-    # ======================================================
-    # DESPACHO
-    # ======================================================
-    folium.Marker(
-
-        location=despacho.coordenadas,
-
-        popup=(
-            f"<b>DESPACHO</b><br>"
-            f"{despacho.nombre}<br>"
-            f"{despacho.direccion}"
-        ),
-
-        icon=folium.Icon(
-            color="red",
-            icon="home"
-        )
-
-    ).add_to(mapa)
-
-    # ======================================================
-    # RUTA
-    # ======================================================
-    coordenadas_linea = [
-        despacho.coordenadas
-    ]
-
-    contador = 1
-
-    for nodo in ruta_optima:
-
-        if nodo == "DESPACHO":
-            continue
-
-        pedido = pedidos[nodo]
-
-        cliente = clientes[
-            pedido["origen"]
-        ]
-
-        coord = cliente.coordenadas
-
-        coordenadas_linea.append(coord)
-
-        # ==================================================
-        # MARCADOR
-        # ==================================================
-        folium.Marker(
-
-            location=coord,
-
-            popup=(
-                f"<b>PARADA {contador}</b><br>"
-                f"<b>Pedido:</b> {nodo}<br>"
-                f"{cliente.nombre} "
-                f"{cliente.apellidos}<br>"
-                f"{cliente.direccion}"
-            ),
-
-            icon=folium.Icon(
-                color="blue",
-                icon="truck"
-            )
-
-        ).add_to(mapa)
-
-        # ==================================================
-        # NUMERACIÓN VISUAL
-        # ==================================================
-        folium.Marker(
-
-            location=coord,
-
-            icon=folium.DivIcon(
-                html=f"""
-                <div style="
-                    font-size: 14px;
-                    font-weight: bold;
-                    color: black;
-                    background-color: white;
-                    border-radius: 12px;
-                    border: 2px solid black;
-                    width: 28px;
-                    height: 28px;
-                    text-align: center;
-                    line-height: 24px;
-                ">
-                    {contador}
-                </div>
-                """
-            )
-
-        ).add_to(mapa)
-
-        contador += 1
-
-    # ======================================================
-    # VOLVER AL DESPACHO
-    # ======================================================
-    coordenadas_linea.append(
-        despacho.coordenadas
-    )
-
-    # ======================================================
-    # POLYLINE
-    # ======================================================
-    folium.PolyLine(
-        coordenadas_linea,
-        color="blue",
-        weight=5,
-        opacity=0.8
-    ).add_to(mapa)
-
-    # ======================================================
-    # GUARDAR MAPA
-    # ======================================================
-    mapa.save(ruta_html)
-
-    print(
-        f"\n✔ Ruta visualizada:"
-    )
-
-    print(ruta_html)
-
-    # ======================================================
-    # ABRIR MAPA
-    # ======================================================
-    try:
-
-        subprocess.run(
-            ["open", ruta_html]
-        )
-
-    except:
-
-        print(
-            "⚠️ No se pudo abrir automáticamente"
-        )
 
 
 # ==========================================================
@@ -479,15 +328,38 @@ def actualizar_clientes(
 
 
 # ==========================================================
-# PERSISTIR RUTA
+# MARCAR VEHÍCULO NO DISPONIBLE
 # ==========================================================
+def ocupar_vehiculo(vehiculo):
+
+    from clases.vehiculo import Vehiculo
+
+    vehiculo.disponible = False
+
+    guardar_vehiculos(
+        Vehiculo.vehiculos_registrados()
+    )
+
+    print(
+        f"\n✔ Vehículo asignado "
+        f"({vehiculo.matricula})"
+    )
+
+    print(
+        "✔ Vehículo marcado como NO disponible"
+    )
+
+
 # ==========================================================
 # PERSISTIR RUTA
 # ==========================================================
 def persistir_ruta(
         despacho,
         pedidos_ruta,
-        distancia_total
+        distancia_total,
+        vehiculo,
+        peso_total,
+        volumen_total
 ):
 
     id_ruta = obtener_siguiente_id_ruta()
@@ -496,19 +368,17 @@ def persistir_ruta(
         id_ruta=id_ruta,
         delegacion=despacho.nombre,
         tipo_ruta="recogida",
-        distancia=distancia_total
+        distancia=distancia_total,
+        vehiculo=vehiculo.matricula,
+        peso_total=peso_total,
+        volumen_total=volumen_total,
+        finalizada=False
     )
 
-    # ======================================================
-    # AÑADIR PEDIDOS
-    # ======================================================
     for pid in pedidos_ruta:
 
         ruta.lista_pedidos.append(pid)
 
-    # ======================================================
-    # DATOS JSON
-    # ======================================================
     datos = {
 
         "tipo": ruta.tipo_ruta,
@@ -521,12 +391,17 @@ def persistir_ruta(
 
         "distancia_total": ruta.distancia_total,
 
-        "lista_pedidos": ruta.lista_pedidos
+        "lista_pedidos": ruta.lista_pedidos,
+
+        "vehiculo": vehiculo.matricula,
+
+        "peso_total": peso_total,
+
+        "volumen_total": volumen_total,
+
+        "finalizada": False
     }
 
-    # ======================================================
-    # PERSISTIR
-    # ======================================================
     añadir_ruta(
         id_ruta,
         datos
@@ -539,9 +414,169 @@ def persistir_ruta(
     )
 
     return str(id_ruta)
+
 # ==========================================================
-# VISUALIZAR RUTA GUARDADA
+# VISUALIZAR MAPA
 # ==========================================================
+def visualizar_ruta_mapa(
+        ruta_optima,
+        pedidos,
+        clientes,
+        despacho,
+        nombre_fichero
+):
+
+    BASE_DIR = encontrar_raiz()
+
+    ruta_html = os.path.join(
+        BASE_DIR,
+        "datos",
+        nombre_fichero
+    )
+
+    mapa = folium.Map(
+        location=despacho.coordenadas,
+        zoom_start=11
+    )
+
+    # ======================================================
+    # DESPACHO
+    # ======================================================
+    folium.Marker(
+
+        location=despacho.coordenadas,
+
+        popup=(
+            f"<b>DESPACHO</b><br>"
+            f"{despacho.nombre}<br>"
+            f"{despacho.direccion}"
+        ),
+
+        icon=folium.Icon(
+            color="red",
+            icon="home"
+        )
+
+    ).add_to(mapa)
+
+    coordenadas_linea = [
+        despacho.coordenadas
+    ]
+
+    contador = 1
+
+    # ======================================================
+    # CLIENTES
+    # ======================================================
+    for nodo in ruta_optima:
+
+        if nodo == "DESPACHO":
+            continue
+
+        pedido = pedidos[nodo]
+
+        cliente = clientes[
+            pedido["origen"]
+        ]
+
+        coord = cliente.coordenadas
+
+        coordenadas_linea.append(coord)
+
+        # --------------------------------------------------
+        # MARCADOR
+        # --------------------------------------------------
+        folium.Marker(
+
+            location=coord,
+
+            popup=(
+                f"<b>PARADA {contador}</b><br>"
+                f"<b>Pedido:</b> {nodo}<br>"
+                f"{cliente.nombre} "
+                f"{cliente.apellidos}<br>"
+                f"{cliente.direccion}"
+            ),
+
+            icon=folium.Icon(
+                color="blue",
+                icon="truck"
+            )
+
+        ).add_to(mapa)
+
+        # --------------------------------------------------
+        # NÚMERO VISUAL
+        # --------------------------------------------------
+        folium.Marker(
+
+            location=coord,
+
+            icon=folium.DivIcon(
+                html=f'''
+                <div style="
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: black;
+                    background-color: white;
+                    border-radius: 12px;
+                    border: 2px solid black;
+                    width: 28px;
+                    height: 28px;
+                    text-align: center;
+                    line-height: 24px;
+                ">
+                    {contador}
+                </div>
+                '''
+            )
+
+        ).add_to(mapa)
+
+        contador += 1
+
+    # ======================================================
+    # VOLVER AL DESPACHO
+    # ======================================================
+    coordenadas_linea.append(
+        despacho.coordenadas
+    )
+
+    # ======================================================
+    # DIBUJAR RUTA
+    # ======================================================
+    folium.PolyLine(
+        coordenadas_linea,
+        color="blue",
+        weight=5,
+        opacity=0.8
+    ).add_to(mapa)
+
+    # ======================================================
+    # GUARDAR
+    # ======================================================
+    mapa.save(ruta_html)
+
+    print(
+        f"\n✔ Ruta visualizada:"
+    )
+
+    print(ruta_html)
+
+    # ======================================================
+    # ABRIR
+    # ======================================================
+    try:
+
+        subprocess.run(
+            ["open", ruta_html]
+        )
+
+    except:
+
+        print(
+            "⚠️ No se pudo abrir automáticamente"
+        )
 # ==========================================================
 # VISUALIZAR RUTA GUARDADA
 # ==========================================================
@@ -556,14 +591,32 @@ def visualizar_ruta_guardada():
     delegaciones = cargar_delegaciones()
 
     print("\n")
-    print("=" * 90)
-    print(" RUTAS DE RECOGIDA DISPONIBLES ")
-    print("=" * 90)
+    print("=" * 100)
+    print(" RUTAS ACTIVAS ")
+    print("=" * 100)
 
     rutas_validas = {}
 
     # ======================================================
-    # FILTRAR RUTAS DE RECOGIDA
+    # CABECERA
+    # ======================================================
+    print(
+        f"{'Ruta':<8}"
+        f"{'Delegación':<25}"
+        f"{'Tipo':<15}"
+        f"{'Vehículo':<18}"
+        f"{'Pedidos':<10}"
+        f"{'Peso':<12}"
+        f"{'Volumen':<12}"
+        f"{'Distancia':<14}"
+        f"{'Estado':<12}"
+        f"{'Ruta óptima'}"
+    )
+
+    print("-" * 200)
+
+    # ======================================================
+    # RUTAS
     # ======================================================
     for rid, ruta in rutas.items():
 
@@ -571,51 +624,67 @@ def visualizar_ruta_guardada():
             ruta.get("tipo", "")
         ).lower().strip()
 
-        # --------------------------------------------------
-        # SOLO RUTAS DE RECOGIDA
-        # --------------------------------------------------
         if tipo != "recogida":
             continue
 
         rutas_validas[rid] = ruta
 
-        print(
-            f"Ruta: {rid:<5} "
-            f"Delegación: {ruta['delegacion']:<30} "
-            f"Pedidos: {len(ruta['lista_pedidos']):<5} "
-            f"Distancia: "
-            f"{ruta['distancia_total']:.2f} km"
+        delegacion = ruta.get(
+            "delegacion",
+            "Delegación"
         )
 
-    # ======================================================
-    # VALIDACIÓN
-    # ======================================================
+        recorrido = (
+                f"{delegacion} -> "
+                +
+                " -> ".join(ruta["lista_pedidos"])
+                +
+                f" -> {delegacion}"
+        )
+
+        estado = (
+            "FINALIZADA"
+            if ruta.get("finalizada", False)
+            else "ACTIVA"
+        )
+
+        print(
+            f"{rid:<8}"
+            f"{ruta.get('delegacion', 'N/A'):<25}"
+            f"{ruta.get('tipo', 'N/A'):<15}"
+            f"{ruta.get('vehiculo', 'N/A'):<18}"
+            f"{len(ruta['lista_pedidos']):<10}"
+            f"{ruta.get('peso_total', 0):<12.2f}"
+            f"{ruta.get('volumen_total', 0):<12.2f}"
+            f"{ruta['distancia_total']:<14.2f}"
+            f"{estado:<12}"
+            f"{recorrido}"
+        )
+
+        print("-" * 200)
+
     if not rutas_validas:
 
         print(
-            "\n❌ No existen rutas de recogida"
+            "\n❌ No existen rutas"
         )
 
         return
 
-    # ======================================================
-    # PEDIR RUTA
-    # ======================================================
     ruta_id = input(
         "\nNúmero de ruta: "
     ).strip()
 
     if ruta_id not in rutas_validas:
 
-        print("\n❌ Ruta no válida")
+        print(
+            "\n❌ Ruta inválida"
+        )
 
         return
 
     ruta = rutas_validas[ruta_id]
 
-    # ======================================================
-    # BUSCAR DESPACHO
-    # ======================================================
     despacho = None
 
     for d in delegaciones:
@@ -629,9 +698,6 @@ def visualizar_ruta_guardada():
             despacho = d
             break
 
-    # ======================================================
-    # VALIDACIÓN
-    # ======================================================
     if not despacho:
 
         print(
@@ -640,9 +706,6 @@ def visualizar_ruta_guardada():
 
         return
 
-    # ======================================================
-    # RECONSTRUIR RUTA
-    # ======================================================
     ruta_optima = ["DESPACHO"]
 
     for pid in ruta["lista_pedidos"]:
@@ -651,9 +714,6 @@ def visualizar_ruta_guardada():
 
     ruta_optima.append("DESPACHO")
 
-    # ======================================================
-    # VISUALIZAR MAPA
-    # ======================================================
     visualizar_ruta_mapa(
 
         ruta_optima=ruta_optima,
@@ -666,199 +726,260 @@ def visualizar_ruta_guardada():
 
         nombre_fichero="ruta.html"
     )
-# ==========================================================
-# GENERAR NUEVA RUTA
-# ==========================================================
-def generar_ruta():
+def recoger_pedidos():
 
     delegaciones = cargar_delegaciones()
 
-    clientes = cargar_clientes()
+    rutas = cargar_rutas()
 
     pedidos = cargar_pedidos()
 
-    print("\nDESPACHOS DISPONIBLES:\n")
+    cargar_vehiculos()
 
-    print("-" * 140)
-    print(f"{'DESPACHO':<35} {'DIRECCIÓN':<80} {'PEDIDOS':<10}")
-    print("-" * 140)
 
-    despachos_con_pedidos = []
+    # ======================================================
+    # FILTRAR RUTAS ACTIVAS
+    # ======================================================
+    rutas_activas = {}
 
-    for d in delegaciones:
+    for rid, r in rutas.items():
 
-        if not isinstance(d, DelegacionDespacho):
-            continue
+        if (
+                r["tipo"].lower() == "recogida"
+                and
+                not r.get("finalizada", False)
+        ):
 
-        total_pedidos_generados = 0
+            rutas_activas[rid] = r
 
-        for pid, p in pedidos.items():
+    # ======================================================
+    # VALIDACIÓN
+    # ======================================================
+    if not rutas_activas:
 
-            estado = str(
-                p.get("estado", "")
-            ).lower().strip()
-
-            if estado != "generado":
-                continue
-
-            cliente = clientes.get(
-                p["origen"]
-            )
-
-            if not cliente:
-                continue
-
-            delegacion = cliente.delegacion_cercana
-
-            if not delegacion:
-                continue
-
-            if (
-                    delegacion.nombre.lower().strip()
-                    ==
-                    d.nombre.lower().strip()
-            ):
-
-                total_pedidos_generados += 1
-
-        if total_pedidos_generados > 0:
-
-            despachos_con_pedidos.append(d)
-
-            direccion = (
-                d.direccion
-                if d.direccion
-                else "SIN DIRECCIÓN"
-            )
-
-            print(
-                f"{d.nombre:<35} "
-                f"{direccion:<80} "
-                f"{total_pedidos_generados:<10}"
-            )
-
-    print("-" * 140)
-
-    if not despachos_con_pedidos:
-
-        print(
-            "\n❌ No existen despachos "
-            "con pedidos en estado GENERADO.\n"
-        )
+        print("\n❌ No existen rutas activas")
 
         return
 
-    nombre = input(
-        "\nDespacho: "
-    )
-
-    despacho = buscar_despacho(
-        nombre,
-        delegaciones
-    )
-
-    if not despacho:
-
-        print(
-            "❌ Despacho no válido"
-        )
-
-        return
-
-    pedidos_filtrados = (
-        obtener_pedidos_despacho(
-            despacho,
-            pedidos,
-            clientes
-        )
-    )
-
-    if not pedidos_filtrados:
-
-        print(
-            "\n❌ No existen pedidos "
-            "pendientes para ese despacho"
-        )
-
-        return
+    # ======================================================
+    # MOSTRAR RUTAS ACTIVAS
+    # ======================================================
+    print("\n")
+    print("=" * 180)
+    print(" RUTAS ACTIVAS ")
+    print("=" * 180)
 
     print(
-        f"\n✔ Pedidos encontrados: "
-        f"{len(pedidos_filtrados)}"
+        f"{'Ruta':<10}"
+        f"{'Delegación':<25}"
+        f"{'Vehículo':<20}"
+        f"{'Pedidos'}"
     )
 
-    G = crear_grafo_ruta(
-        despacho,
-        pedidos_filtrados,
-        clientes
-    )
+    print("-" * 180)
 
-    ruta_optima = (
-        traveling_salesman_problem(
-            G,
-            cycle=True,
-            weight="weight"
+    for rid, r in rutas_activas.items():
+
+        print(
+            f"{rid:<10}"
+            f"{r['delegacion']:<25}"
+            f"{r.get('vehiculo', 'N/A'):<20}"
+            f"{', '.join(r['lista_pedidos'])}"
         )
-    )
 
-    distancia_total = mostrar_ruta(
-        ruta_optima,
-        G,
-        pedidos_filtrados,
-        clientes,
-        despacho
-    )
+    # ======================================================
+    # SELECCIÓN RUTA
+    # ======================================================
+    ruta = None
 
+    ruta_id = None
+
+    while ruta is None:
+
+        ruta_id = input(
+            "\nNúmero ruta: "
+        ).strip()
+
+        if ruta_id not in rutas_activas:
+
+            print("❌ Ruta incorrecta")
+
+            continue
+
+        ruta = rutas_activas[ruta_id]
+
+    # ======================================================
+    # MOSTRAR PEDIDOS
+    # ======================================================
+    print("\n")
+    print("=" * 80)
+    print(" PEDIDOS DE LA RUTA ")
+    print("=" * 80)
+
+    for pid in ruta["lista_pedidos"]:
+
+        estado = pedidos[pid]["estado"]
+
+        print(
+            f"Pedido {pid} | "
+            f"Estado: {estado}"
+        )
+
+    # ======================================================
+    # PEDIDOS RECOGIDOS
+    # ======================================================
+    pedidos_recogidos = None
+
+    while pedidos_recogidos is None:
+
+        entrada = input(
+            "\nPedidos recogidos "
+            "(coma separados o 'todos'): "
+        ).strip().lower()
+
+        # --------------------------------------------------
+        # TODOS
+        # --------------------------------------------------
+        if entrada == "todos":
+
+            pedidos_recogidos = list(
+                ruta["lista_pedidos"]
+            )
+
+            break
+
+        # --------------------------------------------------
+        # VALIDAR LISTA
+        # --------------------------------------------------
+        lista = []
+
+        error = False
+
+        for x in entrada.split(","):
+
+            pid = x.strip()
+
+            if pid not in ruta["lista_pedidos"]:
+
+                print(
+                    f"❌ Pedido incorrecto: {pid}"
+                )
+
+                error = True
+
+            else:
+
+                lista.append(pid)
+
+        if error:
+
+            continue
+
+        pedidos_recogidos = lista
+
+    # ======================================================
+    # CONFIRMACIÓN
+    # ======================================================
     confirmar = input(
-        "\n¿Persistir ruta? (s/n): "
-    ).lower()
+        "\n¿Confirmar recogida? (s/n): "
+    ).strip().lower()
 
     if confirmar != "s":
 
-        print(
-            "\n❌ Operación cancelada"
-        )
+        print("\n❌ Operación cancelada")
 
         return
 
-    pedidos_ruta = actualizar_pedidos(
-        ruta_optima,
-        pedidos
-    )
+    # ======================================================
+    # ELIMINAR PEDIDOS DE LA RUTA
+    # ======================================================
+    pedidos_restantes = []
 
-    actualizar_clientes(
-        pedidos_ruta,
-        pedidos,
-        clientes
-    )
+    for pid in ruta["lista_pedidos"]:
 
-    id_ruta = persistir_ruta(
-        despacho,
-        pedidos_ruta,
-        distancia_total
-    )
+        if pid not in pedidos_recogidos:
+
+            pedidos_restantes.append(pid)
+
+    ruta["lista_pedidos"] = pedidos_restantes
 
     # ======================================================
-    # VISUALIZAR MAPA
+    # SI QUEDAN PEDIDOS
     # ======================================================
-    visualizar_ruta_mapa(
+    if pedidos_restantes:
 
-        ruta_optima=ruta_optima,
+        print("\n")
+        print("=" * 80)
+        print(" PEDIDOS PENDIENTES ")
+        print("=" * 80)
 
-        pedidos=pedidos_filtrados,
+        for pid in pedidos_restantes:
 
-        clientes=clientes,
+            print(f"Pedido {pid}")
 
-        despacho=despacho,
+        finalizar = input(
+            "\n¿Marcar ruta como finalizada? (s/n): "
+        ).strip().lower()
 
-        nombre_fichero=(
-            # f"ruta_{id_ruta}.html"
-            f"ruta.html"
+        if finalizar == "s":
+
+            # ==============================================
+            # MARCAR RUTA FINALIZADA
+            # ==============================================
+            ruta["finalizada"] = True
+
+            # ==============================================
+            # LIBERAR VEHÍCULO
+            # ==============================================
+            matricula = ruta["vehiculo"]
+
+            for v in Vehiculo.vehiculos_registrados():
+
+                if v.matricula == matricula:
+
+                    v.disponible = True
+                    break
+
+            guardar_vehiculos(
+                Vehiculo.vehiculos_registrados()
+            )
+
+            # ==============================================
+            # DEVOLVER PEDIDOS A GENERADO
+            # ==============================================
+            for pid in pedidos_restantes:
+
+                pedidos[pid]["estado"] = "generado"
+
+    # ======================================================
+    # SI NO QUEDAN PEDIDOS
+    # ======================================================
+    else:
+
+        ruta["finalizada"] = True
+
+        matricula = ruta["vehiculo"]
+
+        for v in Vehiculo.vehiculos_registrados():
+
+            if v.matricula == matricula:
+
+                v.disponible = True
+                break
+
+        guardar_vehiculos(
+            Vehiculo.vehiculos_registrados()
         )
-    )
+
+    # ======================================================
+    # GUARDAR
+    # ======================================================
+    guardar_rutas(rutas)
+
+    guardar_pedidos(pedidos)
 
     print(
-        "\n✔ Ruta generada correctamente"
+        "\n✔ Pedidos recogidos correctamente"
     )
 
 
@@ -875,7 +996,8 @@ def ejecutar():
         print("=" * 70)
 
         print("1. Generar ruta")
-        print("2. Visualizar ruta guardada")
+        print("2. Recoger pedidos de ruta")
+        print("3. Visualizar rutas")
         print("0. Salir")
 
         opcion = input(
@@ -887,6 +1009,10 @@ def ejecutar():
             generar_ruta()
 
         elif opcion == "2":
+
+            recoger_pedidos()
+
+        elif opcion == "3":
 
             visualizar_ruta_guardada()
 
