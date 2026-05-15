@@ -68,8 +68,10 @@ def filtrar_pedidos(clientes, pedidos):
         print("2. en_recogida")
         print("3. en_despacho")
         print("4. en_transporte")
-        print("5. en_reparto")
-        print("6. entregado")
+        print("5. en_base")
+        print("6. en_central")
+        print("7. en_reparto")
+        print("8. entregado")
         print("\nEstados disponibles:")
 
         estados = {
@@ -77,8 +79,10 @@ def filtrar_pedidos(clientes, pedidos):
             "2": "en_recogida",
             "3": "en_despacho",
             "4": "en_transporte",
-            "5": "en_reparto",
-            "6": "entregado"
+            "5": "en_base",
+            "6": "en_central",
+            "7": "en_reparto",
+            "8": "entregado"
         }
 
         opcion_estado = input(
@@ -108,6 +112,13 @@ def filtrar_pedidos(clientes, pedidos):
                         "en_despacho"
                 ):
                     filtrados[pid] = p
+            if estado == "en_base":
+
+                if estado_pedido.startswith(
+                        "en_base"
+                ):
+                    filtrados[pid] = p
+
 
             # ==================================================
             # RESTO ESTADOS
