@@ -45,7 +45,8 @@ def filtrar_pedidos(clientes, pedidos):
     print("3. Por cliente destino")
     print("4. Por población origen")
     print("5. Por población destino")
-    print("6. Todos")
+    print("6. Por delegación")
+    print("7. Todos")
     print("0. Salir")
 
     op = input("Opción: ").strip()
@@ -63,19 +64,21 @@ def filtrar_pedidos(clientes, pedidos):
     # ======================================================
     elif op == "1":
 
-        print("\nEstados disponibles:")
         print("1. generado")
         print("2. en_recogida")
-        print("3. en_transporte")
-        print("4. en_reparto")
-        print("5. entregado")
+        print("3. en_despacho")
+        print("4. en_transporte")
+        print("5. en_reparto")
+        print("6. entregado")
+        print("\nEstados disponibles:")
 
         estados = {
             "1": "generado",
             "2": "en_recogida",
-            "3": "en_transporte",
-            "4": "en_reparto",
-            "5": "entregado"
+            "3": "en_despacho",
+            "4": "en_transporte",
+            "5": "en_reparto",
+            "6": "entregado"
         }
 
         opcion_estado = input(
@@ -90,8 +93,29 @@ def filtrar_pedidos(clientes, pedidos):
 
         for pid, p in pedidos.items():
 
-            if p.get("estado", "").lower() == estado:
-                filtrados[pid] = p
+            estado_pedido = (
+                p.get("estado", "")
+                .lower()
+                .strip()
+            )
+
+            # ==================================================
+            # EN DELEGACIÓN
+            # ==================================================
+            if estado == "en_despacho":
+
+                if estado_pedido.startswith(
+                        "en_despacho"
+                ):
+                    filtrados[pid] = p
+
+            # ==================================================
+            # RESTO ESTADOS
+            # ==================================================
+            else:
+
+                if estado_pedido == estado:
+                    filtrados[pid] = p
     # ======================================================
     # FILTRAR POR CLIENTE ORIGEN
     # ======================================================
@@ -157,11 +181,70 @@ def filtrar_pedidos(clientes, pedidos):
                 filtrados[pid] = p
 
     # ======================================================
-    # TODOS
+    # FILTRAR POR DELEGACIÓN
     # ======================================================
     elif op == "6":
 
+        delegaciones = {}
+
+        print("\nDELEGACIONES DISPONIBLES:\n")
+
+        for c in clientes.values():
+
+            if not c.delegacion_cercana:
+                continue
+
+            nombre = c.delegacion_cercana.nombre
+
+            delegaciones[nombre.lower()] = nombre
+
+        delegaciones_ordenadas = sorted(
+            delegaciones.values()
+        )
+
+        for nombre in delegaciones_ordenadas:
+            print(nombre)
+
+        nombre_delegacion = input(
+            "\nDelegación: "
+        ).strip()
+
+        nombre_normalizado = (
+            nombre_delegacion.lower().strip()
+        )
+
+        if nombre_normalizado not in delegaciones:
+            print("❌ Delegación inválida")
+            return None
+
+        nombre_real = delegaciones[
+            nombre_normalizado
+        ]
+
+        for pid, p in pedidos.items():
+
+            cliente = clientes.get(
+                p["origen"]
+            )
+
+            if (
+                    cliente
+                    and
+                    cliente.delegacion_cercana
+                    and
+                    cliente.delegacion_cercana.nombre.lower().strip()
+                    ==
+                    nombre_real.lower().strip()
+            ):
+                filtrados[pid] = p
+
+    # ======================================================
+    # TODOS
+    # ======================================================
+    elif op == "7":
+
         filtrados = pedidos
+
 
     # ======================================================
     # OPCIÓN INVÁLIDA
@@ -185,7 +268,7 @@ def mostrar_pedidos_formateados(pedidos, clientes):
         f"{'DESTINO':<55}"
         f"{'PESO':>10}"
         f"{'VOL':>10}"
-        f"{'ESTADO':>15}"
+        f"{'ESTADO':>20}"
     )
     print("-" * 175)
 
@@ -330,7 +413,7 @@ def mostrar_pedidos_formateados(pedidos, clientes):
 
         peso = f"{p['peso']:.2f}" if p.get("peso") else "N/A"
         volumen = f"{p['volumen']:.2f}" if p.get("volumen") else "N/A"
-        estado = p.get("estado", "N/A")[:12]
+        estado = p.get("estado", "N/A")[:17]
 
         print(
             f"{pid:<8}"
@@ -339,7 +422,7 @@ def mostrar_pedidos_formateados(pedidos, clientes):
             f"{d_txt:<55}"
             f"{peso:>10}"
             f"{volumen:>10}"
-            f"{estado:>15}"
+            f"{estado:>20}"
         )
 
 

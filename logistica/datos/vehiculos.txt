@@ -153,7 +153,7 @@ furgoneta|8739 FTS|True|Despacho 12|1000.0|4000.0
 motocicleta|3125 KBL|True|Despacho 12|30.0|30.0
 motocicleta|3753 YHP|True|Despacho 12|30.0|30.0
 motocicleta|6819 PRS|True|Despacho 12|30.0|30.0
-mochila|DESPACHO12-1|True|Despacho 12|30.0|30.0
+mochila|DESPACHO12-1|False|Despacho 12|30.0|30.0
 mochila|DESPACHO12-2|True|Despacho 12|30.0|30.0
 mochila|DESPACHO12-3|True|Despacho 12|30.0|30.0
 furgoneta|1542 NNR|True|Despacho 13|1000.0|4000.0
@@ -183,10 +183,10 @@ motocicleta|2354 YLC|True|Despacho 15|30.0|30.0
 mochila|DESPACHO15-1|True|Despacho 15|30.0|30.0
 mochila|DESPACHO15-2|True|Despacho 15|30.0|30.0
 mochila|DESPACHO15-3|True|Despacho 15|30.0|30.0
-furgoneta|3362 PVW|True|Despacho 16|1000.0|4000.0
+furgoneta|3362 PVW|False|Despacho 16|1000.0|4000.0
 furgoneta|7165 LHJ|True|Despacho 16|1000.0|4000.0
 furgoneta|7340 BHT|True|Despacho 16|1000.0|4000.0
-motocicleta|3669 PRD|True|Despacho 16|30.0|30.0
+motocicleta|3669 PRD|False|Despacho 16|30.0|30.0
 motocicleta|5622 VPX|True|Despacho 16|30.0|30.0
 motocicleta|6086 WZP|True|Despacho 16|30.0|30.0
 mochila|DESPACHO16-1|True|Despacho 16|30.0|30.0

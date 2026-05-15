@@ -65,6 +65,7 @@ def menu_maestros():
         print("1. Mantenimiento de clientes")
         print("2. Mantenimiento de delegaciones")
         print("3. Mantenimiento de vehiculos")
+        print("4. Mantenimiento de pedidos")
         print("0. Volver")
 
         opcion = input("\nSeleccione una opcion: ").strip()
@@ -74,8 +75,13 @@ def menu_maestros():
         elif opcion == "2":
             mantenimiento_delegaciones()
 
+
         elif opcion == "3":
+
             mantenimiento_vehiculos()
+
+        elif opcion == "4":
+            mantenimiento_pedidos()
 
         if opcion == "0":
             break
@@ -83,7 +89,7 @@ def menu_maestros():
         else:
             print("Opcion no valida")
 
-
+"""
 def menu_pedidos():
     while True:
 
@@ -112,7 +118,7 @@ def menu_pedidos():
 
         else:
             print("Opcion no valida")
-
+"""
 
 def menu_rutas():
     while True:
@@ -122,7 +128,7 @@ def menu_rutas():
         print("=" * 40)
 
         print("1. Rutas de recogida")
-        # print("2. Generar rutas de transporte")
+        print("2. Rutas de transporte")
         # print("3. Generar rutas de reparto")
         print("0. Volver")
 
@@ -155,9 +161,8 @@ def menu_principal():
         print("=" * 40)
 
         print("1. Gestion de archivos maestros")
-        print("2. Gestion de pedidos")
-        print("3. Gestion de rutas")
-        print("4. Generación de datos de prueba")
+        print("2. Gestion de rutas")
+        print("3. Generación de datos de prueba")
         print("0. Salir")
 
         opcion = input("\nSeleccione una opcion: ").strip()
@@ -166,12 +171,9 @@ def menu_principal():
             menu_maestros()
 
         elif opcion == "2":
-            menu_pedidos()
-
-        elif opcion == "3":
             menu_rutas()
 
-        elif opcion == '4':
+        elif opcion == '3':
             menu_datos_prueba()
 
         elif opcion == "0":
