@@ -4,25 +4,13 @@ MÓDULO: vehiculo.py
 ==========================================================
 
 Jerarquía de vehículos del sistema logístico.
-
-TIPOS:
-✔ Camión
-✔ Furgoneta
-✔ Motocicleta
-✔ Mochila
-
-FUNCIONALIDADES:
-✔ Validación de matrículas
-✔ Control de disponibilidad
-✔ Asociación a delegación
-✔ Control de carga máxima
-✔ Control de cubicaje
 """
 
 # ==========================================================
 # IMPORTS
 # ==========================================================
 from abc import ABC
+from typing import List, Set
 
 from utiles.utils import validar_matricula_esp
 
@@ -32,18 +20,20 @@ from utiles.utils import validar_matricula_esp
 # ==========================================================
 class Vehiculo(ABC):
 
+    tipo: str = "vehiculo"
+
     # ======================================================
     # REGISTROS
     # ======================================================
-    _vehiculos = []
+    _vehiculos: List["Vehiculo"] = []
 
-    matriculas_existentes = set()
+    matriculas_existentes: Set[str] = set()
 
     # ======================================================
     # VEHÍCULOS REGISTRADOS
     # ======================================================
     @classmethod
-    def vehiculos_registrados(cls):
+    def vehiculos_registrados(cls) -> List["Vehiculo"]:
         return cls._vehiculos
 
     # ======================================================
@@ -51,22 +41,22 @@ class Vehiculo(ABC):
     # ======================================================
     def __init__(
             self,
-            matricula,
-            disponible,
+            matricula: str,
+            disponible: bool,
             delegacion,
-            carga_maxima,
-            cubicaje
-    ):
+            carga_maxima: float,
+            cubicaje: float
+    ) -> None:
 
         self.validar_matricula_unica(
             matricula
         )
 
-        self._matricula = (
+        self._matricula: str = (
             matricula.upper()
         )
 
-        self._disponible = (
+        self._disponible: bool = (
             disponible
         )
 
@@ -74,11 +64,11 @@ class Vehiculo(ABC):
             delegacion
         )
 
-        self._carga_maxima = (
+        self._carga_maxima: float = (
             carga_maxima
         )
 
-        self._cubicaje = (
+        self._cubicaje: float = (
             cubicaje
         )
 
@@ -94,8 +84,8 @@ class Vehiculo(ABC):
     @classmethod
     def validar_matricula_unica(
             cls,
-            matricula
-    ):
+            matricula: str
+    ) -> None:
 
         if (
                 matricula.upper()
@@ -110,11 +100,11 @@ class Vehiculo(ABC):
     # PROPIEDADES
     # ======================================================
     @property
-    def matricula(self):
+    def matricula(self) -> str:
         return self._matricula
 
     @property
-    def disponible(self):
+    def disponible(self) -> bool:
         return self._disponible
 
     @property
@@ -122,40 +112,54 @@ class Vehiculo(ABC):
         return self._delegacion
 
     @property
-    def carga_maxima(self):
+    def carga_maxima(self) -> float:
         return self._carga_maxima
 
     @property
-    def cubicaje(self):
+    def cubicaje(self) -> float:
         return self._cubicaje
 
     # ======================================================
-    # SETTERS
+    # SET DISPONIBLE
     # ======================================================
-    @disponible.setter
-    def disponible(
+    def set_disponible(
             self,
-            valor
-    ):
+            valor: bool
+    ) -> None:
+
         self._disponible = valor
 
-    def asignar_delegacion(self, delegacion):
+    # ======================================================
+    # MÉTODOS
+    # ======================================================
+    def asignar_delegacion(
+            self,
+            delegacion
+    ) -> None:
+
         self._delegacion = delegacion
 
-    def quitar_delegacion(self):
+    def quitar_delegacion(self) -> None:
+
         self._delegacion = None
 
     # ======================================================
     # STR
     # ======================================================
-    def __str__(self):
+    def __str__(self) -> str:
+
+        nombre_delegacion = (
+            self.delegacion.nombre
+            if self.delegacion
+            else "SIN DELEGACIÓN"
+        )
 
         return (
             f"{self.tipo.upper()} | "
             f"{self.matricula} | "
             f"Carga: {self.carga_maxima} | "
             f"Cubicaje: {self.cubicaje} | "
-            f"{self.delegacion.nombre}"
+            f"{nombre_delegacion}"
         )
 
 
@@ -168,16 +172,17 @@ class VehiculoCamion(Vehiculo):
 
     def __init__(
             self,
-            matricula,
-            disponible,
+            matricula: str,
+            disponible: bool,
             delegacion,
-            carga_maxima,
-            cubicaje
-    ):
+            carga_maxima: float,
+            cubicaje: float
+    ) -> None:
 
         if not validar_matricula_esp(
                 matricula
         ):
+
             raise ValueError(
                 "Matrícula inválida"
             )
@@ -200,16 +205,17 @@ class VehiculoFurgoneta(Vehiculo):
 
     def __init__(
             self,
-            matricula,
-            disponible,
+            matricula: str,
+            disponible: bool,
             delegacion,
-            carga_maxima,
-            cubicaje
-    ):
+            carga_maxima: float,
+            cubicaje: float
+    ) -> None:
 
         if not validar_matricula_esp(
                 matricula
         ):
+
             raise ValueError(
                 "Matrícula inválida"
             )
@@ -232,16 +238,17 @@ class VehiculoMotocicleta(Vehiculo):
 
     def __init__(
             self,
-            matricula,
-            disponible,
+            matricula: str,
+            disponible: bool,
             delegacion,
-            carga_maxima,
-            cubicaje
-    ):
+            carga_maxima: float,
+            cubicaje: float
+    ) -> None:
 
         if not validar_matricula_esp(
                 matricula
         ):
+
             raise ValueError(
                 "Matrícula inválida"
             )
@@ -264,12 +271,12 @@ class VehiculoMochila(Vehiculo):
 
     def __init__(
             self,
-            matricula,
-            disponible,
+            matricula: str,
+            disponible: bool,
             delegacion,
-            carga_maxima,
-            cubicaje
-    ):
+            carga_maxima: float,
+            cubicaje: float
+    ) -> None:
 
         super().__init__(
             matricula,

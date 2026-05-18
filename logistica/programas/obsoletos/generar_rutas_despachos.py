@@ -36,7 +36,7 @@ sys.path.append(
     os.path.abspath(
         os.path.join(
             os.path.dirname(__file__),
-            '..'
+            '../..'
         )
     )
 )
@@ -620,7 +620,7 @@ def persistir_ruta(
 # ==========================================================
 # VISUALIZAR MAPA
 # ==========================================================
-def visualizar_ruta_mapa(
+def visualizar_ruta_mapa2(
         ruta_optima,
         pedidos,
         clientes,
@@ -1222,6 +1222,15 @@ def generar_ruta():
 
     despachos_con_pedidos = []
 
+    print(
+        f"{'DESPACHO':<25}"
+        f"{'PEDIDOS':<12}"
+        f"{'LOCALIDAD':<20}"
+        f"{'DIRECCIÓN'}"
+    )
+
+    print("-" * 140)
+
     for d in delegaciones:
 
         if not isinstance(d, DelegacionDespacho):
@@ -1262,9 +1271,23 @@ def generar_ruta():
 
             despachos_con_pedidos.append(d)
 
+            poblacion = (
+                d.poblacion
+                if hasattr(d, "poblacion")
+                else "N/A"
+            )
+
+            direccion = (
+                d.direccion
+                if hasattr(d, "direccion")
+                else "N/A"
+            )
+
             print(
-                f"{d.nombre:<30}"
-                f"Pedidos: {total}"
+                f"{d.nombre:<25}"
+                f"{total:<12}"
+                f"{poblacion:<20}"
+                f"{direccion}"
             )
 
     if not despachos_con_pedidos:
@@ -1595,7 +1618,7 @@ def ejecutar():
         print("=" * 70)
 
         print("1. Generar ruta")
-        print("2. Recoger pedidos de ruta")
+        print("2. Recepcionar pedidos de ruta")
         print("3. Visualizar rutas")
         print("0. Salir")
 

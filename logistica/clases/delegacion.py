@@ -1,157 +1,270 @@
 """
-Clase abstracta Delegacion.
-
-Los vehículos conocen directamente su delegación.
-La delegación puede consultar sus vehículos asociados.
+==========================================================
+MÓDULO: delegacion.py
+==========================================================
 """
 
-from abc import ABC, abstractmethod
+# ==========================================================
+# IMPORTS
+# ==========================================================
+from abc import ABC
+from typing import List, Optional, Set, Tuple
 
-from utiles.geolocalizacion import geocodificar
+from utiles.geolocalizacion import (
+    geocodificar,
+    obtener_datos_geo
+)
 
 
+# ==========================================================
+# CLASE BASE DELEGACIÓN
+# ==========================================================
 class Delegacion(ABC):
 
-    nombres_registrados = set()
+    tipo: str = "delegacion"
+
+    # ======================================================
+    # REGISTRO GLOBAL
+    # ======================================================
+    nombres_registrados: Set[str] = set()
 
     # ======================================================
     # CONSTRUCTOR
     # ======================================================
-
     def __init__(
             self,
-            nombre,
-            direccion,
-            delegacion_superior=None,
-            provincia=None,
-            poblacion=None,
-            coordenadas=None
-    ):
+            nombre: str,
+            direccion: str,
+            superior=None,
+            coordenadas: Optional[
+                Tuple[float, float]
+            ] = None,
+            provincia_inicial: str = "",
+            poblacion_inicial: str = ""
+    ) -> None:
 
         self.validar_nombre(nombre)
 
-        self._nombre = nombre
-        self._direccion = direccion
+        self._nombre: str = nombre
 
-        self._delegacion_superior = delegacion_superior
+        self._direccion: str = direccion
 
-        self._provincia = provincia
-        self._poblacion = poblacion
+        self._superior = superior
 
-        self._coordenadas = coordenadas
+        self._vehiculos: List = []
 
-        Delegacion.nombres_registrados.add(nombre)
+        self._coordenadas: Optional[
+            Tuple[float, float]
+        ] = coordenadas
+
+        # ==================================================
+        # DATOS GEO
+        # ==================================================
+        self._provincia: str = provincia_inicial
+
+        self._poblacion: str = poblacion_inicial
+
+        # ==================================================
+        # GEOLOCALIZACIÓN
+        # ==================================================
+        if self._coordenadas is None:
+
+            self.calcular_coordenadas()
+
+        # ==================================================
+        # SOLO CALCULAR SI NO EXISTEN YA
+        # ==================================================
+        if self._coordenadas:
+
+            if not self._poblacion or not self._provincia:
+
+                poblacion_geo, provincia_geo = (
+                    obtener_datos_geo(
+                        self._coordenadas
+                    )
+                )
+
+                if (
+                        not self._poblacion
+                        and poblacion_geo
+                ):
+
+                    self._poblacion = (
+                        poblacion_geo
+                    )
+
+                if (
+                        not self._provincia
+                        and provincia_geo
+                ):
+
+                    self._provincia = (
+                        provincia_geo
+                    )
+
+        Delegacion.nombres_registrados.add(
+            nombre.upper()
+        )
 
     # ======================================================
-    # PROPIEDADES
+    # VALIDAR NOMBRE
     # ======================================================
-
-    @property
-    def nombre(self):
-        return self._nombre
-
-    @property
-    def direccion(self):
-        return self._direccion
-
-    @property
-    def coordenadas(self):
-        return self._coordenadas
-
-    @property
-    def provincia(self):
-        return self._provincia
-
-    @property
-    def poblacion(self):
-        return self._poblacion
-
-    @property
-    def delegacion_superior(self):
-        return self._delegacion_superior
-
-    @property
-    def vehiculos(self):
-        """
-        Retorna todos los vehículos asignados
-        a esta delegación.
-        """
-
-        from clases.vehiculo import Vehiculo
-
-        return [
-            v for v in Vehiculo.vehiculos_registrados()
-            if v.delegacion == self
-        ]
-
-    # ======================================================
-    # VALIDACIONES
-    # ======================================================
-
     @classmethod
-    def validar_nombre(cls, nombre):
+    def validar_nombre(
+            cls,
+            nombre: str
+    ) -> None:
 
-        if nombre in cls.nombres_registrados:
+        if (
+                nombre.upper()
+                in cls.nombres_registrados
+        ):
+
             raise ValueError(
-                f"Ya existe una delegación con nombre '{nombre}'"
+                "Ya existe una delegación"
             )
 
     # ======================================================
     # GEOLOCALIZACIÓN
     # ======================================================
+    def calcular_coordenadas(self) -> None:
 
-    def calcular_coordenadas(self):
-        """
-        Calcula coordenadas geográficas a partir
-        de la dirección.
-        """
-
-        self._coordenadas = geocodificar(
+        coordenadas = geocodificar(
             self._direccion
         )
 
-    # ======================================================
-    # GESTIÓN DE VEHÍCULOS
-    # ======================================================
+        if coordenadas:
 
-    def anadir_vehiculo(self, vehiculo):
+            self._coordenadas = coordenadas
 
-        if not self.validar_vehiculo(vehiculo):
-            raise ValueError(
-                f"La delegación '{self.nombre}' no admite "
-                f"vehículos tipo '{vehiculo.tipo}'"
+    # ======================================================
+    # PROPIEDADES
+    # ======================================================
+    @property
+    def nombre(self) -> str:
+        return self._nombre
+
+    @property
+    def direccion(self) -> str:
+        return self._direccion
+
+    @property
+    def superior(self):
+        return self._superior
+
+    @property
+    def delegacion_superior(self):
+        return self._superior
+
+    @property
+    def coordenadas(
+            self
+    ) -> Optional[Tuple[float, float]]:
+
+        return self._coordenadas
+
+    @property
+    def provincia(self) -> str:
+        return self._provincia
+
+    @property
+    def poblacion(self) -> str:
+        return self._poblacion
+
+    @property
+    def vehiculos(self) -> List:
+        return self._vehiculos
+
+    # ======================================================
+    # MÉTODOS SET
+    # ======================================================
+    def set_provincia(
+            self,
+            valor: str
+    ) -> None:
+
+        self._provincia = valor
+
+    def set_poblacion(
+            self,
+            valor: str
+    ) -> None:
+
+        self._poblacion = valor
+    """
+    # ======================================================
+    # SETTERS
+    # ======================================================
+    @provincia.setter
+    def provincia(
+            self,
+            valor: str
+    ) -> None:
+
+        self._provincia = valor
+
+    @poblacion.setter
+    def poblacion(
+            self,
+            valor: str
+    ) -> None:
+
+        self._poblacion = valor
+    """
+
+    # ======================================================
+    # SET DIRECCIÓN
+    # ======================================================
+    def set_direccion(
+            self,
+            nueva_direccion: str
+    ) -> None:
+
+        self._direccion = nueva_direccion
+
+        self.calcular_coordenadas()
+
+    # ======================================================
+    # VEHÍCULOS
+    # ======================================================
+    def agregar_vehiculo(
+            self,
+            vehiculo
+    ) -> None:
+
+        if vehiculo not in self._vehiculos:
+
+            self._vehiculos.append(
+                vehiculo
             )
 
-        vehiculo.asignar_delegacion(self)
+    def eliminar_vehiculo(
+            self,
+            vehiculo
+    ) -> None:
 
-    def quitar_vehiculo(self, vehiculo):
+        if vehiculo in self._vehiculos:
 
-        if vehiculo.delegacion == self:
-            vehiculo.quitar_delegacion()
+            self._vehiculos.remove(
+                vehiculo
+            )
 
-    def vehiculos_disponibles(self):
+    def vehiculos_disponibles(self) -> List:
 
         return [
-            v for v in self.vehiculos
+
+            v for v in self._vehiculos
+
             if v.disponible
         ]
 
     # ======================================================
-    # MÉTODOS ABSTRACTOS
+    # STR
     # ======================================================
-
-    @abstractmethod
-    def validar_vehiculo(self, vehiculo):
-        pass
-
-    # ======================================================
-    # REPRESENTACIÓN
-    # ======================================================
-
-    def __str__(self):
+    def __str__(self) -> str:
 
         return (
-            f"{self.__class__.__name__}: "
+            f"{self.tipo.upper()} | "
             f"{self.nombre} | "
             f"{self.poblacion} | "
             f"{self.provincia}"
@@ -159,35 +272,24 @@ class Delegacion(ABC):
 
 
 # ==========================================================
-# DELEGACIÓN CENTRAL
+# CENTRAL
 # ==========================================================
-
 class DelegacionCentral(Delegacion):
 
-    def validar_vehiculo(self, vehiculo):
-        return vehiculo.tipo == "camion"
+    tipo = "central"
 
 
 # ==========================================================
-# DELEGACIÓN BASE
+# BASE
 # ==========================================================
-
 class DelegacionBase(Delegacion):
 
-    def validar_vehiculo(self, vehiculo):
-        return vehiculo.tipo == "furgoneta"
+    tipo = "base"
 
 
 # ==========================================================
-# DELEGACIÓN DESPACHO
+# DESPACHO
 # ==========================================================
-
 class DelegacionDespacho(Delegacion):
 
-    def validar_vehiculo(self, vehiculo):
-
-        return vehiculo.tipo in [
-            "furgoneta",
-            "motocicleta",
-            "mochila"
-        ]
+    tipo = "despacho"

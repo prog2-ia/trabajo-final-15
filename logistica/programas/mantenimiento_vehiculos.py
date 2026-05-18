@@ -1,46 +1,30 @@
-"""
-==========================================================
-MÓDULO: mantenimiento_vehiculos.py
-==========================================================
+# mantenimiento_vehiculos.py
 
-Mantenimiento completo de vehículos.
+"""
+============================================================
+MANTENIMIENTO DE VEHÍCULOS
+============================================================
 
 FUNCIONALIDADES:
-✔ Altas
-✔ Modificaciones
-✔ Bajas
-✔ Listados
-
-CARACTERÍSTICAS:
-✔ Validación de matrículas únicas
-✔ Validación según tipo de delegación
-✔ Persistencia en fichero texto
-✔ Gestión automática de mochilas
-
-REGLAS:
-✔ Central  → Camión
-✔ Base     → Furgoneta
-✔ Despacho → Furgoneta / Motocicleta / Mochila
+✔ Alta
+✔ Baja
+✔ Modificación
+✔ Listado
+✔ Compatibilidad con mypy
+✔ Validación de matrículas
+✔ Validación de delegaciones
+✔ Gestión de mochilas
 """
 
-# ==========================================================
+# ============================================================
 # IMPORTS
-# ==========================================================
-import os
-import sys
-
-sys.path.append(
-    os.path.abspath(
-        os.path.join(
-            os.path.dirname(__file__),
-            '..'
-        )
-    )
-)
+# ============================================================
+from typing import List, Optional
 
 from clases.delegacion import (
-    DelegacionCentral,
+    Delegacion,
     DelegacionBase,
+    DelegacionCentral,
     DelegacionDespacho
 )
 
@@ -55,449 +39,289 @@ from clases.vehiculo import (
 from persistencia.persistencia_delegaciones import (
     cargar_delegaciones
 )
+
 from persistencia.persistencia_vehiculos import (
-    guardar_vehiculos,
-    cargar_vehiculos
+    cargar_vehiculos,
+    guardar_vehiculos
 )
 
 from utiles.utils import (
-    generar_matricula,
     validar_matricula_esp
 )
 
-# ==========================================================
+
+# ============================================================
 # BUSCAR VEHÍCULO
-# ==========================================================
-def buscar_vehiculo(matricula, vehiculos):
+# ============================================================
+def buscar_vehiculo(
+        matricula: str,
+        vehiculos: List[Vehiculo]
+) -> Optional[Vehiculo]:
 
-    matricula = matricula.upper()
+    for vehiculo in vehiculos:
 
-    for v in vehiculos:
-
-        if v.matricula == matricula:
-            return v
+        if (
+                vehiculo.matricula.upper()
+                == matricula.upper()
+        ):
+            return vehiculo
 
     return None
 
 
-# ==========================================================
+# ============================================================
 # BUSCAR DELEGACIÓN
-# ==========================================================
-def buscar_delegacion(nombre, delegaciones):
+# ============================================================
+def buscar_delegacion(
+        nombre: str,
+        delegaciones: List[Delegacion]
+) -> Optional[Delegacion]:
 
-    for d in delegaciones:
+    for delegacion in delegaciones:
 
-        if d.nombre.lower() == nombre.lower():
-            return d
+        if (
+                delegacion.nombre.upper()
+                == nombre.upper()
+        ):
+            return delegacion
 
     return None
 
 
-# ==========================================================
+# ============================================================
 # IMPRIMIR JERARQUÍA
-# ==========================================================
-def imprimir_jerarquia(delegaciones):
+# ============================================================
+def imprimir_jerarquia(
+        delegaciones: List[Delegacion]
+) -> None:
 
-    ANCHO_NOMBRE = 35
+    print()
+    print("=" * 90)
 
-    def imprimir_linea(prefijo, delegacion):
+    print(
+        f"{'TIPO':15}"
+        f"{'NOMBRE':25}"
+        f"{'POBLACIÓN':20}"
+        f"{'PROVINCIA':20}"
+    )
 
-        nombre = f"{prefijo}{delegacion.nombre}"
+    print("-" * 90)
+
+    for delegacion in delegaciones:
 
         print(
-            f"{nombre:<{ANCHO_NOMBRE}}"
-            f"│ {delegacion.provincia}"
+            f"{delegacion.tipo.upper():15}"
+            f"{delegacion.nombre:25}"
+            f"{delegacion.poblacion:20}"
+            f"{delegacion.provincia:20}"
         )
 
-    centrales = [
 
-        d for d in delegaciones
-
-        if isinstance(
-            d,
-            DelegacionCentral
-        )
-    ]
-
-    for central in centrales:
-
-        imprimir_linea(
-            "",
-            central
-        )
-
-        bases = [
-
-            d for d in delegaciones
-
-            if isinstance(
-                d,
-                DelegacionBase
-            )
-
-            and d.delegacion_superior == central
-        ]
-
-        for b in bases:
-
-            imprimir_linea(
-                "   ├── ",
-                b
-            )
-
-            despachos = [
-
-                d for d in delegaciones
-
-                if isinstance(
-                    d,
-                    DelegacionDespacho
-                )
-
-                and d.delegacion_superior == b
-            ]
-
-            for dep in despachos:
-
-                imprimir_linea(
-                    "   │     ├── ",
-                    dep
-                )
-
-
-
-# ==========================================================
-# PEDIR MOCHILA
-# ==========================================================
-def pedir_mochila(
+# ============================================================
+# SIGUIENTE NÚMERO MOCHILA
+# ============================================================
+def siguiente_numero_mochila(
         delegacion,
-        vehiculos
-):
+        vehiculos: List[Vehiculo]
+) -> int:
 
-    # ======================================================
-    # BUSCAR SIGUIENTE CORRELATIVO
-    # ======================================================
-    numeros = []
+    numeros: List[int] = []
 
     prefijo = (
-        f"{delegacion.nombre}-"
+        delegacion.nombre.upper()
+        + "-"
     )
 
-    for v in vehiculos:
+    for vehiculo in vehiculos:
 
-        if v.tipo != "mochila":
-            continue
-
-        if not v.matricula.startswith(
-                prefijo
+        if (
+                isinstance(
+                    vehiculo,
+                    VehiculoMochila
+                )
+                and vehiculo.matricula.startswith(
+                    prefijo
+                )
         ):
-            continue
 
-        partes = v.matricula.split("-")
+            try:
 
-        if len(partes) < 2:
-            continue
+                numero = int(
+                    vehiculo.matricula.split(
+                        "-"
+                    )[-1]
+                )
 
-        numero = partes[-1]
+                numeros.append(numero)
 
-        if numero.isdigit():
+            except ValueError:
+                pass
 
-            numeros.append(
-                int(numero)
-            )
+    if not numeros:
+        return 1
 
-    siguiente = (
-            max(numeros, default=0)
-            + 1
-    )
-
-    # ======================================================
-    # PEDIR NÚMERO
-    # ======================================================
-    while True:
-
-        entrada = input(
-            f"\nNúmero mochila "
-            f"[{siguiente}]: "
-        ).strip()
-
-        # --------------------------------------------------
-        # USAR SUGERIDO
-        # --------------------------------------------------
-        if not entrada:
-
-            numero = str(siguiente)
-
-        else:
-
-            numero = entrada
-
-        # --------------------------------------------------
-        # VALIDAR NUMÉRICO
-        # --------------------------------------------------
-        if not numero.isdigit():
-
-            print(
-                "\n❌ Número inválido"
-            )
-
-            continue
-
-        # --------------------------------------------------
-        # GENERAR MATRÍCULA
-        # --------------------------------------------------
-        matricula = (
-            f"{delegacion.nombre}"
-            f"-{numero}"
-        )
-
-        # --------------------------------------------------
-        # VALIDAR UNICIDAD
-        # --------------------------------------------------
-        existe = buscar_vehiculo(
-            matricula,
-            vehiculos
-        )
-
-        if existe:
-
-            print(
-                "\n❌ Mochila existente"
-            )
-
-            continue
-
-        return matricula
-# ==========================================================
-# PEDIR DELEGACIÓN
-# ==========================================================
-def pedir_delegacion(delegaciones):
-
-    imprimir_jerarquia(delegaciones)
-
-    while True:
-
-        nombre = input(
-            "\nDelegación: "
-        )
-
-        d = buscar_delegacion(
-            nombre,
-            delegaciones
-        )
-
-        if d:
-            return d
-
-        print(
-            "\n❌ Delegación no encontrada"
-        )
+    return max(numeros) + 1
 
 
-# ==========================================================
+# ============================================================
 # PEDIR MATRÍCULA
-# ==========================================================
-def pedir_matricula(vehiculos):
+# ============================================================
+def pedir_matricula() -> str:
 
     while True:
 
         matricula = input(
-            "\nMatrícula: "
-        ).upper()
+            "Matrícula: "
+        ).upper().strip()
 
-        if not validar_matricula_esp(
+        if validar_matricula_esp(
                 matricula
         ):
 
-            print(
-                "\n❌ Matrícula inválida"
-            )
+            return matricula
 
-            continue
-
-        if buscar_vehiculo(
-                matricula,
-                vehiculos
-        ):
-
-            print(
-                "\n❌ Matrícula existente"
-            )
-
-            continue
-
-        return matricula
-
-
-# ==========================================================
-# PEDIR MOCHILA
-# ==========================================================
-def pedir_mochila(
-        delegacion,
-        vehiculos
-):
-
-    while True:
-
-        numero = input(
-            "\nNúmero mochila: "
+        print(
+            "❌ Matrícula inválida"
         )
 
-        if not numero.isdigit():
 
-            print(
-                "\n❌ Número inválido"
-            )
+# ============================================================
+# ALTA VEHÍCULO
+# ============================================================
+def alta_vehiculo() -> None:
 
-            continue
+    vehiculos = cargar_vehiculos()
 
-        matricula = (
-            f"{delegacion.nombre}"
-            f"-{numero}"
-        )
+    delegaciones = cargar_delegaciones()
 
-        existe = buscar_vehiculo(
-            matricula,
-            vehiculos
-        )
+    print()
+    print("=== ALTA VEHÍCULO ===")
 
-        if existe:
-
-            print(
-                "\n❌ Mochila existente"
-            )
-
-            continue
-
-        return matricula
-
-
-# ==========================================================
-# ALTAS
-# ==========================================================
-def alta_vehiculo(
-        vehiculos,
-        delegaciones
-):
-
-    print("\n" + "=" * 60)
-    print("ALTA DE VEHÍCULO")
-    print("=" * 60)
-
-    # ======================================================
-    # PEDIR DELEGACIÓN
-    # ======================================================
-    delegacion = pedir_delegacion(
+    imprimir_jerarquia(
         delegaciones
     )
 
-    # ======================================================
-    # CENTRAL → CAMIÓN
-    # ======================================================
+    nombre_delegacion = input(
+        "\nDelegación: "
+    ).strip()
+
+    delegacion = buscar_delegacion(
+        nombre_delegacion,
+        delegaciones
+    )
+
+    if not delegacion:
+
+        print(
+            "❌ Delegación no encontrada"
+        )
+
+        return
+
+    vehiculo: Vehiculo
+
+    # ========================================================
+    # CENTRAL -> CAMIÓN
+    # ========================================================
     if isinstance(
             delegacion,
             DelegacionCentral
     ):
 
-        print(
-            "\nTipo vehículo: CAMIÓN"
-        )
+        matricula = pedir_matricula()
 
-        matricula = pedir_matricula(
-            vehiculos
-        )
-
-        v = VehiculoCamion(
+        vehiculo = VehiculoCamion(
             matricula,
             True,
             delegacion,
             20000,
-            40000
+            40
         )
 
-
-    # ======================================================
-    # BASE → FURGONETA
-    # ======================================================
+    # ========================================================
+    # BASE -> FURGONETA
+    # ========================================================
     elif isinstance(
             delegacion,
             DelegacionBase
     ):
 
-        print(
-            "\nTipo vehículo: FURGONETA"
-        )
+        matricula = pedir_matricula()
 
-        matricula = pedir_matricula(
-            vehiculos
-        )
-
-        v = VehiculoFurgoneta(
+        vehiculo = VehiculoFurgoneta(
             matricula,
             True,
             delegacion,
             3500,
-            10000
+            10
         )
 
-
-    # ======================================================
+    # ========================================================
     # DESPACHO
-    # ======================================================
-    else:
+    # ========================================================
+    elif isinstance(
+            delegacion,
+            DelegacionDespacho
+    ):
 
-        print("\n1. Furgoneta")
+        print()
+        print("1. Furgoneta")
         print("2. Motocicleta")
         print("3. Mochila")
 
         opcion = input(
-            "\nTipo vehículo: "
-        )
+            "Tipo: "
+        ).strip()
 
-        # --------------------------------------------------
+        # ====================================================
         # FURGONETA
-        # --------------------------------------------------
+        # ====================================================
         if opcion == "1":
 
-            matricula = pedir_matricula(
-                vehiculos
-            )
+            matricula = pedir_matricula()
 
-            v = VehiculoFurgoneta(
+            vehiculo = VehiculoFurgoneta(
                 matricula,
                 True,
                 delegacion,
                 1000,
-                4000
+                4
             )
 
-
-        # --------------------------------------------------
+        # ====================================================
         # MOTOCICLETA
-        # --------------------------------------------------
+        # ====================================================
         elif opcion == "2":
 
-            matricula = pedir_matricula(
-                vehiculos
-            )
+            matricula = pedir_matricula()
 
-            v = VehiculoMotocicleta(
+            vehiculo = VehiculoMotocicleta(
                 matricula,
                 True,
                 delegacion,
                 30,
-                30
+                0.03
             )
 
-
-        # --------------------------------------------------
+        # ====================================================
         # MOCHILA
-        # --------------------------------------------------
+        # ====================================================
         elif opcion == "3":
 
-            matricula = pedir_mochila(
+            sugerido = siguiente_numero_mochila(
                 delegacion,
                 vehiculos
+            )
+
+            numero = input(
+                f"Número mochila [{sugerido}]: "
+            ).strip()
+
+            if numero == "":
+                numero = str(sugerido)
+
+            matricula = (
+                f"{delegacion.nombre.upper()}-{numero}"
             )
 
             vehiculo = VehiculoMochila(
@@ -505,299 +329,204 @@ def alta_vehiculo(
                 True,
                 delegacion,
                 30,
-                30
+                0.03
             )
-
 
         else:
 
             print(
-                "\n❌ Opción inválida"
+                "❌ Opción inválida"
             )
 
             return
 
-    # ======================================================
-    # GUARDAR
-    # ======================================================
-    vehiculos.append(v)
+    else:
 
-    guardar_vehiculos(vehiculos)
+        print(
+            "❌ Tipo delegación inválido"
+        )
 
-    print("\n✔ Vehículo creado")
+        return
 
+    vehiculos.append(
+        vehiculo
+    )
 
-# ==========================================================
-# MODIFICACIONES
-# ==========================================================
-def modificar_vehiculo(vehiculos):
-
-    print("\n" + "=" * 60)
-    print("MODIFICACIÓN DE VEHÍCULO")
-    print("=" * 60)
-
-    matricula = input(
-        "\nMatrícula: "
-    ).upper()
-
-    v = buscar_vehiculo(
-        matricula,
+    guardar_vehiculos(
         vehiculos
     )
 
-    if not v:
-
-        print(
-            "\n❌ Vehículo no encontrado"
-        )
-
-        return
-
-    # ======================================================
-    # MOSTRAR DATOS
-    # ======================================================
-    print("\nDATOS ACTUALES\n")
-
-    print(f"Tipo       : {v.tipo}")
-    print(f"Matrícula  : {v.matricula}")
-    print(f"Disponible : {v.disponible}")
-    print(f"Delegación : {v.delegacion.nombre}")
-
-    # ======================================================
-    # DISPONIBILIDAD
-    # ======================================================
-    disponible = input(
-        f"\nDisponible "
-        f"[{v.disponible}] "
-        f"(s/n): "
-    ).lower()
-
-    if disponible == "s":
-
-        v._disponible = True
-
-    elif disponible == "n":
-
-        v._disponible = False
-
-    guardar_vehiculos(vehiculos)
-
-    print("\n✔ Vehículo modificado")
-
-
-# ==========================================================
-# BAJAS
-# ==========================================================
-def baja_vehiculo(vehiculos):
-
-    print("\n" + "=" * 60)
-    print("BAJA DE VEHÍCULO")
-    print("=" * 60)
-
-    matricula = input(
-        "\nMatrícula: "
-    ).upper()
-
-    v = buscar_vehiculo(
-        matricula,
-        vehiculos
-    )
-
-    if not v:
-
-        print(
-            "\n❌ Vehículo no encontrado"
-        )
-
-        return
-
-    # ======================================================
-    # MOSTRAR DATOS
-    # ======================================================
-    print("\nVEHÍCULO\n")
-
-    print(f"Tipo       : {v.tipo}")
-    print(f"Matrícula  : {v.matricula}")
-    print(f"Disponible : {v.disponible}")
-    print(f"Delegación : {v.delegacion.nombre}")
-
-    confirmar = input(
-        "\n¿Confirmar baja? (s/n): "
-    ).lower()
-
-    if confirmar != "s":
-
-        print(
-            "\n✔ Operación cancelada"
-        )
-
-        return
-
-    vehiculos.remove(v)
-
-    guardar_vehiculos(vehiculos)
-
-    print("\n✔ Vehículo eliminado")
-
-
-# ==========================================================
-# LISTADO
-# ==========================================================
-def listado_vehiculos(
-        vehiculos,
-        delegaciones
-):
-
-    print("\n" + "=" * 60)
-    print("LISTADO DE VEHÍCULOS")
-    print("=" * 60)
-
-    print("\n1. Todos")
-    print("2. Por delegación")
-
-    opcion = input(
-        "\nSeleccione opción: "
-    )
-
-    resultado = vehiculos
-
-    # ======================================================
-    # FILTRAR POR DELEGACIÓN
-    # ======================================================
-    if opcion == "2":
-
-        delegacion = pedir_delegacion(
-            delegaciones
-        )
-
-        resultado = [
-
-            v for v in vehiculos
-
-            if v.delegacion.nombre.lower()
-               == delegacion.nombre.lower()
-        ]
-
-    # ======================================================
-    # MOSTRAR
-    # ======================================================
-    print("\n" + "=" * 140)
-    print("LISTADO DE VEHÍCULOS")
-    print("=" * 140)
-
-    # ======================================================
-    # CABECERA
-    # ======================================================
+    print()
     print(
-        f"{'TIPO':<15}"
-        f"{'MATRICULA':<20}"
-        f"{'DISPONIBLE':<12}"
-        f"{'CARGA MAX':<15}"
-        f"{'CUBICAJE':<15}"
-        f"{'DELEGACION'}"
+        "✔ Vehículo creado"
     )
 
-    print("-" * 140)
 
-    # ======================================================
-    # DATOS
-    # ======================================================
-    for v in resultado:
-        print(
-            f"{v.tipo:<15}"
-            f"{v.matricula:<20}"
-            f"{str(v.disponible):<12}"
-            f"{str(v.carga_maxima):<15}"
-            f"{str(v.cubicaje):<15}"
-            f"{v.delegacion.nombre}"
-        )
-
-
-    print("\n")
-
-
-
-
-# ==========================================================
-# MENÚ PRINCIPAL
-# ==========================================================
-def ejecutar():
-
-    delegaciones = cargar_delegaciones()
+# ============================================================
+# BAJA VEHÍCULO
+# ============================================================
+def baja_vehiculo() -> None:
 
     vehiculos = cargar_vehiculos()
 
-    while True:
+    matricula = input(
+        "Matrícula: "
+    ).strip()
 
-        print("\n" + "=" * 60)
-        print("MANTENIMIENTO DE VEHÍCULOS")
-        print("=" * 60)
+    vehiculo = buscar_vehiculo(
+        matricula,
+        vehiculos
+    )
 
-        print("\n1. Alta")
-        print("2. Modificación")
-        print("3. Baja")
-        print("4. Listado")
-        print("5. Salir")
+    if not vehiculo:
 
-        opcion = input(
-            "\nSeleccione opción: "
+        print(
+            "❌ Vehículo no encontrado"
         )
 
-        # ==================================================
-        # ALTAS
-        # ==================================================
+        return
+
+    vehiculos.remove(
+        vehiculo
+    )
+
+    guardar_vehiculos(
+        vehiculos
+    )
+
+    print(
+        "✔ Vehículo eliminado"
+    )
+
+
+# ============================================================
+# MODIFICAR VEHÍCULO
+# ============================================================
+def modificar_vehiculo() -> None:
+
+    vehiculos = cargar_vehiculos()
+
+    matricula = input(
+        "Matrícula: "
+    ).strip()
+
+    vehiculo = buscar_vehiculo(
+        matricula,
+        vehiculos
+    )
+
+    if not vehiculo:
+
+        print(
+            "❌ Vehículo no encontrado"
+        )
+
+        return
+
+    print()
+
+    print(
+        f"Disponibilidad actual: {vehiculo.disponible}"
+    )
+
+    nuevo_estado = input(
+        "Disponible (s/n): "
+    ).lower().strip()
+
+    vehiculo.set_disponible(
+        nuevo_estado == "s"
+    )
+
+    guardar_vehiculos(
+        vehiculos
+    )
+
+    print(
+        "✔ Vehículo modificado"
+    )
+
+
+# ============================================================
+# LISTAR VEHÍCULOS
+# ============================================================
+def listar_vehiculos() -> None:
+
+    vehiculos = cargar_vehiculos()
+
+    print()
+    print("=" * 120)
+
+    print(
+        f"{'TIPO':15}"
+        f"{'MATRÍCULA':20}"
+        f"{'DISPONIBLE':15}"
+        f"{'DELEGACIÓN':25}"
+        f"{'CARGA':15}"
+        f"{'CUBICAJE':15}"
+    )
+
+    print("-" * 120)
+
+    for vehiculo in vehiculos:
+
+        print(
+            f"{vehiculo.tipo.upper():15}"
+            f"{vehiculo.matricula:20}"
+            f"{str(vehiculo.disponible):15}"
+            f"{vehiculo.delegacion.nombre:25}"
+            f"{vehiculo.carga_maxima:<15}"
+            f"{vehiculo.cubicaje:<15}"
+        )
+
+
+# ============================================================
+# MENÚ PRINCIPAL
+# ============================================================
+def ejecutar() -> None:
+
+    while True:
+
+        print()
+        print("=" * 40)
+
+        print(
+            "MANTENIMIENTO VEHÍCULOS"
+        )
+
+        print("=" * 40)
+
+        print("1. Alta")
+        print("2. Baja")
+        print("3. Modificar")
+        print("4. Listar")
+        print("0. Salir")
+
+        opcion = input(
+            "\nOpción: "
+        ).strip()
+
         if opcion == "1":
 
-            alta_vehiculo(
-                vehiculos,
-                delegaciones
-            )
+            alta_vehiculo()
 
-        # ==================================================
-        # MODIFICACIONES
-        # ==================================================
         elif opcion == "2":
 
-            modificar_vehiculo(
-                vehiculos
-            )
+            baja_vehiculo()
 
-        # ==================================================
-        # BAJAS
-        # ==================================================
         elif opcion == "3":
 
-            baja_vehiculo(
-                vehiculos
-            )
+            modificar_vehiculo()
 
-        # ==================================================
-        # LISTADOS
-        # ==================================================
         elif opcion == "4":
 
-            listado_vehiculos(
-                vehiculos,
-                delegaciones
-            )
+            listar_vehiculos()
 
-        # ==================================================
-        # SALIR
-        # ==================================================
-        elif opcion == "5":
+        elif opcion == "0":
 
             break
 
         else:
 
             print(
-                "\n❌ Opción inválida"
+                "❌ Opción inválida"
             )
-
-
-# ==========================================================
-# MAIN
-# ==========================================================
-if __name__ == "__main__":
-
-    ejecutar()

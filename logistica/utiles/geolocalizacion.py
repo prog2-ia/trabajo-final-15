@@ -35,7 +35,7 @@ geolocator = Nominatim(
     user_agent="logistica_app"
 )
 
-TIMEOUT = 10
+TIMEOUT = 10        # tiempo de espera de 10 segundos antes de reintentar
 REINTENTOS = 3
 ESPERA_REINTENTO = 2
 ESPERA_PETICION = 1

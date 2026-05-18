@@ -58,8 +58,8 @@ def guardar_delegaciones(
             tipo = "despacho"
 
         nombre_superior = (
-            d.delegacion_superior.nombre
-            if d.delegacion_superior
+            d.superior.nombre
+            if d.superior
             else None
         )
 
@@ -155,15 +155,25 @@ def cargar_delegaciones(
 
         provincia = item.get(
             "provincia",
-            None
+            ""
         )
 
         poblacion = item.get(
             "poblacion",
-            None
+            ""
         )
 
         tipo = item["tipo"]
+
+        coords = item.get(
+            "coordenadas"
+        )
+
+        coordenadas = (
+            tuple(coords)
+            if coords
+            else None
+        )
 
         # --------------------------------------------------
         # CREAR OBJETO
@@ -171,42 +181,32 @@ def cargar_delegaciones(
         if tipo == "central":
 
             d = DelegacionCentral(
-                nombre,
-                direccion,
-                provincia=provincia,
-                poblacion=poblacion
+                nombre=nombre,
+                direccion=direccion,
+                coordenadas=coordenadas,
+                provincia_inicial=provincia,
+                poblacion_inicial=poblacion
             )
 
         elif tipo == "base":
 
             d = DelegacionBase(
-                nombre,
-                direccion,
-                provincia=provincia,
-                poblacion=poblacion
+                nombre=nombre,
+                direccion=direccion,
+                coordenadas=coordenadas,
+                provincia_inicial=provincia,
+                poblacion_inicial=poblacion
             )
 
         else:
 
             d = DelegacionDespacho(
-                nombre,
-                direccion,
-                provincia=provincia,
-                poblacion=poblacion
+                nombre=nombre,
+                direccion=direccion,
+                coordenadas=coordenadas,
+                provincia_inicial=provincia,
+                poblacion_inicial=poblacion
             )
-
-        # --------------------------------------------------
-        # RESTAURAR COORDENADAS
-        # --------------------------------------------------
-        coords = item.get(
-            "coordenadas"
-        )
-
-        d._coordenadas = (
-            tuple(coords)
-            if coords
-            else None
-        )
 
         objetos[nombre] = d
 
@@ -222,7 +222,7 @@ def cargar_delegaciones(
 
         if nombre_superior:
 
-            objetos[nombre]._delegacion_superior = (
+            objetos[nombre]._superior = (
                 objetos[nombre_superior]
             )
 

@@ -365,7 +365,7 @@
         "peso": 0.8,
         "volumen": 3.2,
         "km": 75.77,
-        "estado": "generado",
+        "estado": "en_despacho_12",
         "fecha_pedido": "2026-05-14 03:45:09.400062",
         "fecha_entrega": null
     },
@@ -485,7 +485,7 @@
         "peso": 76.98,
         "volumen": 403.04,
         "km": 426.57,
-        "estado": "en_recogida",
+        "estado": "en_despacho_16",
         "fecha_pedido": "2026-05-14 03:45:09.400822",
         "fecha_entrega": null
     },
@@ -505,7 +505,7 @@
         "peso": 1.58,
         "volumen": 5.98,
         "km": 33.31,
-        "estado": "en_recogida",
+        "estado": "en_despacho_16",
         "fecha_pedido": "2026-05-14 03:45:09.400914",
         "fecha_entrega": null
     },

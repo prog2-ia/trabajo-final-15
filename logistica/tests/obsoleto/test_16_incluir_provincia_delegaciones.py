@@ -24,7 +24,7 @@ Este script SOLO hay que ejecutarlo una vez
 import os
 import sys
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from persistencia.persistencia_delegaciones import (
     cargar_delegaciones,
