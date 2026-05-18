@@ -136,7 +136,7 @@ Gestionar manualmente toda la información del sistema.
 
 ## 🎯 Objetivo
 
-Automatizar el flujo logístico de los pedidos. A partir de unos pedidos generados, se confeccionan las rutas. Existen las siguientes variantes de rutas:
+Automatizar el flujo logístico de los pedidos. A partir de unos pedidos generados, se confeccionan las rutas. 
 
 ### 📦 Rutas
 
@@ -437,8 +437,11 @@ logistica/
 │   ├── generar_clientes.py
 │   ├── generar_vehiculos.py
 │   ├── generar_pedidos.py
-│   ├── generar_rutas_despachos.py
-│   ├── mantenimiento_delegaciones.py
+│   ├── utils_rutas.py
+│   ├── generar_ruta_despacho.py
+│   ├── recoger_pedidos_ruta.py
+│   ├── visualizar_rutas.py
+│   ├── mantenimiento_deleciones.py
 │   ├── mantenimiento_clientes.py
 │   ├── mantenimiento_vehiculos.py
 │   └── mantenimiento_pedidos.py
