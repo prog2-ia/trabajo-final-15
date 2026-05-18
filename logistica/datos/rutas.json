@@ -1,0 +1,76 @@
+{
+    "1": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-14 09:29:27.530294",
+        "distancia_total": 11.14,
+        "vehiculo": "DESPACHO16-1",
+        "peso_total": 4.55,
+        "volumen_total": 22.83,
+        "finalizada": true,
+        "lista_pedidos": []
+    },
+    "2": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-14 09:43:40.034959",
+        "distancia_total": 6.91,
+        "vehiculo": "DESPACHO16-3",
+        "peso_total": 3.06,
+        "volumen_total": 27.67,
+        "finalizada": true,
+        "lista_pedidos": []
+    },
+    "3": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-14 09:46:05.049252",
+        "distancia_total": 4.39,
+        "vehiculo": "3362 PVW",
+        "peso_total": 79.95,
+        "volumen_total": 416.99000000000007,
+        "finalizada": false,
+        "lista_pedidos": [
+            "95"
+        ]
+    },
+    "4": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 16",
+        "fecha": "2026-05-14 09:47:31.570177",
+        "distancia_total": 2.04,
+        "vehiculo": "3669 PRD",
+        "peso_total": 0.79,
+        "volumen_total": 14.02,
+        "finalizada": false,
+        "lista_pedidos": [
+            "100"
+        ]
+    },
+    "5": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 12",
+        "fecha": "2026-05-15 08:09:07.163210",
+        "distancia_total": 10.15,
+        "vehiculo": "DESPACHO12-1",
+        "peso_total": 2.09,
+        "volumen_total": 20.08,
+        "finalizada": false,
+        "lista_pedidos": [
+            "10",
+            "13",
+            "16"
+        ]
+    },
+    "6": {
+        "tipo": "recogida",
+        "delegacion": "Despacho 12",
+        "fecha": "2026-05-15 14:30:01.730282",
+        "distancia_total": 3.26,
+        "vehiculo": "DESPACHO12-3",
+        "peso_total": 0.8,
+        "volumen_total": 3.2,
+        "finalizada": true,
+        "lista_pedidos": []
+    }
+}
